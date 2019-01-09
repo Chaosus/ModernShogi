@@ -4,16 +4,16 @@ Its an advanced japanese chess client with 3D board, AI, server-based multiplaye
 
 Features:
 
--Lots of piece, UI and board themes
--Lots of handicap and timer options(in development)
--Replay viewing(currently only KIF format supported)
--Auto-show moves when you hover your mouse cursor over piece
--Showing dangers and protections on tiles
--Auto-move in one-click if piece have only one move
--Auto-promotion for some pieces
--Speech for turn announcing
--Try-rule or 28-piece rule for impasse
--Modern multiplayer experience with remote master server
+- Lots of piece, UI and board themes
+- Lots of handicap and timer options(in development)
+- Replay viewing(currently only KIF format supported)
+- Auto-show moves when you hover your mouse cursor over piece
+- Showing dangers and protections on tiles
+- Auto-move in one-click if piece have only one move
+- Auto-promotion for some pieces
+- Speech for turn announcing
+- Try-rule or 28-piece rule for impasse
+- Modern multiplayer experience with remote master server
 
 ## This is source code and where can I download game binary ?
 
