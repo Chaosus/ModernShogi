@@ -1,0 +1,40 @@
+﻿namespace ShogiNet
+{
+    public enum ServerAnswer
+    {
+        What,
+        SignUpInfo,
+        SignUpDone,
+        AccountInfo,
+        UserInfo,
+        LoginDone,
+        InvalidLogin,
+        BannedLogin,
+        AlreadyConnected,
+        AcceptJoinPlayer,
+        DeclineJoinPlayer,
+        DeclineJoinObserver,
+        SendPlayerInfo,
+        JoinToGame,
+        AwaitPlayerAccept,
+        JoinedPlayerData,
+        GameInfo,
+        GameData,
+        PlayerData,
+        NotifyGameList,
+        NotifyGameClosed,
+        NotifyPlayerJoined,
+        NotifyMove,
+        NotifyDrop,
+        NotifyMoveString,
+        NotifyChangeStatus,
+        Suspend,
+        Activate,
+        GameReady,
+        Accept,
+        Decline,
+        TakebackRequest,
+        DeclineChangeAccountData,
+        AcceptChangeAccountData
+    }
+}

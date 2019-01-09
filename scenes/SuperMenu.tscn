@@ -8396,7 +8396,7 @@ margin_top = 1075.0
 margin_right = 2370.0
 margin_bottom = 1125.0
 size_flags_horizontal = 3
-custom_constants/separation = 50
+custom_constants/separation = 80
 
 [node name="Desc" type="Label" parent="MainContainer/MainLayout/Screens/SetupScreen/Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/GameType"]
 margin_right = 40.0
@@ -8487,7 +8487,7 @@ margin_right = 2243.0
 margin_bottom = 1125.0
 rect_min_size = Vector2( 0, 50 )
 size_flags_horizontal = 3
-custom_constants/separation = 50
+custom_constants/separation = 80
 
 [node name="Label" type="Label" parent="MainContainer/MainLayout/Screens/SetupScreen/Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/HostSide"]
 margin_left = 84.0
@@ -8537,10 +8537,11 @@ text = "DESC_LOCAL_SIDE"
 align = 1
 
 [node name="HBoxSide" type="HBoxContainer" parent="MainContainer/MainLayout/Screens/SetupScreen/Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/HostSide"]
+editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
-custom_constants/separation = 50
+custom_constants/separation = 80
 
 [node name="RandomCheckBox" type="CheckBox" parent="MainContainer/MainLayout/Screens/SetupScreen/Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/HostSide/HBoxSide"]
 margin_left = 415.0

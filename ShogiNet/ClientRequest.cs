@@ -1,0 +1,33 @@
+﻿namespace ShogiNet
+{
+    public enum ClientRequest
+    {
+        None,
+        Login,
+        SignUp,
+        SignUpInfo,
+        AccountInfo,
+        UserInfo,
+        CreateGame,
+        CloseGame,
+        HostData,
+        JoinGame,
+        GameData,
+        PlayerData,
+        SendMove,
+        SendDrop,
+        GameResult,
+        Takeback,
+        TakebackYes,
+        TakebackNo,
+        SendMoveString,
+        NotifyReady,
+        ChangeAvatar,
+        ChangeCountry,
+        ChangePassword,
+        DeleteYourself,
+        DeleteAccount,
+        AcceptJoiner,
+        DeclineJoiner
+    }
+}
