@@ -1,0 +1,39 @@
+[gd_resource type="Theme" load_steps=3 format=2]
+
+[ext_resource path="res://material/fonts/small_font.tres" type="DynamicFont" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+
+content_margin_left = 1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+bg_color = Color( 0.960784, 0.960784, 0.960784, 1 )
+draw_center = true
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+border_blend = false
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+_sections_unfolded = [ "Border", "Border Width", "Content Margin", "Corner Radius" ]
+
+[resource]
+
+default_font = ExtResource( 1 )
+PanelContainer/styles/panel = SubResource( 1 )
+_sections_unfolded = [ "Panel Container", "PanelContainer/styles/panel", "Styles" ]
+

@@ -1,0 +1,8 @@
+[gd_resource type="ButtonGroup" format=2]
+
+[resource]
+
+resource_local_to_scene = true
+resource_name = "history_mode"
+_sections_unfolded = [ "Resource" ]
+

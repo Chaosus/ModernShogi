@@ -1,0 +1,19 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernShogi", "ModernShogi.csproj", "{2BCA54BC-264F-4F31-9747-D784FE5CF6DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	Release|Any CPU = Release|Any CPU
+	Tools|Any CPU = Tools|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2BCA54BC-264F-4F31-9747-D784FE5CF6DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BCA54BC-264F-4F31-9747-D784FE5CF6DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BCA54BC-264F-4F31-9747-D784FE5CF6DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BCA54BC-264F-4F31-9747-D784FE5CF6DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BCA54BC-264F-4F31-9747-D784FE5CF6DC}.Tools|Any CPU.ActiveCfg = Tools|Any CPU
+		{2BCA54BC-264F-4F31-9747-D784FE5CF6DC}.Tools|Any CPU.Build.0 = Tools|Any CPU
+	EndGlobalSection
+EndGlobal

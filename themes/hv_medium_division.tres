@@ -1,0 +1,8 @@
+[gd_resource type="Theme" format=2]
+
+[resource]
+
+HBoxContainer/constants/separation = 15
+VBoxContainer/constants/separation = 15
+_sections_unfolded = [ "H Box Container", "HBoxContainer", "HBoxContainer/constants", "V Box Container", "VBoxContainer", "VBoxContainer/constants" ]
+

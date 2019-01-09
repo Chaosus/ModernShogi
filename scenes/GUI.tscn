@@ -1,0 +1,2131 @@
+[gd_scene load_steps=46 format=2]
+
+[ext_resource path="res://scripts/GUI.gd" type="Script" id=1]
+[ext_resource path="res://scripts/ui/BlinkControl.gd" type="Script" id=2]
+[ext_resource path="res://scripts/ui/SmallElement.gd" type="Script" id=3]
+[ext_resource path="res://scripts/panels/PromotionPanel.gd" type="Script" id=4]
+[ext_resource path="res://scripts/ui/FadeElement.gd" type="Script" id=5]
+[ext_resource path="res://scripts/ui/CustomTextureButton.gd" type="Script" id=6]
+[ext_resource path="res://scripts/ui/CheckmatePanel.gd" type="Script" id=7]
+[ext_resource path="res://scripts/ui/MediumElement.gd" type="Script" id=8]
+[ext_resource path="res://scripts/panels/AILogPanel.gd" type="Script" id=9]
+[ext_resource path="res://scripts/bars/LeftGameBar.gd" type="Script" id=10]
+[ext_resource path="res://ui/buttons/ai.png" type="Texture" id=11]
+[ext_resource path="res://scripts/ui/Widget.gd" type="Script" id=12]
+[ext_resource path="res://ui/buttons/fix.png" type="Texture" id=13]
+[ext_resource path="res://ui/buttons/help.png" type="Texture" id=14]
+[ext_resource path="res://ui/buttons/dashboard.png" type="Texture" id=15]
+[ext_resource path="res://ui/buttons/brush.png" type="Texture" id=16]
+[ext_resource path="res://ui/buttons/hidebar_left.png" type="Texture" id=17]
+[ext_resource path="res://ui/buttons/piecestyle.png" type="Texture" id=18]
+[ext_resource path="res://scripts/bars/LeftGameHideBar.gd" type="Script" id=19]
+[ext_resource path="res://ui/buttons/hidebar_right.png" type="Texture" id=20]
+[ext_resource path="res://scripts/bars/RightGameBar.gd" type="Script" id=21]
+[ext_resource path="res://ui/buttons/players.png" type="Texture" id=22]
+[ext_resource path="res://ui/buttons/history.png" type="Texture" id=23]
+[ext_resource path="res://ui/buttons/save.png" type="Texture" id=24]
+[ext_resource path="res://scripts/bars/RightGameHideBar.gd" type="Script" id=25]
+[ext_resource path="res://scripts/bars/PieceStylesBar.gd" type="Script" id=26]
+[ext_resource path="res://games/shogi/theme0/a.png" type="Texture" id=27]
+[ext_resource path="res://material/fonts/small_font.tres" type="DynamicFont" id=28]
+[ext_resource path="res://games/shogi/theme1/a.png" type="Texture" id=29]
+[ext_resource path="res://games/shogi/theme2/a.png" type="Texture" id=30]
+[ext_resource path="res://games/shogi/theme3/a.png" type="Texture" id=31]
+[ext_resource path="res://sys.theme" type="Theme" id=32]
+[ext_resource path="res://scripts/panels/HistoryPanel.gd" type="Script" id=33]
+[ext_resource path="res://ui/buttons/skip_previous.png" type="Texture" id=34]
+[ext_resource path="res://ui/buttons/arrow_back.png" type="Texture" id=35]
+[ext_resource path="res://ui/buttons/play_reversed.png" type="Texture" id=36]
+[ext_resource path="res://ui/buttons/play.png" type="Texture" id=37]
+[ext_resource path="res://ui/buttons/arrow_forward.png" type="Texture" id=38]
+[ext_resource path="res://ui/buttons/skip_next.png" type="Texture" id=39]
+[ext_resource path="res://ui/buttons/settings.png" type="Texture" id=40]
+[ext_resource path="res://material/dark_hvscroll.tres" type="Theme" id=41]
+[ext_resource path="res://scripts/panels/InfoPanelList.gd" type="Script" id=42]
+[ext_resource path="res://prefabs/GameInfoPanel.tscn" type="PackedScene" id=43]
+[ext_resource path="res://scripts/ui/PopupCentered.gd" type="Script" id=44]
+[ext_resource path="res://prefabs/PlayerPanel.tscn" type="PackedScene" id=45]
+
+[node name="GUI" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="Box" type="Container" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AwaitLabel" type="Label" parent="Box"]
+visible = false
+anchor_right = 1.0
+margin_top = 160.0
+margin_bottom = 174.0
+size_flags_horizontal = 7
+size_flags_vertical = 7
+text = "DESC_AWAITING"
+align = 1
+script = ExtResource( 2 )
+blink_frequency = 2.0
+
+[node name="ThinkTimeLabel" type="Label" parent="Box"]
+visible = false
+anchor_right = 1.0
+margin_top = 160.0
+margin_bottom = 174.0
+size_flags_horizontal = 7
+size_flags_vertical = 7
+text = "DESC_TC"
+script = ExtResource( 2 )
+blink_frequency = 2.0
+blink_from_start = false
+
+[node name="VBoxSenteInfo" type="VBoxContainer" parent="Box"]
+margin_right = 40.0
+margin_bottom = 40.0
+alignment = 1
+
+[node name="HBoxReplay" type="HBoxContainer" parent="Box"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -47.0
+margin_right = 47.0
+margin_bottom = 40.0
+custom_constants/separation = 40
+script = ExtResource( 3 )
+
+[node name="PromotionDialog" type="PopupPanel" parent="Box"]
+editor/display_folded = true
+margin_top = 600.0
+margin_right = 624.0
+margin_bottom = 966.0
+rect_min_size = Vector2( 600, 300 )
+script = ExtResource( 4 )
+fade_speed = 800.0
+hidden_by_default = true
+dir = Vector2( 0, 1 )
+
+[node name="VBox" type="VBoxContainer" parent="Box/PromotionDialog"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 620.0
+margin_bottom = 362.0
+custom_constants/separation = 0
+
+[node name="LABEL_PROMOTION" type="Label" parent="Box/PromotionDialog/VBox"]
+margin_right = 616.0
+margin_bottom = 163.0
+rect_min_size = Vector2( 0, 128 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "LABEL_PROMOTION"
+align = 1
+valign = 1
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HBox" type="HBoxContainer" parent="Box/PromotionDialog/VBox"]
+margin_top = 163.0
+margin_right = 616.0
+margin_bottom = 272.0
+size_flags_vertical = 0
+alignment = 1
+
+[node name="Offset" type="ReferenceRect" parent="Box/PromotionDialog/VBox/HBox"]
+margin_right = 50.0
+rect_min_size = Vector2( 50, 0 )
+size_flags_vertical = 0
+
+[node name="VBox" type="VBoxContainer" parent="Box/PromotionDialog/VBox/HBox"]
+editor/display_folded = true
+margin_left = 54.0
+margin_right = 254.0
+margin_bottom = 109.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+custom_constants/separation = 0
+alignment = 1
+
+[node name="UnpromotionBtn" type="TextureButton" parent="Box/PromotionDialog/VBox/HBox/VBox"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="Box/PromotionDialog/VBox/HBox/VBox/UnpromotionBtn"]
+position = Vector2( -40, -40 )
+scale = Vector2( 0.5, 0.5 )
+centered = false
+offset = Vector2( 170, 0 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 256 )
+
+[node name="Label" type="Label" parent="Box/PromotionDialog/VBox/HBox/VBox"]
+margin_top = 95.0
+margin_right = 200.0
+margin_bottom = 109.0
+rect_min_size = Vector2( 0, 100 )
+size_flags_vertical = 0
+text = "OPT_1"
+align = 1
+valign = 1
+script = ExtResource( 3 )
+
+[node name="VBox2" type="VBoxContainer" parent="Box/PromotionDialog/VBox/HBox"]
+margin_right = 40.0
+margin_bottom = 40.0
+size_flags_vertical = 3
+alignment = 2
+
+[node name="LABEL_OR" type="Label" parent="Box/PromotionDialog/VBox/HBox/VBox2"]
+margin_left = 258.0
+margin_top = -100.0
+margin_right = 358.0
+margin_bottom = -86.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "LABEL_OR"
+align = 1
+valign = 1
+script = ExtResource( 3 )
+
+[node name="Offset" type="ReferenceRect" parent="Box/PromotionDialog/VBox/HBox/VBox2"]
+margin_right = 40.0
+margin_bottom = 400.0
+
+[node name="VBox3" type="VBoxContainer" parent="Box/PromotionDialog/VBox/HBox"]
+margin_left = 362.0
+margin_right = 562.0
+margin_bottom = 109.0
+rect_min_size = Vector2( 200, 60 )
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="PromotionBtn" type="TextureButton" parent="Box/PromotionDialog/VBox/HBox/VBox3"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+expand = true
+stretch_mode = 6
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="Box/PromotionDialog/VBox/HBox/VBox3/PromotionBtn"]
+position = Vector2( -40, -40 )
+scale = Vector2( 0.5, 0.5 )
+centered = false
+offset = Vector2( 170, 0 )
+region_enabled = true
+region_rect = Rect2( 256, 0, 256, 256 )
+
+[node name="Label" type="Label" parent="Box/PromotionDialog/VBox/HBox/VBox3"]
+margin_top = 95.0
+margin_right = 200.0
+margin_bottom = 109.0
+rect_min_size = Vector2( 0, 100 )
+text = "OPT_2"
+align = 1
+valign = 1
+script = ExtResource( 3 )
+
+[node name="Offset2" type="ReferenceRect" parent="Box/PromotionDialog/VBox/HBox"]
+margin_left = 566.0
+margin_right = 616.0
+rect_min_size = Vector2( 50, 0 )
+size_flags_vertical = 0
+
+[node name="Offset" type="ReferenceRect" parent="Box/PromotionDialog/VBox"]
+margin_top = 272.0
+margin_right = 616.0
+margin_bottom = 322.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="GameOverDialog" type="PopupPanel" parent="Box"]
+editor/display_folded = true
+margin_right = 900.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 900, 320 )
+size_flags_horizontal = 3
+script = ExtResource( 7 )
+hidden_by_default = true
+
+[node name="VBox" type="VBoxContainer" parent="Box/GameOverDialog"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 896.0
+margin_bottom = 332.0
+rect_min_size = Vector2( 820, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 20
+
+[node name="Offset" type="ReferenceRect" parent="Box/GameOverDialog/VBox"]
+margin_right = 892.0
+
+[node name="LABEL_RESULT" type="Label" parent="Box/GameOverDialog/VBox"]
+margin_top = 20.0
+margin_right = 892.0
+margin_bottom = 134.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "LABEL_RESULT"
+align = 1
+valign = 1
+
+[node name="HSeparator" type="HSeparator" parent="Box/GameOverDialog/VBox"]
+margin_top = 154.0
+margin_right = 892.0
+margin_bottom = 154.0
+rect_min_size = Vector2( 800, 0 )
+custom_constants/separation = 0
+
+[node name="Label2" type="Label" parent="Box/GameOverDialog/VBox"]
+margin_top = 174.0
+margin_right = 892.0
+margin_bottom = 188.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "LABEL_NEW_ACTIONS"
+align = 1
+valign = 1
+script = ExtResource( 8 )
+
+[node name="HSeparator2" type="HSeparator" parent="Box/GameOverDialog/VBox"]
+margin_top = 208.0
+margin_right = 892.0
+margin_bottom = 212.0
+custom_constants/separation = 0
+
+[node name="VBox" type="VBoxContainer" parent="Box/GameOverDialog/VBox"]
+margin_top = 232.0
+margin_right = 892.0
+margin_bottom = 292.0
+custom_constants/separation = 20
+
+[node name="ContinueButton" type="Button" parent="Box/GameOverDialog/VBox/VBox"]
+margin_right = 892.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 350, 0 )
+text = "BTN_CONTINUE"
+
+[node name="HSeparator" type="HSeparator" parent="Box/GameOverDialog/VBox/VBox"]
+margin_top = -24.0
+margin_right = 892.0
+margin_bottom = -20.0
+custom_constants/separation = 0
+
+[node name="HBoxSave" type="HBoxContainer" parent="Box/GameOverDialog/VBox/VBox"]
+margin_top = -206.0
+margin_right = 800.0
+margin_bottom = -182.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 10
+
+[node name="Offset" type="ReferenceRect" parent="Box/GameOverDialog/VBox/VBox/HBoxSave"]
+size_flags_horizontal = 3
+
+[node name="SavePathLabel" type="Label" parent="Box/GameOverDialog/VBox/VBox/HBoxSave"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "LABEL_FILENAME"
+
+[node name="SavePathEdit" type="LineEdit" parent="Box/GameOverDialog/VBox/VBox/HBoxSave"]
+margin_right = 58.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 600, 0 )
+size_flags_horizontal = 3
+
+[node name="Offset2" type="ReferenceRect" parent="Box/GameOverDialog/VBox/VBox/HBoxSave"]
+margin_left = 582.0
+margin_right = 582.0
+size_flags_horizontal = 3
+
+[node name="HSeparator2" type="HSeparator" parent="Box/GameOverDialog/VBox/VBox"]
+margin_top = -24.0
+margin_right = 892.0
+margin_bottom = -20.0
+custom_constants/separation = 0
+
+[node name="LeaveButton" type="Button" parent="Box/GameOverDialog/VBox/VBox"]
+margin_top = 40.0
+margin_right = 892.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 350, 0 )
+text = "BTN_LEAVE"
+
+[node name="Offset3" type="ReferenceRect" parent="Box/GameOverDialog/VBox"]
+margin_top = 312.0
+margin_right = 892.0
+margin_bottom = 312.0
+
+[node name="AILog" type="PanelContainer" parent="Box"]
+editor/display_folded = true
+visible = false
+self_modulate = Color( 1, 1, 1, 0.501961 )
+margin_left = 142.0
+margin_top = 128.0
+margin_right = 956.0
+margin_bottom = 966.0
+script = ExtResource( 9 )
+hidden_by_default = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Box/AILog"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 827.0
+margin_bottom = 831.0
+rect_min_size = Vector2( 820, 824 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+
+[node name="VBox" type="VBoxContainer" parent="Box/AILog/ScrollContainer"]
+margin_right = 820.0
+margin_bottom = 824.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="LeftGameBarAIMode" type="PanelContainer" parent="Box"]
+editor/display_folded = true
+visible = false
+margin_left = -142.0
+margin_top = 128.0
+margin_bottom = 1080.0
+rect_min_size = Vector2( 0, 952 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 10 )
+fade_speed = 500.0
+hidden_by_default = true
+dir = Vector2( 1, 0 )
+
+[node name="VBox" type="VBoxContainer" parent="Box/LeftGameBarAIMode"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 135.0
+margin_bottom = 945.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="AISettingsButton" type="TextureButton" parent="Box/LeftGameBarAIMode/VBox"]
+margin_right = 128.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
+texture_normal = ExtResource( 11 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 12 )
+unnamed = true
+tag = 0
+tooltip_enabled = true
+tooltip = "BTN_OPEN_AI_SETTINGS"
+
+[node name="AIRestart" type="TextureButton" parent="Box/LeftGameBarAIMode/VBox"]
+margin_top = 128.0
+margin_right = 128.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 128, 128 )
+texture_normal = ExtResource( 13 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 12 )
+unnamed = true
+tag = 0
+tooltip_enabled = true
+tooltip = "BTN_AI_REFRESH"
+
+[node name="AIHint" type="TextureButton" parent="Box/LeftGameBarAIMode/VBox"]
+visible = false
+margin_top = 256.0
+margin_right = 128.0
+margin_bottom = 384.0
+rect_min_size = Vector2( 128, 128 )
+texture_normal = ExtResource( 14 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 12 )
+unnamed = true
+tag = 0
+tooltip_enabled = true
+tooltip = "BTN_TOGGLE_HINT_MODE"
+
+[node name="AIOpenLog" type="TextureButton" parent="Box/LeftGameBarAIMode/VBox"]
+margin_top = 256.0
+margin_right = 128.0
+margin_bottom = 384.0
+rect_min_size = Vector2( 128, 128 )
+texture_normal = ExtResource( 15 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 12 )
+unnamed = true
+tag = 0
+tooltip_enabled = true
+tooltip = "BTN_AI_LOG"
+
+[node name="Offset" type="ReferenceRect" parent="Box/LeftGameBarAIMode/VBox"]
+margin_top = 384.0
+margin_right = 128.0
+margin_bottom = 682.0
+size_flags_horizontal = 3
+
+[node name="SwitchModeButton" type="TextureButton" parent="Box/LeftGameBarAIMode/VBox"]
+margin_top = 682.0
+margin_right = 128.0
+margin_bottom = 810.0
+rect_min_size = Vector2( 128, 128 )
+texture_normal = ExtResource( 16 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 12 )
+unnamed = true
+tag = 0
+tooltip_enabled = true
+tooltip = "BTN_SWITCH_PANEL_STYLES"
+
+[node name="LeftHideButton" type="TextureButton" parent="Box/LeftGameBarAIMode/VBox"]
+margin_top = 810.0
+margin_right = 128.0
+margin_bottom = 938.0
+rect_min_size = Vector2( 128, 128 )
+texture_normal = ExtResource( 17 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 12 )
+unnamed = true
+tag = 0
+tooltip_enabled = true
+tooltip = "BTN_HIDE_PANEL"
+tooltip_align = 3
+
+[node name="LeftGameBarBrushMode" type="PanelContainer" parent="Box"]
+editor/display_folded = true
+visible = false
+margin_left = -142.0
+margin_top = 128.0
+margin_bottom = 1094.0
+rect_min_size = Vector2( 0, 952 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 10 )
+fade_speed = 500.0
+hidden_by_default = true
+dir = Vector2( 1, 0 )
+mode = 1
+
+[node name="VBox" type="VBoxContainer" parent="Box/LeftGameBarBrushMode"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 135.0
+margin_bottom = 959.0
+rect_min_size = Vector2( 0, 952 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="StylesSettingsButton" type="TextureButton" parent="Box/LeftGameBarBrushMode/VBox"]
+margin_right = 128.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
+texture_normal = ExtResource( 16 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 12 )
+unnamed = true
+tag = 0
+tooltip_enabled = true
+tooltip = "BTN_OPEN_STYLES_SETTINGS"
+
+[node name="PieceStylesButton" type="TextureButton" parent="Box/LeftGameBarBrushMode/VBox"]
+margin_top = 128.0
+margin_right = 128.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 128, 128 )
+texture_normal = ExtResource( 18 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 12 )
+tag = 11
+tooltip_enabled = true
+tooltip = "BTN_PIECE_STYLE"
+
+[node name="Offset" type="ReferenceRect" parent="Box/LeftGameBarBrushMode/VBox"]
+margin_top = 256.0
+margin_right = 128.0
+margin_bottom = 696.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SwitchModeButton" type="TextureButton" parent="Box/LeftGameBarBrushMode/VBox"]
+margin_top = 696.0
+margin_right = 128.0
+margin_bottom = 824.0
+rect_min_size = Vector2( 128, 128 )
+texture_normal = ExtResource( 11 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 12 )
+unnamed = true
+tag = 0
+tooltip_enabled = true
+tooltip = "BTN_SWITCH_PANEL_AI"
+
+[node name="LeftHideButton" type="TextureButton" parent="Box/LeftGameBarBrushMode/VBox"]
+margin_top = 824.0
+margin_right = 128.0
+margin_bottom = 952.0
+rect_min_size = Vector2( 128, 128 )
+texture_normal = ExtResource( 17 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 12 )
+unnamed = true
+tag = 0
+tooltip_enabled = true
+tooltip = "BTN_HIDE_PANEL"
+tooltip_align = 3
+
+[node name="LeftGameHideBar" type="PanelContainer" parent="Box"]
+editor/display_folded = true
+visible = false
+self_modulate = Color( 1, 1, 1, 0 )
+margin_top = 128.0
+margin_right = 142.0
+margin_bottom = 1080.0
+rect_min_size = Vector2( 142, 952 )
+mouse_filter = 2
+size_flags_vertical = 3
+script = ExtResource( 19 )
+fade_speed = 5.0
+
+[node name="VBox" type="VBoxContainer" parent="Box/LeftGameHideBar"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 135.0
+margin_bottom = 945.0
+mouse_filter = 2
+custom_constants/separation = 0
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Box/LeftGameHideBar/VBox"]
+margin_right = 128.0
+margin_bottom = 810.0
+mouse_filter = 2
+size_flags_vertical = 3
+
+[node name="LeftShowWidget" type="TextureButton" parent="Box/LeftGameHideBar/VBox"]
+self_modulate = Color( 1, 1, 1, 0.196078 )
+margin_top = 810.0
+margin_right = 128.0
+margin_bottom = 938.0
+rect_min_size = Vector2( 128, 128 )
+texture_normal = ExtResource( 20 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 12 )
+tag = 8
+tooltip_enabled = true
+tooltip = "BTN_SHOW_PANEL"
+tooltip_align = 3
+
+[node name="RightGameBar" type="PanelContainer" parent="Box"]
+editor/display_folded = true
+visible = false
+margin_left = 1920.0
+margin_top = 128.0
+margin_right = 2062.0
+margin_bottom = 1080.0
+grow_horizontal = 0
+grow_vertical = 0
+rect_min_size = Vector2( 0, 952 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 21 )
+fade_speed = 500.0
+hidden_by_default = true
+dir = Vector2( -1, 0 )
+
+[node name="VBox" type="VBoxContainer" parent="Box/RightGameBar"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 135.0
+margin_bottom = 945.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="PlayerInfoButton" type="TextureButton" parent="Box/RightGameBar/VBox"]
+margin_right = 128.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
+texture_normal = ExtResource( 22 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 12 )
+unnamed = true
+tooltip_enabled = true
+tooltip = "LABEL_PLAYER_INFO"
+tooltip_align = 2
+
+[node name="HistoryButton" type="TextureButton" parent="Box/RightGameBar/VBox"]
+margin_right = 128.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
+texture_normal = ExtResource( 23 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 12 )
+unnamed = true
+tooltip_enabled = true
+tooltip = "LABEL_HISTORY"
+tooltip_align = 2
+
+[node name="SaveButton" type="TextureButton" parent="Box/RightGameBar/VBox"]
+margin_top = 128.0
+margin_right = 128.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 128, 128 )
+texture_normal = ExtResource( 24 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 12 )
+unnamed = true
+tooltip_enabled = true
+tooltip = "BTN_SAVE"
+tooltip_align = 2
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Box/RightGameBar/VBox"]
+margin_top = 256.0
+margin_right = 128.0
+margin_bottom = 810.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RightHideWidget" type="TextureButton" parent="Box/RightGameBar/VBox"]
+margin_top = 810.0
+margin_right = 128.0
+margin_bottom = 938.0
+rect_min_size = Vector2( 128, 128 )
+texture_normal = ExtResource( 20 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 12 )
+tag = 9
+tooltip_enabled = true
+tooltip = "BTN_HIDE_PANEL"
+tooltip_align = 4
+
+[node name="RightGameHideBar" type="PanelContainer" parent="Box"]
+editor/display_folded = true
+visible = false
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 1778.0
+margin_top = 128.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+rect_min_size = Vector2( 142, 0 )
+mouse_filter = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+script = ExtResource( 25 )
+fade_speed = 5.0
+
+[node name="VBox" type="VBoxContainer" parent="Box/RightGameHideBar"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 135.0
+margin_bottom = 945.0
+mouse_filter = 2
+custom_constants/separation = 0
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Box/RightGameHideBar/VBox"]
+margin_right = 128.0
+margin_bottom = 810.0
+mouse_filter = 2
+size_flags_vertical = 3
+
+[node name="RightShowWidget" type="TextureButton" parent="Box/RightGameHideBar/VBox"]
+self_modulate = Color( 1, 1, 1, 0.192157 )
+margin_top = 810.0
+margin_right = 128.0
+margin_bottom = 938.0
+rect_min_size = Vector2( 128, 128 )
+texture_normal = ExtResource( 17 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 12 )
+tag = 10
+tooltip_enabled = true
+tooltip = "BTN_SHOW_PANEL"
+tooltip_align = 4
+
+[node name="PieceStylesPanel" type="PanelContainer" parent="Box"]
+editor/display_folded = true
+visible = false
+margin_left = 142.0
+margin_top = 128.0
+margin_right = 342.0
+margin_bottom = 728.0
+rect_min_size = Vector2( 200, 700 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 26 )
+hidden_by_default = true
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Box/PieceStylesPanel"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 193.0
+margin_bottom = 693.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 20
+
+[node name="Theme1" type="VBoxContainer" parent="Box/PieceStylesPanel/HBoxContainer"]
+margin_right = 186.0
+margin_bottom = 151.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="PSKanjiButton" type="TextureButton" parent="Box/PieceStylesPanel/HBoxContainer/Theme1"]
+margin_right = 186.0
+margin_bottom = 129.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 27 )
+expand = true
+stretch_mode = 5
+script = ExtResource( 12 )
+unnamed = true
+
+[node name="PSTYLE_KANJI" type="Label" parent="Box/PieceStylesPanel/HBoxContainer/Theme1"]
+margin_top = 129.0
+margin_right = 186.0
+margin_bottom = 151.0
+custom_fonts/font = ExtResource( 28 )
+text = "PSTYLE_KANJI"
+align = 1
+
+[node name="Theme2" type="VBoxContainer" parent="Box/PieceStylesPanel/HBoxContainer"]
+margin_top = 171.0
+margin_right = 186.0
+margin_bottom = 322.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="PSSymbolicButton" type="TextureButton" parent="Box/PieceStylesPanel/HBoxContainer/Theme2"]
+margin_right = 186.0
+margin_bottom = 129.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 29 )
+expand = true
+stretch_mode = 5
+script = ExtResource( 12 )
+unnamed = true
+
+[node name="PSTYLE_SYMBOLS" type="Label" parent="Box/PieceStylesPanel/HBoxContainer/Theme2"]
+margin_top = 129.0
+margin_right = 186.0
+margin_bottom = 151.0
+custom_fonts/font = ExtResource( 28 )
+text = "PSTYLE_SYMBOLS"
+align = 1
+
+[node name="Theme3" type="VBoxContainer" parent="Box/PieceStylesPanel/HBoxContainer"]
+margin_top = 342.0
+margin_right = 186.0
+margin_bottom = 493.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="PSWesternButton" type="TextureButton" parent="Box/PieceStylesPanel/HBoxContainer/Theme3"]
+margin_right = 186.0
+margin_bottom = 129.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 30 )
+expand = true
+stretch_mode = 5
+script = ExtResource( 12 )
+unnamed = true
+
+[node name="PSTYLE_WESTERN" type="Label" parent="Box/PieceStylesPanel/HBoxContainer/Theme3"]
+margin_top = 129.0
+margin_right = 186.0
+margin_bottom = 151.0
+custom_fonts/font = ExtResource( 28 )
+text = "PSTYLE_WESTERN"
+align = 1
+
+[node name="Theme4" type="VBoxContainer" parent="Box/PieceStylesPanel/HBoxContainer"]
+margin_top = 513.0
+margin_right = 186.0
+margin_bottom = 664.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="PSKanji2Button" type="TextureButton" parent="Box/PieceStylesPanel/HBoxContainer/Theme4"]
+margin_right = 186.0
+margin_bottom = 129.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 31 )
+expand = true
+stretch_mode = 5
+script = ExtResource( 12 )
+unnamed = true
+
+[node name="PSTYLE_KANJI2" type="Label" parent="Box/PieceStylesPanel/HBoxContainer/Theme4"]
+margin_top = 129.0
+margin_right = 186.0
+margin_bottom = 151.0
+custom_fonts/font = ExtResource( 28 )
+text = "PSTYLE_KANJI"
+align = 1
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Box/PieceStylesPanel/HBoxContainer"]
+margin_top = 684.0
+margin_right = 186.0
+margin_bottom = 684.0
+
+[node name="HistoryPanel" type="PopupPanel" parent="Box"]
+self_modulate = Color( 1, 1, 1, 0.501961 )
+margin_left = 1078.0
+margin_top = 128.0
+margin_right = 1482.0
+margin_bottom = 292.0
+rect_min_size = Vector2( 0, 124 )
+size_flags_vertical = 3
+theme = ExtResource( 32 )
+script = ExtResource( 33 )
+hidden_by_default = true
+
+[node name="VBox" type="VBoxContainer" parent="Box/HistoryPanel"]
+margin_right = 588.0
+margin_bottom = 164.0
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="VBoxControl" type="VBoxContainer" parent="Box/HistoryPanel/VBox"]
+margin_right = 404.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="HBox" type="HBoxContainer" parent="Box/HistoryPanel/VBox/VBoxControl"]
+margin_right = 404.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 400, 80 )
+custom_constants/separation = 0
+alignment = 1
+
+[node name="Offset4" type="ReferenceRect" parent="Box/HistoryPanel/VBox/VBoxControl/HBox"]
+margin_bottom = 80.0
+size_flags_horizontal = 3
+
+[node name="ToBeginningHistoryBtn" type="TextureButton" parent="Box/HistoryPanel/VBox/VBoxControl/HBox"]
+margin_right = 50.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 50, 50 )
+texture_normal = ExtResource( 34 )
+expand = true
+stretch_mode = 5
+script = ExtResource( 12 )
+unnamed = true
+
+[node name="Offset7" type="ReferenceRect" parent="Box/HistoryPanel/VBox/VBoxControl/HBox"]
+visible = false
+margin_left = 56.0
+margin_right = 62.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+
+[node name="VSeparator2" type="VSeparator" parent="Box/HistoryPanel/VBox/VBoxControl/HBox"]
+visible = false
+margin_left = 60.0
+margin_right = 64.0
+margin_bottom = 80.0
+
+[node name="Offset" type="ReferenceRect" parent="Box/HistoryPanel/VBox/VBoxControl/HBox"]
+margin_left = 50.0
+margin_right = 50.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+
+[node name="BackHistoryBtn" type="TextureButton" parent="Box/HistoryPanel/VBox/VBoxControl/HBox"]
+margin_left = 50.0
+margin_right = 100.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 50, 50 )
+texture_normal = ExtResource( 35 )
+expand = true
+stretch_mode = 5
+script = ExtResource( 12 )
+unnamed = true
+
+[node name="PlayReverseHistoryButton" type="TextureButton" parent="Box/HistoryPanel/VBox/VBoxControl/HBox"]
+margin_left = 100.0
+margin_right = 150.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 50, 50 )
+texture_normal = ExtResource( 36 )
+expand = true
+stretch_mode = 5
+script = ExtResource( 12 )
+unnamed = true
+
+[node name="PlayHistoryButton" type="TextureButton" parent="Box/HistoryPanel/VBox/VBoxControl/HBox"]
+margin_left = 150.0
+margin_right = 200.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 50, 50 )
+texture_normal = ExtResource( 37 )
+expand = true
+stretch_mode = 5
+script = ExtResource( 12 )
+unnamed = true
+
+[node name="ForwardHistoryBtn" type="TextureButton" parent="Box/HistoryPanel/VBox/VBoxControl/HBox"]
+margin_left = 200.0
+margin_right = 250.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 50, 50 )
+texture_normal = ExtResource( 38 )
+expand = true
+stretch_mode = 5
+script = ExtResource( 12 )
+unnamed = true
+
+[node name="Offset3" type="ReferenceRect" parent="Box/HistoryPanel/VBox/VBoxControl/HBox"]
+visible = false
+margin_left = 214.0
+margin_right = 221.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+
+[node name="VSeparator3" type="VSeparator" parent="Box/HistoryPanel/VBox/VBoxControl/HBox"]
+visible = false
+margin_left = 221.0
+margin_right = 225.0
+margin_bottom = 80.0
+
+[node name="Offset8" type="ReferenceRect" parent="Box/HistoryPanel/VBox/VBoxControl/HBox"]
+margin_left = 250.0
+margin_right = 250.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+
+[node name="ToEndHistoryBtn" type="TextureButton" parent="Box/HistoryPanel/VBox/VBoxControl/HBox"]
+margin_left = 250.0
+margin_right = 300.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 50, 50 )
+texture_normal = ExtResource( 39 )
+expand = true
+stretch_mode = 5
+script = ExtResource( 12 )
+unnamed = true
+
+[node name="Offset6" type="ReferenceRect" parent="Box/HistoryPanel/VBox/VBoxControl/HBox"]
+size_flags_horizontal = 3
+
+[node name="VSeparator" type="VSeparator" parent="Box/HistoryPanel/VBox/VBoxControl/HBox"]
+margin_right = 4.0
+margin_bottom = 3.0
+size_flags_horizontal = 3
+
+[node name="Offset5" type="ReferenceRect" parent="Box/HistoryPanel/VBox/VBoxControl/HBox"]
+margin_left = 304.0
+margin_right = 304.0
+
+[node name="SettingsHistoryBtn" type="TextureButton" parent="Box/HistoryPanel/VBox/VBoxControl/HBox"]
+margin_left = 304.0
+margin_right = 354.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 50, 50 )
+texture_normal = ExtResource( 40 )
+expand = true
+stretch_mode = 5
+script = ExtResource( 12 )
+unnamed = true
+
+[node name="HideHistoryBtn" type="TextureButton" parent="Box/HistoryPanel/VBox/VBoxControl/HBox"]
+margin_left = 354.0
+margin_right = 404.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 50, 50 )
+texture_normal = ExtResource( 20 )
+expand = true
+stretch_mode = 5
+script = ExtResource( 12 )
+unnamed = true
+
+[node name="HSeparator" type="HSeparator" parent="Box/HistoryPanel/VBox"]
+margin_top = 80.0
+margin_right = 404.0
+margin_bottom = 80.0
+custom_constants/separation = 0
+
+[node name="VBoxShogi" type="VBoxContainer" parent="Box/HistoryPanel/VBox"]
+margin_top = 80.0
+margin_right = 404.0
+margin_bottom = 176.0
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="HBoxTableHeader" type="HBoxContainer" parent="Box/HistoryPanel/VBox/VBoxShogi"]
+margin_right = 404.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="LABEL_N" type="Label" parent="Box/HistoryPanel/VBox/VBoxShogi/HBoxTableHeader"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 60 )
+size_flags_vertical = 1
+text = "#"
+align = 1
+valign = 1
+
+[node name="VSeparator1" type="VSeparator" parent="Box/HistoryPanel/VBox/VBoxShogi/HBoxTableHeader"]
+margin_left = 80.0
+margin_right = 84.0
+margin_bottom = 80.0
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Box/HistoryPanel/VBox/VBoxShogi/HBoxTableHeader"]
+visible = false
+margin_left = 80.0
+margin_right = 80.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxPlayers" type="HBoxContainer" parent="Box/HistoryPanel/VBox/VBoxShogi/HBoxTableHeader"]
+margin_left = 84.0
+margin_right = 404.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+custom_constants/separation = 25
+
+[node name="Offset" type="ReferenceRect" parent="Box/HistoryPanel/VBox/VBoxShogi/HBoxTableHeader/HBoxPlayers"]
+margin_right = 44.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+
+[node name="LABEL_BLACK_INPUT" type="Label" parent="Box/HistoryPanel/VBox/VBoxShogi/HBoxTableHeader/HBoxPlayers"]
+margin_left = 69.0
+margin_top = 29.0
+margin_right = 113.0
+margin_bottom = 51.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+text = "?"
+align = 1
+valign = 1
+script = ExtResource( 3 )
+
+[node name="VSeparator" type="VSeparator" parent="Box/HistoryPanel/VBox/VBoxShogi/HBoxTableHeader/HBoxPlayers"]
+margin_right = 4.0
+margin_bottom = 40.0
+
+[node name="LABEL_WHITE_INPUT" type="Label" parent="Box/HistoryPanel/VBox/VBoxShogi/HBoxTableHeader/HBoxPlayers"]
+margin_left = 207.0
+margin_top = 29.0
+margin_right = 251.0
+margin_bottom = 51.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+text = "?"
+align = 1
+valign = 1
+script = ExtResource( 3 )
+
+[node name="Offset2" type="ReferenceRect" parent="Box/HistoryPanel/VBox/VBoxShogi/HBoxTableHeader/HBoxPlayers"]
+margin_left = 276.0
+margin_right = 320.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+
+[node name="HSeparator" type="HSeparator" parent="Box/HistoryPanel/VBox/VBoxShogi"]
+margin_top = 80.0
+margin_right = 404.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 400, 0 )
+
+[node name="HistoryScrollContainer" type="ScrollContainer" parent="Box/HistoryPanel/VBox/VBoxShogi"]
+margin_top = 84.0
+margin_right = 404.0
+margin_bottom = 84.0
+mouse_filter = 1
+size_flags_horizontal = 3
+scroll_horizontal_enabled = false
+
+[node name="VBox" type="VBoxContainer" parent="Box/HistoryPanel/VBox/VBoxShogi/HistoryScrollContainer"]
+margin_right = 404.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="VBoxChess" type="VBoxContainer" parent="Box/HistoryPanel/VBox"]
+visible = false
+margin_top = 64.0
+margin_right = 704.0
+margin_bottom = 128.0
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="HBoxTableHeader" type="HBoxContainer" parent="Box/HistoryPanel/VBox/VBoxChess"]
+margin_right = 700.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+custom_constants/separation = 0
+
+[node name="LABEL_N" type="Label" parent="Box/HistoryPanel/VBox/VBoxChess/HBoxTableHeader"]
+margin_top = 23.0
+margin_right = 80.0
+margin_bottom = 83.0
+rect_min_size = Vector2( 80, 60 )
+size_flags_vertical = 1
+text = "#"
+align = 1
+valign = 1
+
+[node name="VSeparator1" type="VSeparator" parent="Box/HistoryPanel/VBox/VBoxChess/HBoxTableHeader"]
+margin_left = 80.0
+margin_right = 84.0
+margin_bottom = 60.0
+
+[node name="LABEL_BLACK_INPUT" type="Label" parent="Box/HistoryPanel/VBox/VBoxChess/HBoxTableHeader"]
+margin_left = 84.0
+margin_right = 384.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 310, 60 )
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "?"
+align = 1
+valign = 1
+clip_text = true
+script = ExtResource( 3 )
+
+[node name="VSeparator2" type="VSeparator" parent="Box/HistoryPanel/VBox/VBoxChess/HBoxTableHeader"]
+margin_left = 344.0
+margin_right = 348.0
+margin_bottom = 60.0
+
+[node name="LABEL_WHITE_INPUT" type="Label" parent="Box/HistoryPanel/VBox/VBoxChess/HBoxTableHeader"]
+margin_left = 348.0
+margin_right = 658.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 310, 60 )
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "?"
+align = 1
+valign = 1
+clip_text = true
+script = ExtResource( 3 )
+
+[node name="HSeparator" type="HSeparator" parent="Box/HistoryPanel/VBox/VBoxChess"]
+margin_top = 60.0
+margin_right = 600.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 600, 0 )
+custom_constants/separation = 0
+
+[node name="HistoryScrollContainer" type="ScrollContainer" parent="Box/HistoryPanel/VBox/VBoxChess"]
+margin_top = 64.0
+margin_right = 30.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 41 )
+scroll_horizontal_enabled = false
+
+[node name="VBox" type="VBoxContainer" parent="Box/HistoryPanel/VBox/VBoxChess/HistoryScrollContainer"]
+margin_right = 30.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="SFENLabel" type="Label" parent="Box"]
+visible = false
+margin_top = 128.0
+margin_right = 40.0
+margin_bottom = 142.0
+custom_fonts/font = ExtResource( 28 )
+
+[node name="PopupList" type="VBoxContainer" parent="Box"]
+editor/display_folded = true
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -960.0
+margin_top = 6.0
+margin_right = 960.0
+margin_bottom = 506.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 42 )
+__meta__ = {
+"_edit_lock_": true
+}
+fade_speed = 600.0
+dir = Vector2( 0, 1 )
+
+[node name="CC1" type="CenterContainer" parent="Box/PopupList"]
+editor/display_folded = true
+margin_right = 1920.0
+
+[node name="CheckPopup" parent="Box/PopupList/CC1" instance=ExtResource( 43 )]
+visible = false
+margin_left = 810.0
+margin_top = -7.0
+margin_right = 1110.0
+margin_bottom = 7.0
+mouse_filter = 2
+size_flags_horizontal = 0
+text = "LABEL_CHECK"
+
+[node name="CC2" type="CenterContainer" parent="Box/PopupList"]
+editor/display_folded = true
+margin_top = 4.0
+margin_right = 1920.0
+margin_bottom = 4.0
+
+[node name="AwaitAnswerPopup" parent="Box/PopupList/CC2" instance=ExtResource( 43 )]
+visible = false
+margin_left = 560.0
+margin_top = -7.0
+margin_right = 1360.0
+margin_bottom = 7.0
+rect_min_size = Vector2( 800, 0 )
+mouse_filter = 2
+text = "POPUP_AWAIT_ANSWER"
+
+[node name="AwaitAnswerDisabled" parent="Box/PopupList/CC2" instance=ExtResource( 43 )]
+visible = false
+margin_left = 560.0
+margin_top = -7.0
+margin_right = 1360.0
+margin_bottom = 7.0
+rect_min_size = Vector2( 800, 0 )
+mouse_filter = 2
+text = "POPUP_AWAIT_ANSWER"
+
+[node name="AwaitAnswerDisconnectedPopup" parent="Box/PopupList/CC2" instance=ExtResource( 43 )]
+visible = false
+margin_left = 560.0
+margin_top = -7.0
+margin_right = 1360.0
+margin_bottom = 7.0
+rect_min_size = Vector2( 800, 0 )
+mouse_filter = 2
+text = "POPUP_AWAIT_DISCONNECTED"
+
+[node name="AwaitAnswerNotYourTurnPopup" parent="Box/PopupList/CC2" instance=ExtResource( 43 )]
+visible = false
+margin_left = 560.0
+margin_top = -7.0
+margin_right = 1360.0
+margin_bottom = 7.0
+rect_min_size = Vector2( 800, 0 )
+mouse_filter = 2
+text = "POPUP_AWAIT_YOUR_TURN"
+
+[node name="AwaitAnswerGameOverPopup" parent="Box/PopupList/CC2" instance=ExtResource( 43 )]
+visible = false
+margin_left = 560.0
+margin_top = -7.0
+margin_right = 1360.0
+margin_bottom = 7.0
+rect_min_size = Vector2( 800, 0 )
+mouse_filter = 2
+text = "POPUP_AWAIT_GAMEOVER"
+
+[node name="CC3" type="CenterContainer" parent="Box/PopupList"]
+editor/display_folded = true
+margin_top = 8.0
+margin_right = 1920.0
+margin_bottom = 8.0
+
+[node name="TakebackYes" parent="Box/PopupList/CC3" instance=ExtResource( 43 )]
+visible = false
+margin_left = 660.0
+margin_top = -7.0
+margin_right = 1260.0
+margin_bottom = 7.0
+rect_min_size = Vector2( 600, 0 )
+mouse_filter = 2
+size_flags_horizontal = 0
+hidden_by_default = true
+text = "DESC_TAKEBACK_YES"
+
+[node name="CC4" type="CenterContainer" parent="Box/PopupList"]
+editor/display_folded = true
+margin_top = 12.0
+margin_right = 1920.0
+margin_bottom = 12.0
+
+[node name="TakebackNo" parent="Box/PopupList/CC4" instance=ExtResource( 43 )]
+visible = false
+margin_left = 810.0
+margin_top = -7.0
+margin_right = 1110.0
+margin_bottom = 7.0
+mouse_filter = 2
+hidden_by_default = true
+text = "DESC_TAKEBACK_NO"
+
+[node name="CC5" type="CenterContainer" parent="Box/PopupList"]
+editor/display_folded = true
+margin_top = 16.0
+margin_right = 1920.0
+margin_bottom = 16.0
+
+[node name="ReplayDonePanel" parent="Box/PopupList/CC5" instance=ExtResource( 43 )]
+visible = false
+margin_left = 810.0
+margin_top = -7.0
+margin_right = 1110.0
+margin_bottom = 7.0
+mouse_filter = 2
+prefix = "LABEL_REPLAY_IS_DONE"
+
+[node name="CC6" type="CenterContainer" parent="Box/PopupList"]
+editor/display_folded = true
+margin_top = 20.0
+margin_right = 1920.0
+margin_bottom = 20.0
+
+[node name="DisconnectPanel" parent="Box/PopupList/CC6" instance=ExtResource( 43 )]
+visible = false
+margin_left = 810.0
+margin_top = -7.0
+margin_right = 1110.0
+margin_bottom = 7.0
+mouse_filter = 2
+text = "POPUP_DISCONNECTED"
+
+[node name="CC7" type="CenterContainer" parent="Box/PopupList"]
+editor/display_folded = true
+margin_top = 24.0
+margin_right = 1920.0
+margin_bottom = 24.0
+
+[node name="ConnectedPopup" parent="Box/PopupList/CC7" instance=ExtResource( 43 )]
+visible = false
+margin_left = 810.0
+margin_top = -7.0
+margin_right = 1110.0
+margin_bottom = 7.0
+mouse_filter = 2
+text = "POPUP_CONNECTED"
+
+[node name="CC8" type="CenterContainer" parent="Box/PopupList"]
+editor/display_folded = true
+margin_top = 28.0
+margin_right = 1920.0
+margin_bottom = 28.0
+
+[node name="ObsConnectedPopup" parent="Box/PopupList/CC8" instance=ExtResource( 43 )]
+visible = false
+margin_left = 810.0
+margin_top = -7.0
+margin_right = 1110.0
+margin_bottom = 7.0
+mouse_filter = 2
+text = "POPUP_CONNECTED"
+
+[node name="CC9" type="CenterContainer" parent="Box/PopupList"]
+editor/display_folded = true
+margin_top = 32.0
+margin_right = 1920.0
+margin_bottom = 32.0
+
+[node name="ObsDisconnectedPopup" parent="Box/PopupList/CC9" instance=ExtResource( 43 )]
+visible = false
+margin_left = 810.0
+margin_top = -7.0
+margin_right = 1110.0
+margin_bottom = 7.0
+mouse_filter = 2
+text = "POPUP_DISCONNECTED"
+
+[node name="CC10" type="CenterContainer" parent="Box/PopupList"]
+editor/display_folded = true
+margin_top = 36.0
+margin_right = 1920.0
+margin_bottom = 36.0
+
+[node name="ReconnectedPopup" parent="Box/PopupList/CC10" instance=ExtResource( 43 )]
+visible = false
+margin_left = 810.0
+margin_top = -7.0
+margin_right = 1110.0
+margin_bottom = 7.0
+mouse_filter = 2
+text = "POPUP_RECONNECTED"
+
+[node name="Timer" type="Timer" parent="Box/PopupList"]
+wait_time = 1.66
+one_shot = true
+
+[node name="InfoContainer" type="CenterContainer" parent="Box"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TakebackDialog" type="PopupPanel" parent="Box"]
+editor/display_folded = true
+margin_right = 900.0
+margin_bottom = 275.0
+rect_min_size = Vector2( 900, 275 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 44 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Box/TakebackDialog"]
+editor/display_folded = true
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 896.0
+margin_bottom = 271.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+alignment = 1
+
+[node name="Offset" type="ReferenceRect" parent="Box/TakebackDialog/VBoxContainer"]
+margin_right = 892.0
+margin_bottom = 38.0
+size_flags_vertical = 3
+
+[node name="Desc" type="Label" parent="Box/TakebackDialog/VBoxContainer"]
+margin_top = 38.0
+margin_right = 892.0
+margin_bottom = 76.0
+rect_min_size = Vector2( 800, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "DESC_TAKEBACK"
+align = 1
+
+[node name="Offset2" type="ReferenceRect" parent="Box/TakebackDialog/VBoxContainer"]
+margin_top = 76.0
+margin_right = 892.0
+margin_bottom = 114.0
+size_flags_vertical = 3
+
+[node name="HSeparator" type="HSeparator" parent="Box/TakebackDialog/VBoxContainer"]
+margin_top = 114.0
+margin_right = 892.0
+margin_bottom = 152.0
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="Offset3" type="ReferenceRect" parent="Box/TakebackDialog/VBoxContainer"]
+margin_top = 152.0
+margin_right = 892.0
+margin_bottom = 190.0
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Box/TakebackDialog/VBoxContainer"]
+margin_top = 190.0
+margin_right = 892.0
+margin_bottom = 228.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Offset" type="ReferenceRect" parent="Box/TakebackDialog/VBoxContainer/HBoxContainer"]
+margin_right = 248.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+
+[node name="TakebackYesButton" type="Button" parent="Box/TakebackDialog/VBoxContainer/HBoxContainer"]
+margin_left = 252.0
+margin_right = 317.0
+margin_bottom = 38.0
+text = "BTN_YES"
+flat = true
+
+[node name="Offset2" type="ReferenceRect" parent="Box/TakebackDialog/VBoxContainer/HBoxContainer"]
+margin_left = 321.0
+margin_right = 569.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+
+[node name="TakebackNoButton" type="Button" parent="Box/TakebackDialog/VBoxContainer/HBoxContainer"]
+margin_left = 573.0
+margin_right = 638.0
+margin_bottom = 38.0
+text = "BTN_NO"
+flat = true
+
+[node name="Offset3" type="ReferenceRect" parent="Box/TakebackDialog/VBoxContainer/HBoxContainer"]
+margin_left = 642.0
+margin_right = 892.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+
+[node name="Offset4" type="ReferenceRect" parent="Box/TakebackDialog/VBoxContainer"]
+margin_top = 228.0
+margin_right = 892.0
+margin_bottom = 267.0
+size_flags_vertical = 3
+
+[node name="LeavePopup" type="PopupPanel" parent="Box"]
+editor/display_folded = true
+margin_right = 900.0
+margin_bottom = 270.0
+rect_min_size = Vector2( 900, 275 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 44 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Box/LeavePopup"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 896.0
+margin_bottom = 271.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+alignment = 1
+
+[node name="Offset" type="ReferenceRect" parent="Box/LeavePopup/VBoxContainer"]
+margin_right = 800.0
+size_flags_vertical = 3
+
+[node name="Desc" type="Label" parent="Box/LeavePopup/VBoxContainer"]
+margin_top = 4.0
+margin_right = 800.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 800, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "DESC_SD"
+align = 1
+
+[node name="Offset2" type="ReferenceRect" parent="Box/LeavePopup/VBoxContainer"]
+margin_right = 800.0
+size_flags_vertical = 3
+
+[node name="HSeparator" type="HSeparator" parent="Box/LeavePopup/VBoxContainer"]
+margin_top = 22.0
+margin_right = 800.0
+margin_bottom = 22.0
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="Offset3" type="ReferenceRect" parent="Box/LeavePopup/VBoxContainer"]
+margin_right = 800.0
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Box/LeavePopup/VBoxContainer"]
+editor/display_folded = true
+margin_top = 26.0
+margin_right = 800.0
+margin_bottom = 46.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Offset" type="ReferenceRect" parent="Box/LeavePopup/VBoxContainer/HBoxContainer"]
+margin_right = 218.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+
+[node name="LeaveYesButton" type="Button" parent="Box/LeavePopup/VBoxContainer/HBoxContainer"]
+margin_left = 222.0
+margin_right = 287.0
+margin_bottom = 20.0
+text = "BTN_YES"
+flat = true
+
+[node name="Offset2" type="ReferenceRect" parent="Box/LeavePopup/VBoxContainer/HBoxContainer"]
+margin_left = 291.0
+margin_right = 509.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+
+[node name="LeaveNoButton" type="Button" parent="Box/LeavePopup/VBoxContainer/HBoxContainer"]
+margin_left = 513.0
+margin_right = 578.0
+margin_bottom = 20.0
+text = "BTN_NO"
+flat = true
+
+[node name="Offset3" type="ReferenceRect" parent="Box/LeavePopup/VBoxContainer/HBoxContainer"]
+margin_left = 582.0
+margin_right = 800.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+
+[node name="Offset4" type="ReferenceRect" parent="Box/LeavePopup/VBoxContainer"]
+margin_right = 800.0
+size_flags_vertical = 3
+
+[node name="LeavePopup2" type="PopupPanel" parent="Box"]
+editor/display_folded = true
+margin_right = 900.0
+margin_bottom = 270.0
+rect_min_size = Vector2( 900, 275 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 44 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Box/LeavePopup2"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 896.0
+margin_bottom = 271.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+alignment = 1
+
+[node name="Offset" type="ReferenceRect" parent="Box/LeavePopup2/VBoxContainer"]
+margin_right = 800.0
+size_flags_vertical = 3
+
+[node name="Desc" type="Label" parent="Box/LeavePopup2/VBoxContainer"]
+margin_top = 4.0
+margin_right = 800.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 800, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "DESC_SD2"
+align = 1
+
+[node name="Offset2" type="ReferenceRect" parent="Box/LeavePopup2/VBoxContainer"]
+margin_right = 800.0
+size_flags_vertical = 3
+
+[node name="HSeparator" type="HSeparator" parent="Box/LeavePopup2/VBoxContainer"]
+margin_top = 22.0
+margin_right = 800.0
+margin_bottom = 22.0
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="Offset3" type="ReferenceRect" parent="Box/LeavePopup2/VBoxContainer"]
+margin_right = 800.0
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Box/LeavePopup2/VBoxContainer"]
+margin_top = 26.0
+margin_right = 800.0
+margin_bottom = 46.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Offset" type="ReferenceRect" parent="Box/LeavePopup2/VBoxContainer/HBoxContainer"]
+margin_right = 218.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+
+[node name="LeaveOK" type="Button" parent="Box/LeavePopup2/VBoxContainer/HBoxContainer"]
+margin_left = 222.0
+margin_right = 287.0
+margin_bottom = 20.0
+text = "BTN_OK"
+flat = true
+
+[node name="Offset2" type="ReferenceRect" parent="Box/LeavePopup2/VBoxContainer/HBoxContainer"]
+margin_left = 291.0
+margin_right = 509.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+
+[node name="Offset4" type="ReferenceRect" parent="Box/LeavePopup2/VBoxContainer"]
+margin_right = 800.0
+size_flags_vertical = 3
+
+[node name="SaveDialog" type="PopupPanel" parent="Box"]
+editor/display_folded = true
+margin_right = 900.0
+margin_bottom = 270.0
+rect_min_size = Vector2( 900, 275 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 44 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Box/SaveDialog"]
+editor/display_folded = true
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 896.0
+margin_bottom = 271.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+alignment = 1
+
+[node name="Offset" type="ReferenceRect" parent="Box/SaveDialog/VBoxContainer"]
+margin_right = 800.0
+size_flags_vertical = 3
+
+[node name="Desc" type="Label" parent="Box/SaveDialog/VBoxContainer"]
+margin_top = 4.0
+margin_right = 800.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 800, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "DESC_SAVE"
+align = 1
+
+[node name="Offset2" type="ReferenceRect" parent="Box/SaveDialog/VBoxContainer"]
+margin_right = 800.0
+size_flags_vertical = 3
+
+[node name="HSeparator" type="HSeparator" parent="Box/SaveDialog/VBoxContainer"]
+margin_top = 22.0
+margin_right = 800.0
+margin_bottom = 22.0
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="Offset3" type="ReferenceRect" parent="Box/SaveDialog/VBoxContainer"]
+margin_right = 800.0
+size_flags_vertical = 3
+
+[node name="HBoxSave" type="HBoxContainer" parent="Box/SaveDialog/VBoxContainer"]
+editor/display_folded = true
+margin_top = 26.0
+margin_right = 800.0
+margin_bottom = 46.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 10
+
+[node name="Offset" type="ReferenceRect" parent="Box/SaveDialog/VBoxContainer/HBoxSave"]
+size_flags_horizontal = 3
+
+[node name="SavePathLabel" type="Label" parent="Box/SaveDialog/VBoxContainer/HBoxSave"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "LABEL_FILENAME"
+
+[node name="SavePathEdit" type="LineEdit" parent="Box/SaveDialog/VBoxContainer/HBoxSave"]
+margin_right = 58.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 600, 0 )
+size_flags_horizontal = 3
+
+[node name="Offset2" type="ReferenceRect" parent="Box/SaveDialog/VBoxContainer/HBoxSave"]
+margin_left = 582.0
+margin_right = 582.0
+size_flags_horizontal = 3
+
+[node name="Offset4" type="ReferenceRect" parent="Box/SaveDialog/VBoxContainer"]
+margin_right = 800.0
+size_flags_vertical = 3
+
+[node name="HSeparator2" type="HSeparator" parent="Box/SaveDialog/VBoxContainer"]
+margin_top = 22.0
+margin_right = 800.0
+margin_bottom = 22.0
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Box/SaveDialog/VBoxContainer"]
+editor/display_folded = true
+margin_top = 26.0
+margin_right = 800.0
+margin_bottom = 46.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Offset" type="ReferenceRect" parent="Box/SaveDialog/VBoxContainer/HBoxContainer"]
+margin_right = 218.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+
+[node name="SaveOkButton" type="Button" parent="Box/SaveDialog/VBoxContainer/HBoxContainer"]
+margin_left = 222.0
+margin_right = 287.0
+margin_bottom = 20.0
+text = "BTN_OK"
+flat = true
+
+[node name="Offset2" type="ReferenceRect" parent="Box/SaveDialog/VBoxContainer/HBoxContainer"]
+margin_left = 582.0
+margin_right = 800.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+
+[node name="SaveCancelButton" type="Button" parent="Box/SaveDialog/VBoxContainer/HBoxContainer"]
+margin_left = 222.0
+margin_right = 287.0
+margin_bottom = 20.0
+text = "BTN_CANCEL"
+flat = true
+
+[node name="Offset3" type="ReferenceRect" parent="Box/SaveDialog/VBoxContainer/HBoxContainer"]
+margin_right = 218.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+
+[node name="Offset5" type="ReferenceRect" parent="Box/SaveDialog/VBoxContainer"]
+margin_right = 800.0
+size_flags_vertical = 3
+
+[node name="ServerSDDialog" type="PopupPanel" parent="Box"]
+editor/display_folded = true
+margin_right = 900.0
+margin_bottom = 270.0
+rect_min_size = Vector2( 950, 275 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 44 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Box/ServerSDDialog"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 946.0
+margin_bottom = 271.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+alignment = 1
+
+[node name="Offset" type="ReferenceRect" parent="Box/ServerSDDialog/VBoxContainer"]
+margin_right = 800.0
+size_flags_vertical = 3
+
+[node name="Desc" type="Label" parent="Box/ServerSDDialog/VBoxContainer"]
+margin_top = 4.0
+margin_right = 800.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 800, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "DESC_SERVER_SD"
+align = 1
+
+[node name="Offset2" type="ReferenceRect" parent="Box/ServerSDDialog/VBoxContainer"]
+margin_right = 800.0
+size_flags_vertical = 3
+
+[node name="HSeparator" type="HSeparator" parent="Box/ServerSDDialog/VBoxContainer"]
+margin_top = 22.0
+margin_right = 800.0
+margin_bottom = 22.0
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="Offset3" type="ReferenceRect" parent="Box/ServerSDDialog/VBoxContainer"]
+margin_right = 800.0
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Box/ServerSDDialog/VBoxContainer"]
+margin_top = 26.0
+margin_right = 800.0
+margin_bottom = 46.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Offset" type="ReferenceRect" parent="Box/ServerSDDialog/VBoxContainer/HBoxContainer"]
+margin_right = 218.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+
+[node name="ServerSDOkButton" type="Button" parent="Box/ServerSDDialog/VBoxContainer/HBoxContainer"]
+margin_left = 222.0
+margin_right = 287.0
+margin_bottom = 20.0
+text = "BTN_OK"
+flat = true
+
+[node name="Offset2" type="ReferenceRect" parent="Box/ServerSDDialog/VBoxContainer/HBoxContainer"]
+margin_left = 291.0
+margin_right = 509.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+
+[node name="Offset4" type="ReferenceRect" parent="Box/ServerSDDialog/VBoxContainer"]
+margin_right = 800.0
+size_flags_vertical = 3
+
+[node name="ResignDialog" type="PopupPanel" parent="Box"]
+editor/display_folded = true
+margin_right = 900.0
+margin_bottom = 275.0
+rect_min_size = Vector2( 900, 275 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 44 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Box/ResignDialog"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 896.0
+margin_bottom = 271.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+alignment = 1
+
+[node name="Offset" type="ReferenceRect" parent="Box/ResignDialog/VBoxContainer"]
+margin_right = 800.0
+size_flags_vertical = 3
+
+[node name="Desc" type="Label" parent="Box/ResignDialog/VBoxContainer"]
+margin_top = 4.0
+margin_right = 800.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 800, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "DESC_RESIGN"
+align = 1
+
+[node name="Offset2" type="ReferenceRect" parent="Box/ResignDialog/VBoxContainer"]
+margin_right = 800.0
+size_flags_vertical = 3
+
+[node name="HSeparator" type="HSeparator" parent="Box/ResignDialog/VBoxContainer"]
+margin_top = 22.0
+margin_right = 800.0
+margin_bottom = 22.0
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="Offset3" type="ReferenceRect" parent="Box/ResignDialog/VBoxContainer"]
+margin_right = 800.0
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Box/ResignDialog/VBoxContainer"]
+margin_top = 26.0
+margin_right = 800.0
+margin_bottom = 46.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Offset" type="ReferenceRect" parent="Box/ResignDialog/VBoxContainer/HBoxContainer"]
+margin_right = 218.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+
+[node name="ResignYesButton" type="Button" parent="Box/ResignDialog/VBoxContainer/HBoxContainer"]
+margin_left = 222.0
+margin_right = 287.0
+margin_bottom = 20.0
+text = "BTN_YES"
+flat = true
+
+[node name="Offset2" type="ReferenceRect" parent="Box/ResignDialog/VBoxContainer/HBoxContainer"]
+margin_left = 291.0
+margin_right = 509.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+
+[node name="ResignNoButton" type="Button" parent="Box/ResignDialog/VBoxContainer/HBoxContainer"]
+margin_left = 513.0
+margin_right = 578.0
+margin_bottom = 20.0
+text = "BTN_NO"
+flat = true
+
+[node name="Offset3" type="ReferenceRect" parent="Box/ResignDialog/VBoxContainer/HBoxContainer"]
+margin_left = 582.0
+margin_right = 800.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+
+[node name="Offset4" type="ReferenceRect" parent="Box/ResignDialog/VBoxContainer"]
+margin_right = 800.0
+size_flags_vertical = 3
+
+[node name="WhitePlayerPanel" parent="." instance=ExtResource( 45 )]
+visible = false
+margin_top = 128.0
+margin_bottom = 128.0
+
+[node name="BlackPlayerPanel" parent="." instance=ExtResource( 45 )]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -230.0
+margin_top = -500.0
+margin_right = 0.0
+margin_bottom = -500.0
+side = true
+
+[connection signal="visibility_changed" from="Box/PromotionDialog" to="Box/PromotionDialog" method="_on_PromotionPanel_visibility_changed"]
+[connection signal="pressed" from="Box/PromotionDialog/VBox/HBox/VBox/UnpromotionBtn" to="Box/PromotionDialog" method="_on_UnpromotionBtn_pressed"]
+[connection signal="pressed" from="Box/PromotionDialog/VBox/HBox/VBox3/PromotionBtn" to="Box/PromotionDialog" method="_on_PromotionBtn_pressed"]
+[connection signal="pressed" from="Box/GameOverDialog/VBox/VBox/ContinueButton" to="." method="_on_ContinueButton_pressed"]
+[connection signal="pressed" from="Box/GameOverDialog/VBox/VBox/LeaveButton" to="." method="_on_LeaveButton_pressed"]
+[connection signal="pressed" from="Box/LeftGameBarAIMode/VBox/AISettingsButton" to="." method="_on_AISettingsButton_pressed"]
+[connection signal="pressed" from="Box/LeftGameBarAIMode/VBox/AIRestart" to="." method="_on_AIRestart_pressed"]
+[connection signal="pressed" from="Box/LeftGameBarAIMode/VBox/AIHint" to="." method="_on_AIHint_pressed"]
+[connection signal="pressed" from="Box/LeftGameBarAIMode/VBox/AIOpenLog" to="." method="_on_AIOpenLog_pressed"]
+[connection signal="pressed" from="Box/LeftGameBarAIMode/VBox/SwitchModeButton" to="Box/LeftGameBarAIMode" method="_on_SwitchModeButton_pressed"]
+[connection signal="pressed" from="Box/LeftGameBarAIMode/VBox/LeftHideButton" to="Box/LeftGameBarAIMode" method="_on_LeftHideButton_pressed"]
+[connection signal="pressed" from="Box/LeftGameBarBrushMode/VBox/StylesSettingsButton" to="." method="_on_StylesSettingsButton_pressed"]
+[connection signal="pressed" from="Box/LeftGameBarBrushMode/VBox/PieceStylesButton" to="." method="_on_PieceStylesButton_pressed"]
+[connection signal="pressed" from="Box/LeftGameBarBrushMode/VBox/SwitchModeButton" to="Box/LeftGameBarBrushMode" method="_on_SwitchModeButton_pressed"]
+[connection signal="pressed" from="Box/LeftGameBarBrushMode/VBox/LeftHideButton" to="Box/LeftGameBarBrushMode" method="_on_LeftHideButton_pressed"]
+[connection signal="pressed" from="Box/LeftGameHideBar/VBox/LeftShowWidget" to="Box/LeftGameHideBar" method="_on_LeftShowWidget_pressed"]
+[connection signal="pressed" from="Box/RightGameBar/VBox/PlayerInfoButton" to="." method="_on_PlayerInfoButton_pressed"]
+[connection signal="pressed" from="Box/RightGameBar/VBox/HistoryButton" to="." method="_on_HistoryButton_pressed"]
+[connection signal="pressed" from="Box/RightGameBar/VBox/SaveButton" to="." method="_on_SaveButton_pressed"]
+[connection signal="pressed" from="Box/RightGameBar/VBox/RightHideWidget" to="Box/RightGameBar" method="_on_RightHideWidget_pressed"]
+[connection signal="pressed" from="Box/RightGameHideBar/VBox/RightShowWidget" to="Box/RightGameHideBar" method="_on_RightShowWidget_pressed"]
+[connection signal="pressed" from="Box/PieceStylesPanel/HBoxContainer/Theme1/PSKanjiButton" to="." method="_on_PSKanjiButton_pressed"]
+[connection signal="pressed" from="Box/PieceStylesPanel/HBoxContainer/Theme2/PSSymbolicButton" to="." method="_on_PSSymbolicButton_pressed"]
+[connection signal="pressed" from="Box/PieceStylesPanel/HBoxContainer/Theme3/PSWesternButton" to="." method="_on_PSWesternButton_pressed"]
+[connection signal="pressed" from="Box/PieceStylesPanel/HBoxContainer/Theme4/PSKanji2Button" to="." method="_on_PSKanji2Button_pressed"]
+[connection signal="pressed" from="Box/HistoryPanel/VBox/VBoxControl/HBox/ToBeginningHistoryBtn" to="Box/HistoryPanel" method="_on_ToBeginningHistoryBtn_pressed"]
+[connection signal="pressed" from="Box/HistoryPanel/VBox/VBoxControl/HBox/BackHistoryBtn" to="Box/HistoryPanel" method="_on_BackHistoryBtn_pressed"]
+[connection signal="pressed" from="Box/HistoryPanel/VBox/VBoxControl/HBox/PlayReverseHistoryButton" to="Box/HistoryPanel" method="_on_PlayReverseHistoryButton_pressed"]
+[connection signal="pressed" from="Box/HistoryPanel/VBox/VBoxControl/HBox/PlayHistoryButton" to="Box/HistoryPanel" method="_on_PlayHistoryButton_pressed"]
+[connection signal="pressed" from="Box/HistoryPanel/VBox/VBoxControl/HBox/ForwardHistoryBtn" to="Box/HistoryPanel" method="_on_ForwardHistoryBtn_pressed"]
+[connection signal="pressed" from="Box/HistoryPanel/VBox/VBoxControl/HBox/ToEndHistoryBtn" to="Box/HistoryPanel" method="_on_ToEndHistoryBtn_pressed"]
+[connection signal="pressed" from="Box/HistoryPanel/VBox/VBoxControl/HBox/SettingsHistoryBtn" to="Box/HistoryPanel" method="_on_SettingsHistoryBtn_pressed"]
+[connection signal="pressed" from="Box/HistoryPanel/VBox/VBoxControl/HBox/HideHistoryBtn" to="Box/HistoryPanel" method="_on_HideHistoryBtn_pressed"]
+[connection signal="timeout" from="Box/PopupList/Timer" to="Box/PopupList" method="_on_Timer_timeout"]
+[connection signal="pressed" from="Box/TakebackDialog/VBoxContainer/HBoxContainer/TakebackYesButton" to="." method="_on_TakebackYesButton_pressed"]
+[connection signal="pressed" from="Box/TakebackDialog/VBoxContainer/HBoxContainer/TakebackNoButton" to="." method="_on_TakebackNoButton_pressed"]
+[connection signal="pressed" from="Box/LeavePopup/VBoxContainer/HBoxContainer/LeaveYesButton" to="." method="_on_LeaveYesButton_pressed"]
+[connection signal="pressed" from="Box/LeavePopup/VBoxContainer/HBoxContainer/LeaveNoButton" to="." method="_on_LeaveNoButton_pressed"]
+[connection signal="pressed" from="Box/LeavePopup2/VBoxContainer/HBoxContainer/LeaveOK" to="." method="_on_LeaveOK_pressed"]
+[connection signal="pressed" from="Box/SaveDialog/VBoxContainer/HBoxContainer/SaveOkButton" to="." method="_on_SaveOkButton_pressed"]
+[connection signal="pressed" from="Box/SaveDialog/VBoxContainer/HBoxContainer/SaveCancelButton" to="." method="_on_SaveCancelButton_pressed"]
+[connection signal="pressed" from="Box/ServerSDDialog/VBoxContainer/HBoxContainer/ServerSDOkButton" to="." method="_on_ServerSDOkButton_pressed"]
+[connection signal="pressed" from="Box/ResignDialog/VBoxContainer/HBoxContainer/ResignYesButton" to="." method="_on_ResignYesButton_pressed"]
+[connection signal="pressed" from="Box/ResignDialog/VBoxContainer/HBoxContainer/ResignNoButton" to="." method="_on_ResignNoButton_pressed"]

@@ -1,0 +1,11 @@
+[gd_resource type="DynamicFont" format=2]
+
+[resource]
+
+size = 60
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = false
+use_filter = false
+_sections_unfolded = [ "Font", "Settings" ]
+

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/Piece.gd" type="Script" id=1]
+[ext_resource path="res://models/shogi/shogi_piece.obj" type="ArrayMesh" id=2]
+
+[node name="Piece" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="Mesh" type="MeshInstance" parent="."]
+mesh = ExtResource( 2 )
+material/0 = null
+

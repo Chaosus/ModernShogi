@@ -1,0 +1,131 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/AwaitDialog.gd" type="Script" id=1]
+
+[node name="AwaitDialog" type="PopupPanel"]
+visible = true
+self_modulate = Color( 1, 1, 1, 0.882353 )
+margin_right = 808.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+script = ExtResource( 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 804.0
+margin_bottom = 76.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Offset" type="ReferenceRect" parent="VBoxContainer"]
+margin_right = 800.0
+rect_min_size = Vector2( 800, 0 )
+size_flags_vertical = 3
+
+[node name="HBoxDesc" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 4.0
+margin_right = 800.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+
+[node name="ReferenceRect" type="ReferenceRect" parent="VBoxContainer/HBoxDesc"]
+margin_right = 40.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 40, 0 )
+
+[node name="Desc" type="Label" parent="VBoxContainer/HBoxDesc"]
+margin_left = 44.0
+margin_right = 756.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = "DESC"
+align = 1
+valign = 1
+
+[node name="ReferenceRect2" type="ReferenceRect" parent="VBoxContainer/HBoxDesc"]
+margin_left = 760.0
+margin_right = 800.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 40, 0 )
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+margin_top = 22.0
+margin_right = 800.0
+margin_bottom = 26.0
+
+[node name="HBoxTimer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 30.0
+margin_right = 800.0
+margin_bottom = 44.0
+alignment = 1
+
+[node name="TimerLabel" type="Label" parent="VBoxContainer/HBoxTimer"]
+margin_left = 400.0
+margin_right = 400.0
+margin_bottom = 14.0
+align = 3
+valign = 3
+
+[node name="HBoxCancel" type="HBoxContainer" parent="VBoxContainer"]
+editor/display_folded = true
+margin_top = 48.0
+margin_right = 800.0
+margin_bottom = 68.0
+
+[node name="Offset" type="ReferenceRect" parent="VBoxContainer/HBoxCancel"]
+margin_right = 349.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+
+[node name="CancelButton" type="Button" parent="VBoxContainer/HBoxCancel"]
+margin_left = 353.0
+margin_right = 446.0
+margin_bottom = 20.0
+text = "BTN_CANCEL"
+
+[node name="Offset2" type="ReferenceRect" parent="VBoxContainer/HBoxCancel"]
+margin_left = 450.0
+margin_right = 800.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+
+[node name="HBoxOK" type="HBoxContainer" parent="VBoxContainer"]
+visible = false
+margin_top = 136.0
+margin_right = 892.0
+margin_bottom = 156.0
+
+[node name="Offset" type="ReferenceRect" parent="VBoxContainer/HBoxOK"]
+margin_right = 248.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+
+[node name="OKButton" type="Button" parent="VBoxContainer/HBoxOK"]
+margin_left = 252.0
+margin_right = 317.0
+margin_bottom = 20.0
+text = "BTN_OK"
+
+[node name="Offset2" type="ReferenceRect" parent="VBoxContainer/HBoxOK"]
+margin_left = 321.0
+margin_right = 569.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+
+[node name="Offset4" type="ReferenceRect" parent="VBoxContainer"]
+margin_top = 72.0
+margin_right = 800.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="pressed" from="VBoxContainer/HBoxCancel/CancelButton" to="." method="_on_CancelButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxOK/OKButton" to="." method="_on_CancelButton_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

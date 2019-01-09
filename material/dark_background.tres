@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=2]
+
+[resource]
+
+PanelContainer/styles/panel = null
+_sections_unfolded = [ "PanelContainer", "PanelContainer/styles" ]
+
