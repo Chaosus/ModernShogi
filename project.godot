@@ -47,6 +47,7 @@ _global_script_class_icons={
 config/name="ModernShogi"
 run/main_scene="res://scenes/SuperMenu.tscn"
 config/use_custom_user_dir=true
+config/custom_user_dir_name="ModernShogi"
 boot_splash/image="res://logo.png"
 boot_splash/fullsize=false
 boot_splash/bg_color=Color( 0, 0, 0, 1 )

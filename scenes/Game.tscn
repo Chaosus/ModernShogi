@@ -30,7 +30,7 @@ editor/display_folded = true
 script = ExtResource( 4 )
 
 [node name="Camera" type="Camera" parent="FixedCamera1"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 19, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 19, 0 )
 current = true
 far = 1000.0
 
@@ -39,11 +39,11 @@ editor/display_folded = true
 script = ExtResource( 4 )
 
 [node name="Camera" type="Camera" parent="FixedCamera2"]
-transform = Transform( -1, 8.74228e-08, 0, 3.82137e-15, 4.37114e-08, 1, 8.74228e-08, 1, -4.37114e-08, 0, 19, 0 )
+transform = Transform( -1, 8.74228e-008, 0, 3.82137e-015, 4.37114e-008, 1, 8.74228e-008, 1, -4.37114e-008, 0, 19, 0 )
 far = 1000.0
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 5, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 5, 0 )
 shadow_enabled = true
 directional_shadow_depth_range = 1
 

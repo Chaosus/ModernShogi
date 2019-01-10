@@ -566,6 +566,7 @@ shadow_color = Color( 0, 0, 0, 0 )
 [sub_resource type="DynamicFont" id=18]
 
 size = 70
+use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 103 )
 
@@ -1612,6 +1613,7 @@ size_flags_vertical = 0
 custom_constants/separation = 0
 
 [node name="TopBar" type="PanelContainer" parent="MainContainer/MainLayout"]
+editor/display_folded = true
 margin_right = 1920.0
 margin_bottom = 128.0
 rect_min_size = Vector2( 1920, 128 )
@@ -1986,7 +1988,7 @@ rect_min_size = Vector2( 0, 128 )
 mouse_filter = 2
 custom_constants/separation = 0
 
-[node name="ReferenceRect" type="ReferenceRect" parent="MainContainer/MainLayout/TopHBar/HBox"]
+[node name="Offset" type="ReferenceRect" parent="MainContainer/MainLayout/TopHBar/HBox"]
 modulate = Color( 1, 1, 1, 0 )
 self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 1792.0
@@ -2226,7 +2228,6 @@ margin_right = 650.0
 margin_bottom = 685.0
 
 [node name="MainMenuScreen" type="CenterContainer" parent="MainContainer/MainLayout/Screens"]
-editor/display_folded = true
 visible = false
 margin_right = 1920.0
 margin_bottom = 952.0
@@ -2340,7 +2341,6 @@ valign = 1
 script = ExtResource( 36 )
 
 [node name="HBoxJoin" type="VBoxContainer" parent="MainContainer/MainLayout/Screens/MainMenuScreen/GridContainer/Column1"]
-editor/display_folded = true
 visible = false
 margin_top = 444.0
 margin_right = 192.0
@@ -7965,6 +7965,7 @@ text = "BTN_LOAD"
 flat = true
 
 [node name="SetupScreen" type="CenterContainer" parent="MainContainer/MainLayout/Screens"]
+editor/display_folded = true
 visible = false
 margin_right = 1920.0
 margin_bottom = 952.0
@@ -9190,7 +9191,6 @@ margin_right = 1077.0
 margin_bottom = 366.0
 
 [node name="LoginScreen" type="CenterContainer" parent="MainContainer/MainLayout/Screens"]
-editor/display_folded = true
 visible = false
 margin_right = 1920.0
 margin_bottom = 952.0

@@ -421,6 +421,7 @@ public class LiteConnection : Node
                         break;
                 }
             }
+            reader.Recycle();
         };
 
         client = new NetManager(listener);
@@ -457,6 +458,7 @@ public class LiteConnection : Node
         {
             client.DisconnectPeer(server);
         }
+
         StartClient();
 
         server = client.Connect(IP, Port, "mshogi");

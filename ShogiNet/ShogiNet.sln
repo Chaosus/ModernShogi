@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28407.52
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShogiNet", "ShogiNet.csproj", "{F25EA348-64C8-45D0-99DE-0D63F14A3B7A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F25EA348-64C8-45D0-99DE-0D63F14A3B7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F25EA348-64C8-45D0-99DE-0D63F14A3B7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F25EA348-64C8-45D0-99DE-0D63F14A3B7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F25EA348-64C8-45D0-99DE-0D63F14A3B7A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F7EDCA71-253B-4809-9535-164CE3E472AF}
+	EndGlobalSection
+EndGlobal

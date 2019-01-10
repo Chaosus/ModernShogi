@@ -38,17 +38,18 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GodotSharp">
-      <HintPath>..\..\..\Users\chaos\AppData\Roaming\Godot\mono\solutions\14949366699295908205_5_1546442693\GodotSharp\bin\Release\GodotSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="LiteNetLib, Version=0.8.393.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="GodotSharp, Version=1.0.6948.24971, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\ModernShogiServer\MasterServer\LiteNetLib.dll</HintPath>
+      <HintPath>..\..\Users\chaos\AppData\Roaming\Godot\mono\solutions\10460354967624842995_5_1546442693\GodotSharp\bin\Release\GodotSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="LiteNetLib">
+      <HintPath>Libs\LiteNetLib.dll</HintPath>
     </Reference>
     <Reference Include="ShogiNet">
-      <HintPath>..\ModernShogiServer\MasterServer\ShogiNet\bin\Release\ShogiNet.dll</HintPath>
+      <HintPath>Libs\ShogiNet.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
