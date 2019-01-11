@@ -61,14 +61,25 @@ signal turn_changed
 
 ####################################################################################
 
+var joining_dialog = null
+
 func ms_show_joining_dialog(name, id, avatar, country, rating, wins, loses, draws):
 	var dialog = preload("res://scenes/PlayerJoiningPanel.tscn").instance()
 	dialog.self_destruct = true
 	add_child(dialog)
-	dialog.apply_theme(UI.get_current_subtheme())
+	dialog.connect("destroyed", self, "free_joining_dialog_ref")
 	dialog.setup_params(id, name, avatar, country, rating, wins, loses, draws)
 	dialog.beautiful_show()
+	joining_dialog = dialog
 	return dialog
+
+func free_joining_dialog_ref():
+	joining_dialog = null
+
+func ms_destroy_joining_dialog():
+	if joining_dialog != null:
+		joining_dialog.destroy()
+		joining_dialog = null
 
 # Происходит при отсоединении другого игрока
 func ms_suspend(reason):
@@ -1041,7 +1052,7 @@ func extract_piece_from_storage(side, type):
 # idx - индекс на котором нужно остановиться
 # boost - включить пропуск анимаций
 func play(idx, boost):
-	playback_boost = boost	
+	playback_boost = boost
 	if session.turn_counter < idx:
 		history_move_proc = HistoryPlayProc.FORWARD
 	elif session.turn_counter > idx:

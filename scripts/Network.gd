@@ -19,23 +19,23 @@ var saved_username = null
 
 var saved_password = null
 
-func get_username():
+func get_username() -> String:
 	return saved_username
 
-func get_password():
+func get_password() -> String:
 	return saved_password
 
-func setup_connection_data(ip, port):
+func setup_connection_data(ip:String, port:int) -> void:
 	connection.SetupAddress(ip, port)
 
 # Вход на главный сервер
-func sign_in(name, password):
+func sign_in(name:String, password:String) -> void:
 	saved_username = name
 	saved_password = password
 	connection.SignIn(name, password)
 
 # Регистрация на главном сервере
-func sign_up(name, password, country):
+func sign_up(name:String, password:String, country:int) -> void:
 	connection.SignUp(name, password, country)
 
 # Установка базовых параметров
@@ -57,8 +57,6 @@ func get_login_name():
 		return saved_username
 	return null
 		
-
-	
 # Разрыв соединения с главным сервером
 func disconnect_if_connected():
 	if connection_established:
@@ -104,67 +102,75 @@ func request_takeback():
 		connection.RequestTakeback()
 
 # Удаление своего аккаунта - доступно всем пользователям
-func delete_yourself(password):
+func delete_yourself(password:String) -> void:
 	if connection_established:
 		connection.DeleteYourself(password)
 
 # Посылает сигнал о готовности на главный сервер
-func request_ready():
+func request_ready() -> void:
 	if connection_established:
 		connection.NotifyReady()
 
-func send_move_string(s):
+func send_move_string(s:String) -> void:
 	if connection_established:
 		connection.SendMoveString(s)
 		
 # Посылает ход на главный сервер
-func send_move(piece_type, is_promoted, from_x, from_y, to_x, to_y, promotion):
+func send_move(piece_type:int, is_promoted:bool, from_x:int, from_y:int, to_x:int, to_y:int, promotion:bool) -> void:
 	if connection_established:
 		connection.SendMove(piece_type, is_promoted, from_x, from_y, to_x, to_y, promotion)
 		
 # Посылает ход-сброс на главный сервер
-func send_drop(side, type, to_x, to_y):
+func send_drop(side:int, type:int, to_x:int, to_y:int) -> void:
 	if connection_established:
 		connection.SendDrop(side, type, to_x, to_y)
 
-func send_result(reason):
+func send_result(reason:int) -> void:
 	if connection_established:
 		connection.SendResult(reason)
 
-func send_accept(caller_index):
+func send_accept(caller_index:int) -> void:
 	if connection_established:
 		connection.AcceptRequest(caller_index)
 
-func send_decline(caller_index):
+func send_decline(caller_index:int) -> void:
 	if connection_established:
 		connection.DeclineRequest(caller_index)
 
-func send_accept_takeback():
+func send_accept_takeback() -> void:
 	if connection_established:
 		connection.AcceptTakeback()
 		
-func send_decline_takeback():
+func send_decline_takeback() -> void:
 	if connection_established:
 		connection.DeclineTakeback()
+
+# Принятие другого игрока
+func accept_joining_request(user_id:int) -> void:
+	if connection_established:
+		connection.AcceptJoiningRequest(user_id)
+		
+# Отклонение другого игрока
+func decline_joining_request(user_id:int) -> void:
+	if connection_established:
+		connection.DeclineJoiningRequest(user_id)
+
+# Остановка присоединения к игре	
+func stop_joining():
+	if connection_established:
+		connection.StopJoining()
 
 # Запросы на изменение данных аккаунта
 
 # Запрос на изменение пароля
-func request_change_password(old_password, new_password):
+func request_change_password(old_password:String, new_password:String) -> void:
 	if connection_established:
 		connection.RequestChangePassword(old_password, new_password)
 
-func request_change_country(tag):
+# Запрос на изменение страны
+func request_change_country(tag:int) -> void:
 	if connection_established:
 		connection.RequestChangeCountry(tag)
-
-func accept_joining_request(id):
-	if connection_established:
-		connection.AcceptJoiningRequest(id)
-
-func decline_joining_request(id):
-	if connection_established:
-		connection.DeclineJoiningRequest(id)
 
 # ENET handlers
 

@@ -10,7 +10,7 @@ public class LiteConnection : Node
     static NetPeer server;
 
     [Signal]
-    public delegate void SetGame(int key, bool isProtected, int gameType, string gameName, int handicap, string userName, int playerCount, int observerCount, int turnCount);
+    public delegate void SetGame(int key, bool isRated, bool isProtected, int gameType, string gameName, int handicap, string userName, int playerCount, int observerCount, int turnCount);
 
     [Signal]
     public delegate void RemoveGame(int key);
@@ -40,16 +40,19 @@ public class LiteConnection : Node
     public delegate void NetworkError();
 
     [Signal]
-    public delegate void AcceptPlayer();
+    public delegate void StartSession();
+    
+    [Signal]
+    public delegate void JoinPlayerFail(int gameId, int reason);
 
     [Signal]
-    public delegate void JoinPlayerFail(int reason);
+    public delegate void JoinObserverFail(int gameId, int reason);
 
     [Signal]
-    public delegate void JoinObserverFail(int reason);
+    public delegate void CallJoiningDialog();
 
     [Signal]
-    public delegate void CreateGame(int game_type, bool isRated, string game_name, int handicap, int hostSide, int yourSide);
+    public delegate void DestroyJoiningDialog();
 
     [Signal]
     public delegate void AddPlayer(int id, int side, string name);
@@ -111,6 +114,19 @@ public class LiteConnection : Node
     [Signal]
     public delegate void PlayerWantsToJoin(string name, int id, int avatar, int country, int ratingPoints, int winCount, int loseCount, int drawCount);
 
+
+    public struct SavedGameData
+    {
+        public int Id;
+        public int GameType;
+        public bool IsRated;
+        public string GameName;
+        public ShogiHandicaps Handicap;
+        public Side HostSide;
+    }
+
+    public SavedGameData GData;
+
     public void SetupEventHandlers(Node loginScreen, Node serverScreen, Node accountScreen, Node gameScreen)
     {
         Connect(nameof(SignUpSuccess), loginScreen, "on_signup_success");
@@ -120,8 +136,8 @@ public class LiteConnection : Node
         Connect(nameof(AlreadyConnected), loginScreen, "on_already_connected");
 
         Connect(nameof(NetworkError), serverScreen, "on_network_error");
-        Connect(nameof(CreateGame), serverScreen, "create_game");
-        Connect(nameof(AcceptPlayer), serverScreen, "join");
+        Connect(nameof(CallJoiningDialog), serverScreen, "call_joining_dialog");
+        Connect(nameof(StartSession), serverScreen, "start_session");
         Connect(nameof(JoinPlayerFail), serverScreen, "join_fail");
         Connect(nameof(JoinObserverFail), serverScreen, "join_obs_fail");
         Connect(nameof(AddPlayer), serverScreen, "add_player");
@@ -136,6 +152,7 @@ public class LiteConnection : Node
         Connect(nameof(DeclineChangeAccountInfo), accountScreen, "on_decline_change");
 
         Connect(nameof(PlayerWantsToJoin), gameScreen, "ms_show_joining_dialog");
+        Connect(nameof(DestroyJoiningDialog), gameScreen, "ms_destroy_joining_dialog");
         Connect(nameof(Accept), gameScreen, "ms_accept");
         Connect(nameof(Decline), gameScreen, "ms_decline");
         Connect(nameof(GameSuspend), gameScreen, "ms_suspend");
@@ -158,8 +175,6 @@ public class LiteConnection : Node
     public int ClientCountry;
 
     public ClientRequest CurrentRequest;
-
-    private ShogiNet.GameData GData;
 
     public string IP;
 
@@ -246,11 +261,6 @@ public class LiteConnection : Node
                     case ServerAnswer.AccountInfo:
                         EmitSignal(nameof(ShowAccountInfo), reader.GetString(), reader.GetInt(), reader.GetInt(), reader.GetInt(), reader.GetInt(), reader.GetInt(), reader.GetInt());
                         break;
-                    case ServerAnswer.AwaitPlayerAccept:
-                        {
-
-                        }
-                        break;
                     case ServerAnswer.SignUpInfo:
                         {
                             var writer = new NetDataWriter();
@@ -288,20 +298,18 @@ public class LiteConnection : Node
                             EmitSignal(nameof(ConnectionSuccess));
                         }
                         break;
-                    case ServerAnswer.GameInfo:
-                        {
-                            var gameType = reader.GetInt();
-                            var isRated = reader.GetBool();
-                            var gameName = reader.GetString();
-                            var handicap = reader.GetInt();
-                            var hostSide = reader.GetInt();
-                            var yourSide = reader.GetInt();
+                    //case ServerAnswer.GameInfo:
+                    //    {
+                    //        var gameType = reader.GetInt();
+                    //        var isRated = reader.GetBool();
+                    //        var gameName = reader.GetString();
+                    //        var handicap = reader.GetInt();
+                    //        var hostSide = reader.GetInt();
+                    //        var yourSide = reader.GetInt();
 
-                            GData = new ShogiNet.GameData((Side)hostSide);
-
-                            EmitSignal(nameof(CreateGame), gameType, isRated, gameName, handicap, hostSide, yourSide);
-                        }
-                        break;
+                    //        EmitSignal(nameof(CallJoiningDialog), gameType, isRated, gameName, handicap, hostSide, yourSide);
+                    //    }
+                    //    break;
                     case ServerAnswer.GameData:
                         {
                             var yourSide = reader.GetInt();
@@ -374,6 +382,7 @@ public class LiteConnection : Node
                             for (int i = 0; i < count; i++)
                             {
                                 var key = reader.GetInt();
+                                var is_rated = reader.GetBool();
                                 var is_protected = reader.GetBool();
                                 var game_type = reader.GetInt();
                                 var game_name = reader.GetString();
@@ -382,7 +391,8 @@ public class LiteConnection : Node
                                 var player_count = reader.GetInt();
                                 var obs_count = reader.GetInt();
                                 var turn_count = reader.GetInt();
-                                EmitSignal(nameof(SetGame), key, is_protected, game_type, game_name, handicap, username, player_count, obs_count, turn_count);
+
+                                EmitSignal(nameof(SetGame), key, is_rated, is_protected, game_type, game_name, handicap, username, player_count, obs_count, turn_count);
                             }
                             EmitSignal(nameof(GameListEnd), count);
                         }
@@ -410,14 +420,29 @@ public class LiteConnection : Node
                     case ServerAnswer.JoinedPlayerData:
                         EmitSignal(nameof(PlayerWantsToJoin), reader.GetString(), reader.GetInt(), reader.GetInt(), reader.GetInt(), reader.GetInt(), reader.GetInt(), reader.GetInt(), reader.GetInt());
                         break;
+                    case ServerAnswer.AwaitPlayerAccept:
+                        EmitSignal(nameof(CallJoiningDialog));
+                        break;
+                    case ServerAnswer.StopJoining:
+                        EmitSignal(nameof(DestroyJoiningDialog));
+                        break;
                     case ServerAnswer.AcceptJoinPlayer: // принять игрока
-                        EmitSignal(nameof(AcceptPlayer));
+                        {
+                            var gameId = reader.GetInt();
+
+                            if(gameId != GData.Id)
+                            {
+                                break;
+                            }
+
+                            EmitSignal(nameof(StartSession));
+                        }
                         break;
                     case ServerAnswer.DeclineJoinPlayer: // отказать присоединять игрока
-                        EmitSignal(nameof(JoinPlayerFail), reader.GetInt());
+                        EmitSignal(nameof(JoinPlayerFail), reader.GetInt(), reader.GetInt());
                         break;
                     case ServerAnswer.DeclineJoinObserver:  // отказать присоединять игрока
-                        EmitSignal(nameof(JoinObserverFail), reader.GetInt());
+                        EmitSignal(nameof(JoinObserverFail), reader.GetInt(), reader.GetInt());
                         break;
                 }
             }
@@ -425,6 +450,30 @@ public class LiteConnection : Node
         };
 
         client = new NetManager(listener);
+    }
+    
+    public void RequestJoin(int game_key, bool is_obs)
+    {
+        GData.Id = game_key;
+
+        var writer = new NetDataWriter();
+        writer.Put((int)ClientRequest.JoinGame);
+        writer.Put(game_key);
+        writer.Put(is_obs);
+        writer.Put((string)null);
+        server.Send(writer, DeliveryMethod.ReliableOrdered);
+    }
+
+    public void RequestJoinProtected(int game_key, bool is_obs, string password)
+    {
+        GData.Id = game_key;
+
+        var writer = new NetDataWriter();
+        writer.Put((int)ClientRequest.JoinGame);
+        writer.Put(game_key);
+        writer.Put(is_obs);
+        writer.Put(password);
+        server.Send(writer, DeliveryMethod.ReliableOrdered);
     }
 
     private void StartClient()
@@ -563,26 +612,6 @@ public class LiteConnection : Node
         server.Send(writer, DeliveryMethod.ReliableOrdered);
     }
 
-    public void RequestJoin(int game_key, bool is_obs)
-    {
-        var writer = new NetDataWriter();
-        writer.Put((int)ClientRequest.JoinGame);
-        writer.Put(game_key);
-        writer.Put(is_obs);
-        writer.Put((string)null);
-        server.Send(writer, DeliveryMethod.ReliableOrdered);
-    }
-
-    public void RequestJoinProtected(int game_key, bool is_obs, string password)
-    {
-        var writer = new NetDataWriter();
-        writer.Put((int)ClientRequest.JoinGame);
-        writer.Put(game_key);
-        writer.Put(is_obs);
-        writer.Put(password);
-        server.Send(writer, DeliveryMethod.ReliableOrdered);
-    }
-
     public void DeleteYourself(string password)
     {
         var writer = new NetDataWriter();
@@ -631,6 +660,13 @@ public class LiteConnection : Node
         }
     }
 
+    public void StopJoining()
+    {
+        var writer = new NetDataWriter();
+        writer.Put((int)ClientRequest.StopJoining);
+        server.Send(writer, DeliveryMethod.ReliableOrdered);
+    }
+
     public void AcceptTakeback()
     {
         var writer = new NetDataWriter();
@@ -662,19 +698,19 @@ public class LiteConnection : Node
         server.Send(writer, DeliveryMethod.ReliableOrdered);
     }
 
-    public void AcceptJoiningRequest(int tag)
+    public void AcceptJoiningRequest(int joiner)
     {
         var writer = new NetDataWriter();
         writer.Put((int)ClientRequest.AcceptJoiner);
-        writer.Put(tag);
+        writer.Put(joiner);
         server.Send(writer, DeliveryMethod.ReliableOrdered);
     }
 
-    public void DeclineJoiningRequest(int tag)
+    public void DeclineJoiningRequest(int joiner)
     {
         var writer = new NetDataWriter();
         writer.Put((int)ClientRequest.DeclineJoiner);
-        writer.Put(tag);
+        writer.Put(joiner);
         server.Send(writer, DeliveryMethod.ReliableOrdered);
     }
 }

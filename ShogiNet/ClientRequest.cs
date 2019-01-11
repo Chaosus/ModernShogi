@@ -12,6 +12,8 @@
         CloseGame,
         HostData,
         JoinGame,
+        StopJoining,
+        GameStart,
         GameData,
         PlayerData,
         SendMove,

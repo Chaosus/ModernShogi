@@ -183,11 +183,13 @@ class Player:
 		all_pieces.clear()
 
 class GameSession:
-	var game_name
+	var id = -1
+	var game_name = "?"
+	var game_template = null
+	var is_rated = false
+	var setup = 0
 	var user_name
 	var host_name
-	var game_template = null
-	var setup = 0
 	var sfen = null
 	var initial_side = 0
 	var turn_counter = 0
@@ -209,7 +211,10 @@ class GameSession:
 	var max_seconds = 0
 	var is_server = false	
 	var has_other_player = false
-	var is_rated = false
+
+	# Возращает Id мультиплеерной игры
+	func get_id():
+		return id
 	func is_pvp():
 		return !ai_enabled
 	func is_ai():

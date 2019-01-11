@@ -35,6 +35,7 @@
         Decline,
         TakebackRequest,
         DeclineChangeAccountData,
-        AcceptChangeAccountData
+        AcceptChangeAccountData,
+        StopJoining
     }
 }

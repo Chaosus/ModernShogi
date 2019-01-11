@@ -27,14 +27,16 @@ func set_title(text):
 func _on_CancelButton_pressed():
 	cancel_pressed = true
 	if !timeout_happens:
+		Network.stop_joining()
 		emit_signal("cancel")
-	destroy()
+		destroy()
 
 func _on_Timer_timeout():
 	current_time += 1
 	timer_label.text = str(max_time - current_time)
 	if current_time >= max_time:
 		timeout_happens = true
+		Network.stop_joining()
 		if !cancel_pressed:
 			emit_signal("timeout")
 		destroy()

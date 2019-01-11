@@ -5,7 +5,7 @@ onready var password_box = $VBox/HBox/Password
 onready var places_label = $VBox/HBox/Places
 onready var turn_count = $VBox/HBox/TurnCount
 onready var players_label = $VBox/HBox/Players
-onready var game_type_label = $VBox/HBox/GameType
+onready var game_label = $VBox/HBox/GameType
 onready var handicap_label = $VBox/HBox/Handicap
 onready var desc_label = $VBox/HBox/Description
 onready var server_ip_label = $VBox/HBox/ServerIP
@@ -14,7 +14,10 @@ export(bool) var is_header = false
 
 var id
 var key
-
+var game
+var game_name
+var game_handicap
+var is_rated
 var is_protected
 
 func expand(enabled):
@@ -35,21 +38,24 @@ func change(player_names, player_count, obs_count, turn_count):
 		places_label.text += "(" + str(obs_count) + ")"
 	self.turn_count.text = str(turn_count)
 		
-func _setup_std(id, key, is_protected, game_type, game_name, player_names, player_count, obs_count, turn_count):
+func _setup_std(id, key, is_rated, is_protected, game, game_name, player_names, player_count, obs_count, turn_count):
 	self.id = id
 	self.key = key
 	index_label.text = str(id)
+	self.is_rated = is_rated
 	self.is_protected = is_protected
 	if !is_protected:
 		password_box.texture = null
 	places_label.text = "2/" + str(player_count)
 	if obs_count > 0:
 		places_label.text += "(" + str(obs_count) + ")"
-	game_type_label.text = "?"
-	match game_type:
+	game_label.text = "?"
+	self.game = game
+	match game:
 		Games.GameType.SHOGI:
-			game_type_label.text = "LABEL_GAME_NAME_SHOGI"
+			game_label.text = "LABEL_GAME_NAME_SHOGI"
 	players_label.text = player_names
+	self.game_name = game_name
 	desc_label.text = game_name
 	$VBox/HBox/JoinButton.apply_current_theme()
 	$VBox/HBox/ObserveButton.apply_current_theme()
@@ -65,19 +71,20 @@ func setup_header():
 	index_label.text = "#"
 	places_label.text = "HEADER_PLACES"
 	turn_count.text = "HEADER_TURN_COUNT"
-	game_type_label.text = "HEADER_GAMETYPE"
+	game_label.text = "HEADER_GAMETYPE"
 	handicap_label.text = "HEADER_HANDICAP"
 	server_ip_label.text = "IP"
 	players_label.text = "HEADER_PLAYERS"
 	desc_label.text = "HEADER_SERVER_DESC"
 	
-func setup_save(id, key, is_protected, game_type, game_name, handicap, sfen, username, player_count, obs_count, turn_count):
-	_setup_std(id, key, is_protected, game_type, game_name, username, player_count, obs_count, turn_count)
+func setup_save(id, key, is_rated, is_protected, game_type, game_name, handicap, sfen, username, player_count, obs_count, turn_count):
+	_setup_std(id, key, is_rated, is_protected, game_type, game_name, username, player_count, obs_count, turn_count)
 	handicap_label.text = "[SFEN]"
 
-func setup(id, key, is_protected, game_type, game_name, handicap, sfen, username, player_count, obs_count, turn_count):
-	_setup_std(id, key, is_protected, game_type, game_name, username, player_count, obs_count, turn_count)
+func setup(id, key, is_rated, is_protected, game_type, game_name, handicap, sfen, username, player_count, obs_count, turn_count):
+	_setup_std(id, key, is_rated, is_protected, game_type, game_name, username, player_count, obs_count, turn_count)
 	handicap_label.text = "?"
+	self.game_handicap = handicap
 	match handicap:
 		Games.ShogiHandicaps.NONE:
 			handicap_label.text = "None"
@@ -123,6 +130,8 @@ func _ready():
 		setup_header()
 
 func _on_ObserveButton_pressed():
+	var ss = UI.get_root().server_screen
+	
 	if is_protected:
 		var dialog = UI.call_password_dialog()
 		yield(dialog, "destroyed")
@@ -132,6 +141,14 @@ func _on_ObserveButton_pressed():
 	Network.request_join(key, true)
 	
 func _on_JoinButton_pressed():
+	var ss = UI.get_root().server_screen
+	
+	ss.saved_game_id = key
+	ss.saved_game_type = game
+	ss.saved_is_rated = is_rated
+	ss.saved_game_name = game_name
+	ss.saved_handicap = game_handicap
+	
 	if is_protected:
 		var dialog = UI.call_password_dialog()
 		yield(dialog, "destroyed")

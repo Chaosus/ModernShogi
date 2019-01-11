@@ -566,7 +566,6 @@ shadow_color = Color( 0, 0, 0, 0 )
 [sub_resource type="DynamicFont" id=18]
 
 size = 70
-use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 103 )
 

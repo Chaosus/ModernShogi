@@ -1125,3 +1125,7 @@ LABEL_STATS,Statistic:,Статистика:,
 LABEL_WINS2,Win count,Число побед,
 LABEL_DRAWS2,Draw count,Число ничьих,
 LABEL_LOSES2,Lose count,Число поражений,
+MP_PLAYER_DECLINE,Game creator is declined your joining request,Создатель игры отклонил ваш запрос присоединения,
+MP_OTHER_CONNECTION_EXIST,"Other player is already tries to connect to this game. 
+Try again later.","Другой игрок уже пытается присоединиться к этой игре.
+Попробуйте позже",

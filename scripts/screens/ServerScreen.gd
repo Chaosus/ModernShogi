@@ -41,38 +41,62 @@ func go_back_if_possible():
 
 #--------------------------------------------------------------------------------#
 
+var join_dialog
+
+func call_joining_dialog():
+	join_dialog = UI.call_joining_dialog()
+	join_dialog.connect("destroyed", self, "free_joining_dialog_ref")
+	
+func free_joining_dialog_ref():
+	join_dialog = null
+	
+func destroy_joining_dialog():
+	if join_dialog != null:
+		join_dialog.destroy()
+		
+#--------------------------------------------------------------------------------#
+
 func on_network_error(code):
 	print("network error = " + str(code))
 
 func show_account_info(name, country, rating, win_count, lose_count, draw_count, visit_count):
 	UI.get_root().account_screen.setup_account(name, country, rating, win_count, lose_count, draw_count, visit_count)
 	goto_screen(UI.SCREEN_ACCOUNT)
-	
-	
-func create_game(game_type, is_rated, game_name, handicap, host_side, your_side):
+
+var saved_game_id
+var saved_game_type
+var saved_is_rated
+var saved_game_name
+var saved_handicap
+
+# Начинаем игровую сессию
+func start_session():
+	destroy_joining_dialog()
 	game_session = Game.GameSession.new()
-	game_session.game_template = Games.get_game_by_name(game_type)
-	game_session.is_rated = is_rated
-	game_session.game_name = game_name
-	game_session.setup = handicap
+	game_session.id = saved_game_id
+	game_session.game_name = saved_game_name
+	game_session.game_template = Games.get_game_by_name(saved_game_type)
+	game_session.is_rated = saved_is_rated
+	game_session.setup = saved_handicap
+	game_session.user_name = Network.get_login_name()
 	game_session.mp_mode = true
 	game_session.global_game = true
-	game_session.initial_side = host_side
-	game_session.your_side = your_side
-	game_session.user_name = Network.get_login_name()
-	UI.call_joining_dialog()
-
-func join():
 	GameStarter.set_from_screen(self)
 	GameStarter.join_game(game_session)
 	
-func join_fail(reason):
-	if reason == 1:
+func join_fail(game_id, reason):
+	if reason == 1: # game is full
 		UI.call_dialog("DESC_GAME_IS_FULL")
-	elif reason == 10: # password is incorrect
+	elif reason == 2: # creator decline join
+		destroy_joining_dialog()
+		UI.call_dialog("MP_PLAYER_DECLINE")
+	elif reason == 10: # game is protected but password is incorrect
+		destroy_joining_dialog()
 		UI.call_dialog("MP_INCORRECT_PASSWORD")
+	elif reason == 14: # other player already tries to connect to this game
+		UI.call_dialog("MP_OTHER_CONNECTION_EXIST")
 
-func join_obs_fail(reason):
+func join_obs_fail(id, reason):
 	if reason == 1:
 		UI.call_dialog("DESC_GAME_IS_FULL2")
 
@@ -100,7 +124,7 @@ var game_count = 0
 func list_begin(count):
 	game_count = count
 	
-func set_game(key, is_protected, game_type, game_name, handicap, user_name, player_count, obs_count, turn_count):
+func set_game(key, is_rated, is_protected, game_type, game_name, handicap, user_name, player_count, obs_count, turn_count):
 	var children = game_list.get_children()
 	for child in children:
 		if child.key == key:
@@ -109,7 +133,7 @@ func set_game(key, is_protected, game_type, game_name, handicap, user_name, play
 	var box = remote_box_prefab.instance()
 	game_list.add_child(box)
 	var id = game_list.get_child_count()
-	box.setup(id, key, is_protected, game_type, game_name, handicap, null, user_name, player_count, obs_count, turn_count)
+	box.setup(id, key, is_rated, is_protected, game_type, game_name, handicap, null, user_name, player_count, obs_count, turn_count)
 
 func remove_game(key):
 	var children = game_list.get_children()
