@@ -15,7 +15,6 @@
         DeclineJoinPlayer,
         DeclineJoinObserver,
         SendPlayerInfo,
-        JoinToGame,
         AwaitPlayerAccept,
         JoinedPlayerData,
         GameInfo,

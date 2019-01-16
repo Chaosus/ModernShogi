@@ -231,6 +231,8 @@ func main_action():
 		return
 	if game_instance.has_panel_focus():
 		return
+	if game_instance.session.is_observer():
+		return
 	if piece != null:
 		# выбор другой фигуры
 		if piece.side == game_instance.session.turn_side:

@@ -132,6 +132,12 @@ func _ready():
 func _on_ObserveButton_pressed():
 	var ss = UI.get_root().server_screen
 	
+	ss.saved_game_id = key
+	ss.saved_game_type = game
+	ss.saved_is_rated = is_rated
+	ss.saved_game_name = game_name
+	ss.saved_handicap = game_handicap
+	
 	if is_protected:
 		var dialog = UI.call_password_dialog()
 		yield(dialog, "destroyed")

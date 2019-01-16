@@ -70,7 +70,7 @@ var saved_game_name
 var saved_handicap
 
 # Начинаем игровую сессию
-func start_session():
+func start_session(is_obs):
 	destroy_joining_dialog()
 	game_session = Game.GameSession.new()
 	game_session.id = saved_game_id
@@ -78,6 +78,9 @@ func start_session():
 	game_session.game_template = Games.get_game_by_name(saved_game_type)
 	game_session.is_rated = saved_is_rated
 	game_session.setup = saved_handicap
+	if is_obs:
+		game_session.initial_side = -1
+	game_session.obs_mode = is_obs
 	game_session.user_name = Network.get_login_name()
 	game_session.mp_mode = true
 	game_session.global_game = true

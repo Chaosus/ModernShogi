@@ -1129,3 +1129,4 @@ MP_PLAYER_DECLINE,Game creator is declined your joining request,Создател
 MP_OTHER_CONNECTION_EXIST,"Other player is already tries to connect to this game. 
 Try again later.","Другой игрок уже пытается присоединиться к этой игре.
 Попробуйте позже",
+MP_DECLINE_WRONG_TURN,You can perform this action only on your turn !,Вы можете выполнить это действие только на своём ходу !,

@@ -45,6 +45,11 @@
         /// <summary>
         /// Игра или группа уже в процессе присоединения другого игрока.
         /// </summary>
-        OtherPlayerInJoinProcess
+        OtherPlayerInJoinProcess,
+
+        /// <summary>
+        /// Это действие нельзя выполнить на ходу другого игрока.
+        /// </summary>
+        WrongTurn
     }
 }

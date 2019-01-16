@@ -40,7 +40,7 @@ public class LiteConnection : Node
     public delegate void NetworkError();
 
     [Signal]
-    public delegate void StartSession();
+    public delegate void StartSession(bool isObs);
     
     [Signal]
     public delegate void JoinPlayerFail(int gameId, int reason);
@@ -342,7 +342,7 @@ public class LiteConnection : Node
                             for (int i = 0; i < observerCount; i++)
                             {
                                 var name = reader.GetString();
-                                EmitSignal(nameof(PlayerData), name, i, -1, true);
+                                EmitSignal(nameof(PlayerData), name, -1, true);
                             }
 
                             EmitSignal(nameof(PlayerDataEnd));
@@ -435,7 +435,9 @@ public class LiteConnection : Node
                                 break;
                             }
 
-                            EmitSignal(nameof(StartSession));
+                            var is_obs = reader.GetBool();
+
+                            EmitSignal(nameof(StartSession), is_obs);
                         }
                         break;
                     case ServerAnswer.DeclineJoinPlayer: // отказать присоединять игрока

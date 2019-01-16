@@ -109,6 +109,8 @@ func ms_decline(what):
 		UI.call_dialog("MP_DECLINE_GAME_NOT_STARTED")
 	elif what == 8: # DeclineArg.GameIsDone
 		UI.call_dialog("MP_DECLINE_GAME_IS_DONE")
+	elif what == 15: # DeclineArg.WrongTurn
+		UI.call_dialog("MP_DECLINE_WRONG_TURN")
 	else:
 		UI.call_dialog("MP_DECLINE")
 	
@@ -834,7 +836,6 @@ puppet func build_history(hlog):
 		parsed_move.index = counter
 		add_record_to_history(parsed_move, false)
 		counter += 1
-	session.turn_counter = counter
 	# перемотка на последний ход
 	gui.history_panel.history_to_end_forced()
 
@@ -1412,15 +1413,21 @@ func show_checkmate_dlg(winner, invalid_move):
 	if session.is_multiplayer() or session.is_ai():
 		gui.show_await_label(true, "DESC_GAMEOVER", false)
 		if invalid_move:
-			if winner == session.your_side:
-				text = TranslationServer.translate("GAME_RESULT_ILLEGAL_MOVE") + " : " + TranslationServer.translate("LABEL_VICTORY")
-			else:
+			if session.is_observer():
 				text = TranslationServer.translate("GAME_RESULT_ILLEGAL_MOVE") + " : " + session.players[winner].name + TranslationServer.translate("LABEL_IS_WINNER")
-		else:
-			if winner == session.your_side:
-				text = TranslationServer.translate("LABEL_CHECKMATE") + " : " + TranslationServer.translate("LABEL_VICTORY")
 			else:
+				if winner == session.your_side:
+					text = TranslationServer.translate("GAME_RESULT_ILLEGAL_MOVE") + " : " + TranslationServer.translate("LABEL_VICTORY")
+				else:
+					text = TranslationServer.translate("GAME_RESULT_ILLEGAL_MOVE") + " : " + session.players[winner].name + TranslationServer.translate("LABEL_IS_WINNER")
+		else:
+			if session.is_observer():
 				text = TranslationServer.translate("LABEL_CHECKMATE") + " : " + session.players[winner].name + TranslationServer.translate("LABEL_IS_WINNER")
+			else:
+				if winner == session.your_side:
+					text = TranslationServer.translate("LABEL_CHECKMATE") + " : " + TranslationServer.translate("LABEL_VICTORY")
+				else:
+					text = TranslationServer.translate("LABEL_CHECKMATE") + " : " + session.players[winner].name + TranslationServer.translate("LABEL_IS_WINNER")
 	else:
 		if invalid_move:
 			if winner == 0:

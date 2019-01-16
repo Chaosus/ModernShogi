@@ -1,4 +1,4 @@
-[gd_scene load_steps=134 format=2]
+[gd_scene load_steps=126 format=2]
 
 [ext_resource path="res://sys.theme" type="Theme" id=1]
 [ext_resource path="res://scripts/SuperMenu.gd" type="Script" id=2]
@@ -83,37 +83,36 @@
 [ext_resource path="res://scripts/ui/FileTree.gd" type="Script" id=81]
 [ext_resource path="res://scripts/screens/LoadingScreen.gd" type="Script" id=82]
 [ext_resource path="res://textures/loader_big.png" type="Texture" id=83]
-[ext_resource path="res://material/fonts/standart_font.tres" type="DynamicFont" id=84]
-[ext_resource path="res://scripts/screens/LoadGameScreen.gd" type="Script" id=85]
-[ext_resource path="res://scripts/screens/GameCreationScreen.gd" type="Script" id=86]
-[ext_resource path="res://ui/btngroups/handicap_buttongroup.tres" type="ButtonGroup" id=87]
-[ext_resource path="res://scripts/screens/JoinScreen.gd" type="Script" id=88]
-[ext_resource path="res://scripts/ui/PopupCentered.gd" type="Script" id=89]
-[ext_resource path="res://scripts/screens/LoginScreen.gd" type="Script" id=90]
-[ext_resource path="res://ui/flags/unknown.jpg" type="Texture" id=91]
-[ext_resource path="res://scripts/ui/HelpElement.gd" type="Script" id=92]
-[ext_resource path="res://scripts/screens/AccountScreen.gd" type="Script" id=93]
-[ext_resource path="res://scripts/ui/PopupPanelCentered.gd" type="Script" id=94]
-[ext_resource path="res://ui/avatars/blank_simple.jpg" type="Texture" id=95]
-[ext_resource path="res://ui/buttons/gender_male.png" type="Texture" id=96]
-[ext_resource path="res://scripts/screens/ServerScreen.gd" type="Script" id=97]
-[ext_resource path="res://prefabs/RemoteServerGameBox.tscn" type="PackedScene" id=98]
-[ext_resource path="res://scripts/screens/QuitConfirmation.gd" type="Script" id=99]
-[ext_resource path="res://themes/hv_big_division.tres" type="Theme" id=100]
-[ext_resource path="res://scripts/GoodBayScreen.gd" type="Script" id=101]
-[ext_resource path="res://scripts/screens/ExtrasMenu.gd" type="Script" id=102]
-[ext_resource path="res://material/fonts/zekton_rg.ttf" type="DynamicFontData" id=103]
-[ext_resource path="res://themes/hv_containers.tres" type="Theme" id=104]
-[ext_resource path="res://scripts/screens/CountrySelectionScreen.gd" type="Script" id=105]
-[ext_resource path="res://material/light_hvscroll.tres" type="Theme" id=106]
-[ext_resource path="res://scripts/screens/AvatarSelectionScreen.gd" type="Script" id=107]
-[ext_resource path="res://scripts/screens/ColorSelectionScreen.gd" type="Script" id=108]
-[ext_resource path="res://themes/hv_medium_division.tres" type="Theme" id=109]
-[ext_resource path="res://scripts/panels/LoadingPanel.gd" type="Script" id=110]
-[ext_resource path="res://scenes/Game.tscn" type="PackedScene" id=111]
-[ext_resource path="res://scripts/UISFX.gd" type="Script" id=112]
-[ext_resource path="res://scripts/BackgroundMusic.gd" type="Script" id=113]
-[ext_resource path="res://prefabs/PopupDialog.tscn" type="PackedScene" id=114]
+[ext_resource path="res://scripts/screens/LoadGameScreen.gd" type="Script" id=84]
+[ext_resource path="res://scripts/screens/GameCreationScreen.gd" type="Script" id=85]
+[ext_resource path="res://ui/btngroups/handicap_buttongroup.tres" type="ButtonGroup" id=86]
+[ext_resource path="res://scripts/screens/JoinScreen.gd" type="Script" id=87]
+[ext_resource path="res://scripts/ui/PopupCentered.gd" type="Script" id=88]
+[ext_resource path="res://scripts/screens/LoginScreen.gd" type="Script" id=89]
+[ext_resource path="res://ui/flags/unknown.jpg" type="Texture" id=90]
+[ext_resource path="res://scripts/ui/HelpElement.gd" type="Script" id=91]
+[ext_resource path="res://scripts/screens/AccountScreen.gd" type="Script" id=92]
+[ext_resource path="res://scripts/ui/PopupPanelCentered.gd" type="Script" id=93]
+[ext_resource path="res://ui/avatars/blank_simple.jpg" type="Texture" id=94]
+[ext_resource path="res://ui/buttons/gender_male.png" type="Texture" id=95]
+[ext_resource path="res://scripts/screens/ServerScreen.gd" type="Script" id=96]
+[ext_resource path="res://prefabs/RemoteServerGameBox.tscn" type="PackedScene" id=97]
+[ext_resource path="res://scripts/screens/QuitConfirmation.gd" type="Script" id=98]
+[ext_resource path="res://themes/hv_big_division.tres" type="Theme" id=99]
+[ext_resource path="res://scripts/GoodBayScreen.gd" type="Script" id=100]
+[ext_resource path="res://scripts/screens/ExtrasMenu.gd" type="Script" id=101]
+[ext_resource path="res://themes/hv_containers.tres" type="Theme" id=102]
+[ext_resource path="res://scripts/screens/CountrySelectionScreen.gd" type="Script" id=103]
+[ext_resource path="res://material/light_hvscroll.tres" type="Theme" id=104]
+[ext_resource path="res://scripts/screens/AvatarSelectionScreen.gd" type="Script" id=105]
+[ext_resource path="res://scripts/screens/ColorSelectionScreen.gd" type="Script" id=106]
+[ext_resource path="res://material/fonts/standart_font.tres" type="DynamicFont" id=107]
+[ext_resource path="res://themes/hv_medium_division.tres" type="Theme" id=108]
+[ext_resource path="res://scripts/panels/LoadingPanel.gd" type="Script" id=109]
+[ext_resource path="res://scenes/Game.tscn" type="PackedScene" id=110]
+[ext_resource path="res://scripts/UISFX.gd" type="Script" id=111]
+[ext_resource path="res://scripts/BackgroundMusic.gd" type="Script" id=112]
+[ext_resource path="res://prefabs/PopupDialog.tscn" type="PackedScene" id=113]
 
 [sub_resource type="ButtonGroup" id=1]
 
@@ -130,448 +129,28 @@
 [sub_resource type="ButtonGroup" id=5]
 
 
-[sub_resource type="StyleBoxFlat" id=6]
-
-bg_color = Color( 0.980392, 0.980392, 0.980392, 1 )
-
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="ButtonGroup" id=6]
 
 
-[sub_resource type="StyleBoxFlat" id=8]
+[sub_resource type="ButtonGroup" id=7]
 
 
-[sub_resource type="StyleBoxFlat" id=9]
-
-bg_color = Color( 0.898039, 0.898039, 0.898039, 1 )
-
-[sub_resource type="StyleBoxFlat" id=10]
-
-bg_color = Color( 1, 1, 1, 1 )
-
-[sub_resource type="Theme" id=11]
-
-default_font = ExtResource( 84 )
-Button/colors/font_color = Color( 0, 0, 0, 1 )
-Button/colors/font_color_disabled = Color( 0.686275, 0.211765, 0.211765, 1 )
-Button/colors/font_color_hover = Color( 0.968627, 1, 0, 1 )
-Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
-Button/constants/hseparation = 2
-Button/fonts/BigFont = null
-Button/fonts/font = ExtResource( 84 )
-Button/styles/disabled = null
-Button/styles/focus = null
-Button/styles/hover = null
-Button/styles/normal = null
-Button/styles/pressed = null
-ButtonGroup/styles/panel = null
-CheckBox/colors/font_color = Color( 0, 0, 0, 1 )
-CheckBox/colors/font_color_disabled = Color( 0, 0, 0, 1 )
-CheckBox/colors/font_color_hover = Color( 0, 0, 0, 1 )
-CheckBox/colors/font_color_pressed = Color( 0, 0, 0, 1 )
-CheckBox/constants/check_vadjust = 0
-CheckBox/constants/hseparation = 4
-CheckBox/fonts/font = null
-CheckBox/icons/checked = null
-CheckBox/icons/radio_checked = null
-CheckBox/icons/radio_unchecked = null
-CheckBox/icons/unchecked = null
-CheckBox/styles/disabled = null
-CheckBox/styles/focus = null
-CheckBox/styles/hover = null
-CheckBox/styles/normal = null
-CheckBox/styles/pressed = null
-CheckButton/colors/font_color = Color( 0, 0, 0, 1 )
-CheckButton/colors/font_color_disabled = Color( 0, 0, 0, 1 )
-CheckButton/colors/font_color_hover = Color( 0, 0, 0, 1 )
-CheckButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
-CheckButton/constants/check_vadjust = 0
-CheckButton/constants/hseparation = 4
-CheckButton/fonts/font = null
-CheckButton/icons/off = null
-CheckButton/icons/on = null
-CheckButton/styles/disabled = null
-CheckButton/styles/focus = null
-CheckButton/styles/hover = null
-CheckButton/styles/normal = null
-CheckButton/styles/pressed = null
-ColorPicker/constants/h_width = 30
-ColorPicker/constants/label_width = 10
-ColorPicker/constants/margin = 4
-ColorPicker/constants/sv_height = 256
-ColorPicker/constants/sv_width = 256
-ColorPicker/icons/add_preset = null
-ColorPicker/icons/color_hue = null
-ColorPicker/icons/color_sample = null
-ColorPicker/icons/preset_bg = null
-ColorPicker/icons/screen_picker = null
-ColorPickerButton/colors/font_color = Color( 0, 0, 0, 1 )
-ColorPickerButton/colors/font_color_disabled = Color( 0, 0, 0, 1 )
-ColorPickerButton/colors/font_color_hover = Color( 0, 0, 0, 1 )
-ColorPickerButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
-ColorPickerButton/constants/hseparation = 2
-ColorPickerButton/fonts/font = null
-ColorPickerButton/icons/bg = null
-ColorPickerButton/styles/disabled = null
-ColorPickerButton/styles/focus = null
-ColorPickerButton/styles/hover = null
-ColorPickerButton/styles/normal = null
-ColorPickerButton/styles/pressed = null
-Dialogs/constants/button_margin = 32
-Dialogs/constants/margin = 8
-FileDialog/colors/files_disabled = Color( 0, 0, 0, 1 )
-FileDialog/icons/folder = null
-FileDialog/icons/parent_folder = null
-FileDialog/icons/reload = null
-Fonts/fonts/large = null
-Fonts/fonts/normal = null
-GraphEdit/colors/grid_major = Color( 0, 0, 0, 1 )
-GraphEdit/colors/grid_minor = Color( 0, 0, 0, 1 )
-GraphEdit/constants/bezier_len_neg = 160
-GraphEdit/constants/bezier_len_pos = 80
-GraphEdit/icons/minus = null
-GraphEdit/icons/more = null
-GraphEdit/icons/reset = null
-GraphEdit/icons/snap = null
-GraphEdit/styles/bg = null
-GraphNode/colors/title_color = Color( 0, 0, 0, 1 )
-GraphNode/constants/close_offset = 18
-GraphNode/constants/port_offset = 3
-GraphNode/constants/separation = 1
-GraphNode/constants/title_offset = 20
-GraphNode/fonts/title_font = null
-GraphNode/icons/close = null
-GraphNode/icons/port = null
-GraphNode/icons/resizer = null
-GraphNode/styles/breakpoint = null
-GraphNode/styles/comment = null
-GraphNode/styles/commentfocus = null
-GraphNode/styles/defaultfocus = null
-GraphNode/styles/defaultframe = null
-GraphNode/styles/frame = null
-GraphNode/styles/position = null
-GraphNode/styles/selectedframe = null
-GridContainer/constants/hseparation = 4
-GridContainer/constants/vseparation = 4
-HBoxContainer/constants/separation = 4
-HScrollBar/icons/decrement = null
-HScrollBar/icons/decrement_highlight = null
-HScrollBar/icons/increment = null
-HScrollBar/icons/increment_highlight = null
-HScrollBar/styles/grabber = null
-HScrollBar/styles/grabber_highlight = null
-HScrollBar/styles/grabber_pressed = null
-HScrollBar/styles/scroll = null
-HScrollBar/styles/scroll_focus = null
-HSeparator/constants/separation = 4
-HSeparator/styles/separator = null
-HSlider/icons/grabber = null
-HSlider/icons/grabber_disabled = null
-HSlider/icons/grabber_highlight = null
-HSlider/icons/tick = null
-HSlider/styles/focus = null
-HSlider/styles/grabber_area = null
-HSlider/styles/grabber_disabled = null
-HSlider/styles/grabber_highlight = null
-HSlider/styles/slider = null
-HSplitContainer/constants/autohide = 1
-HSplitContainer/constants/separation = 12
-HSplitContainer/icons/grabber = null
-HSplitContainer/styles/bg = null
-Icons/icons/close = null
-Icons/icons/logo = null
-ItemList/colors/font_color = Color( 0, 0, 0, 1 )
-ItemList/colors/font_color_selected = Color( 0, 0, 0, 1 )
-ItemList/colors/guide_color = Color( 0, 0, 0, 1 )
-ItemList/constants/hseparation = 4
-ItemList/constants/icon_margin = 4
-ItemList/constants/line_separation = 2
-ItemList/constants/vseparation = 2
-ItemList/fonts/font = null
-ItemList/styles/bg = null
-ItemList/styles/bg_focus = null
-ItemList/styles/cursor = null
-ItemList/styles/cursor_unfocused = null
-ItemList/styles/selected = null
-ItemList/styles/selected_focus = null
-Label/colors/font_color = Color( 1, 1, 1, 1 )
-Label/colors/font_color_shadow = Color( 0, 0, 0, 1 )
-Label/constants/line_spacing = 3
-Label/constants/shadow_as_outline = 0
-Label/constants/shadow_offset_x = 1
-Label/constants/shadow_offset_y = 1
-Label/fonts/font = null
-Label/styles/normal = null
-LineEdit/colors/cursor_color = Color( 0, 0, 0, 1 )
-LineEdit/colors/font_color = Color( 0, 0, 0, 1 )
-LineEdit/colors/font_color_selected = Color( 0, 0, 0, 1 )
-LineEdit/colors/selection_color = Color( 0, 0, 0, 1 )
-LineEdit/constants/minimum_spaces = 12
-LineEdit/fonts/font = null
-LineEdit/styles/focus = null
-LineEdit/styles/normal = null
-LineEdit/styles/read_only = null
-LinkButton/colors/font_color = Color( 0, 0, 0, 1 )
-LinkButton/colors/font_color_hover = Color( 0, 0, 0, 1 )
-LinkButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
-LinkButton/constants/underline_spacing = 2
-LinkButton/fonts/font = null
-LinkButton/styles/focus = null
-MarginContainer/constants/margin_bottom = 0
-MarginContainer/constants/margin_left = 8
-MarginContainer/constants/margin_right = 0
-MarginContainer/constants/margin_top = 0
-MenuButton/colors/font_color = Color( 0, 0, 0, 1 )
-MenuButton/colors/font_color_disabled = Color( 0, 0, 0, 1 )
-MenuButton/colors/font_color_hover = Color( 0, 0, 0, 1 )
-MenuButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
-MenuButton/constants/hseparation = 3
-MenuButton/fonts/font = null
-MenuButton/styles/disabled = null
-MenuButton/styles/focus = null
-MenuButton/styles/hover = null
-MenuButton/styles/normal = null
-MenuButton/styles/pressed = null
-OptionButton/colors/font_color = Color( 0, 0, 0, 1 )
-OptionButton/colors/font_color_disabled = Color( 0, 0, 0, 1 )
-OptionButton/colors/font_color_hover = Color( 0, 0, 0, 1 )
-OptionButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
-OptionButton/constants/arrow_margin = 2
-OptionButton/constants/hseparation = 2
-OptionButton/fonts/font = null
-OptionButton/icons/arrow = null
-OptionButton/styles/disabled = null
-OptionButton/styles/focus = null
-OptionButton/styles/hover = null
-OptionButton/styles/normal = null
-OptionButton/styles/pressed = null
-Panel/styles/panel = SubResource( 6 )
-Panel/styles/panelf = SubResource( 7 )
-Panel/styles/panelnc = SubResource( 8 )
-PanelContainer/styles/panel = SubResource( 9 )
-PopupMenu/colors/font_color = Color( 0, 0, 0, 1 )
-PopupMenu/colors/font_color_accel = Color( 0, 0, 0, 1 )
-PopupMenu/colors/font_color_disabled = Color( 0, 0, 0, 1 )
-PopupMenu/colors/font_color_hover = Color( 0, 0, 0, 1 )
-PopupMenu/constants/hseparation = 4
-PopupMenu/constants/vseparation = 4
-PopupMenu/fonts/font = null
-PopupMenu/icons/checked = null
-PopupMenu/icons/radio_checked = null
-PopupMenu/icons/radio_unchecked = null
-PopupMenu/icons/submenu = null
-PopupMenu/icons/unchecked = null
-PopupMenu/styles/hover = null
-PopupMenu/styles/panel = null
-PopupMenu/styles/panel_disabled = null
-PopupMenu/styles/separator = null
-PopupPanel/styles/panel = null
-ProgressBar/colors/font_color = Color( 0, 0, 0, 1 )
-ProgressBar/colors/font_color_shadow = Color( 0, 0, 0, 1 )
-ProgressBar/fonts/font = null
-ProgressBar/styles/bg = null
-ProgressBar/styles/fg = null
-ReferenceRect/styles/border = null
-RichTextLabel/colors/default_color = Color( 0, 0, 0, 1 )
-RichTextLabel/colors/font_color_selected = Color( 0, 0, 0, 1 )
-RichTextLabel/colors/selection_color = Color( 0, 0, 0, 1 )
-RichTextLabel/constants/line_separation = 1
-RichTextLabel/constants/table_hseparation = 3
-RichTextLabel/constants/table_vseparation = 3
-RichTextLabel/fonts/bold_font = null
-RichTextLabel/fonts/bold_italics_font = null
-RichTextLabel/fonts/italics_font = null
-RichTextLabel/fonts/mono_font = null
-RichTextLabel/fonts/normal_font = null
-RichTextLabel/styles/focus = null
-RichTextLabel/styles/normal = null
-SpinBox/icons/updown = null
-TabContainer/colors/font_color_bg = Color( 0, 0, 0, 1 )
-TabContainer/colors/font_color_disabled = Color( 0, 0, 0, 1 )
-TabContainer/colors/font_color_fg = Color( 0, 0, 0, 1 )
-TabContainer/constants/hseparation = 4
-TabContainer/constants/label_valign_bg = 2
-TabContainer/constants/label_valign_fg = 0
-TabContainer/constants/side_margin = 8
-TabContainer/constants/top_margin = 24
-TabContainer/fonts/font = null
-TabContainer/icons/decrement = null
-TabContainer/icons/decrement_highlight = null
-TabContainer/icons/increment = null
-TabContainer/icons/increment_highlight = null
-TabContainer/icons/menu = null
-TabContainer/icons/menu_highlight = null
-TabContainer/styles/panel = null
-TabContainer/styles/tab_bg = null
-TabContainer/styles/tab_fg = null
-Tabs/colors/font_color_bg = Color( 1, 1, 1, 1 )
-Tabs/colors/font_color_disabled = Color( 1, 1, 1, 1 )
-Tabs/colors/font_color_fg = Color( 1, 1, 1, 1 )
-Tabs/constants/hseparation = 4
-Tabs/constants/label_valign_bg = 2
-Tabs/constants/label_valign_fg = 0
-Tabs/constants/top_margin = 24
-Tabs/fonts/font = null
-Tabs/icons/close = null
-Tabs/icons/decrement = null
-Tabs/icons/decrement_highlight = null
-Tabs/icons/increment = null
-Tabs/icons/increment_highlight = null
-Tabs/styles/button = null
-Tabs/styles/button_pressed = null
-Tabs/styles/panel = null
-Tabs/styles/tab_bg = null
-Tabs/styles/tab_fg = null
-TextEdit/colors/background_color = Color( 0, 0, 0, 1 )
-TextEdit/colors/brace_mismatch_color = Color( 0, 0, 0, 1 )
-TextEdit/colors/breakpoint_color = Color( 0, 0, 0, 1 )
-TextEdit/colors/caret_background_color = Color( 0, 0, 0, 1 )
-TextEdit/colors/caret_color = Color( 0, 0, 0, 1 )
-TextEdit/colors/code_folding_color = Color( 0, 0, 0, 1 )
-TextEdit/colors/completion_background_color = Color( 0, 0, 0, 1 )
-TextEdit/colors/completion_existing_color = Color( 0, 0, 0, 1 )
-TextEdit/colors/completion_font_color = Color( 0, 0, 0, 1 )
-TextEdit/colors/completion_scroll_color = Color( 0, 0, 0, 1 )
-TextEdit/colors/completion_selected_color = Color( 0, 0, 0, 1 )
-TextEdit/colors/current_line_color = Color( 0, 0, 0, 1 )
-TextEdit/colors/font_color = Color( 0, 0, 0, 1 )
-TextEdit/colors/font_color_selected = Color( 0, 0, 0, 1 )
-TextEdit/colors/function_color = Color( 0, 0, 0, 1 )
-TextEdit/colors/line_number_color = Color( 0, 0, 0, 1 )
-TextEdit/colors/mark_color = Color( 0, 0, 0, 1 )
-TextEdit/colors/member_variable_color = Color( 0, 0, 0, 1 )
-TextEdit/colors/number_color = Color( 0, 0, 0, 1 )
-TextEdit/colors/selection_color = Color( 0, 0, 0, 1 )
-TextEdit/colors/symbol_color = Color( 0, 0, 0, 1 )
-TextEdit/colors/word_highlighted_color = Color( 0, 0, 0, 1 )
-TextEdit/constants/completion_lines = 7
-TextEdit/constants/completion_max_width = 50
-TextEdit/constants/completion_scroll_width = 3
-TextEdit/constants/line_spacing = 4
-TextEdit/fonts/font = null
-TextEdit/icons/tab = null
-TextEdit/styles/completion = null
-TextEdit/styles/focus = null
-TextEdit/styles/normal = null
-TextEdit/styles/read_only = null
-ToolButton/colors/font_color = Color( 0, 0, 0, 1 )
-ToolButton/colors/font_color_disabled = Color( 0, 0, 0, 1 )
-ToolButton/colors/font_color_hover = Color( 0, 0, 0, 1 )
-ToolButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
-ToolButton/constants/hseparation = 3
-ToolButton/fonts/font = null
-ToolButton/styles/disabled = null
-ToolButton/styles/focus = null
-ToolButton/styles/hover = null
-ToolButton/styles/normal = null
-ToolButton/styles/pressed = null
-TooltipLabel/colors/font_color = Color( 0, 0, 0, 1 )
-TooltipLabel/colors/font_color_shadow = Color( 0, 0, 0, 1 )
-TooltipLabel/constants/shadow_offset_x = 1
-TooltipLabel/constants/shadow_offset_y = 1
-TooltipLabel/fonts/font = null
-TooltipPanel/styles/panel = null
-Tree/colors/cursor_color = Color( 0, 0, 0, 1 )
-Tree/colors/custom_button_font_highlight = Color( 0, 0, 0, 1 )
-Tree/colors/drop_position_color = Color( 0, 0, 0, 1 )
-Tree/colors/font_color = Color( 0, 0, 0, 1 )
-Tree/colors/font_color_selected = Color( 0, 0, 0, 1 )
-Tree/colors/guide_color = Color( 0, 0, 0, 1 )
-Tree/colors/relationship_line_color = Color( 0, 0, 0, 1 )
-Tree/colors/selection_color = Color( 0, 0, 0, 1 )
-Tree/colors/title_button_color = Color( 0, 0, 0, 1 )
-Tree/constants/button_margin = 4
-Tree/constants/draw_relationship_lines = 0
-Tree/constants/guide_width = 2
-Tree/constants/hseparation = 4
-Tree/constants/item_margin = 12
-Tree/constants/scroll_border = 4
-Tree/constants/scroll_speed = 12
-Tree/constants/vseparation = 4
-Tree/fonts/font = null
-Tree/fonts/title_button_font = null
-Tree/icons/arrow = null
-Tree/icons/arrow_collapsed = null
-Tree/icons/checked = null
-Tree/icons/select_arrow = null
-Tree/icons/unchecked = null
-Tree/icons/updown = null
-Tree/styles/bg = null
-Tree/styles/bg_focus = null
-Tree/styles/button_pressed = null
-Tree/styles/cursor = null
-Tree/styles/cursor_unfocused = null
-Tree/styles/custom_button = null
-Tree/styles/custom_button_hover = null
-Tree/styles/custom_button_pressed = null
-Tree/styles/selected = null
-Tree/styles/selected_focus = null
-Tree/styles/title_button_hover = null
-Tree/styles/title_button_normal = null
-Tree/styles/title_button_pressed = null
-VBoxContainer/constants/separation = 0
-VScrollBar/icons/decrement = null
-VScrollBar/icons/decrement_highlight = null
-VScrollBar/icons/increment = null
-VScrollBar/icons/increment_highlight = null
-VScrollBar/styles/grabber = null
-VScrollBar/styles/grabber_highlight = null
-VScrollBar/styles/grabber_pressed = null
-VScrollBar/styles/scroll = null
-VScrollBar/styles/scroll_focus = null
-VSeparator/constants/separation = 4
-VSeparator/styles/separator = null
-VSlider/icons/grabber = null
-VSlider/icons/grabber_disabled = null
-VSlider/icons/grabber_highlight = null
-VSlider/icons/tick = null
-VSlider/styles/focus = null
-VSlider/styles/grabber_area = null
-VSlider/styles/grabber_disabled = null
-VSlider/styles/grabber_highlight = null
-VSlider/styles/slider = null
-VSplitContainer/constants/autohide = 1
-VSplitContainer/constants/separation = 12
-VSplitContainer/icons/grabber = null
-VSplitContainer/styles/bg = null
-WindowDialog/colors/title_color = Color( 0, 0, 0, 1 )
-WindowDialog/constants/close_h_ofs = 18
-WindowDialog/constants/close_v_ofs = 18
-WindowDialog/constants/scaleborder_size = 4
-WindowDialog/constants/title_height = 20
-WindowDialog/fonts/title_font = null
-WindowDialog/icons/close = null
-WindowDialog/icons/close_highlight = null
-WindowDialog/styles/panel = SubResource( 10 )
-
-[sub_resource type="ButtonGroup" id=12]
+[sub_resource type="ButtonGroup" id=8]
 
 
-[sub_resource type="ButtonGroup" id=13]
+[sub_resource type="ButtonGroup" id=9]
 
 
-[sub_resource type="ButtonGroup" id=14]
+[sub_resource type="ButtonGroup" id=10]
 
 
-[sub_resource type="ButtonGroup" id=15]
-
-
-[sub_resource type="ButtonGroup" id=16]
-
-
-[sub_resource type="StyleBoxFlat" id=17]
+[sub_resource type="StyleBoxFlat" id=11]
 
 bg_color = Color( 0, 0, 0, 0 )
 shadow_color = Color( 0, 0, 0, 0 )
 
-[sub_resource type="DynamicFont" id=18]
+[sub_resource type="Theme" id=12]
 
-size = 70
-use_filter = false
-font_data = ExtResource( 103 )
-
-[sub_resource type="Theme" id=19]
-
-default_font = SubResource( 18 )
 BoxContainer/constants/separation = 4
 Button/colors/font_color = Color( 0, 0, 0, 1 )
 Button/colors/font_color_disabled = Color( 1, 0.607843, 0, 1 )
@@ -580,7 +159,7 @@ Button/colors/font_color_pressed = Color( 0, 0, 1, 1 )
 Button/colors/icon_color_hover = Color( 0, 0, 0, 1 )
 Button/colors/icon_color_pressed = Color( 0, 0, 0, 1 )
 Button/styles/disabled = null
-Button/styles/focus = SubResource( 17 )
+Button/styles/focus = SubResource( 11 )
 Button/styles/hover = null
 Button/styles/normal = null
 Button/styles/pressed = null
@@ -7672,7 +7251,6 @@ margin_right = 813.0
 margin_bottom = 820.0
 rect_min_size = Vector2( 300, 5 )
 size_flags_horizontal = 3
-theme = SubResource( 11 )
 
 [node name="LoadGameScreen" type="CenterContainer" parent="MainContainer/MainLayout/Screens"]
 editor/display_folded = true
@@ -7681,7 +7259,7 @@ margin_right = 1920.0
 margin_bottom = 952.0
 rect_min_size = Vector2( 0, 952 )
 size_flags_vertical = 0
-script = ExtResource( 85 )
+script = ExtResource( 84 )
 
 [node name="Box" type="ScrollContainer" parent="MainContainer/MainLayout/Screens/LoadGameScreen"]
 margin_left = 960.0
@@ -7734,7 +7312,7 @@ rect_min_size = Vector2( 50, 0 )
 margin_right = 190.0
 margin_bottom = 24.0
 pressed = true
-group = SubResource( 12 )
+group = SubResource( 6 )
 text = "RB_LOAD_TARGET_LOCAL"
 
 [node name="TargetHostBox" type="HBoxContainer" parent="MainContainer/MainLayout/Screens/LoadGameScreen/Box/VBox/TargetBox/VBox"]
@@ -7750,7 +7328,7 @@ rect_min_size = Vector2( 50, 0 )
 [node name="TargetHostRadioButton" type="CheckBox" parent="MainContainer/MainLayout/Screens/LoadGameScreen/Box/VBox/TargetBox/VBox/TargetHostBox"]
 margin_right = 212.0
 margin_bottom = 24.0
-group = SubResource( 12 )
+group = SubResource( 6 )
 text = "RB_LOAD_TARGET_NETWORK"
 
 [node name="HSeparator2" type="HSeparator" parent="MainContainer/MainLayout/Screens/LoadGameScreen/Box/VBox/TargetBox/VBox"]
@@ -7900,7 +7478,7 @@ rect_min_size = Vector2( 50, 0 )
 [node name="RB_LOAD_METHOD_REPLAY" type="CheckBox" parent="MainContainer/MainLayout/Screens/LoadGameScreen/Box/VBox/MethodBox/VBox/MethodReplayBox"]
 margin_right = 203.0
 margin_bottom = 24.0
-group = SubResource( 13 )
+group = SubResource( 7 )
 text = "RB_LOAD_METHOD_REPLAY"
 
 [node name="MethodSFENBox" type="HBoxContainer" parent="MainContainer/MainLayout/Screens/LoadGameScreen/Box/VBox/MethodBox/VBox"]
@@ -7916,7 +7494,7 @@ rect_min_size = Vector2( 50, 0 )
 margin_right = 188.0
 margin_bottom = 24.0
 pressed = true
-group = SubResource( 13 )
+group = SubResource( 7 )
 text = "RB_LOAD_METHOD_SFEN"
 
 [node name="HSeparator2" type="HSeparator" parent="MainContainer/MainLayout/Screens/LoadGameScreen/Box/VBox/MethodBox/VBox"]
@@ -7970,7 +7548,7 @@ margin_right = 1920.0
 margin_bottom = 952.0
 rect_min_size = Vector2( 0, 952 )
 size_flags_vertical = 0
-script = ExtResource( 86 )
+script = ExtResource( 85 )
 
 [node name="Box" type="ScrollContainer" parent="MainContainer/MainLayout/Screens/SetupScreen"]
 margin_left = 768.0
@@ -8409,21 +7987,21 @@ text = "MP_DESC_GAME"
 margin_right = 24.0
 margin_bottom = 48.0
 pressed = true
-group = SubResource( 14 )
+group = SubResource( 8 )
 text = "RB_RATED_GAME"
 script = ExtResource( 58 )
 
 [node name="UnratedGameRadioBox" type="CheckBox" parent="MainContainer/MainLayout/Screens/SetupScreen/Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/GameType"]
 margin_right = 386.0
 margin_bottom = 48.0
-group = SubResource( 14 )
+group = SubResource( 8 )
 text = "RB_UNRATED_GAME"
 script = ExtResource( 58 )
 
 [node name="PrivateGameRadioBox" type="CheckBox" parent="MainContainer/MainLayout/Screens/SetupScreen/Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/GameType"]
 margin_right = 361.0
 margin_bottom = 48.0
-group = SubResource( 14 )
+group = SubResource( 8 )
 text = "RB_PRIVATE_GAME"
 script = ExtResource( 58 )
 
@@ -8549,7 +8127,7 @@ margin_left = 415.0
 margin_right = 776.0
 margin_bottom = 49.0
 pressed = true
-group = SubResource( 15 )
+group = SubResource( 9 )
 text = "LABEL_RANDOM"
 script = ExtResource( 58 )
 
@@ -8557,7 +8135,7 @@ script = ExtResource( 58 )
 margin_left = 784.0
 margin_right = 1102.0
 margin_bottom = 49.0
-group = SubResource( 15 )
+group = SubResource( 9 )
 text = "LABEL_BLACK4"
 script = ExtResource( 58 )
 
@@ -8565,7 +8143,7 @@ script = ExtResource( 58 )
 margin_left = 1110.0
 margin_right = 1421.0
 margin_bottom = 49.0
-group = SubResource( 15 )
+group = SubResource( 9 )
 text = "LABEL_WHITE4"
 script = ExtResource( 58 )
 
@@ -8677,7 +8255,7 @@ margin_top = 28.0
 margin_right = 257.0
 margin_bottom = 52.0
 pressed = true
-group = ExtResource( 87 )
+group = ExtResource( 86 )
 text = "CB_GAME_HANDICAP_LEFT_LANCE"
 script = ExtResource( 58 )
 
@@ -8694,7 +8272,7 @@ margin_bottom = 40.0
 margin_top = 56.0
 margin_right = 257.0
 margin_bottom = 80.0
-group = ExtResource( 87 )
+group = ExtResource( 86 )
 text = "CB_GAME_HANDICAP_BISHOP"
 script = ExtResource( 58 )
 
@@ -8711,7 +8289,7 @@ margin_bottom = 40.0
 margin_top = 56.0
 margin_right = 257.0
 margin_bottom = 80.0
-group = ExtResource( 87 )
+group = ExtResource( 86 )
 text = "CB_GAME_HANDICAP_ROOK"
 script = ExtResource( 58 )
 
@@ -8727,7 +8305,7 @@ margin_bottom = 40.0
 [node name="HandicapRookLeftLance" type="CheckBox" parent="MainContainer/MainLayout/Screens/SetupScreen/Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicapRookLeftLance"]
 margin_right = 257.0
 margin_bottom = 24.0
-group = ExtResource( 87 )
+group = ExtResource( 86 )
 text = "CB_GAME_HANDICAP_ROOK_LANCE"
 script = ExtResource( 58 )
 
@@ -8743,7 +8321,7 @@ margin_bottom = 40.0
 [node name="HandicapPiece2" type="CheckBox" parent="MainContainer/MainLayout/Screens/SetupScreen/Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap2Piece"]
 margin_right = 257.0
 margin_bottom = 24.0
-group = ExtResource( 87 )
+group = ExtResource( 86 )
 text = "CB_GAME_HANDICAP_2PIECE"
 script = ExtResource( 58 )
 
@@ -8759,7 +8337,7 @@ margin_bottom = 40.0
 [node name="HandicapPiece3" type="CheckBox" parent="MainContainer/MainLayout/Screens/SetupScreen/Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap3Piece"]
 margin_right = 257.0
 margin_bottom = 24.0
-group = ExtResource( 87 )
+group = ExtResource( 86 )
 text = "CB_GAME_HANDICAP_3PIECE"
 script = ExtResource( 58 )
 
@@ -8775,7 +8353,7 @@ margin_bottom = 40.0
 [node name="HandicapPiece4" type="CheckBox" parent="MainContainer/MainLayout/Screens/SetupScreen/Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap4Piece"]
 margin_right = 257.0
 margin_bottom = 24.0
-group = ExtResource( 87 )
+group = ExtResource( 86 )
 text = "CB_GAME_HANDICAP_4PIECE"
 script = ExtResource( 58 )
 
@@ -8791,7 +8369,7 @@ margin_bottom = 40.0
 [node name="HandicapPiece5" type="CheckBox" parent="MainContainer/MainLayout/Screens/SetupScreen/Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap5Piece"]
 margin_right = 257.0
 margin_bottom = 24.0
-group = ExtResource( 87 )
+group = ExtResource( 86 )
 text = "CB_GAME_HANDICAP_5PIECE"
 script = ExtResource( 58 )
 
@@ -8807,7 +8385,7 @@ margin_bottom = 40.0
 [node name="HandicapPiece6" type="CheckBox" parent="MainContainer/MainLayout/Screens/SetupScreen/Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap6Piece"]
 margin_right = 257.0
 margin_bottom = 24.0
-group = ExtResource( 87 )
+group = ExtResource( 86 )
 text = "CB_GAME_HANDICAP_6PIECE"
 script = ExtResource( 58 )
 
@@ -8823,7 +8401,7 @@ margin_bottom = 40.0
 [node name="HandicapPiece7" type="CheckBox" parent="MainContainer/MainLayout/Screens/SetupScreen/Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap7Piece"]
 margin_right = 257.0
 margin_bottom = 24.0
-group = ExtResource( 87 )
+group = ExtResource( 86 )
 text = "CB_GAME_HANDICAP_7PIECE"
 script = ExtResource( 58 )
 
@@ -8839,7 +8417,7 @@ margin_bottom = 40.0
 [node name="HandicapPiece8" type="CheckBox" parent="MainContainer/MainLayout/Screens/SetupScreen/Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap8Piece"]
 margin_right = 257.0
 margin_bottom = 24.0
-group = ExtResource( 87 )
+group = ExtResource( 86 )
 text = "CB_GAME_HANDICAP_8PIECE"
 script = ExtResource( 58 )
 
@@ -8855,7 +8433,7 @@ margin_bottom = 40.0
 [node name="HandicapPiece9" type="CheckBox" parent="MainContainer/MainLayout/Screens/SetupScreen/Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap9Piece"]
 margin_right = 257.0
 margin_bottom = 24.0
-group = ExtResource( 87 )
+group = ExtResource( 86 )
 text = "CB_GAME_HANDICAP_9PIECE"
 script = ExtResource( 58 )
 
@@ -8871,7 +8449,7 @@ margin_bottom = 40.0
 [node name="HandicapPiece10" type="CheckBox" parent="MainContainer/MainLayout/Screens/SetupScreen/Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap10Piece"]
 margin_right = 257.0
 margin_bottom = 24.0
-group = ExtResource( 87 )
+group = ExtResource( 86 )
 text = "CB_GAME_HANDICAP_10PIECE"
 script = ExtResource( 58 )
 
@@ -8887,7 +8465,7 @@ margin_bottom = 40.0
 [node name="Handicap3Pawns" type="CheckBox" parent="MainContainer/MainLayout/Screens/SetupScreen/Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap3Pawns"]
 margin_right = 257.0
 margin_bottom = 24.0
-group = ExtResource( 87 )
+group = ExtResource( 86 )
 text = "CB_GAME_HANDICAP_3PAWNS"
 script = ExtResource( 58 )
 
@@ -8903,7 +8481,7 @@ margin_bottom = 40.0
 [node name="HandicapNakedKing" type="CheckBox" parent="MainContainer/MainLayout/Screens/SetupScreen/Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicapNakedKing"]
 margin_right = 257.0
 margin_bottom = 24.0
-group = ExtResource( 87 )
+group = ExtResource( 86 )
 text = "CB_GAME_HANDICAP_NAKED_KING"
 script = ExtResource( 58 )
 
@@ -8919,7 +8497,7 @@ margin_bottom = 40.0
 [node name="HandicapDragonfly" type="CheckBox" parent="MainContainer/MainLayout/Screens/SetupScreen/Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicapDragonfly"]
 margin_right = 257.0
 margin_bottom = 24.0
-group = ExtResource( 87 )
+group = ExtResource( 86 )
 text = "CB_GAME_HANDICAP_DRAGONFLY"
 script = ExtResource( 58 )
 
@@ -8935,7 +8513,7 @@ margin_bottom = 40.0
 [node name="HandicapDragonflyLances" type="CheckBox" parent="MainContainer/MainLayout/Screens/SetupScreen/Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicapDragonflyLances"]
 margin_right = 257.0
 margin_bottom = 24.0
-group = ExtResource( 87 )
+group = ExtResource( 86 )
 text = "CB_GAME_HANDICAP_DRAGONFLY_LANCES"
 script = ExtResource( 58 )
 
@@ -8951,7 +8529,7 @@ margin_bottom = 40.0
 [node name="HandicapDragonflyLancesKnights" type="CheckBox" parent="MainContainer/MainLayout/Screens/SetupScreen/Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicapDragonflyLancesKnights"]
 margin_right = 257.0
 margin_bottom = 24.0
-group = ExtResource( 87 )
+group = ExtResource( 86 )
 text = "CB_GAME_HANDICAP_DRAGONFLY_LANCES_KNIGHTS"
 script = ExtResource( 58 )
 
@@ -8973,7 +8551,7 @@ margin_right = 1920.0
 margin_bottom = 952.0
 rect_min_size = Vector2( 0, 952 )
 size_flags_vertical = 0
-script = ExtResource( 88 )
+script = ExtResource( 87 )
 
 [node name="Panel" type="PopupPanel" parent="MainContainer/MainLayout/Screens/JoinIPScreen"]
 visible = true
@@ -8981,7 +8559,7 @@ margin_left = 393.0
 margin_top = 194.0
 margin_right = 1527.0
 margin_bottom = 757.0
-script = ExtResource( 89 )
+script = ExtResource( 88 )
 
 [node name="VBox" type="VBoxContainer" parent="MainContainer/MainLayout/Screens/JoinIPScreen/Panel"]
 margin_right = 1134.0
@@ -9012,7 +8590,7 @@ margin_left = 54.0
 margin_right = 78.0
 margin_bottom = 24.0
 pressed = true
-group = SubResource( 16 )
+group = SubResource( 10 )
 
 [node name="IPV4Desc" type="Label" parent="MainContainer/MainLayout/Screens/JoinIPScreen/Panel/VBox/VBoxIP/HBoxIPV4"]
 margin_left = 82.0
@@ -9075,7 +8653,7 @@ rect_min_size = Vector2( 50, 0 )
 margin_left = 54.0
 margin_right = 78.0
 margin_bottom = 24.0
-group = SubResource( 16 )
+group = SubResource( 10 )
 
 [node name="IPV6Desc" type="Label" parent="MainContainer/MainLayout/Screens/JoinIPScreen/Panel/VBox/VBoxIP/HBoxIPV6"]
 margin_left = 82.0
@@ -9190,12 +8768,13 @@ margin_right = 1077.0
 margin_bottom = 366.0
 
 [node name="LoginScreen" type="CenterContainer" parent="MainContainer/MainLayout/Screens"]
+editor/display_folded = true
 visible = false
 margin_right = 1920.0
 margin_bottom = 952.0
 rect_min_size = Vector2( 0, 952 )
 size_flags_vertical = 0
-script = ExtResource( 90 )
+script = ExtResource( 89 )
 
 [node name="LoginPanel" type="PopupPanel" parent="MainContainer/MainLayout/Screens/LoginScreen"]
 visible = true
@@ -9206,7 +8785,7 @@ margin_bottom = 826.0
 rect_min_size = Vector2( 800, 700 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 89 )
+script = ExtResource( 88 )
 
 [node name="VBox" type="VBoxContainer" parent="MainContainer/MainLayout/Screens/LoginScreen/LoginPanel"]
 margin_right = 977.0
@@ -9404,7 +8983,7 @@ margin_bottom = 826.0
 rect_min_size = Vector2( 1800, 700 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 89 )
+script = ExtResource( 88 )
 
 [node name="VBox" type="VBoxContainer" parent="MainContainer/MainLayout/Screens/LoginScreen/RestorePassword"]
 margin_right = 1800.0
@@ -9483,7 +9062,7 @@ margin_top = 426.0
 margin_right = 1160.0
 margin_bottom = 526.0
 rect_min_size = Vector2( 400, 100 )
-script = ExtResource( 89 )
+script = ExtResource( 88 )
 
 [node name="Box" type="CenterContainer" parent="MainContainer/MainLayout/Screens/LoginScreen/ConnectionPanel"]
 margin_right = 400.0
@@ -9507,7 +9086,7 @@ margin_top = 426.0
 margin_right = 1560.0
 margin_bottom = 526.0
 rect_min_size = Vector2( 1200, 100 )
-script = ExtResource( 89 )
+script = ExtResource( 88 )
 
 [node name="Box" type="CenterContainer" parent="MainContainer/MainLayout/Screens/LoginScreen/ConnectionDonePanel"]
 margin_right = 1200.0
@@ -9533,7 +9112,7 @@ margin_bottom = 823.0
 rect_min_size = Vector2( 900, 500 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 89 )
+script = ExtResource( 88 )
 
 [node name="VBox" type="VBoxContainer" parent="MainContainer/MainLayout/Screens/LoginScreen/RegPanel"]
 margin_right = 1596.0
@@ -9677,9 +9256,9 @@ margin_top = 177.0
 margin_right = 225.0
 margin_bottom = 327.0
 rect_min_size = Vector2( 225, 150 )
-texture_normal = ExtResource( 91 )
+texture_normal = ExtResource( 90 )
 expand = true
-script = ExtResource( 92 )
+script = ExtResource( 91 )
 tooltip_enabled = true
 tooltip_align = 1
 tooltip = ""
@@ -9749,7 +9328,7 @@ editor/display_folded = true
 visible = false
 margin_right = 1920.0
 margin_bottom = 952.0
-script = ExtResource( 93 )
+script = ExtResource( 92 )
 
 [node name="AccountInfoPanel" type="PopupPanel" parent="MainContainer/MainLayout/Screens/AccountScreen"]
 margin_left = 260.0
@@ -9757,7 +9336,7 @@ margin_top = 16.0
 margin_right = 1660.0
 margin_bottom = 936.0
 rect_min_size = Vector2( 1400, 920 )
-script = ExtResource( 94 )
+script = ExtResource( 93 )
 
 [node name="VBox" type="VBoxContainer" parent="MainContainer/MainLayout/Screens/AccountScreen/AccountInfoPanel"]
 margin_right = 1400.0
@@ -9800,7 +9379,7 @@ margin_top = -130.0
 margin_right = 150.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 256, 256 )
-texture = ExtResource( 95 )
+texture = ExtResource( 94 )
 expand = true
 stretch_mode = 1
 
@@ -9850,7 +9429,7 @@ margin_bottom = -334.0
 rect_min_size = Vector2( 64, 32 )
 expand = true
 stretch_mode = 5
-script = ExtResource( 92 )
+script = ExtResource( 91 )
 
 [node name="ExtraData" type="HBoxContainer" parent="MainContainer/MainLayout/Screens/AccountScreen/AccountInfoPanel/VBox/HLayout/VLayout/GeneralInfo/VBox"]
 editor/display_folded = true
@@ -9895,7 +9474,7 @@ margin_bottom = 40.0
 [node name="GenderBox" type="TextureRect" parent="MainContainer/MainLayout/Screens/AccountScreen/AccountInfoPanel/VBox/HLayout/VLayout/GeneralInfo/VBox/ExtraData/GenderBox"]
 margin_right = 32.0
 margin_bottom = 32.0
-texture = ExtResource( 96 )
+texture = ExtResource( 95 )
 expand = true
 
 [node name="HBox" type="HBoxContainer" parent="MainContainer/MainLayout/Screens/AccountScreen/AccountInfoPanel/VBox/HLayout/VLayout"]
@@ -10221,7 +9800,7 @@ margin_top = 154.0
 margin_right = 1447.0
 margin_bottom = 797.0
 rect_min_size = Vector2( 0, 400 )
-script = ExtResource( 94 )
+script = ExtResource( 93 )
 
 [node name="VBox" type="VBoxContainer" parent="MainContainer/MainLayout/Screens/AccountScreen/ChangePasswordPanel"]
 margin_right = 974.0
@@ -10468,7 +10047,7 @@ margin_top = 274.0
 margin_right = 1282.0
 margin_bottom = 678.0
 rect_min_size = Vector2( 0, 400 )
-script = ExtResource( 94 )
+script = ExtResource( 93 )
 
 [node name="VBox" type="VBoxContainer" parent="MainContainer/MainLayout/Screens/AccountScreen/ChangePublicDataPanel"]
 margin_right = 645.0
@@ -10552,7 +10131,7 @@ margin_bottom = 40.0
 rect_min_size = Vector2( 64, 32 )
 expand = true
 stretch_mode = 5
-script = ExtResource( 92 )
+script = ExtResource( 91 )
 
 [node name="Offset2" type="ReferenceRect" parent="MainContainer/MainLayout/Screens/AccountScreen/ChangePublicDataPanel/VBox/Layout"]
 margin_right = 40.0
@@ -10610,7 +10189,7 @@ margin_top = 202.0
 margin_right = 1409.0
 margin_bottom = 750.0
 rect_min_size = Vector2( 0, 350 )
-script = ExtResource( 94 )
+script = ExtResource( 93 )
 
 [node name="VBox" type="VBoxContainer" parent="MainContainer/MainLayout/Screens/AccountScreen/DeleteAccountPanel"]
 margin_right = 898.0
@@ -10805,13 +10384,14 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="ServerScreen" type="CenterContainer" parent="MainContainer/MainLayout/Screens"]
+editor/display_folded = true
 visible = false
 margin_right = 1956.0
 margin_bottom = 952.0
 rect_min_size = Vector2( 0, 952 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
-script = ExtResource( 97 )
+script = ExtResource( 96 )
 
 [node name="VBox" type="VBoxContainer" parent="MainContainer/MainLayout/Screens/ServerScreen"]
 margin_left = 28.0
@@ -10854,7 +10434,7 @@ margin_bottom = 144.0
 rect_min_size = Vector2( 0, 60 )
 custom_constants/separation = 0
 
-[node name="Header" parent="MainContainer/MainLayout/Screens/ServerScreen/VBox/Header/VBoxContainer" instance=ExtResource( 98 )]
+[node name="Header" parent="MainContainer/MainLayout/Screens/ServerScreen/VBox/Header/VBoxContainer" instance=ExtResource( 97 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 1956.0
@@ -10964,7 +10544,7 @@ margin_right = 2560.0
 margin_bottom = 952.0
 rect_min_size = Vector2( 0, 952 )
 size_flags_vertical = 0
-script = ExtResource( 99 )
+script = ExtResource( 98 )
 
 [node name="SimpleLayout" type="VBoxContainer" parent="MainContainer/MainLayout/Screens/QuitConfirmationScreen"]
 margin_left = 1107.0
@@ -10973,7 +10553,7 @@ margin_right = 1453.0
 margin_bottom = 612.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 100 )
+theme = ExtResource( 99 )
 
 [node name="QuitQuestion" type="Label" parent="MainContainer/MainLayout/Screens/QuitConfirmationScreen/SimpleLayout"]
 margin_right = 759.0
@@ -11015,16 +10595,14 @@ margin_right = 373.0
 margin_bottom = 157.0
 rect_min_size = Vector2( 300, 5 )
 size_flags_horizontal = 3
-theme = SubResource( 11 )
 
 [node name="GoodbayScreen" type="CenterContainer" parent="MainContainer/MainLayout/Screens"]
-editor/display_folded = true
 visible = false
 margin_right = 1920.0
 margin_bottom = 952.0
 rect_min_size = Vector2( 0, 952 )
 size_flags_vertical = 0
-script = ExtResource( 101 )
+script = ExtResource( 100 )
 
 [node name="VBox" type="VBoxContainer" parent="MainContainer/MainLayout/Screens/GoodbayScreen"]
 margin_left = 810.0
@@ -11072,14 +10650,12 @@ margin_bottom = 232.0
 rect_min_size = Vector2( 300, 5 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = SubResource( 11 )
 
 [node name="QuitTimer" type="Timer" parent="MainContainer/MainLayout/Screens/GoodbayScreen"]
 wait_time = 4.0
 one_shot = true
 
 [node name="ExtrasScreen" type="CenterContainer" parent="MainContainer/MainLayout/Screens"]
-editor/display_folded = true
 visible = false
 margin_top = 269.0
 margin_right = 1920.0
@@ -11087,16 +10663,14 @@ margin_bottom = 1221.0
 rect_min_size = Vector2( 0, 952 )
 focus_mode = 2
 size_flags_vertical = 0
-script = ExtResource( 102 )
+script = ExtResource( 101 )
 
 [node name="SimpleLayout" type="VBoxContainer" parent="MainContainer/MainLayout/Screens/ExtrasScreen"]
-editor/display_folded = true
-margin_left = 536.0
-margin_top = 153.0
-margin_right = 1383.0
-margin_bottom = 798.0
+margin_left = 739.0
+margin_top = 290.0
+margin_right = 1180.0
+margin_bottom = 661.0
 focus_mode = 2
-theme = SubResource( 19 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -11104,7 +10678,6 @@ __meta__ = {
 [node name="Title" type="Label" parent="MainContainer/MainLayout/Screens/ExtrasScreen/SimpleLayout"]
 margin_right = 847.0
 margin_bottom = 85.0
-theme = SubResource( 19 )
 text = "Разное"
 align = 1
 __meta__ = {
@@ -11116,7 +10689,6 @@ visible = false
 margin_top = 163.0
 margin_right = 847.0
 margin_bottom = 256.0
-theme = SubResource( 19 )
 text = "Miscellaneous"
 align = 1
 __meta__ = {
@@ -11129,7 +10701,7 @@ margin_top = 89.0
 margin_right = 847.0
 margin_bottom = 645.0
 focus_mode = 2
-theme = ExtResource( 104 )
+theme = ExtResource( 102 )
 alignment = 1
 __meta__ = {
 "_edit_lock_": true
@@ -11140,7 +10712,7 @@ margin_right = 847.0
 margin_bottom = 91.0
 focus_neighbour_top = NodePath("../QuitBtn")
 focus_neighbour_bottom = NodePath("../NewGameBtn")
-theme = SubResource( 19 )
+theme = SubResource( 12 )
 text = "Авторы"
 flat = true
 __meta__ = {
@@ -11153,7 +10725,7 @@ margin_right = 847.0
 margin_bottom = 184.0
 focus_neighbour_top = NodePath("../QuickGameBtn")
 focus_neighbour_bottom = NodePath("../ReplaysBtn")
-theme = SubResource( 19 )
+theme = SubResource( 12 )
 text = "Инструменты создания"
 flat = true
 __meta__ = {
@@ -11166,7 +10738,7 @@ margin_right = 847.0
 margin_bottom = 277.0
 focus_neighbour_top = NodePath("../ReplaysBtn")
 focus_neighbour_bottom = NodePath("../TutorialsBtn")
-theme = SubResource( 19 )
+theme = SubResource( 12 )
 text = "История создания"
 flat = true
 __meta__ = {
@@ -11179,7 +10751,7 @@ margin_right = 847.0
 margin_bottom = 370.0
 focus_neighbour_top = NodePath("../ReplaysBtn")
 focus_neighbour_bottom = NodePath("../TutorialsBtn")
-theme = SubResource( 19 )
+theme = SubResource( 12 )
 text = "Пожертовать"
 flat = true
 __meta__ = {
@@ -11192,7 +10764,7 @@ margin_right = 847.0
 margin_bottom = 463.0
 focus_neighbour_top = NodePath("../ReplaysBtn")
 focus_neighbour_bottom = NodePath("../TutorialsBtn")
-theme = SubResource( 19 )
+theme = SubResource( 12 )
 text = "Полезные ссылки"
 flat = true
 __meta__ = {
@@ -11205,7 +10777,7 @@ margin_right = 847.0
 margin_bottom = 556.0
 focus_neighbour_top = NodePath("../CreditsBtn")
 focus_neighbour_bottom = NodePath("../QuickGameBtn")
-theme = SubResource( 19 )
+theme = SubResource( 12 )
 text = "Назад"
 flat = true
 __meta__ = {
@@ -11219,7 +10791,7 @@ margin_right = 1920.0
 margin_bottom = 952.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 105 )
+script = ExtResource( 103 )
 
 [node name="PanelEN" type="PanelContainer" parent="MainContainer/MainLayout/Screens/CountrySelectionScreen"]
 margin_top = 1.0
@@ -11240,7 +10812,7 @@ margin_bottom = 950.0
 focus_mode = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 106 )
+theme = ExtResource( 104 )
 script = ExtResource( 55 )
 full_scale = true
 
@@ -11300,14 +10872,14 @@ editor/display_folded = true
 visible = false
 margin_right = 1920.0
 margin_bottom = 952.0
-script = ExtResource( 107 )
+script = ExtResource( 105 )
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MainContainer/MainLayout/Screens/AvatarSelectionScreen"]
 margin_left = 960.0
 margin_top = 476.0
 margin_right = 960.0
 margin_bottom = 476.0
-theme = ExtResource( 106 )
+theme = ExtResource( 104 )
 script = ExtResource( 55 )
 full_scale = true
 
@@ -11319,29 +10891,25 @@ columns = 3
 modulate = Color( 1, 1, 1, 0 )
 
 [node name="TagContainer" type="VBoxContainer" parent="MainContainer/MainLayout/Screens/AvatarSelectionScreen/ScrollContainer/Grid"]
-editor/display_folded = true
 margin_left = 100.0
 margin_right = 100.0
 
 [node name="TopOffset" type="Panel" parent="MainContainer/MainLayout/Screens/AvatarSelectionScreen/ScrollContainer/Grid/TagContainer"]
 modulate = Color( 1, 1, 1, 0 )
-theme = SubResource( 11 )
 
 [node name="AvatarContainer" type="VBoxContainer" parent="MainContainer/MainLayout/Screens/AvatarSelectionScreen/ScrollContainer/Grid"]
-editor/display_folded = true
 margin_left = 200.0
 margin_right = 200.0
 
 [node name="TopOffset" type="Panel" parent="MainContainer/MainLayout/Screens/AvatarSelectionScreen/ScrollContainer/Grid/AvatarContainer"]
 modulate = Color( 1, 1, 1, 0 )
-theme = SubResource( 11 )
 
 [node name="ColorSelectionScreen" type="CenterContainer" parent="MainContainer/MainLayout/Screens"]
 editor/display_folded = true
 visible = false
 margin_right = 1920.0
 margin_bottom = 952.0
-script = ExtResource( 108 )
+script = ExtResource( 106 )
 
 [node name="Panel" type="PanelContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen"]
 margin_left = 960.0
@@ -11352,7 +10920,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel"]
-editor/display_folded = true
 margin_right = 30.0
 margin_bottom = 30.0
 size_flags_horizontal = 3
@@ -11361,7 +10928,6 @@ script = ExtResource( 55 )
 full_scale = true
 
 [node name="Grid" type="GridContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer"]
-editor/display_folded = true
 margin_right = 30.0
 margin_bottom = 30.0
 size_flags_horizontal = 3
@@ -11384,7 +10950,6 @@ custom_constants/separation = 95
 [node name="TopOffset" type="Panel" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/CategoryContainer"]
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 300.0
-theme = SubResource( 11 )
 
 [node name="Red" type="Label" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/CategoryContainer"]
 margin_top = 95.0
@@ -11392,7 +10957,7 @@ margin_right = 300.0
 margin_bottom = 281.0
 rect_min_size = Vector2( 300, 186 )
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 84 )
+custom_fonts/font = ExtResource( 107 )
 text = "Red"
 align = 1
 valign = 1
@@ -11403,7 +10968,7 @@ margin_right = 300.0
 margin_bottom = 562.0
 rect_min_size = Vector2( 300, 186 )
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 84 )
+custom_fonts/font = ExtResource( 107 )
 text = "Pink"
 align = 1
 valign = 1
@@ -11414,7 +10979,7 @@ margin_right = 300.0
 margin_bottom = 843.0
 rect_min_size = Vector2( 300, 186 )
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 84 )
+custom_fonts/font = ExtResource( 107 )
 text = "Orange"
 align = 1
 valign = 1
@@ -11425,7 +10990,7 @@ margin_right = 300.0
 margin_bottom = 1124.0
 rect_min_size = Vector2( 300, 186 )
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 84 )
+custom_fonts/font = ExtResource( 107 )
 text = "Yellow"
 align = 1
 valign = 1
@@ -11436,7 +11001,7 @@ margin_right = 300.0
 margin_bottom = 1405.0
 rect_min_size = Vector2( 300, 186 )
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 84 )
+custom_fonts/font = ExtResource( 107 )
 text = "Green"
 align = 1
 valign = 1
@@ -11447,7 +11012,7 @@ margin_right = 300.0
 margin_bottom = 1686.0
 rect_min_size = Vector2( 300, 186 )
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 84 )
+custom_fonts/font = ExtResource( 107 )
 text = "Black"
 align = 1
 valign = 1
@@ -11462,7 +11027,6 @@ modulate = Color( 1, 1, 1, 0 )
 margin_right = 4030.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 0, 50 )
-theme = SubResource( 11 )
 
 [node name="HBoxRed" type="HBoxContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer"]
 margin_top = 95.0
@@ -11476,7 +11040,7 @@ editor/display_folded = true
 margin_right = 230.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxRed/RED"]
 editor/display_folded = true
@@ -11505,7 +11069,7 @@ margin_left = 380.0
 margin_right = 610.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxRed/INDIAN_RED"]
 editor/display_folded = true
@@ -11534,7 +11098,7 @@ margin_left = 760.0
 margin_right = 990.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxRed/LIGHT_CORAL"]
 margin_right = 230.0
@@ -11562,7 +11126,7 @@ margin_left = 1140.0
 margin_right = 1370.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxRed/SALMON"]
 margin_right = 230.0
@@ -11590,7 +11154,7 @@ margin_left = 1520.0
 margin_right = 1750.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxRed/DARK_SALMON"]
 margin_right = 230.0
@@ -11618,7 +11182,7 @@ margin_left = 1900.0
 margin_right = 2130.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxRed/LIGHT_SALMON"]
 margin_right = 230.0
@@ -11646,7 +11210,7 @@ margin_left = 2280.0
 margin_right = 2510.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxRed/CRIMSON"]
 margin_right = 230.0
@@ -11674,7 +11238,7 @@ margin_left = 2660.0
 margin_right = 2890.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxRed/FIRE_BRICK"]
 editor/display_folded = true
@@ -11703,7 +11267,7 @@ margin_left = 3040.0
 margin_right = 3270.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxRed/DARK_RED"]
 margin_right = 230.0
@@ -11739,7 +11303,7 @@ editor/display_folded = true
 margin_right = 230.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxPink/PINK"]
 margin_right = 230.0
@@ -11767,7 +11331,7 @@ margin_left = 380.0
 margin_right = 610.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxPink/LIGHT_PINK"]
 margin_right = 230.0
@@ -11795,7 +11359,7 @@ margin_left = 760.0
 margin_right = 990.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxPink/HOT_PINK"]
 margin_right = 230.0
@@ -11823,7 +11387,7 @@ margin_left = 1140.0
 margin_right = 1370.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxPink/DEEP_PINK"]
 margin_right = 230.0
@@ -11851,7 +11415,7 @@ margin_left = 1520.0
 margin_right = 1750.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxPink/MEDIUM_VIOLET_RED"]
 margin_right = 230.0
@@ -11879,7 +11443,7 @@ margin_left = 1900.0
 margin_right = 2130.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxPink/PALE_VIOLET_RED"]
 margin_right = 230.0
@@ -11913,7 +11477,7 @@ editor/display_folded = true
 margin_right = 230.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxOrange/ORANGE"]
 margin_right = 230.0
@@ -11941,7 +11505,7 @@ margin_left = 380.0
 margin_right = 610.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxOrange/LIGHT_SALMON"]
 margin_right = 230.0
@@ -11969,7 +11533,7 @@ margin_left = 760.0
 margin_right = 990.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxOrange/CORAL"]
 margin_right = 230.0
@@ -11997,7 +11561,7 @@ margin_left = 1140.0
 margin_right = 1370.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxOrange/TOMATO"]
 margin_right = 230.0
@@ -12025,7 +11589,7 @@ margin_left = 1520.0
 margin_right = 1750.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxOrange/ORANGE_RED"]
 margin_right = 230.0
@@ -12053,7 +11617,7 @@ margin_left = 1900.0
 margin_right = 2130.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxOrange/DARK_ORANGE"]
 margin_right = 230.0
@@ -12087,7 +11651,7 @@ editor/display_folded = true
 margin_right = 230.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxYellow/YELLOW"]
 editor/display_folded = true
@@ -12116,7 +11680,7 @@ margin_left = 380.0
 margin_right = 610.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxYellow/GOLD"]
 margin_right = 230.0
@@ -12144,7 +11708,7 @@ margin_left = 760.0
 margin_right = 990.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxYellow/LIGHT_YELLOW"]
 margin_right = 230.0
@@ -12172,7 +11736,7 @@ margin_left = 1140.0
 margin_right = 1370.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxYellow/LEMON_CHIFFON"]
 margin_right = 230.0
@@ -12200,7 +11764,7 @@ margin_left = 1520.0
 margin_right = 1750.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxYellow/LIGHT_GOLDENROD_YELLOW"]
 margin_right = 230.0
@@ -12228,7 +11792,7 @@ margin_left = 1900.0
 margin_right = 2130.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxYellow/PAPAYA_WHIP"]
 margin_right = 230.0
@@ -12256,7 +11820,7 @@ margin_left = 2280.0
 margin_right = 2510.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxYellow/MOCCASIN"]
 margin_right = 230.0
@@ -12284,7 +11848,7 @@ margin_left = 2660.0
 margin_right = 2890.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxYellow/PEACH_PUFF"]
 margin_right = 230.0
@@ -12312,7 +11876,7 @@ margin_left = 3040.0
 margin_right = 3270.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxYellow/PALE_GOLDENROD"]
 margin_right = 230.0
@@ -12340,7 +11904,7 @@ margin_left = 3420.0
 margin_right = 3650.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxYellow/KHAKI"]
 margin_right = 230.0
@@ -12368,7 +11932,7 @@ margin_left = 3800.0
 margin_right = 4030.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxYellow/DARK_KHAKI"]
 margin_right = 230.0
@@ -12402,7 +11966,7 @@ editor/display_folded = true
 margin_right = 230.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxGreen/GREEN_YELLOW"]
 margin_right = 230.0
@@ -12430,7 +11994,7 @@ margin_left = 380.0
 margin_right = 610.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxGreen/CHARTREUSE"]
 margin_right = 230.0
@@ -12458,7 +12022,7 @@ margin_left = 760.0
 margin_right = 990.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxGreen/LAWNGREEN"]
 margin_right = 230.0
@@ -12486,7 +12050,7 @@ margin_left = 1140.0
 margin_right = 1370.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxGreen/LIME"]
 margin_right = 230.0
@@ -12514,7 +12078,7 @@ margin_left = 1520.0
 margin_right = 1750.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxGreen/LIME_GREEN"]
 margin_right = 230.0
@@ -12542,7 +12106,7 @@ margin_left = 1900.0
 margin_right = 2130.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxGreen/PALE_GREEN"]
 margin_right = 230.0
@@ -12570,7 +12134,7 @@ margin_left = 2280.0
 margin_right = 2510.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxGreen/LIGHT_GREEN"]
 margin_right = 230.0
@@ -12598,7 +12162,7 @@ margin_left = 2660.0
 margin_right = 2890.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxGreen/MEDIUM_SPRING_GREEN"]
 margin_right = 230.0
@@ -12626,7 +12190,7 @@ margin_left = 3040.0
 margin_right = 3270.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxGreen/SPRING_GREEN"]
 margin_right = 230.0
@@ -12660,7 +12224,7 @@ editor/display_folded = true
 margin_right = 230.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxBlackAndGray/BLACK"]
 editor/display_folded = true
@@ -12689,7 +12253,7 @@ margin_left = 380.0
 margin_right = 610.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxBlackAndGray/GAINSBORO"]
 editor/display_folded = true
@@ -12718,7 +12282,7 @@ margin_left = 760.0
 margin_right = 990.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxBlackAndGray/LIGHT_GRAY"]
 margin_right = 230.0
@@ -12746,7 +12310,7 @@ margin_left = 1140.0
 margin_right = 1370.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxBlackAndGray/SILVER"]
 margin_right = 230.0
@@ -12774,7 +12338,7 @@ margin_left = 1520.0
 margin_right = 1750.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxBlackAndGray/DARK_GRAY"]
 margin_right = 230.0
@@ -12802,7 +12366,7 @@ margin_left = 1900.0
 margin_right = 2130.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxBlackAndGray/GRAY"]
 margin_right = 230.0
@@ -12830,7 +12394,7 @@ margin_left = 2280.0
 margin_right = 2510.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxBlackAndGray/DIM_GRAY"]
 margin_right = 230.0
@@ -12858,7 +12422,7 @@ margin_left = 2660.0
 margin_right = 2890.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxBlackAndGray/LIGHT_SLATE_GRAY"]
 margin_right = 230.0
@@ -12886,7 +12450,7 @@ margin_left = 3040.0
 margin_right = 3270.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxBlackAndGray/SLATE_GRAY"]
 margin_right = 230.0
@@ -12914,7 +12478,7 @@ margin_left = 3420.0
 margin_right = 3650.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 109 )
+theme = ExtResource( 108 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxBlackAndGray/DARK_SLATE_GRAY"]
 margin_right = 230.0
@@ -12950,7 +12514,7 @@ margin_top = 390.0
 margin_right = 1430.0
 margin_bottom = 690.0
 rect_min_size = Vector2( 300, 300 )
-script = ExtResource( 110 )
+script = ExtResource( 109 )
 
 [node name="VBox" type="VBoxContainer" parent="MainContainer/LoadingPanel"]
 margin_right = 300.0
@@ -12969,7 +12533,7 @@ margin_bottom = 14.0
 text = "LABEL_LOADING"
 align = 1
 
-[node name="Game" parent="MainContainer" instance=ExtResource( 111 )]
+[node name="Game" parent="MainContainer" instance=ExtResource( 110 )]
 editor/display_folded = true
 margin_top = 128.0
 margin_bottom = 1208.0
@@ -12983,19 +12547,19 @@ margin_right = 1920.0
 margin_bottom = 483.0
 
 [node name="UISFX" type="AudioStreamPlayer" parent="."]
-script = ExtResource( 112 )
+script = ExtResource( 111 )
 
 [node name="BackgroundMusic" type="Node" parent="."]
 editor/display_folded = true
-script = ExtResource( 113 )
+script = ExtResource( 112 )
 
 [node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="BackgroundMusic"]
 autoplay = true
 
-[node name="DeleteFileDialog" parent="." instance=ExtResource( 114 )]
+[node name="DeleteFileDialog" parent="." instance=ExtResource( 113 )]
 visible = false
 
-[node name="DeleteProfileDialog" parent="." instance=ExtResource( 114 )]
+[node name="DeleteProfileDialog" parent="." instance=ExtResource( 113 )]
 visible = false
 
 [connection signal="pressed" from="MainContainer/MainLayout/TopBar/HBox/LeftWidgetBox/BackBtnWidget" to="." method="_on_BackBtnWidget_pressed"]

@@ -38,9 +38,9 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GodotSharp, Version=1.0.6949.19682, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="GodotSharp, Version=1.0.6953.30370, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Users\chaos\AppData\Roaming\Godot\mono\solutions\4760267815245497075_5_1546442693\GodotSharp\bin\Release\GodotSharp.dll</HintPath>
+      <HintPath>..\..\Users\chaos\AppData\Roaming\Godot\mono\solutions\15093042477017170103_5_1546442693\GodotSharp\bin\Release\GodotSharp.dll</HintPath>
     </Reference>
     <Reference Include="LiteNetLib">
       <HintPath>Libs\LiteNetLib.dll</HintPath>

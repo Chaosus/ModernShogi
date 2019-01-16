@@ -69,6 +69,7 @@ func start_join_session():
 func join_game(session):
 	_pre_load()
 	yield(self, "preload_completed")
+	game_screen.obsmode = session.is_observer()
 	game_screen.init_game(session)
 	_post_load()
 	
