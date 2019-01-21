@@ -8,6 +8,8 @@ signal destroyed
 
 func _ready():
 	UI.add_theme_element(self)
+	rect_scale = UI.scale
+	self_modulate.a = 0.88
 	hide()
 		
 func apply_theme(theme):

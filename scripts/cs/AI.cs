@@ -1,4 +1,4 @@
-﻿using Godot;
+using Godot;
 using System;
 using System.Collections.Generic;
 
@@ -105,8 +105,6 @@ public class AI : Node
         UCIEngine.Shutdown();
     }
 
-    #region Godot's handlers
-
     private Node game;
 
     public bool MoveLock()
@@ -171,6 +169,4 @@ public class AI : Node
         }
         base._PhysicsProcess(delta);
     }
-
-    #endregion
 }

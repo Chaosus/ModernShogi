@@ -1474,7 +1474,7 @@ func _input(event):
 		if event.pressed:
 			match event.scancode:
 				KEY_T:
-					ms_show_joining_dialog(0, "Chaosus", 0, 22, 1200, 0, 0, 0)
+					#ms_show_joining_dialog(0, "Chaosus", 0, 22, 1200, 0, 0, 0)
 					#gui.show_promotion_dialog(null)
 					#spawn_test_arrow(null, get_nest(1, 1), Games.ShogiPieceTypes.BISHOP, session.turn_side)
 					pass

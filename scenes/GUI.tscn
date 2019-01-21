@@ -245,7 +245,6 @@ margin_bottom = 322.0
 rect_min_size = Vector2( 0, 50 )
 
 [node name="GameOverDialog" type="PopupPanel" parent="Box"]
-editor/display_folded = true
 margin_right = 900.0
 margin_bottom = 320.0
 rect_min_size = Vector2( 900, 320 )
@@ -901,6 +900,7 @@ margin_right = 186.0
 margin_bottom = 684.0
 
 [node name="HistoryPanel" type="PopupPanel" parent="Box"]
+editor/display_folded = true
 self_modulate = Color( 1, 1, 1, 0.501961 )
 margin_left = 1078.0
 margin_top = 128.0

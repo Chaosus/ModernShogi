@@ -54,6 +54,7 @@
     <Compile Include="ServerAnswer.cs" />
     <Compile Include="ShogiHandicaps.cs" />
     <Compile Include="Side.cs" />
+    <Compile Include="TimerOp.cs" />
     <Compile Include="UserData.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

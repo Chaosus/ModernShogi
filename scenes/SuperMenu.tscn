@@ -1169,6 +1169,7 @@ align = 3
 valign = 3
 
 [node name="MainContainer" type="Container" parent="."]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 1920.0
@@ -1684,7 +1685,6 @@ expand = true
 stretch_mode = 3
 script = ExtResource( 12 )
 unnamed = true
-tag = 0
 tooltip_align = 1
 
 [node name="DescriptionsList" type="VBoxContainer" parent="MainContainer/MainLayout/Screens/FirstScreen/FirstScreenBox/VBox"]
@@ -9261,7 +9261,6 @@ expand = true
 script = ExtResource( 91 )
 tooltip_enabled = true
 tooltip_align = 1
-tooltip = ""
 
 [node name="CountrySelectionCurrent" type="Label" parent="MainContainer/MainLayout/Screens/LoginScreen/RegPanel/VBox/Data/HBox/VBox2"]
 visible = false

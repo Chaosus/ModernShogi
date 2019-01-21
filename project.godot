@@ -19,7 +19,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/ui/FadeElement.gd"
 }, {
-"base": "Control",
+"base": "",
 "class": "HostScreen",
 "language": "GDScript",
 "path": "res://scripts/screens/HostScreen.gd"
