@@ -42,6 +42,9 @@
     <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="GodotSharp">
+      <HintPath>.mono\assemblies\GodotSharp.dll</HintPath>
+    </Reference>
     <Reference Include="LiteNetLib">
       <HintPath>..\LiteNetLib\LiteNetLib\bin\Release\LiteNetLib.dll</HintPath>
     </Reference>

@@ -1,0 +1,14 @@
+
+\.import/
+
+*.import
+
+\.mono/
+
+\.vs/
+
+ShogiNet/bin/
+
+ShogiNet/obj/
+
+*.translation
