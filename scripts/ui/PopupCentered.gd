@@ -16,7 +16,11 @@ func _ready():
 	rect_scale = UI.scale
 	hide()
 	update_position()
-	
+
+func _notification(what):
+	if what == NOTIFICATION_PREDELETE:
+		UI.remove_theme_element(self) 
+
 func update_mode(mode):
 	self.mode = mode
 	if mode == 0:

@@ -48,29 +48,28 @@ func on_already_connected():
 	
 # Возникает при закрытиии соединения с сервером
 func on_connection_fail(reason):
-	yield($ConnectionPanel.beautiful_hide(), "fade_completed")
-	if reason == 0:
-		if !was_connected:
-			$ConnectionDonePanel/Box/Desc.text = "LABEL_SERVER_CONNECTION_FAIL"
+	if connection:
+		yield($ConnectionPanel.beautiful_hide(), "fade_completed")
+		if reason == 0:
+			if !was_connected:
+				$ConnectionDonePanel/Box/Desc.text = "LABEL_SERVER_CONNECTION_FAIL"
+			else:
+				$ConnectionDonePanel/Box/Desc.text = "LABEL_SERVER_CLOSED"
+		elif reason == 1: # invalid login
+			$ConnectionDonePanel/Box/Desc.text = "MP_INVALID_LOGIN"
+		elif reason == 2: # already been logged
+			$ConnectionDonePanel/Box/Desc.text = "MP_ALREADY_LOGON"
+		elif reason == 3: # banned
+			$ConnectionDonePanel/Box/Desc.text = "MP_BANNED"
 		else:
-			$ConnectionDonePanel/Box/Desc.text = "LABEL_SERVER_CLOSED"
-	elif reason == 1: # invalid login
-		$ConnectionDonePanel/Box/Desc.text = "MP_INVALID_LOGIN"
-	elif reason == 2: # already been logged
-		$ConnectionDonePanel/Box/Desc.text = "MP_ALREADY_LOGON"
-	elif reason == 3: # banned
-		$ConnectionDonePanel/Box/Desc.text = "MP_BANNED"
-	else:
-		$ConnectionDonePanel/Box/Desc.text = "LABEL_UNKNOWN_ERROR"
-	#if connection:
-	yield($ConnectionDonePanel.beautiful_show(), "fade_completed")
-	yield(get_tree().create_timer(1.5), "timeout")
-	yield($ConnectionDonePanel.beautiful_hide(), "fade_completed")
-#	if was_connected:
-#		UI.get_root().server_screen.goto_screen(UI.SCREEN_LOGIN, false)
-#	else:
-	$LoginPanel.beautiful_show()
-	was_connected = false
+			$ConnectionDonePanel/Box/Desc.text = "LABEL_UNKNOWN_ERROR"
+		yield($ConnectionDonePanel.beautiful_show(), "fade_completed")
+		yield(get_tree().create_timer(1.5), "timeout")
+		yield($ConnectionDonePanel.beautiful_hide(), "fade_completed")
+		
+		if connection:
+			$LoginPanel.beautiful_show()
+		was_connected = false
 
 func on_signup_success():
 	yield($ConnectionPanel.beautiful_hide(), "fade_completed")

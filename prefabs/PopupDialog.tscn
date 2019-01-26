@@ -3,7 +3,6 @@
 [ext_resource path="res://scripts/ui/PopupCentered.gd" type="Script" id=1]
 
 [node name="PopupDialog" type="PopupPanel"]
-visible = true
 self_modulate = Color( 1, 1, 1, 0.882353 )
 margin_right = 808.0
 margin_bottom = 38.0

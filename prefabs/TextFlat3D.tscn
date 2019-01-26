@@ -16,7 +16,6 @@ viewport_path = NodePath("Viewport")
 flags_transparent = true
 flags_unshaded = true
 albedo_texture = SubResource( 2 )
-roughness = 0.0
 
 [node name="TextFlat3D" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )

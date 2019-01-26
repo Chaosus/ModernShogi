@@ -11,7 +11,11 @@ func _ready():
 	rect_scale = UI.scale
 	self_modulate.a = 0.88
 	hide()
-		
+
+func _notification(what):
+	if what == NOTIFICATION_PREDELETE:
+		UI.remove_theme_element(self) 
+	
 func apply_theme(theme):
 	self.theme = theme
 
