@@ -24,7 +24,7 @@ For mine (Chaosus) comfortability. Dont change them in main repo at least.
 - loc - contains localization files
 - material - Google-Material theme which is used widely for UI in project 
 - materials - some Godot's materials
-- models - 3D models
+- models - obj models and meshes
 - sansara - color adjusted elements from Google-Material for Sansara themes
 - scenes - contains Godot's scenes(or prefabs)
 - scripts - contains C# and Godot's scripts

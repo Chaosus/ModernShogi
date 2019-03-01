@@ -1372,7 +1372,7 @@ func go_back_if_possible():
 			open_screen(UI.SCREEN_LIBRARY, true)
 			yield(gui.history_panel.beautiful_hide(), "fade_completed")
 
-onready var ai_log_item_preset = preload("res://prefabs/AILogItem.tscn")
+onready var ai_log_item_preset = preload("res://scenes/AILogItem.tscn")
 	
 var need_max_ai_log_scroll = false
 

@@ -96,7 +96,7 @@
 [ext_resource path="res://ui/avatars/blank_simple.jpg" type="Texture" id=94]
 [ext_resource path="res://ui/buttons/gender_male.png" type="Texture" id=95]
 [ext_resource path="res://scripts/screens/ServerScreen.gd" type="Script" id=96]
-[ext_resource path="res://prefabs/RemoteServerGameBox.tscn" type="PackedScene" id=97]
+[ext_resource path="res://scenes/RemoteServerGameBox.tscn" type="PackedScene" id=97]
 [ext_resource path="res://scripts/screens/QuitConfirmation.gd" type="Script" id=98]
 [ext_resource path="res://themes/hv_big_division.tres" type="Theme" id=99]
 [ext_resource path="res://scripts/GoodBayScreen.gd" type="Script" id=100]
@@ -112,7 +112,7 @@
 [ext_resource path="res://scenes/Game.tscn" type="PackedScene" id=110]
 [ext_resource path="res://scripts/UISFX.gd" type="Script" id=111]
 [ext_resource path="res://scripts/BackgroundMusic.gd" type="Script" id=112]
-[ext_resource path="res://prefabs/PopupDialog.tscn" type="PackedScene" id=113]
+[ext_resource path="res://scenes/PopupDialog.tscn" type="PackedScene" id=113]
 
 [sub_resource type="ButtonGroup" id=1]
 

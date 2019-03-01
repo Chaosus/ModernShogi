@@ -42,9 +42,11 @@
 [ext_resource path="res://ui/buttons/settings.png" type="Texture" id=40]
 [ext_resource path="res://material/dark_hvscroll.tres" type="Theme" id=41]
 [ext_resource path="res://scripts/panels/InfoPanelList.gd" type="Script" id=42]
-[ext_resource path="res://prefabs/GameInfoPanel.tscn" type="PackedScene" id=43]
+[ext_resource path="res://scenes/GameInfoPanel.tscn" type="PackedScene" id=43]
 [ext_resource path="res://scripts/ui/PopupCentered.gd" type="Script" id=44]
-[ext_resource path="res://prefabs/PlayerPanel.tscn" type="PackedScene" id=45]
+[ext_resource path="res://scenes/PlayerPanel.tscn" type="PackedScene" id=45]
+
+
 
 [node name="GUI" type="CanvasLayer"]
 script = ExtResource( 1 )

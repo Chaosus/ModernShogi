@@ -33,7 +33,7 @@ class StorageSection:
 	func _init(side, importance):
 		self.side = side
 		self.importance = importance
-		storage_prefab = preload("res://prefabs/StorageNest.tscn")
+		storage_prefab = preload("res://scenes/StorageNest.tscn")
 		
 	func cleanup():
 		stacks.clear()

@@ -1,6 +1,6 @@
 extends "res://scripts/UIScreen.gd"
 
-onready var remote_box_prefab = preload("res://prefabs/RemoteServerGameBox.tscn")
+onready var remote_box_prefab = preload("res://scenes/RemoteServerGameBox.tscn")
 onready var game_list = $VBox/Box/ServerList/ServerList
 onready var status_label = $VBox/Header/InfoContainer/StatusLabel
 

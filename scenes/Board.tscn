@@ -4,27 +4,21 @@
 [ext_resource path="res://materials/Grid.material" type="Material" id=2]
 
 [sub_resource type="CubeMesh" id=1]
-
 size = Vector3( 1, 1, 1 )
 
 [sub_resource type="SpatialMaterial" id=2]
-
 roughness = 0.0
 
 [sub_resource type="PlaneMesh" id=3]
-
 size = Vector2( 1, 1 )
 
 [sub_resource type="CubeMesh" id=4]
-
 size = Vector3( 1, 1, 1 )
 
 [sub_resource type="SpatialMaterial" id=5]
-
 roughness = 0.0
 
 [sub_resource type="SpatialMaterial" id=6]
-
 roughness = 0.0
 
 [node name="Board" type="Spatial"]

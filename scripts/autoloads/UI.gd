@@ -1714,7 +1714,7 @@ func get_master_port():
 
 # Вызов диалога, Режимы - 0(YesNo), 1(NoYes), 2(Ok)
 func call_dialog(desc, button_mode = 2):
-	var dialog = preload("res://prefabs/PopupDialog.tscn").instance()
+	var dialog = preload("res://scenes/PopupDialog.tscn").instance()
 	dialog.self_destruct = true
 	dialog.update_mode(button_mode)
 	get_current_screen().add_child(dialog)
@@ -1735,7 +1735,7 @@ func call_data_dialog(caption, desc):
 
 # Вызов диалога присоединения к обычной игре
 func call_joining_dialog():
-	var dialog = preload("res://prefabs/AwaitDialog.tscn").instance()
+	var dialog = preload("res://scenes/AwaitDialog.tscn").instance()
 	dialog.self_destruct = true
 	dialog.set_title("MP_AWAIT_PERMISSION")
 	get_current_screen().add_child(dialog)

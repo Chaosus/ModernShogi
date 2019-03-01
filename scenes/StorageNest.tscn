@@ -4,9 +4,7 @@
 
 [sub_resource type="CubeMesh" id=1]
 
-
 [sub_resource type="BoxShape" id=2]
-
 
 [node name="StorageNest" type="Area"]
 transform = Transform( 0.8, 0, 0, 0, 1, 0, 0, 0, 0.8, 0, 0, 0 )

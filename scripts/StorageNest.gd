@@ -181,7 +181,7 @@ func setup(piece_template, side, x_index, importance, board):
 	
 	scale.y = 1.0
 	
-	var text_prefab  = preload("res://prefabs/TextFlat3D.tscn")
+	var text_prefab  = preload("res://scenes/TextFlat3D.tscn")
 	text = text_prefab.instance()
 	text.add_to_group("storage_text")
 	add_child(text)
@@ -194,7 +194,7 @@ func setup(piece_template, side, x_index, importance, board):
 
 	# Создание обманки фигуры
 	
-	dummy = preload("res://prefabs/Dummy.tscn").instance()
+	dummy = preload("res://scenes/Dummy.tscn").instance()
 	dummy.setup(piece_template, side)
 	dummy.visible = false
 	add_child(dummy)
