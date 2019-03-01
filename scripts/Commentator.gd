@@ -119,7 +119,10 @@ func say_checkmate():
 	_say()	
 	
 func say_record(record):
-	UI.get_ai().SetSFXPause(true)
+	if UI.get_ai() != null:
+		UI.get_ai().SetSFXPause(true)
+	else:
+		return
 	yield(say_side(record.side), "finished")
 	yield(get_tree().create_timer(0.1), "timeout")
 	if record.drop:

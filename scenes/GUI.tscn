@@ -423,7 +423,6 @@ expand = true
 stretch_mode = 3
 script = ExtResource( 12 )
 unnamed = true
-tag = 0
 tooltip_enabled = true
 tooltip = "BTN_OPEN_AI_SETTINGS"
 
@@ -437,7 +436,6 @@ expand = true
 stretch_mode = 3
 script = ExtResource( 12 )
 unnamed = true
-tag = 0
 tooltip_enabled = true
 tooltip = "BTN_AI_REFRESH"
 
@@ -452,7 +450,6 @@ expand = true
 stretch_mode = 3
 script = ExtResource( 12 )
 unnamed = true
-tag = 0
 tooltip_enabled = true
 tooltip = "BTN_TOGGLE_HINT_MODE"
 
@@ -466,7 +463,6 @@ expand = true
 stretch_mode = 3
 script = ExtResource( 12 )
 unnamed = true
-tag = 0
 tooltip_enabled = true
 tooltip = "BTN_AI_LOG"
 
@@ -486,7 +482,6 @@ expand = true
 stretch_mode = 3
 script = ExtResource( 12 )
 unnamed = true
-tag = 0
 tooltip_enabled = true
 tooltip = "BTN_SWITCH_PANEL_STYLES"
 
@@ -500,7 +495,6 @@ expand = true
 stretch_mode = 3
 script = ExtResource( 12 )
 unnamed = true
-tag = 0
 tooltip_enabled = true
 tooltip = "BTN_HIDE_PANEL"
 tooltip_align = 3
@@ -539,7 +533,6 @@ expand = true
 stretch_mode = 3
 script = ExtResource( 12 )
 unnamed = true
-tag = 0
 tooltip_enabled = true
 tooltip = "BTN_OPEN_STYLES_SETTINGS"
 
@@ -573,7 +566,6 @@ expand = true
 stretch_mode = 3
 script = ExtResource( 12 )
 unnamed = true
-tag = 0
 tooltip_enabled = true
 tooltip = "BTN_SWITCH_PANEL_AI"
 
@@ -587,7 +579,6 @@ expand = true
 stretch_mode = 3
 script = ExtResource( 12 )
 unnamed = true
-tag = 0
 tooltip_enabled = true
 tooltip = "BTN_HIDE_PANEL"
 tooltip_align = 3

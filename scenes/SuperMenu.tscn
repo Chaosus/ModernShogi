@@ -116,41 +116,29 @@
 
 [sub_resource type="ButtonGroup" id=1]
 
-
 [sub_resource type="CanvasItemMaterial" id=2]
-
 
 [sub_resource type="ButtonGroup" id=3]
 
-
 [sub_resource type="ButtonGroup" id=4]
-
 
 [sub_resource type="ButtonGroup" id=5]
 
-
 [sub_resource type="ButtonGroup" id=6]
-
 
 [sub_resource type="ButtonGroup" id=7]
 
-
 [sub_resource type="ButtonGroup" id=8]
-
 
 [sub_resource type="ButtonGroup" id=9]
 
-
 [sub_resource type="ButtonGroup" id=10]
 
-
 [sub_resource type="StyleBoxFlat" id=11]
-
 bg_color = Color( 0, 0, 0, 0 )
 shadow_color = Color( 0, 0, 0, 0 )
 
 [sub_resource type="Theme" id=12]
-
 BoxContainer/constants/separation = 4
 Button/colors/font_color = Color( 0, 0, 0, 1 )
 Button/colors/font_color_disabled = Color( 1, 0.607843, 0, 1 )
@@ -1169,7 +1157,6 @@ align = 3
 valign = 3
 
 [node name="MainContainer" type="Container" parent="."]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 1920.0
@@ -1595,6 +1582,7 @@ tooltip = "BTN_SHOW_PANEL"
 tooltip_align = 2
 
 [node name="Screens" type="PanelContainer" parent="MainContainer/MainLayout"]
+editor/display_folded = true
 margin_top = 128.0
 margin_right = 1920.0
 margin_bottom = 1080.0
@@ -12556,10 +12544,8 @@ script = ExtResource( 112 )
 autoplay = true
 
 [node name="DeleteFileDialog" parent="." instance=ExtResource( 113 )]
-visible = false
 
 [node name="DeleteProfileDialog" parent="." instance=ExtResource( 113 )]
-visible = false
 
 [connection signal="pressed" from="MainContainer/MainLayout/TopBar/HBox/LeftWidgetBox/BackBtnWidget" to="." method="_on_BackBtnWidget_pressed"]
 [connection signal="pressed" from="MainContainer/MainLayout/TopBar/HBox/LeftWidgetBox/SettingsWidget" to="." method="_on_SettingsWidget_pressed"]

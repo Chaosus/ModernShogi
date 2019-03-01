@@ -1,5 +1,7 @@
 extends Spatial
 
+# ArrowGen.gd
+
 signal show_done
 
 onready var mesh = $MeshInstance
@@ -11,9 +13,6 @@ var mat = null
 var state = 0
 
 var initialized = false
-
-# ArrowGen.gd
-
 func begin_hide():
 	state = 2
 	

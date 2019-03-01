@@ -2,8 +2,6 @@
 
 [sub_resource type="PanoramaSky" id=1]
 
-
 [resource]
-
 background_sky = SubResource( 1 )
 

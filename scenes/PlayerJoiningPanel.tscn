@@ -13,7 +13,6 @@
 [node name="PlayerJoiningDialog" type="PopupPanel" groups=[
 "player_panel",
 ]]
-visible = true
 self_modulate = Color( 1, 1, 1, 0.941176 )
 margin_right = 230.0
 rect_min_size = Vector2( 700, 0 )

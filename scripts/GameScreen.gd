@@ -10,9 +10,9 @@ onready var fixedcamera2 = $FixedCamera2
 onready var commentator = $Commentator
 onready var stopwatch = $SecondTimer
 
-onready var arrow_prefab = preload("res://prefabs/Arrow.tscn")
-onready var nest_prefab = preload("res://prefabs/Tile.tscn")
-onready var piece_prefab = preload("res://prefabs/Piece.tscn")
+onready var arrow_prefab = preload("res://scenes/Arrow.tscn")
+onready var nest_prefab = preload("res://scenes/Tile.tscn")
+onready var piece_prefab = preload("res://scenes/Piece.tscn")
 
 var session
 
@@ -58,6 +58,12 @@ var username
 var current_view = null
 
 signal turn_changed
+
+const ROTATELIMIT = 1.5
+
+const ROTSPEED = 4.0
+
+const ZOOMSPEED = 100.0
 
 ####################################################################################
 
@@ -1554,9 +1560,6 @@ func reset_camera():
 		current_view.translation.z = 0.0
 		current_view.scale = Vector3(1, 1, 1)
 	
-const ROTATELIMIT = 1.5
-const ROTSPEED = 5.0
-const ZOOMSPEED = 100.0
 
 var _previous_mouse_pos = Vector2(0, 0)
 

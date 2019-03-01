@@ -57,10 +57,10 @@ void fragment()
 			
 			if(y > 5.0)
 			{
-				add_color = vec3(1, 1, 1) / 2.0;
+				add_color = vec3(1.0, 1.0, 1.0) / 2.0;
 			}else if(y < 3.0) 
 			{
-				add_color = vec3(1, 1, 1) / 2.0;
+				add_color = vec3(1.0, 1.0, 1.0) / 2.0;
 			}
 		}
 		
