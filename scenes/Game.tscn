@@ -3,11 +3,10 @@
 [ext_resource path="res://scripts/GameScreen.gd" type="Script" id=1]
 [ext_resource path="res://scripts/cs/AI.cs" type="Script" id=2]
 [ext_resource path="res://scenes/Board.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scripts/GameCamera.gd" type="Script" id=4]
+[ext_resource path="res://scenes/GameCamera.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/GUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://sounds/move1.wav" type="AudioStream" id=6]
 [ext_resource path="res://scripts/Commentator.gd" type="Script" id=7]
-
 
 [node name="Game" type="Container"]
 visible = false
@@ -26,22 +25,10 @@ one_shot = true
 [node name="Board" parent="." instance=ExtResource( 3 )]
 board_scale = 2.0
 
-[node name="FixedCamera1" type="Spatial" parent="."]
-editor/display_folded = true
-script = ExtResource( 4 )
+[node name="FixedCamera1" parent="." instance=ExtResource( 4 )]
 
-[node name="Camera" type="Camera" parent="FixedCamera1"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 19, 0 )
-current = true
-far = 1000.0
-
-[node name="FixedCamera2" type="Spatial" parent="."]
-editor/display_folded = true
-script = ExtResource( 4 )
-
-[node name="Camera" type="Camera" parent="FixedCamera2"]
-transform = Transform( -1, 8.74228e-008, 0, 3.82137e-015, 4.37114e-008, 1, 8.74228e-008, 1, -4.37114e-008, 0, 19, 0 )
-far = 1000.0
+[node name="FixedCamera2" parent="." instance=ExtResource( 4 )]
+angle_y = 180.0
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 5, 0 )

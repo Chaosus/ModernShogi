@@ -87,6 +87,7 @@ enum {
 	CB_CAMERA_ALLOW_PAN,
 	CB_CAMERA_SWITCH_SIDES,
 	CB_CAMERA_RESTRICT_YAW,
+	CB_CAMERA_INTERPOLATION,
 	
 	# Styles settings
 	
@@ -1534,6 +1535,7 @@ func apply_profile(profile):
 	get_named_element(CB_CAMERA_ALLOW_PAN).pressed = bool(settings.get_value(Settings.SV_CAMERA_PAN_ENABLED))
 	get_named_element(CB_CAMERA_SWITCH_SIDES).pressed = bool(settings.get_value(Settings.SV_CAMERA_SWITCH_ENABLED))
 	get_named_element(CB_CAMERA_RESTRICT_YAW).pressed = bool(settings.get_value(Settings.SV_CAMERA_RESTRICT_YAW))
+	get_named_element(CB_CAMERA_INTERPOLATION).pressed = bool(settings.get_value(Settings.SV_CAMERA_SMOOTH_ENABLED))
 	
 	# STYLES
 	

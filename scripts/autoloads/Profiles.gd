@@ -2,7 +2,7 @@ extends Node
 
 # Profiles.gd
 
-const CURRENT_VERSION = 1202
+const CURRENT_VERSION = 1205
 
 class ProfileSettings:
 	
@@ -59,6 +59,8 @@ class ProfileSettings:
 		append_settings(Settings.SV_CAMERA_PAN_ENABLED, false)
 		append_settings(Settings.SV_CAMERA_SWITCH_ENABLED, false)
 		append_settings(Settings.SV_CAMERA_RESTRICT_YAW, true)
+		append_settings(Settings.SV_CAMERA_SMOOTH_ENABLED, true)
+		append_settings(Settings.SV_CAMERA_SMOOTH_SPEED, 1.0)
 		
 		# Styles
 		
@@ -128,20 +130,28 @@ class ProfileSettings:
 		
 		# Keys
 		
-		append_key(Settings.SV_KEY_CAMERA_ROTATE_LEFT_DEF, "A", Settings.SV_KEY_CAMERA_ROTATE_LEFT2_DEF, "Left", Settings.SV_KEY_CAMERA_ROTATE_LEFT, Settings.SV_KEY_CAMERA_ROTATE_LEFT2)
-		append_key(Settings.SV_KEY_CAMERA_ROTATE_RIGHT_DEF, "D", Settings.SV_KEY_CAMERA_ROTATE_RIGHT2_DEF, "Right", Settings.SV_KEY_CAMERA_ROTATE_RIGHT, Settings.SV_KEY_CAMERA_ROTATE_RIGHT2)
-		append_key(Settings.SV_KEY_CAMERA_ROTATE_UP_DEF, "W", Settings.SV_KEY_CAMERA_ROTATE_UP2_DEF, "Up", Settings.SV_KEY_CAMERA_ROTATE_UP, Settings.SV_KEY_CAMERA_ROTATE_UP2)
-		append_key(Settings.SV_KEY_CAMERA_ROTATE_DOWN_DEF, "S", Settings.SV_KEY_CAMERA_ROTATE_DOWN2_DEF, "Down", Settings.SV_KEY_CAMERA_ROTATE_DOWN, Settings.SV_KEY_CAMERA_ROTATE_DOWN2)
+		append_key(Settings.SV_KEY_UI_UP_DEF, "Up", Settings.SV_KEY_UI_UP2_DEF, "", Settings.SV_KEY_UI_UP, Settings.SV_KEY_UI_UP2)
+		append_key(Settings.SV_KEY_UI_DOWN_DEF, "Down", Settings.SV_KEY_UI_DOWN2_DEF, "", Settings.SV_KEY_UI_DOWN, Settings.SV_KEY_UI_DOWN2)
+		append_key(Settings.SV_KEY_UI_LEFT_DEF, "Left", Settings.SV_KEY_UI_LEFT2_DEF, "", Settings.SV_KEY_UI_LEFT, Settings.SV_KEY_UI_LEFT2)
+		append_key(Settings.SV_KEY_UI_RIGHT_DEF, "Right", Settings.SV_KEY_UI_RIGHT2_DEF, "", Settings.SV_KEY_UI_RIGHT, Settings.SV_KEY_UI_RIGHT2)
+		append_key(Settings.SV_KEY_UI_ACTION_DEF, "Enter", Settings.SV_KEY_UI_ACTION2_DEF, "", Settings.SV_KEY_UI_ACTION, Settings.SV_KEY_UI_ACTION2)
+		
+		append_key(Settings.SV_KEY_CAMERA_ROTATE_LEFT_DEF, "A", Settings.SV_KEY_CAMERA_ROTATE_LEFT2_DEF, "", Settings.SV_KEY_CAMERA_ROTATE_LEFT, Settings.SV_KEY_CAMERA_ROTATE_LEFT2)
+		append_key(Settings.SV_KEY_CAMERA_ROTATE_RIGHT_DEF, "D", Settings.SV_KEY_CAMERA_ROTATE_RIGHT2_DEF, "", Settings.SV_KEY_CAMERA_ROTATE_RIGHT, Settings.SV_KEY_CAMERA_ROTATE_RIGHT2)
+		append_key(Settings.SV_KEY_CAMERA_ROTATE_UP_DEF, "W", Settings.SV_KEY_CAMERA_ROTATE_UP2_DEF, "", Settings.SV_KEY_CAMERA_ROTATE_UP, Settings.SV_KEY_CAMERA_ROTATE_UP2)
+		append_key(Settings.SV_KEY_CAMERA_ROTATE_DOWN_DEF, "S", Settings.SV_KEY_CAMERA_ROTATE_DOWN2_DEF, "", Settings.SV_KEY_CAMERA_ROTATE_DOWN, Settings.SV_KEY_CAMERA_ROTATE_DOWN2)
 		append_key(Settings.SV_KEY_CAMERA_RESET_DEF, "Space", Settings.SV_KEY_CAMERA_RESET2_DEF, "", Settings.SV_KEY_CAMERA_RESET, Settings.SV_KEY_CAMERA_RESET2)
 		append_key(Settings.SV_KEY_FLIP_BOARD_DEF, "F", Settings.SV_KEY_FLIP_BOARD2_DEF, "", Settings.SV_KEY_FLIP_BOARD, Settings.SV_KEY_FLIP_BOARD2)
+		
 		append_key(Settings.SV_KEY_SHOW_HISTORY_DEF, "H", Settings.SV_KEY_SHOW_HISTORY2_DEF, "", Settings.SV_KEY_SHOW_HISTORY, Settings.SV_KEY_SHOW_HISTORY2)
 		append_key(Settings.SV_KEY_HISTORY_BACK_DEF, "Z", Settings.SV_KEY_HISTORY_BACK2_DEF, "", Settings.SV_KEY_HISTORY_BACK, Settings.SV_KEY_HISTORY_BACK2)
-		append_key(Settings.SV_KEY_HISTORY_FORWARD_DEF, "Y", Settings.SV_KEY_HISTORY_FORWARD2_DEF, "", Settings.SV_KEY_HISTORY_FORWARD, Settings.SV_KEY_HISTORY_FORWARD2)
+		append_key(Settings.SV_KEY_HISTORY_FORWARD_DEF, "C", Settings.SV_KEY_HISTORY_FORWARD2_DEF, "", Settings.SV_KEY_HISTORY_FORWARD, Settings.SV_KEY_HISTORY_FORWARD2)
 		append_key(Settings.SV_KEY_HISTORY_PLAY_REVERSED_DEF, "", Settings.SV_KEY_HISTORY_PLAY2_REVERSED_DEF, "", Settings.SV_KEY_HISTORY_PLAY_REVERSED, Settings.SV_KEY_HISTORY_PLAY2_REVERSED)
-		append_key(Settings.SV_KEY_HISTORY_PLAY_DEF, "", Settings.SV_KEY_HISTORY_PLAY2_DEF, "", Settings.SV_KEY_HISTORY_PLAY, Settings.SV_KEY_HISTORY_PLAY2)
+		append_key(Settings.SV_KEY_HISTORY_PLAY_DEF, "X", Settings.SV_KEY_HISTORY_PLAY2_DEF, "", Settings.SV_KEY_HISTORY_PLAY, Settings.SV_KEY_HISTORY_PLAY2)
 		append_key(Settings.SV_KEY_HISTORY_TO_START_DEF, "", Settings.SV_KEY_HISTORY_TO_START2_DEF, "", Settings.SV_KEY_HISTORY_TO_START, Settings.SV_KEY_HISTORY_TO_START2)
 		append_key(Settings.SV_KEY_HISTORY_TO_END_DEF, "", Settings.SV_KEY_HISTORY_TO_END2_DEF, "", Settings.SV_KEY_HISTORY_TO_END, Settings.SV_KEY_HISTORY_TO_END2)
 		append_key(Settings.SV_KEY_TOGGLE_HINT_MODE_DEF, "R", Settings.SV_KEY_TOGGLE_HINT_MODE2_DEF, "", Settings.SV_KEY_TOGGLE_HINT_MODE, Settings.SV_KEY_TOGGLE_HINT_MODE2)
+		
 		
 	
 	func _init():

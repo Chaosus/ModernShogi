@@ -63,7 +63,7 @@ const ROTATELIMIT = 1.5
 
 const ROTSPEED = 4.0
 
-const ZOOMSPEED = 100.0
+const ZOOMSPEED = 250.0
 
 ####################################################################################
 
@@ -205,18 +205,21 @@ func set_camera_side(side):
 			
 			camera_side = side
 			get_tree().call_group("storage_nest", "invert", side)
-			
+			var by = 0.0
 			if current_view != null and !was_resetted:
-				cx = -current_view.rotation.x
-				cy = current_view.rotation.y
+				cx = current_view.rotation.x
+				cy = wrapf(current_view.rotation.y - PI, 0.0, TAU)
 				cz = current_view.scale
 				ct = current_view.translation
+				by = current_view.rotation.y
 			current_view = fixedcamera2 if side == 1 else fixedcamera1
 			current_view.rotation.x = cx
-			current_view.rotation.y = cy
+			current_view.rotation.y = by
+			current_view.flip(cy)
+			#current_view.rotation.y = cy
 			current_view.scale = cz
 			current_view.translation = Vector3(-ct.x, ct.y, -ct.z)
-			current_view.get_node("Camera").make_current()
+			current_view.make_current()
 		
 func get_camera_side():
 	return camera_side
@@ -1493,10 +1496,10 @@ func _input(event):
 					_secondary_action()
 				BUTTON_WHEEL_UP:
 					if Profiles.get_current_settings().get_value(Settings.SV_CAMERA_ZOOM_ENABLED):
-						zoom(-ZOOMSPEED * get_process_delta_time())
+						zoom(-ZOOMSPEED)
 				BUTTON_WHEEL_DOWN:
 					if Profiles.get_current_settings().get_value(Settings.SV_CAMERA_ZOOM_ENABLED):
-						zoom(ZOOMSPEED * get_process_delta_time())
+						zoom(ZOOMSPEED)
 
 func get_movelock():
 	return nest_select_lock
@@ -1528,10 +1531,7 @@ func zoom(s):
 	if has_panel_focus():
 		return
 	_input_happens = true
-	current_view.scale += Vector3(s, s, s)
-	current_view.scale.x = clamp(current_view.scale.x, 0.2, board.board_scale / 1.8)
-	current_view.scale.y = clamp(current_view.scale.y, 0.2, board.board_scale / 1.8)
-	current_view.scale.z = clamp(current_view.scale.z, 0.2, board.board_scale / 1.8)
+	current_view.zoom(s * get_process_delta_time(), 0.2, board.board_scale / 1.8, get_process_delta_time())
 
 func reset_yaw():
 	if current_view != null:
@@ -1552,14 +1552,7 @@ func reset_pan():
 
 func reset_camera():
 	if current_view != null:
-		current_view.rotation.x = 0.0
-		current_view.rotation.y = 0.0
-		current_view.rotation.z = 0.0
-		current_view.translation.x = 0.0
-		current_view.translation.y = 0.0
-		current_view.translation.z = 0.0
-		current_view.scale = Vector3(1, 1, 1)
-	
+		current_view.reset()
 
 var _previous_mouse_pos = Vector2(0, 0)
 
@@ -1590,32 +1583,32 @@ func _process_input(delta):
 		if Input.is_action_pressed("rotate_camera_left"):
 			_input_happens = true
 			if e and !session.is_observer():
-				current_view.rotation.y = clamp(current_view.rotation.y - (ROTSPEED * delta), -PI/2, PI/2)
+				current_view.yaw(-ROTSPEED, true, delta)
 			else:
-				current_view.rotation.y = wrapf(current_view.rotation.y - (ROTSPEED * delta), 0.0, TAU)
+				current_view.yaw(-ROTSPEED, false, delta)
 		elif Input.is_action_pressed("rotate_camera_right"):
 			_input_happens = true
 			if e and !session.is_observer():
-				current_view.rotation.y = clamp(current_view.rotation.y + (ROTSPEED * delta), -PI/2, PI/2)
+				current_view.yaw(ROTSPEED, true, delta)
 			else:
-				current_view.rotation.y = wrapf(current_view.rotation.y + (ROTSPEED * delta), 0.0, TAU)
-			
+				current_view.yaw(ROTSPEED, false, delta)
+		
 	# вращать вверх/вниз
 	if Profiles.get_current_settings().get_value(Settings.SV_CAMERA_PITCH_ENABLED):
 		if camera_side == 0:
 			if Input.is_action_pressed("rotate_camera_up"):
 				_input_happens = true
-				current_view.rotation.x = clamp(current_view.rotation.x - (ROTSPEED * delta), 0.0, ROTATELIMIT)
+				current_view.pitch(-ROTSPEED, delta)
 			elif Input.is_action_pressed("rotate_camera_down"):
 				_input_happens = true
-				current_view.rotation.x = clamp(current_view.rotation.x + (ROTSPEED * delta), 0.0, ROTATELIMIT)
+				current_view.pitch(ROTSPEED, delta)
 		elif camera_side == 1:
-			if Input.is_action_pressed("rotate_camera_down"):
+			if Input.is_action_pressed("rotate_camera_up"):
 				_input_happens = true
-				current_view.rotation.x = clamp(current_view.rotation.x - (ROTSPEED * delta), -ROTATELIMIT, 0.0)
-			elif Input.is_action_pressed("rotate_camera_up"):
+				current_view.pitch(-ROTSPEED, delta)
+			elif Input.is_action_pressed("rotate_camera_down"):
 				_input_happens = true
-				current_view.rotation.x = clamp(current_view.rotation.x + (ROTSPEED * delta), -ROTATELIMIT, 0.0)
+				current_view.pitch(ROTSPEED, delta)
 	
 	var v = get_viewport().get_mouse_position()
 	if Profiles.get_current_settings().get_value(Settings.SV_CAMERA_PAN_ENABLED):
@@ -1723,7 +1716,6 @@ func on_hide():
 	gui.set_visible(false)
 	gui.save_btn.visible = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	current_view.disable()
 	ai.Pause()
 	
 	gui.get_node("WhitePlayerPanel").beautiful_hide()

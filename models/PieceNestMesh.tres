@@ -1,10 +1,5 @@
 [gd_resource type="PlaneMesh" format=2]
 
 [resource]
-
-custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
-flip_faces = false
 size = Vector2( 2.01, 2.01 )
-subdivide_width = 0
-subdivide_depth = 0
 

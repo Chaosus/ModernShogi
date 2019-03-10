@@ -127,6 +127,7 @@ func setup_ai_game():
 
 func setup_local():
 	is_local_side = true
+	is_rated_game = false
 	local_side_label.visible = true
 	
 	get_tree().call_group("local_offset", "set_visible", true)

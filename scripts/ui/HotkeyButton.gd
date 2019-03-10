@@ -13,6 +13,9 @@ var _altbtn
 var _blink_red
 var _bval
 var _buttons_list
+var _is_joy = false
+
+export(bool) var locked = false
 
 func set_buttons_list(list):
 	_buttons_list = list
@@ -27,6 +30,8 @@ func get_scancode():
 	return _scancode
 
 func _gui_input(event):
+	if locked:
+		return
 	if event is InputEventMouseButton:
 		if event.pressed:
 			if event.button_index == 2:
@@ -91,6 +96,8 @@ func _ready():
 	UI.add_unnamed_medium_element(self)
 
 func _on_pressed():
+	if locked:
+		return
 	if _listen:
 		_on_unfocused()
 	else:
@@ -144,8 +151,49 @@ func delete():
 	_update_input_map(0)
 	_scancode = 0
 
+func get_joypad_button_name(idx):
+	match idx:
+		JOY_BUTTON_0:
+			return "Button 0(A)"
+		JOY_BUTTON_1:
+			return "Button 1"
+		JOY_BUTTON_2:
+			return "Button 2"
+		JOY_BUTTON_3:
+			return "Button 3"
+		_:
+			return "(Unknown)"
+
 func _input(event):
+	if locked:
+		return
 	if _listen:
+		if event is InputEventJoypadButton:
+			if !event.pressed:
+				UI.key_enter_mode = false
+				var tscancode = event.button_index
+				var fail = false
+				
+				var ttext = get_joypad_button_name(event.button_index)
+				for btn in _buttons_list.values():
+					var tbtn = btn[0]
+					var tbtn2 = btn[1]
+					if tbtn != self:
+						if tbtn.get_scancode() == tscancode and tbtn._is_joy:
+							tbtn.blink()
+							fail = true
+					if tbtn2 != self:
+						if tbtn2.get_scancode() == tscancode and tbtn2._is_joy:
+							tbtn2.blink()
+							fail = true
+				if !fail:
+					text = ttext
+					_update_input_map(tscancode)
+					_scancode = tscancode
+					_key = ttext
+					_listen = false
+					_is_joy = true
+					pressed = false
 		if event is InputEventKey:
 			if !event.pressed:
 				if event.scancode == KEY_ESCAPE:
@@ -166,11 +214,11 @@ func _input(event):
 						var tbtn = btn[0]
 						var tbtn2 = btn[1]
 						if tbtn != self:
-							if tbtn.get_scancode() == tscancode:
+							if tbtn.get_scancode() == tscancode and !tbtn._is_joy:
 								tbtn.blink()
 								fail = true
 						if tbtn2 != self:
-							if tbtn2.get_scancode() == tscancode:
+							if tbtn2.get_scancode() == tscancode and !tbtn2._is_joy:
 								tbtn2.blink()
 								fail = true
 					if !fail:
@@ -178,6 +226,7 @@ func _input(event):
 						_update_input_map(tscancode)
 						_scancode = tscancode
 						_key = ttext
+						_is_joy = false
 						_listen = false
 						pressed = false
 	

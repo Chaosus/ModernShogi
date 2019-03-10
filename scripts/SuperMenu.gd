@@ -213,13 +213,12 @@ func sansara_pressed(reversed):
 			if reversed:
 				new_theme = wrapi(current_theme + 1, 0, UI.UITheme.LIMITER)
 			else:
-				new_theme = wrapi(current_theme - 1, 0, UI.UITheme.LIMITER)
-					
+				new_theme = wrapi(current_theme - 1, 0, UI.UITheme.LIMITER)					
 	UI.current_aspect = UI.themes[new_theme].current_aspect
 	Profiles.get_current_settings().set_value(Settings.SV_UI_THEME, new_theme)
 	UI.apply_theme_to_ui(new_theme, UI.current_aspect)
 	UI.set_theme(new_theme, UI.current_aspect)
-
+	
 
 func quit(save = true):
 	if save:

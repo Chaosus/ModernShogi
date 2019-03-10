@@ -1130,3 +1130,10 @@ MP_OTHER_CONNECTION_EXIST,"Other player is already tries to connect to this game
 Try again later.","Другой игрок уже пытается присоединиться к этой игре.
 Попробуйте позже",
 MP_DECLINE_WRONG_TURN,You can perform this action only on your turn !,Вы можете выполнить это действие только на своём ходу !,
+CB_CAMERA_INTERP,Enable interpolation,Включить плавные переходы,
+KEY_UI_UP,Cursor: Up,Курсор: Вверх,
+KEY_UI_DOWN,Cursor: Down,Курсор: Вниз,
+KEY_UI_LEFT,Cursor: Left,Курсор: Влево,
+KEY_UI_RIGHT,Cursor: Right,Курсор: Вправо,
+KEY_UI_ACCEPT,Cursor: Action,Курсор: Действие,
+CB_SHOW_LOCKED_MEMBERS,Show locked members,Показывать закрытые поля,

@@ -1,0 +1,1245 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scripts/InputSettings.gd" type="Script" id=1]
+[ext_resource path="res://ui/input/mouse_right.png" type="Texture" id=2]
+[ext_resource path="res://ui/input/mouse_middle.png" type="Texture" id=3]
+[ext_resource path="res://scripts/ui/BackgroundContainer.gd" type="Script" id=4]
+[ext_resource path="res://scripts/ui/MediumElement.gd" type="Script" id=5]
+[ext_resource path="res://scripts/ui/HotkeyButton.gd" type="Script" id=6]
+
+[node name="InputSettings" type="VBoxContainer"]
+visible = false
+margin_bottom = 803.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 50
+script = ExtResource( 1 )
+
+[node name="Offset" type="ReferenceRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = -45.0
+margin_bottom = -45.0
+
+[node name="SH_HOTKEYS" type="Label" parent="."]
+margin_right = 80.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_vertical = 1
+text = "SH_HOTKEYS"
+align = 1
+valign = 1
+
+[node name="HSeparator2" type="HSeparator" parent="."]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="HBoxInfo" type="HBoxContainer" parent="."]
+editor/display_folded = true
+margin_right = 241.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="Offset" type="ReferenceRect" parent="HBoxInfo"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 500.0
+margin_right = 500.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 80, 0 )
+
+[node name="UseLabel" type="Label" parent="HBoxInfo"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "DESC_INPUT_USE"
+
+[node name="TextureRect" type="TextureRect" parent="HBoxInfo"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 6
+
+[node name="DescDefault" type="Label" parent="HBoxInfo"]
+margin_right = 157.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = "DESC_INPUT_DEFAULT"
+valign = 1
+autowrap = true
+
+[node name="HBoxInfo2" type="HBoxContainer" parent="."]
+margin_right = 241.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="Offset" type="ReferenceRect" parent="HBoxInfo2"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 500.0
+margin_right = 500.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 80, 0 )
+
+[node name="UseLabel" type="Label" parent="HBoxInfo2"]
+margin_right = 108.0
+margin_bottom = 14.0
+text = "DESC_INPUT_USE"
+
+[node name="TextureRect" type="TextureRect" parent="HBoxInfo2"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="DescDelete" type="Label" parent="HBoxInfo2"]
+margin_right = 157.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = "DESC_INPUT_DELETE"
+valign = 1
+autowrap = true
+
+[node name="HBoxInfo3" type="HBoxContainer" parent="."]
+margin_right = 241.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="Offset" type="ReferenceRect" parent="HBoxInfo3"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 500.0
+margin_right = 500.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 80, 0 )
+
+[node name="CB_SHOW_LOCKED_MEMBERS" type="CheckBox" parent="HBoxInfo3"]
+margin_right = 24.0
+margin_bottom = 24.0
+text = "CB_SHOW_LOCKED_MEMBERS"
+
+[node name="KeyBox" type="PanelContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 4 )
+
+[node name="KeyGrid" type="GridContainer" parent="KeyBox"]
+margin_right = 40.0
+margin_bottom = 40.0
+size_flags_vertical = 3
+custom_constants/vseparation = 0
+custom_constants/hseparation = 0
+columns = 3
+
+[node name="VBox" type="VBoxContainer" parent="KeyBox/KeyGrid"]
+margin_right = 40.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="HSep" type="HSeparator" parent="KeyBox/KeyGrid/VBox"]
+margin_right = 1000.0
+margin_bottom = 4.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="VBoxUIUp" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
+editor/display_folded = true
+visible = false
+margin_right = 170.0
+margin_bottom = 84.0
+custom_constants/separation = 0
+
+[node name="LABEL_KEY_UI_UP" type="Label" parent="KeyBox/KeyGrid/VBox/VBoxUIUp"]
+margin_right = 100.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+text = "KEY_UI_UP"
+align = 1
+valign = 1
+script = ExtResource( 5 )
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox/VBoxUIUp"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="VBoxUIDown" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
+editor/display_folded = true
+visible = false
+margin_right = 170.0
+margin_bottom = 84.0
+custom_constants/separation = 0
+
+[node name="LABEL_KEY_UI_DOWN" type="Label" parent="KeyBox/KeyGrid/VBox/VBoxUIDown"]
+margin_right = 100.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+text = "KEY_UI_DOWN"
+align = 1
+valign = 1
+script = ExtResource( 5 )
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox/VBoxUIDown"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="VBoxUILeft" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
+editor/display_folded = true
+visible = false
+margin_right = 170.0
+margin_bottom = 84.0
+custom_constants/separation = 0
+
+[node name="LABEL_KEY_UI_LEFT" type="Label" parent="KeyBox/KeyGrid/VBox/VBoxUILeft"]
+margin_right = 100.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+text = "KEY_UI_LEFT"
+align = 1
+valign = 1
+script = ExtResource( 5 )
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox/VBoxUILeft"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="VBoxUIRight" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
+editor/display_folded = true
+visible = false
+margin_right = 170.0
+margin_bottom = 84.0
+custom_constants/separation = 0
+
+[node name="LABEL_KEY_UI_RIGHT" type="Label" parent="KeyBox/KeyGrid/VBox/VBoxUIRight"]
+margin_right = 100.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+text = "KEY_UI_RIGHT"
+align = 1
+valign = 1
+script = ExtResource( 5 )
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox/VBoxUIRight"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="VBoxUIAccept" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
+editor/display_folded = true
+visible = false
+margin_right = 170.0
+margin_bottom = 84.0
+custom_constants/separation = 0
+
+[node name="LABEL_KEY_UI_ACCEPT" type="Label" parent="KeyBox/KeyGrid/VBox/VBoxUIAccept"]
+margin_right = 100.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+text = "KEY_UI_ACCEPT"
+align = 1
+valign = 1
+script = ExtResource( 5 )
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox/VBoxUIAccept"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="VBoxCameraRotateUp" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
+editor/display_folded = true
+margin_right = 170.0
+margin_bottom = 84.0
+custom_constants/separation = 0
+
+[node name="LABEL_KEY_CAMERA_UP" type="Label" parent="KeyBox/KeyGrid/VBox/VBoxCameraRotateUp"]
+margin_right = 100.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+text = "KEY_CAMERA_UP"
+align = 1
+valign = 1
+script = ExtResource( 5 )
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox/VBoxCameraRotateUp"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="VBoxCameraRotateDown" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
+editor/display_folded = true
+margin_right = 170.0
+margin_bottom = 84.0
+custom_constants/separation = 0
+
+[node name="LABEL_KEY_CAMERA_DOWN" type="Label" parent="KeyBox/KeyGrid/VBox/VBoxCameraRotateDown"]
+margin_right = 100.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+text = "KEY_CAMERA_DOWN"
+align = 1
+valign = 1
+script = ExtResource( 5 )
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox/VBoxCameraRotateDown"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="DescCameraRotateLeft" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
+editor/display_folded = true
+margin_right = 170.0
+margin_bottom = 84.0
+custom_constants/separation = 0
+
+[node name="LABEL_KEY_CAMERA_LEFT" type="Label" parent="KeyBox/KeyGrid/VBox/DescCameraRotateLeft"]
+margin_right = 100.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+text = "KEY_CAMERA_LEFT"
+align = 1
+valign = 1
+script = ExtResource( 5 )
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox/DescCameraRotateLeft"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="VBoxCameraRotateRight" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
+editor/display_folded = true
+margin_right = 170.0
+margin_bottom = 84.0
+custom_constants/separation = 0
+
+[node name="LABEL_KEY_CAMERA_RIGHT" type="Label" parent="KeyBox/KeyGrid/VBox/VBoxCameraRotateRight"]
+margin_right = 100.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+text = "KEY_CAMERA_RIGHT"
+align = 1
+valign = 1
+script = ExtResource( 5 )
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox/VBoxCameraRotateRight"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="VBoxCameraReset" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
+editor/display_folded = true
+margin_right = 128.0
+margin_bottom = 84.0
+custom_constants/separation = 0
+
+[node name="LABEL_KEY_CAMERA_RESET" type="Label" parent="KeyBox/KeyGrid/VBox/VBoxCameraReset"]
+margin_right = 100.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+text = "KEY_CAMERA_RESET"
+align = 1
+valign = 1
+script = ExtResource( 5 )
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox/VBoxCameraReset"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="VBoxFlipBoard" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
+editor/display_folded = true
+margin_right = 128.0
+margin_bottom = 84.0
+custom_constants/separation = 0
+
+[node name="LABEL_KEY_FLIP_BOARD" type="Label" parent="KeyBox/KeyGrid/VBox/VBoxFlipBoard"]
+margin_right = 100.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+text = "KEY_FLIP_BOARD"
+align = 1
+valign = 1
+script = ExtResource( 5 )
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox/VBoxFlipBoard"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="VBoxHistory" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
+editor/display_folded = true
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 0
+
+[node name="LABEL_KEY_HISTORY_SHOW" type="Label" parent="KeyBox/KeyGrid/VBox/VBoxHistory"]
+margin_right = 100.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+text = "KEY_HISTORY_SHOW"
+align = 1
+valign = 1
+script = ExtResource( 5 )
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox/VBoxHistory"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="VBoxHistoryBack" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
+editor/display_folded = true
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 0
+
+[node name="LABEL_KEY_HISTORY_BACKWARD" type="Label" parent="KeyBox/KeyGrid/VBox/VBoxHistoryBack"]
+margin_right = 100.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+text = "KEY_HISTORY_BACKWARD"
+align = 1
+valign = 1
+script = ExtResource( 5 )
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox/VBoxHistoryBack"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="VBoxHistoryForward" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
+editor/display_folded = true
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 0
+
+[node name="LABEL_KEY_HISTORY_FORWARD" type="Label" parent="KeyBox/KeyGrid/VBox/VBoxHistoryForward"]
+margin_right = 155.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+text = "KEY_HISTORY_FORWARD"
+align = 1
+valign = 1
+script = ExtResource( 5 )
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox/VBoxHistoryForward"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="VBoxHistoryPlay" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
+editor/display_folded = true
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 0
+
+[node name="LABEL_KEY_HISTORY_PLAY" type="Label" parent="KeyBox/KeyGrid/VBox/VBoxHistoryPlay"]
+margin_right = 155.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+text = "KEY_HISTORY_PLAY"
+align = 1
+valign = 1
+script = ExtResource( 5 )
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox/VBoxHistoryPlay"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="VBoxHistoryPlayReversed" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
+editor/display_folded = true
+margin_right = 187.0
+margin_bottom = 84.0
+custom_constants/separation = 0
+
+[node name="LABEL_KEY_HISTORY_PLAY_REVERSE" type="Label" parent="KeyBox/KeyGrid/VBox/VBoxHistoryPlayReversed"]
+margin_right = 155.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+text = "KEY_HISTORY_PLAY_REVERSED"
+align = 1
+valign = 1
+script = ExtResource( 5 )
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox/VBoxHistoryPlayReversed"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="VBoxHistoryToStart" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
+editor/display_folded = true
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 0
+
+[node name="LABEL_KEY_HISTORY_TO_START" type="Label" parent="KeyBox/KeyGrid/VBox/VBoxHistoryToStart"]
+margin_right = 155.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+text = "KEY_HISTORY_TO_START"
+align = 1
+valign = 1
+script = ExtResource( 5 )
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox/VBoxHistoryToStart"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="VBoxHistoryToEnd" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
+editor/display_folded = true
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 0
+
+[node name="LABEL_KEY_HISTORY_TO_END" type="Label" parent="KeyBox/KeyGrid/VBox/VBoxHistoryToEnd"]
+margin_right = 155.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+text = "KEY_HISTORY_TO_END"
+align = 1
+valign = 1
+script = ExtResource( 5 )
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox/VBoxHistoryToEnd"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="VBoxHintMode" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
+editor/display_folded = true
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 0
+
+[node name="LABEL_KEY_TOGGLE_HINT_MODE" type="Label" parent="KeyBox/KeyGrid/VBox/VBoxHintMode"]
+margin_right = 155.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+text = "KEY_TOGGLE_HINT_MODE"
+align = 1
+valign = 1
+script = ExtResource( 5 )
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox/VBoxHintMode"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="VSeparator" type="VSeparator" parent="KeyBox/KeyGrid"]
+margin_right = 4.0
+margin_bottom = 40.0
+
+[node name="VBox2" type="VBoxContainer" parent="KeyBox/KeyGrid"]
+margin_right = 40.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="HSep" type="HSeparator" parent="KeyBox/KeyGrid/VBox2"]
+margin_right = 1000.0
+margin_bottom = 4.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="KeyUIUp" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
+editor/display_folded = true
+visible = false
+margin_right = 188.0
+margin_bottom = 84.0
+custom_constants/separation = 0
+
+[node name="HBox" type="HBoxContainer" parent="KeyBox/KeyGrid/VBox2/KeyUIUp"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="KEY" type="Button" parent="KeyBox/KeyGrid/VBox2/KeyUIUp/HBox"]
+margin_right = 40.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+
+[node name="VSeparator" type="VSeparator" parent="KeyBox/KeyGrid/VBox2/KeyUIUp/HBox"]
+margin_right = 4.0
+margin_bottom = 40.0
+
+[node name="KEY_ALT" type="Button" parent="KeyBox/KeyGrid/VBox2/KeyUIUp/HBox"]
+margin_right = 25.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+locked = true
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox2/KeyUIUp"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="KeyUIDown" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
+editor/display_folded = true
+visible = false
+margin_right = 188.0
+margin_bottom = 84.0
+custom_constants/separation = 0
+
+[node name="HBox" type="HBoxContainer" parent="KeyBox/KeyGrid/VBox2/KeyUIDown"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="KEY" type="Button" parent="KeyBox/KeyGrid/VBox2/KeyUIDown/HBox"]
+margin_right = 25.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+locked = true
+
+[node name="VSeparator" type="VSeparator" parent="KeyBox/KeyGrid/VBox2/KeyUIDown/HBox"]
+margin_right = 4.0
+margin_bottom = 40.0
+
+[node name="KEY_ALT" type="Button" parent="KeyBox/KeyGrid/VBox2/KeyUIDown/HBox"]
+margin_right = 25.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+locked = true
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox2/KeyUIDown"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="KeyUILeft" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
+editor/display_folded = true
+visible = false
+margin_right = 188.0
+margin_bottom = 84.0
+custom_constants/separation = 0
+
+[node name="HBox" type="HBoxContainer" parent="KeyBox/KeyGrid/VBox2/KeyUILeft"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="KEY" type="Button" parent="KeyBox/KeyGrid/VBox2/KeyUILeft/HBox"]
+margin_right = 25.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+locked = true
+
+[node name="VSeparator" type="VSeparator" parent="KeyBox/KeyGrid/VBox2/KeyUILeft/HBox"]
+margin_right = 4.0
+margin_bottom = 40.0
+
+[node name="KEY_ALT" type="Button" parent="KeyBox/KeyGrid/VBox2/KeyUILeft/HBox"]
+margin_right = 25.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+locked = true
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox2/KeyUILeft"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="KeyUIRight" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
+editor/display_folded = true
+visible = false
+margin_right = 188.0
+margin_bottom = 84.0
+custom_constants/separation = 0
+
+[node name="HBox" type="HBoxContainer" parent="KeyBox/KeyGrid/VBox2/KeyUIRight"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="KEY" type="Button" parent="KeyBox/KeyGrid/VBox2/KeyUIRight/HBox"]
+margin_right = 25.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+locked = true
+
+[node name="VSeparator" type="VSeparator" parent="KeyBox/KeyGrid/VBox2/KeyUIRight/HBox"]
+margin_right = 4.0
+margin_bottom = 40.0
+
+[node name="KEY_ALT" type="Button" parent="KeyBox/KeyGrid/VBox2/KeyUIRight/HBox"]
+margin_right = 25.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+locked = true
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox2/KeyUIRight"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="KeyUIAccept" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
+editor/display_folded = true
+visible = false
+margin_right = 188.0
+margin_bottom = 84.0
+custom_constants/separation = 0
+
+[node name="HBox" type="HBoxContainer" parent="KeyBox/KeyGrid/VBox2/KeyUIAccept"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="KEY" type="Button" parent="KeyBox/KeyGrid/VBox2/KeyUIAccept/HBox"]
+margin_right = 25.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+locked = true
+
+[node name="VSeparator" type="VSeparator" parent="KeyBox/KeyGrid/VBox2/KeyUIAccept/HBox"]
+margin_right = 4.0
+margin_bottom = 40.0
+
+[node name="KEY_ALT" type="Button" parent="KeyBox/KeyGrid/VBox2/KeyUIAccept/HBox"]
+margin_right = 25.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+locked = true
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox2/KeyUIAccept"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="VBoxCameraRotateUp" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
+editor/display_folded = true
+margin_right = 188.0
+margin_bottom = 84.0
+custom_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="KeyBox/KeyGrid/VBox2/VBoxCameraRotateUp"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="BTN_KEY_CAMERA_UP" type="Button" parent="KeyBox/KeyGrid/VBox2/VBoxCameraRotateUp/HBoxContainer"]
+margin_right = 25.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+
+[node name="VSeparator" type="VSeparator" parent="KeyBox/KeyGrid/VBox2/VBoxCameraRotateUp/HBoxContainer"]
+margin_right = 4.0
+margin_bottom = 40.0
+
+[node name="BTN_KEY_CAMERA_UP_ALT" type="Button" parent="KeyBox/KeyGrid/VBox2/VBoxCameraRotateUp/HBoxContainer"]
+margin_right = 25.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox2/VBoxCameraRotateUp"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="VBoxCameraRotateDown" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
+editor/display_folded = true
+margin_right = 188.0
+margin_bottom = 84.0
+custom_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="KeyBox/KeyGrid/VBox2/VBoxCameraRotateDown"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="BTN_KEY_CAMERA_DOWN" type="Button" parent="KeyBox/KeyGrid/VBox2/VBoxCameraRotateDown/HBoxContainer"]
+margin_right = 25.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+
+[node name="VSeparator" type="VSeparator" parent="KeyBox/KeyGrid/VBox2/VBoxCameraRotateDown/HBoxContainer"]
+margin_right = 4.0
+margin_bottom = 40.0
+
+[node name="BTN_KEY_CAMERA_DOWN_ALT" type="Button" parent="KeyBox/KeyGrid/VBox2/VBoxCameraRotateDown/HBoxContainer"]
+margin_right = 25.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox2/VBoxCameraRotateDown"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="KeyCameraRotateLeft" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
+editor/display_folded = true
+margin_right = 188.0
+margin_bottom = 84.0
+custom_constants/separation = 0
+
+[node name="HBox" type="HBoxContainer" parent="KeyBox/KeyGrid/VBox2/KeyCameraRotateLeft"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="KEY" type="Button" parent="KeyBox/KeyGrid/VBox2/KeyCameraRotateLeft/HBox"]
+margin_right = 25.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+
+[node name="VSeparator" type="VSeparator" parent="KeyBox/KeyGrid/VBox2/KeyCameraRotateLeft/HBox"]
+margin_right = 4.0
+margin_bottom = 40.0
+
+[node name="KEY_ALT" type="Button" parent="KeyBox/KeyGrid/VBox2/KeyCameraRotateLeft/HBox"]
+margin_right = 25.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox2/KeyCameraRotateLeft"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="VBoxCameraRotateRight" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
+editor/display_folded = true
+margin_right = 188.0
+margin_bottom = 84.0
+custom_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="KeyBox/KeyGrid/VBox2/VBoxCameraRotateRight"]
+editor/display_folded = true
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="BTN_KEY_CAMERA_RIGHT" type="Button" parent="KeyBox/KeyGrid/VBox2/VBoxCameraRotateRight/HBoxContainer"]
+margin_right = 25.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+
+[node name="VSeparator" type="VSeparator" parent="KeyBox/KeyGrid/VBox2/VBoxCameraRotateRight/HBoxContainer"]
+margin_right = 4.0
+margin_bottom = 40.0
+
+[node name="BTN_KEY_CAMERA_RIGHT_ALT" type="Button" parent="KeyBox/KeyGrid/VBox2/VBoxCameraRotateRight/HBoxContainer"]
+margin_right = 25.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox2/VBoxCameraRotateRight"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="VBoxCameraReset" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
+editor/display_folded = true
+margin_right = 40.0
+margin_bottom = 84.0
+custom_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="KeyBox/KeyGrid/VBox2/VBoxCameraReset"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="BTN_KEY_CAMERA_RESET" type="Button" parent="KeyBox/KeyGrid/VBox2/VBoxCameraReset/HBoxContainer"]
+margin_right = 49.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+
+[node name="VSeparator" type="VSeparator" parent="KeyBox/KeyGrid/VBox2/VBoxCameraReset/HBoxContainer"]
+margin_right = 4.0
+margin_bottom = 40.0
+
+[node name="BTN_KEY_CAMERA_RESET_ALT" type="Button" parent="KeyBox/KeyGrid/VBox2/VBoxCameraReset/HBoxContainer"]
+margin_right = 49.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox2/VBoxCameraReset"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="VBoxFlipBoard" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
+editor/display_folded = true
+margin_right = 40.0
+margin_bottom = 84.0
+custom_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="KeyBox/KeyGrid/VBox2/VBoxFlipBoard"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="BTN_KEY_FLIP_BOARD" type="Button" parent="KeyBox/KeyGrid/VBox2/VBoxFlipBoard/HBoxContainer"]
+margin_right = 49.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+
+[node name="VSeparator" type="VSeparator" parent="KeyBox/KeyGrid/VBox2/VBoxFlipBoard/HBoxContainer"]
+margin_right = 4.0
+margin_bottom = 40.0
+
+[node name="BTN_KEY_FLIP_BOARD_ALT" type="Button" parent="KeyBox/KeyGrid/VBox2/VBoxFlipBoard/HBoxContainer"]
+margin_right = 49.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox2/VBoxFlipBoard"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="VBoxHistory" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
+editor/display_folded = true
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="KeyBox/KeyGrid/VBox2/VBoxHistory"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="BTN_KEY_HISTORY" type="Button" parent="KeyBox/KeyGrid/VBox2/VBoxHistory/HBoxContainer"]
+margin_right = 22.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+
+[node name="VSeparator" type="VSeparator" parent="KeyBox/KeyGrid/VBox2/VBoxHistory/HBoxContainer"]
+margin_right = 4.0
+margin_bottom = 40.0
+
+[node name="BTN_KEY_HISTORY_ALT" type="Button" parent="KeyBox/KeyGrid/VBox2/VBoxHistory/HBoxContainer"]
+margin_right = 22.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox2/VBoxHistory"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="VBoxHistoryBack" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
+editor/display_folded = true
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="KeyBox/KeyGrid/VBox2/VBoxHistoryBack"]
+editor/display_folded = true
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="BTN_KEY_HISTORY_BACK" type="Button" parent="KeyBox/KeyGrid/VBox2/VBoxHistoryBack/HBoxContainer"]
+margin_right = 74.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+
+[node name="VSeparator" type="VSeparator" parent="KeyBox/KeyGrid/VBox2/VBoxHistoryBack/HBoxContainer"]
+margin_right = 4.0
+margin_bottom = 40.0
+
+[node name="BTN_KEY_HISTORY_BACK_ALT" type="Button" parent="KeyBox/KeyGrid/VBox2/VBoxHistoryBack/HBoxContainer"]
+margin_right = 74.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox2/VBoxHistoryBack"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="VBoxHistoryForward" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
+editor/display_folded = true
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="KeyBox/KeyGrid/VBox2/VBoxHistoryForward"]
+editor/display_folded = true
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="BTN_KEY_HISTORY_FORWARD" type="Button" parent="KeyBox/KeyGrid/VBox2/VBoxHistoryForward/HBoxContainer"]
+margin_right = 73.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+
+[node name="VSeparator" type="VSeparator" parent="KeyBox/KeyGrid/VBox2/VBoxHistoryForward/HBoxContainer"]
+margin_right = 4.0
+margin_bottom = 40.0
+
+[node name="BTN_KEY_HISTORY_FORWARD_ALT" type="Button" parent="KeyBox/KeyGrid/VBox2/VBoxHistoryForward/HBoxContainer"]
+margin_right = 73.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox2/VBoxHistoryForward"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="VBoxHistoryPlay" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
+editor/display_folded = true
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="KeyBox/KeyGrid/VBox2/VBoxHistoryPlay"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="BTN_KEY_HISTORY_PLAY" type="Button" parent="KeyBox/KeyGrid/VBox2/VBoxHistoryPlay/HBoxContainer"]
+margin_right = 73.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+
+[node name="VSeparator" type="VSeparator" parent="KeyBox/KeyGrid/VBox2/VBoxHistoryPlay/HBoxContainer"]
+margin_right = 4.0
+margin_bottom = 40.0
+
+[node name="BTN_KEY_HISTORY_PLAY_ALT" type="Button" parent="KeyBox/KeyGrid/VBox2/VBoxHistoryPlay/HBoxContainer"]
+margin_right = 73.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox2/VBoxHistoryPlay"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="KeyHistoryPlayReversed" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
+editor/display_folded = true
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 0
+
+[node name="HBox" type="HBoxContainer" parent="KeyBox/KeyGrid/VBox2/KeyHistoryPlayReversed"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="KEY" type="Button" parent="KeyBox/KeyGrid/VBox2/KeyHistoryPlayReversed/HBox"]
+margin_right = 73.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+
+[node name="VSeparator" type="VSeparator" parent="KeyBox/KeyGrid/VBox2/KeyHistoryPlayReversed/HBox"]
+margin_right = 4.0
+margin_bottom = 40.0
+
+[node name="KEY_ALT" type="Button" parent="KeyBox/KeyGrid/VBox2/KeyHistoryPlayReversed/HBox"]
+margin_right = 73.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox2/KeyHistoryPlayReversed"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="VBoxHistoryToStart" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
+editor/display_folded = true
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="KeyBox/KeyGrid/VBox2/VBoxHistoryToStart"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="BTN_KEY_HISTORY_TO_START" type="Button" parent="KeyBox/KeyGrid/VBox2/VBoxHistoryToStart/HBoxContainer"]
+margin_right = 73.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+
+[node name="VSeparator" type="VSeparator" parent="KeyBox/KeyGrid/VBox2/VBoxHistoryToStart/HBoxContainer"]
+margin_right = 4.0
+margin_bottom = 40.0
+
+[node name="BTN_KEY_HISTORY_TO_START_ALT" type="Button" parent="KeyBox/KeyGrid/VBox2/VBoxHistoryToStart/HBoxContainer"]
+margin_right = 73.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox2/VBoxHistoryToStart"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="VBoxHistoryToEnd" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
+editor/display_folded = true
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="KeyBox/KeyGrid/VBox2/VBoxHistoryToEnd"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="BTN_KEY_HISTORY_TO_END" type="Button" parent="KeyBox/KeyGrid/VBox2/VBoxHistoryToEnd/HBoxContainer"]
+margin_right = 73.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+
+[node name="VSeparator" type="VSeparator" parent="KeyBox/KeyGrid/VBox2/VBoxHistoryToEnd/HBoxContainer"]
+margin_right = 4.0
+margin_bottom = 40.0
+
+[node name="BTN_KEY_HISTORY_TO_END_ALT" type="Button" parent="KeyBox/KeyGrid/VBox2/VBoxHistoryToEnd/HBoxContainer"]
+margin_right = 73.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox2/VBoxHistoryToEnd"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="KeyHintMode" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
+editor/display_folded = true
+margin_right = 188.0
+margin_bottom = 84.0
+custom_constants/separation = 0
+
+[node name="HBox" type="HBoxContainer" parent="KeyBox/KeyGrid/VBox2/KeyHintMode"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="KEY" type="Button" parent="KeyBox/KeyGrid/VBox2/KeyHintMode/HBox"]
+margin_right = 25.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+
+[node name="VSeparator" type="VSeparator" parent="KeyBox/KeyGrid/VBox2/KeyHintMode/HBox"]
+margin_right = 4.0
+margin_bottom = 40.0
+
+[node name="KEY_ALT" type="Button" parent="KeyBox/KeyGrid/VBox2/KeyHintMode/HBox"]
+margin_right = 25.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+text = "?"
+flat = true
+script = ExtResource( 6 )
+
+[node name="HSeparator" type="HSeparator" parent="KeyBox/KeyGrid/VBox2/KeyHintMode"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="SaveButton" type="Button" parent="."]
+margin_right = 147.0
+margin_bottom = 20.0
+text = "BTN_INPUT_SAVE"
+
+[node name="DefaultButton" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+text = "BTN_INPUT_DEFAULT"
+
+[node name="Offset2" type="ReferenceRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = -45.0
+margin_bottom = -45.0
+
+[connection signal="toggled" from="HBoxInfo3/CB_SHOW_LOCKED_MEMBERS" to="." method="_on_CB_SHOW_LOCKED_MEMBERS_toggled"]
+[connection signal="pressed" from="SaveButton" to="." method="_on_SaveButton_pressed"]
+[connection signal="pressed" from="DefaultButton" to="." method="_on_DefaultButton_pressed"]

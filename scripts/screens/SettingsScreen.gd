@@ -112,7 +112,6 @@ func _ready():
 	# History - Symbols
 	UI.register_named_element(UI.RB_HISTORY_SYMBOLS_JP, history.get_node("SymbolsBox/VBox/HBoxHistorySymbols1/RB_HISTORY_SYMBOLS_JP"))	
 	UI.register_named_element(UI.RB_HISTORY_SYMBOLS_EN, history.get_node("SymbolsBox/VBox/HBoxHistorySymbols2/RB_HISTORY_SYMBOLS_EN"))
-	
 	# Camera
 	UI.register_named_element(UI.CB_CAMERA_ALLOW_YAW, camera.get_node("Box/VBox/HBoxAllowYaw/CB_CAMERA_ALLOW_YAW"))
 	UI.register_named_element(UI.CB_CAMERA_ALLOW_PITCH, camera.get_node("Box/VBox/HBoxAllowPitch/CB_CAMERA_ALLOW_PITCH"))
@@ -120,6 +119,7 @@ func _ready():
 	UI.register_named_element(UI.CB_CAMERA_ALLOW_PAN, camera.get_node("Box/VBox/HBoxAllowPan/CB_CAMERA_ALLOW_PAN"))
 	UI.register_named_element(UI.CB_CAMERA_SWITCH_SIDES, camera.get_node("Box/VBox/HBoxSwitchSides/CB_CAMERA_SWITCH_SIDES"))
 	UI.register_named_element(UI.CB_CAMERA_RESTRICT_YAW, camera.get_node("Box/VBox/HBoxRestrictYaw/CB_CAMERA_RESTRICT_YAW"))
+	UI.register_named_element(UI.CB_CAMERA_INTERPOLATION, camera.get_node("Box/VBox/HBoxEnableInterpolation/CB_CAMERA_INTERPOLATION"))
 	# Styles
 	UI.register_named_element(UI.CHECKBOX_STYLES_UI_COLORING, styles.get_node("BoardStylesBox/VBox/HBoxBoardUIColoring/CB_STYLES_UI_COLORING"))
 	UI.register_named_element(UI.CHECKBOX_STYLES_BOARD_MARKUP, styles.get_node("HBoxBoardMarkup/CB_STYLES_BOARD_MARKUP"))
@@ -793,7 +793,11 @@ func _on_CB_CAMERA_SWITCH_SIDES_toggled(toggled):
 	
 func _on_CB_CAMERA_RESTRICT_YAW_toggled(toggled):
 	Profiles.get_current_settings().set_value(Settings.SV_CAMERA_RESTRICT_YAW, toggled)
-	
+
+func _on_CB_CAMERA_INTERPOLATION_toggled(toggled):
+	Profiles.set_value(Settings.SV_CAMERA_SMOOTH_ENABLED, toggled)
+	UI.get_game().current_view.stop_tweens()
+			
 # Styles
 
 func _on_CB_STYLES_UI_COLORING_toggled(toggled):
@@ -1009,10 +1013,5 @@ func _on_MasterIPV6Box_text_changed(new_text):
 	
 func _on_MasterPortBox_value_changed(value):
 	Profiles.set_value(Settings.SV_MASTER_PORT, int(value))
-
-
-
-
-
 
 
