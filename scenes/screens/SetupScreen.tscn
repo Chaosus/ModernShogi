@@ -1,0 +1,1042 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scripts/screens/GameCreationScreen.gd" type="Script" id=1]
+[ext_resource path="res://scripts/ui/ScalableScrollContainer.gd" type="Script" id=2]
+[ext_resource path="res://scripts/ui/BackgroundContainer.gd" type="Script" id=3]
+[ext_resource path="res://scripts/ui/RadioBox.gd" type="Script" id=4]
+[ext_resource path="res://scripts/ui/CheckBox.gd" type="Script" id=5]
+[ext_resource path="res://ui/btngroups/handicap_buttongroup.tres" type="ButtonGroup" id=6]
+
+[sub_resource type="ButtonGroup" id=1]
+
+[sub_resource type="ButtonGroup" id=2]
+
+[node name="SetupScreen" type="CenterContainer"]
+visible = false
+margin_right = 1920.0
+margin_bottom = 952.0
+rect_min_size = Vector2( 0, 952 )
+size_flags_vertical = 0
+script = ExtResource( 1 )
+
+[node name="Box" type="ScrollContainer" parent="."]
+margin_left = 892.0
+margin_top = 476.0
+margin_right = 1028.0
+margin_bottom = 476.0
+scroll_horizontal_enabled = false
+script = ExtResource( 2 )
+full_scale = true
+sub_offset_x = 145
+sub_offset_y = 91
+
+[node name="SimpleLayout" type="VBoxContainer" parent="Box"]
+margin_right = 136.0
+margin_bottom = 306.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+custom_constants/separation = 50
+
+[node name="LoadControl" type="VBoxContainer" parent="Box/SimpleLayout"]
+editor/display_folded = true
+visible = false
+margin_right = 965.0
+margin_bottom = 58.0
+
+[node name="HSeparator" type="HSeparator" parent="Box/SimpleLayout/LoadControl"]
+margin_right = 965.0
+margin_bottom = 4.0
+size_flags_horizontal = 3
+
+[node name="SH_LOAD" type="Label" parent="Box/SimpleLayout/LoadControl"]
+margin_top = 8.0
+margin_right = 965.0
+margin_bottom = 58.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_vertical = 1
+text = "SH_LOAD"
+align = 1
+valign = 1
+
+[node name="VBoxNetworkControl" type="VBoxContainer" parent="Box/SimpleLayout"]
+editor/display_folded = true
+visible = false
+margin_right = 1425.0
+margin_bottom = 237.0
+
+[node name="HSeparator" type="HSeparator" parent="Box/SimpleLayout/VBoxNetworkControl"]
+margin_right = 1425.0
+size_flags_horizontal = 3
+
+[node name="SH_NETWORK" type="Label" parent="Box/SimpleLayout/VBoxNetworkControl"]
+margin_top = 45.0
+margin_right = 1425.0
+margin_bottom = 94.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_vertical = 1
+text = "SH_NETWORK"
+align = 1
+valign = 1
+
+[node name="NetBox" type="PanelContainer" parent="Box/SimpleLayout/VBoxNetworkControl"]
+editor/display_folded = true
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 3 )
+
+[node name="VBox" type="VBoxContainer" parent="Box/SimpleLayout/VBoxNetworkControl/NetBox"]
+editor/display_folded = true
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="HSeparator" type="HSeparator" parent="Box/SimpleLayout/VBoxNetworkControl/NetBox/VBox"]
+margin_top = 50.0
+margin_right = 1023.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+
+[node name="HBoxPort" type="HBoxContainer" parent="Box/SimpleLayout/VBoxNetworkControl/NetBox/VBox"]
+editor/display_folded = true
+margin_top = 184.0
+margin_right = 1425.0
+margin_bottom = 237.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_horizontal = 3
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Box/SimpleLayout/VBoxNetworkControl/NetBox/VBox/HBoxPort"]
+margin_right = 80.0
+margin_bottom = 53.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="Label" type="Label" parent="Box/SimpleLayout/VBoxNetworkControl/NetBox/VBox/HBoxPort"]
+margin_left = 84.0
+margin_top = 2.0
+margin_right = 304.0
+margin_bottom = 51.0
+text = "DESC_PORT"
+
+[node name="SpinBox" type="SpinBox" parent="Box/SimpleLayout/VBoxNetworkControl/NetBox/VBox/HBoxPort"]
+margin_left = 308.0
+margin_right = 508.0
+margin_bottom = 53.0
+rect_min_size = Vector2( 200, 0 )
+max_value = 65535.0
+value = 55669.0
+
+[node name="ReferenceRect2" type="ReferenceRect" parent="Box/SimpleLayout/VBoxNetworkControl/NetBox/VBox/HBoxPort"]
+margin_left = 512.0
+margin_right = 1425.0
+margin_bottom = 53.0
+size_flags_horizontal = 3
+
+[node name="HSeparator2" type="HSeparator" parent="Box/SimpleLayout/VBoxNetworkControl/NetBox/VBox"]
+margin_top = 139.0
+margin_right = 1425.0
+margin_bottom = 139.0
+size_flags_horizontal = 3
+
+[node name="QuickAIControl" type="VBoxContainer" parent="Box/SimpleLayout"]
+editor/display_folded = true
+visible = false
+margin_right = 1151.0
+margin_bottom = 331.0
+alignment = 1
+
+[node name="Offset" type="ReferenceRect" parent="Box/SimpleLayout/QuickAIControl"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="SH_AI" type="Label" parent="Box/SimpleLayout/QuickAIControl"]
+margin_top = 95.0
+margin_right = 1023.0
+margin_bottom = 144.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_vertical = 1
+text = "SH_GAME_AI"
+align = 1
+valign = 1
+
+[node name="AIBox" type="PanelContainer" parent="Box/SimpleLayout/QuickAIControl"]
+editor/display_folded = true
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 3 )
+
+[node name="VBox" type="VBoxContainer" parent="Box/SimpleLayout/QuickAIControl/AIBox"]
+editor/display_folded = true
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="HSeparator2" type="HSeparator" parent="Box/SimpleLayout/QuickAIControl/AIBox/VBox"]
+margin_top = 189.0
+margin_right = 1023.0
+margin_bottom = 189.0
+size_flags_horizontal = 3
+
+[node name="VBoxQuickAIError" type="VBoxContainer" parent="Box/SimpleLayout/QuickAIControl/AIBox/VBox"]
+editor/display_folded = true
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="HBoxQuickAIError" type="HBoxContainer" parent="Box/SimpleLayout/QuickAIControl/AIBox/VBox/VBoxQuickAIError"]
+editor/display_folded = true
+margin_right = 821.0
+margin_bottom = 49.0
+rect_min_size = Vector2( 0, 105 )
+size_flags_horizontal = 3
+
+[node name="Offset" type="ReferenceRect" parent="Box/SimpleLayout/QuickAIControl/AIBox/VBox/VBoxQuickAIError/HBoxQuickAIError"]
+margin_right = 80.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 80, 0 )
+size_flags_horizontal = 3
+
+[node name="QuickAIErrorLabel" type="Label" parent="Box/SimpleLayout/QuickAIControl/AIBox/VBox/VBoxQuickAIError/HBoxQuickAIError"]
+margin_right = 40.0
+margin_bottom = 49.0
+text = "DESC_ENGINE_NOT_FOUND_ERROR"
+align = 1
+
+[node name="Offset2" type="ReferenceRect" parent="Box/SimpleLayout/QuickAIControl/AIBox/VBox/VBoxQuickAIError/HBoxQuickAIError"]
+margin_right = 80.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 80, 0 )
+size_flags_horizontal = 3
+
+[node name="HBoxAISettings" type="HBoxContainer" parent="Box/SimpleLayout/QuickAIControl/AIBox/VBox/VBoxQuickAIError"]
+editor/display_folded = true
+margin_right = 628.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_horizontal = 3
+
+[node name="Offset" type="ReferenceRect" parent="Box/SimpleLayout/QuickAIControl/AIBox/VBox/VBoxQuickAIError/HBoxAISettings"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 80, 0 )
+size_flags_horizontal = 3
+
+[node name="AISettingsButton" type="Button" parent="Box/SimpleLayout/QuickAIControl/AIBox/VBox/VBoxQuickAIError/HBoxAISettings"]
+margin_right = 40.0
+margin_bottom = 49.0
+text = "DESC_ADV_AI_SETTINGS"
+
+[node name="Offset2" type="ReferenceRect" parent="Box/SimpleLayout/QuickAIControl/AIBox/VBox/VBoxQuickAIError/HBoxAISettings"]
+margin_right = 80.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 80, 0 )
+size_flags_horizontal = 3
+
+[node name="QuickAIControl" type="VBoxContainer" parent="Box/SimpleLayout/QuickAIControl/AIBox/VBox"]
+visible = false
+margin_right = 771.0
+margin_bottom = 143.0
+
+[node name="HBoxAISkillLevel" type="HBoxContainer" parent="Box/SimpleLayout/QuickAIControl/AIBox/VBox/QuickAIControl"]
+margin_right = 146.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_horizontal = 3
+custom_constants/separation = 80
+
+[node name="Offset" type="ReferenceRect" parent="Box/SimpleLayout/QuickAIControl/AIBox/VBox/QuickAIControl/HBoxAISkillLevel"]
+
+[node name="SkillLevelDesc" type="Label" parent="Box/SimpleLayout/QuickAIControl/AIBox/VBox/QuickAIControl/HBoxAISkillLevel"]
+margin_right = 40.0
+margin_bottom = 49.0
+text = "DESC_AI_DIFFICULTY"
+
+[node name="AISkillLevelSlider" type="HSlider" parent="Box/SimpleLayout/QuickAIControl/AIBox/VBox/QuickAIControl/HBoxAISkillLevel"]
+margin_right = 16.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 500, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 20.0
+scrollable = false
+ticks_on_borders = true
+
+[node name="AISkillLevelSV" type="Label" parent="Box/SimpleLayout/QuickAIControl/AIBox/VBox/QuickAIControl/HBoxAISkillLevel"]
+margin_right = 40.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 50, 0 )
+align = 1
+
+[node name="Offset2" type="ReferenceRect" parent="Box/SimpleLayout/QuickAIControl/AIBox/VBox/QuickAIControl/HBoxAISkillLevel"]
+
+[node name="HBoxAIBattle" type="HBoxContainer" parent="Box/SimpleLayout/QuickAIControl/AIBox/VBox/QuickAIControl"]
+editor/display_folded = true
+margin_right = 146.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_horizontal = 3
+
+[node name="Offset" type="ReferenceRect" parent="Box/SimpleLayout/QuickAIControl/AIBox/VBox/QuickAIControl/HBoxAIBattle"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 80, 0 )
+
+[node name="CPUBattleCheckBox" type="CheckBox" parent="Box/SimpleLayout/QuickAIControl/AIBox/VBox/QuickAIControl/HBoxAIBattle"]
+margin_right = 32.0
+margin_bottom = 49.0
+text = "CB_AI_VS_AI"
+
+[node name="HSeparator3" type="HSeparator" parent="Box/SimpleLayout/QuickAIControl/AIBox/VBox"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TimeControl" type="VBoxContainer" parent="Box/SimpleLayout"]
+editor/display_folded = true
+visible = false
+margin_top = 50.0
+margin_right = 1023.0
+margin_bottom = 294.0
+
+[node name="HSeparator" type="HSeparator" parent="Box/SimpleLayout/TimeControl"]
+margin_right = 1023.0
+size_flags_horizontal = 3
+
+[node name="SH_GAME_TIMECONTROL" type="Label" parent="Box/SimpleLayout/TimeControl"]
+margin_top = 45.0
+margin_right = 1023.0
+margin_bottom = 94.0
+text = "SH_GAME_TIMECONTROL"
+align = 1
+
+[node name="HSeparator2" type="HSeparator" parent="Box/SimpleLayout/TimeControl"]
+margin_top = 139.0
+margin_right = 1023.0
+margin_bottom = 139.0
+size_flags_horizontal = 3
+
+[node name="HBoxTimeControl" type="HBoxContainer" parent="Box/SimpleLayout/TimeControl"]
+editor/display_folded = true
+margin_top = 184.0
+margin_right = 1023.0
+margin_bottom = 244.0
+custom_constants/separation = 80
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Box/SimpleLayout/TimeControl/HBoxTimeControl"]
+margin_bottom = 60.0
+
+[node name="TimeControlMinutesDesc" type="Label" parent="Box/SimpleLayout/TimeControl/HBoxTimeControl"]
+margin_left = 80.0
+margin_top = 5.0
+margin_right = 363.0
+margin_bottom = 54.0
+text = "DESC_MINUTES"
+
+[node name="TimeControlMinutes" type="OptionButton" parent="Box/SimpleLayout/TimeControl/HBoxTimeControl"]
+margin_left = 443.0
+margin_right = 508.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 65, 60 )
+align = 1
+
+[node name="TimeControlSecondsDesc" type="Label" parent="Box/SimpleLayout/TimeControl/HBoxTimeControl"]
+margin_left = 588.0
+margin_top = 5.0
+margin_right = 878.0
+margin_bottom = 54.0
+text = "DESC_BYOYOMI"
+
+[node name="TimeControlSeconds" type="OptionButton" parent="Box/SimpleLayout/TimeControl/HBoxTimeControl"]
+margin_left = 958.0
+margin_right = 1023.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 65, 60 )
+align = 1
+
+[node name="HBoxRatedTimeControl" type="HBoxContainer" parent="Box/SimpleLayout/TimeControl"]
+editor/display_folded = true
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 80
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Box/SimpleLayout/TimeControl/HBoxRatedTimeControl"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="DESC_MINUTES" type="Label" parent="Box/SimpleLayout/TimeControl/HBoxRatedTimeControl"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "DESC_MINUTES"
+
+[node name="OPT_TIMECONTROL_MINUTES" type="OptionButton" parent="Box/SimpleLayout/TimeControl/HBoxRatedTimeControl"]
+margin_top = 34.0
+margin_right = 65.0
+margin_bottom = 94.0
+rect_min_size = Vector2( 65, 60 )
+align = 1
+
+[node name="DESC_BYOYOMI" type="Label" parent="Box/SimpleLayout/TimeControl/HBoxRatedTimeControl"]
+margin_right = 96.0
+margin_bottom = 14.0
+text = "DESC_BYOYOMI"
+
+[node name="OPT_TIMECONTROL_BYOYOMI" type="OptionButton" parent="Box/SimpleLayout/TimeControl/HBoxRatedTimeControl"]
+margin_right = 65.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 65, 60 )
+align = 1
+
+[node name="GameSettings" type="VBoxContainer" parent="Box/SimpleLayout"]
+margin_right = 965.0
+margin_bottom = 138.0
+
+[node name="LocalOffset" type="ReferenceRect" parent="Box/SimpleLayout/GameSettings" groups=[
+"local_offset",
+]]
+margin_right = 965.0
+
+[node name="SH_GAME_SETTINGS" type="Label" parent="Box/SimpleLayout/GameSettings"]
+margin_top = 4.0
+margin_right = 965.0
+margin_bottom = 54.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_vertical = 1
+text = "SH_GAME_SETTINGS"
+align = 1
+valign = 1
+
+[node name="GameBox" type="PanelContainer" parent="Box/SimpleLayout/GameSettings"]
+margin_top = 58.0
+margin_right = 965.0
+margin_bottom = 138.0
+script = ExtResource( 3 )
+
+[node name="VBox" type="VBoxContainer" parent="Box/SimpleLayout/GameSettings/GameBox"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 958.0
+margin_bottom = 73.0
+
+[node name="HSeparator" type="HSeparator" parent="Box/SimpleLayout/GameSettings/GameBox/VBox"]
+margin_right = 951.0
+margin_bottom = 4.0
+size_flags_horizontal = 3
+
+[node name="HBox" type="HBoxContainer" parent="Box/SimpleLayout/GameSettings/GameBox/VBox"]
+margin_top = 8.0
+margin_right = 951.0
+margin_bottom = 58.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="Offset" type="ReferenceRect" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox"]
+margin_right = 50.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="VBox" type="VBoxContainer" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox"]
+margin_left = 50.0
+margin_right = 901.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+
+[node name="GameType" type="HBoxContainer" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox"]
+visible = false
+margin_left = 768.0
+margin_top = 1075.0
+margin_right = 2370.0
+margin_bottom = 1125.0
+size_flags_horizontal = 3
+custom_constants/separation = 80
+
+[node name="Desc" type="Label" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/GameType"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 233, 0 )
+text = "MP_DESC_GAME"
+
+[node name="RatedGameRadioBox" type="CheckBox" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/GameType"]
+margin_right = 24.0
+margin_bottom = 48.0
+pressed = true
+group = SubResource( 1 )
+text = "RB_RATED_GAME"
+script = ExtResource( 4 )
+
+[node name="UnratedGameRadioBox" type="CheckBox" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/GameType"]
+margin_right = 386.0
+margin_bottom = 48.0
+group = SubResource( 1 )
+text = "RB_UNRATED_GAME"
+script = ExtResource( 4 )
+
+[node name="PrivateGameRadioBox" type="CheckBox" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/GameType"]
+margin_right = 361.0
+margin_bottom = 48.0
+group = SubResource( 1 )
+text = "RB_PRIVATE_GAME"
+script = ExtResource( 4 )
+
+[node name="Password" type="HBoxContainer" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox"]
+editor/display_folded = true
+visible = false
+margin_left = 768.0
+margin_top = 788.0
+margin_right = 2193.0
+margin_bottom = 841.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_horizontal = 3
+custom_constants/separation = 50
+
+[node name="Desc" type="Label" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/Password"]
+margin_left = 84.0
+margin_top = 2.0
+margin_right = 304.0
+margin_bottom = 51.0
+rect_min_size = Vector2( 233, 0 )
+text = "LABEL_PASSWORD"
+
+[node name="PasswordBox" type="LineEdit" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/Password"]
+margin_right = 58.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+max_length = 30
+expand_to_text_length = true
+
+[node name="GameName" type="HBoxContainer" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox"]
+editor/display_folded = true
+visible = false
+margin_left = 768.0
+margin_top = 788.0
+margin_right = 2193.0
+margin_bottom = 841.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_horizontal = 3
+custom_constants/separation = 50
+
+[node name="Label" type="Label" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/GameName"]
+margin_left = 84.0
+margin_top = 2.0
+margin_right = 304.0
+margin_bottom = 51.0
+rect_min_size = Vector2( 233, 0 )
+text = "DESC_GAME_NAME"
+
+[node name="GameName" type="LineEdit" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/GameName"]
+margin_right = 58.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+text = "Play with me !"
+max_length = 30
+expand_to_text_length = true
+
+[node name="HostSide" type="HBoxContainer" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox"]
+margin_right = 851.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_horizontal = 3
+custom_constants/separation = 80
+
+[node name="Label" type="Label" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/HostSide"]
+margin_top = 18.0
+margin_right = 233.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 233, 0 )
+text = "DESC_HOST_SIDE"
+
+[node name="RandomSide" type="Label" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/HostSide"]
+visible = false
+margin_top = -102.0
+margin_right = 482.0
+margin_bottom = -53.0
+text = "LABEL_RANDOM"
+align = 1
+
+[node name="BlackSide" type="Label" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/HostSide"]
+visible = false
+margin_top = -102.0
+margin_right = 482.0
+margin_bottom = -53.0
+text = "LABEL_BLACK4"
+align = 1
+
+[node name="WhiteSide" type="Label" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/HostSide"]
+visible = false
+margin_top = -102.0
+margin_right = 482.0
+margin_bottom = -53.0
+text = "LABEL_WHITE4"
+align = 1
+
+[node name="AISide" type="Label" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/HostSide"]
+visible = false
+margin_top = -102.0
+margin_right = 482.0
+margin_bottom = -53.0
+text = "DESC_AI_SIDE"
+align = 1
+
+[node name="LocalSide" type="Label" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/HostSide"]
+visible = false
+margin_top = -102.0
+margin_right = 482.0
+margin_bottom = -53.0
+text = "DESC_LOCAL_SIDE"
+align = 1
+
+[node name="HBoxSide" type="HBoxContainer" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/HostSide"]
+margin_left = 313.0
+margin_right = 851.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+custom_constants/separation = 80
+
+[node name="RandomCheckBox" type="CheckBox" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/HostSide/HBoxSide"]
+margin_right = 133.0
+margin_bottom = 50.0
+pressed = true
+group = SubResource( 2 )
+text = "LABEL_RANDOM"
+script = ExtResource( 4 )
+
+[node name="BlackCheckBox" type="CheckBox" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/HostSide/HBoxSide"]
+margin_left = 213.0
+margin_right = 335.0
+margin_bottom = 50.0
+group = SubResource( 2 )
+text = "LABEL_BLACK4"
+script = ExtResource( 4 )
+
+[node name="WhiteCheckBox" type="CheckBox" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/HostSide/HBoxSide"]
+margin_left = 415.0
+margin_right = 538.0
+margin_bottom = 50.0
+group = SubResource( 2 )
+text = "LABEL_WHITE4"
+script = ExtResource( 4 )
+
+[node name="Offset2" type="ReferenceRect" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox"]
+margin_left = 901.0
+margin_right = 951.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="HSeparator2" type="HSeparator" parent="Box/SimpleLayout/GameSettings/GameBox/VBox"]
+margin_top = 62.0
+margin_right = 951.0
+margin_bottom = 66.0
+size_flags_horizontal = 3
+
+[node name="SH_GAME_HANDICAP" type="Label" parent="Box/SimpleLayout"]
+margin_top = 188.0
+margin_right = 965.0
+margin_bottom = 238.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_vertical = 1
+text = "SH_GAME_HANDICAP"
+align = 1
+valign = 1
+
+[node name="HandicapBox" type="PanelContainer" parent="Box/SimpleLayout"]
+editor/display_folded = true
+margin_top = 288.0
+margin_right = 965.0
+margin_bottom = 342.0
+script = ExtResource( 3 )
+
+[node name="VBox" type="VBoxContainer" parent="Box/SimpleLayout/HandicapBox"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 958.0
+margin_bottom = 47.0
+
+[node name="HSeparator" type="HSeparator" parent="Box/SimpleLayout/HandicapBox/VBox"]
+margin_right = 951.0
+margin_bottom = 4.0
+size_flags_horizontal = 3
+
+[node name="VBox" type="VBoxContainer" parent="Box/SimpleLayout/HandicapBox/VBox"]
+editor/display_folded = true
+margin_top = 8.0
+margin_right = 951.0
+margin_bottom = 40.0
+
+[node name="HBoxHandicap" type="HBoxContainer" parent="Box/SimpleLayout/HandicapBox/VBox/VBox"]
+editor/display_folded = true
+margin_right = 951.0
+margin_bottom = 24.0
+
+[node name="Offset" type="ReferenceRect" parent="Box/SimpleLayout/HandicapBox/VBox/VBox/HBoxHandicap"]
+margin_right = 50.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="CB_GAME_ENABLE_HANDICAP" type="CheckBox" parent="Box/SimpleLayout/HandicapBox/VBox/VBox/HBoxHandicap"]
+margin_left = 54.0
+margin_right = 273.0
+margin_bottom = 24.0
+text = "CB_GAME_ENABLE_HANDICAP"
+script = ExtResource( 5 )
+
+[node name="HBoxAIHandicap" type="HBoxContainer" parent="Box/SimpleLayout/HandicapBox/VBox/VBox"]
+editor/display_folded = true
+visible = false
+margin_top = 184.0
+margin_right = 456.0
+margin_bottom = 233.0
+
+[node name="Offset" type="ReferenceRect" parent="Box/SimpleLayout/HandicapBox/VBox/VBox/HBoxAIHandicap"]
+margin_top = -754.0
+margin_right = 80.0
+margin_bottom = -714.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="AIGiveHandicapCheckBox" type="CheckBox" parent="Box/SimpleLayout/HandicapBox/VBox/VBox/HBoxAIHandicap"]
+margin_top = -754.0
+margin_right = 372.0
+margin_bottom = -705.0
+text = "CB_AI_HANDICAP"
+script = ExtResource( 5 )
+
+[node name="HSeparator2" type="HSeparator" parent="Box/SimpleLayout/HandicapBox/VBox/VBox"]
+margin_top = 28.0
+margin_right = 951.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+
+[node name="VBox2" type="VBoxContainer" parent="Box/SimpleLayout/HandicapBox/VBox"]
+editor/display_folded = true
+visible = false
+margin_top = 82.0
+margin_right = 1128.0
+margin_bottom = 1819.0
+
+[node name="HBoxHandicapLeftLance" type="HBoxContainer" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 80
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicapLeftLance"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="HandicapLeftLance" type="CheckBox" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicapLeftLance"]
+margin_top = 28.0
+margin_right = 257.0
+margin_bottom = 52.0
+pressed = true
+group = ExtResource( 6 )
+text = "CB_GAME_HANDICAP_LEFT_LANCE"
+script = ExtResource( 4 )
+
+[node name="HBoxHandicapBishop" type="HBoxContainer" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 80
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicapBishop"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="HandicapBishop" type="CheckBox" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicapBishop"]
+margin_top = 56.0
+margin_right = 257.0
+margin_bottom = 80.0
+group = ExtResource( 6 )
+text = "CB_GAME_HANDICAP_BISHOP"
+script = ExtResource( 4 )
+
+[node name="HBoxHandicapRook" type="HBoxContainer" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 80
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicapRook"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="HandicapRook" type="CheckBox" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicapRook"]
+margin_top = 56.0
+margin_right = 257.0
+margin_bottom = 80.0
+group = ExtResource( 6 )
+text = "CB_GAME_HANDICAP_ROOK"
+script = ExtResource( 4 )
+
+[node name="HBoxHandicapRookLeftLance" type="HBoxContainer" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 80
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicapRookLeftLance"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="HandicapRookLeftLance" type="CheckBox" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicapRookLeftLance"]
+margin_right = 257.0
+margin_bottom = 24.0
+group = ExtResource( 6 )
+text = "CB_GAME_HANDICAP_ROOK_LANCE"
+script = ExtResource( 4 )
+
+[node name="HBoxHandicap2Piece" type="HBoxContainer" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 80
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap2Piece"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="HandicapPiece2" type="CheckBox" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap2Piece"]
+margin_right = 257.0
+margin_bottom = 24.0
+group = ExtResource( 6 )
+text = "CB_GAME_HANDICAP_2PIECE"
+script = ExtResource( 4 )
+
+[node name="HBoxHandicap3Piece" type="HBoxContainer" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 80
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap3Piece"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="HandicapPiece3" type="CheckBox" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap3Piece"]
+margin_right = 257.0
+margin_bottom = 24.0
+group = ExtResource( 6 )
+text = "CB_GAME_HANDICAP_3PIECE"
+script = ExtResource( 4 )
+
+[node name="HBoxHandicap4Piece" type="HBoxContainer" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 80
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap4Piece"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="HandicapPiece4" type="CheckBox" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap4Piece"]
+margin_right = 257.0
+margin_bottom = 24.0
+group = ExtResource( 6 )
+text = "CB_GAME_HANDICAP_4PIECE"
+script = ExtResource( 4 )
+
+[node name="HBoxHandicap5Piece" type="HBoxContainer" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 80
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap5Piece"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="HandicapPiece5" type="CheckBox" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap5Piece"]
+margin_right = 257.0
+margin_bottom = 24.0
+group = ExtResource( 6 )
+text = "CB_GAME_HANDICAP_5PIECE"
+script = ExtResource( 4 )
+
+[node name="HBoxHandicap6Piece" type="HBoxContainer" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 80
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap6Piece"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="HandicapPiece6" type="CheckBox" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap6Piece"]
+margin_right = 257.0
+margin_bottom = 24.0
+group = ExtResource( 6 )
+text = "CB_GAME_HANDICAP_6PIECE"
+script = ExtResource( 4 )
+
+[node name="HBoxHandicap7Piece" type="HBoxContainer" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 80
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap7Piece"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="HandicapPiece7" type="CheckBox" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap7Piece"]
+margin_right = 257.0
+margin_bottom = 24.0
+group = ExtResource( 6 )
+text = "CB_GAME_HANDICAP_7PIECE"
+script = ExtResource( 4 )
+
+[node name="HBoxHandicap8Piece" type="HBoxContainer" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 80
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap8Piece"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="HandicapPiece8" type="CheckBox" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap8Piece"]
+margin_right = 257.0
+margin_bottom = 24.0
+group = ExtResource( 6 )
+text = "CB_GAME_HANDICAP_8PIECE"
+script = ExtResource( 4 )
+
+[node name="HBoxHandicap9Piece" type="HBoxContainer" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 80
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap9Piece"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="HandicapPiece9" type="CheckBox" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap9Piece"]
+margin_right = 257.0
+margin_bottom = 24.0
+group = ExtResource( 6 )
+text = "CB_GAME_HANDICAP_9PIECE"
+script = ExtResource( 4 )
+
+[node name="HBoxHandicap10Piece" type="HBoxContainer" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 80
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap10Piece"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="HandicapPiece10" type="CheckBox" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap10Piece"]
+margin_right = 257.0
+margin_bottom = 24.0
+group = ExtResource( 6 )
+text = "CB_GAME_HANDICAP_10PIECE"
+script = ExtResource( 4 )
+
+[node name="HBoxHandicap3Pawns" type="HBoxContainer" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 80
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap3Pawns"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Handicap3Pawns" type="CheckBox" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap3Pawns"]
+margin_right = 257.0
+margin_bottom = 24.0
+group = ExtResource( 6 )
+text = "CB_GAME_HANDICAP_3PAWNS"
+script = ExtResource( 4 )
+
+[node name="HBoxHandicapNakedKing" type="HBoxContainer" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 80
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicapNakedKing"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="HandicapNakedKing" type="CheckBox" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicapNakedKing"]
+margin_right = 257.0
+margin_bottom = 24.0
+group = ExtResource( 6 )
+text = "CB_GAME_HANDICAP_NAKED_KING"
+script = ExtResource( 4 )
+
+[node name="HBoxHandicapDragonfly" type="HBoxContainer" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 80
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicapDragonfly"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="HandicapDragonfly" type="CheckBox" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicapDragonfly"]
+margin_right = 257.0
+margin_bottom = 24.0
+group = ExtResource( 6 )
+text = "CB_GAME_HANDICAP_DRAGONFLY"
+script = ExtResource( 4 )
+
+[node name="HBoxHandicapDragonflyLances" type="HBoxContainer" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 80
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicapDragonflyLances"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="HandicapDragonflyLances" type="CheckBox" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicapDragonflyLances"]
+margin_right = 257.0
+margin_bottom = 24.0
+group = ExtResource( 6 )
+text = "CB_GAME_HANDICAP_DRAGONFLY_LANCES"
+script = ExtResource( 4 )
+
+[node name="HBoxHandicapDragonflyLancesKnights" type="HBoxContainer" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 80
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicapDragonflyLancesKnights"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="HandicapDragonflyLancesKnights" type="CheckBox" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicapDragonflyLancesKnights"]
+margin_right = 257.0
+margin_bottom = 24.0
+group = ExtResource( 6 )
+text = "CB_GAME_HANDICAP_DRAGONFLY_LANCES_KNIGHTS"
+script = ExtResource( 4 )
+
+[node name="HSeparator2" type="HSeparator" parent="Box/SimpleLayout/HandicapBox/VBox/VBox2"]
+margin_right = 40.0
+margin_bottom = 4.0
+
+[node name="CreateButton" type="Button" parent="Box/SimpleLayout"]
+margin_top = 392.0
+margin_right = 965.0
+margin_bottom = 412.0
+text = "BTN_CREATE"
+flat = true
+
+[connection signal="visibility_changed" from="." to="." method="_on_SetupScreen_visibility_changed"]
+[connection signal="value_changed" from="Box/SimpleLayout/QuickAIControl/AIBox/VBox/QuickAIControl/HBoxAISkillLevel/AISkillLevelSlider" to="." method="_on_AISkillLevelSlider_value_changed"]
+[connection signal="toggled" from="Box/SimpleLayout/QuickAIControl/AIBox/VBox/QuickAIControl/HBoxAIBattle/CPUBattleCheckBox" to="." method="_on_CPUBattleCheckBox_toggled"]
+[connection signal="pressed" from="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/GameType/RatedGameRadioBox" to="." method="_on_RatedGameRadioBox_pressed"]
+[connection signal="pressed" from="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/GameType/UnratedGameRadioBox" to="." method="_on_UnratedGameRadioBox_pressed"]
+[connection signal="pressed" from="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/GameType/PrivateGameRadioBox" to="." method="_on_PrivateGameRadioBox_pressed"]
+[connection signal="pressed" from="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/HostSide/HBoxSide/RandomCheckBox" to="." method="_on_RandomCheckBox_pressed"]
+[connection signal="pressed" from="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/HostSide/HBoxSide/BlackCheckBox" to="." method="_on_BlackCheckBox_pressed"]
+[connection signal="pressed" from="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/HostSide/HBoxSide/WhiteCheckBox" to="." method="_on_WhiteCheckBox_pressed"]
+[connection signal="toggled" from="Box/SimpleLayout/HandicapBox/VBox/VBox/HBoxHandicap/CB_GAME_ENABLE_HANDICAP" to="." method="_on_CB_GAME_ENABLE_HANDICAP_toggled"]
+[connection signal="toggled" from="Box/SimpleLayout/HandicapBox/VBox/VBox/HBoxAIHandicap/AIGiveHandicapCheckBox" to="." method="_on_AIGiveHandicapCheckBox_toggled"]
+[connection signal="pressed" from="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicapLeftLance/HandicapLeftLance" to="." method="_on_HandicapLeftLance_pressed"]
+[connection signal="pressed" from="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicapBishop/HandicapBishop" to="." method="_on_HandicapBishop_pressed"]
+[connection signal="pressed" from="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicapRook/HandicapRook" to="." method="_on_HandicapRook_pressed"]
+[connection signal="pressed" from="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicapRookLeftLance/HandicapRookLeftLance" to="." method="_on_HandicapRookLeftLance_pressed"]
+[connection signal="pressed" from="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap2Piece/HandicapPiece2" to="." method="_on_HandicapPiece2_pressed"]
+[connection signal="pressed" from="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap3Piece/HandicapPiece3" to="." method="_on_HandicapPiece3_pressed"]
+[connection signal="pressed" from="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap4Piece/HandicapPiece4" to="." method="_on_HandicapPiece4_pressed"]
+[connection signal="pressed" from="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap5Piece/HandicapPiece5" to="." method="_on_HandicapPiece5_pressed"]
+[connection signal="pressed" from="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap6Piece/HandicapPiece6" to="." method="_on_HandicapPiece6_pressed"]
+[connection signal="pressed" from="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap7Piece/HandicapPiece7" to="." method="_on_HandicapPiece7_pressed"]
+[connection signal="pressed" from="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap8Piece/HandicapPiece8" to="." method="_on_HandicapPiece8_pressed"]
+[connection signal="pressed" from="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap9Piece/HandicapPiece9" to="." method="_on_HandicapPiece9_pressed"]
+[connection signal="pressed" from="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap10Piece/HandicapPiece10" to="." method="_on_HandicapPiece10_pressed"]
+[connection signal="pressed" from="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicap3Pawns/Handicap3Pawns" to="." method="_on_Handicap3Pawns_pressed"]
+[connection signal="pressed" from="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicapNakedKing/HandicapNakedKing" to="." method="_on_HandicapNakedKing_pressed"]
+[connection signal="pressed" from="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicapDragonfly/HandicapDragonfly" to="." method="_on_HandicapDragonfly_pressed"]
+[connection signal="pressed" from="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicapDragonflyLances/HandicapDragonflyLances" to="." method="_on_HandicapDragonflyLances_pressed"]
+[connection signal="pressed" from="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicapDragonflyLancesKnights/HandicapDragonflyLancesKnights" to="." method="_on_HandicapDragonflyLancesKnights_pressed"]
+[connection signal="pressed" from="Box/SimpleLayout/CreateButton" to="." method="_on_CreateButton_pressed"]

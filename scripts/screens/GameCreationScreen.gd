@@ -395,7 +395,7 @@ func _on_CreateButton_pressed():
 	var handicap = Games.ShogiHandicaps.NONE
 	var side = host_side
 	
-	if !is_rated_game:
+	if !is_rated_game or is_ai_game:
 		if handicap_control.pressed:
 			handicap = _handicap
 	else:
