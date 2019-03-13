@@ -1,6 +1,6 @@
 ## What is this game about ?
 
-Its an advanced japanese chess client with 3D board, AI, server-based multiplayer and more !
+Its an free and advanced japanese chess(shogi) client with 3D board, AI, server-based multiplayer and more !
 
 Features:
 
@@ -21,7 +21,12 @@ https://chaosus.itch.io/modern-shogi - Its better to download directly through i
 
 ## Is this game free ? What kind of License ? 
 
-Yes its completly free. You can create your derivative work or contribute to main project. Source code is licensed under MIT license. If you want to help developer you can subscribe to my patreon - (https://www.patreon.com/chaosus). 
+Yes its completly free(except some assets - see [LICENSE](LICENSE) for more information). You can create your derivative work or contribute to main project. Source code is licensed under MIT license. If you want to help developer you can subscribes to my patreon - (https://www.patreon.com/chaosus). 
+
+## Why is this game is free ?
+
+As its my first big project, I wanted to make this game free to all other shogi fans +
+I cannot compete with big shogi creators such as 81dojo or UNBALANCE corp. unless making it free.
 
 ## Which languages in-game will be supported ?
 
@@ -37,7 +42,7 @@ You can play against AI, other player on same computer, view replays(in KIF form
 
 ## What about AI ?
 
-Game uses YaneuraOu engine(https://github.com/yaneurao/YaneuraOu) and evaluation book Elmo(https://github.com/mk-takizawa/elmo_for_learn) (https://drive.google.com/file/d/0B0XpI3oPiCmFalVGclpIZjBmdGs) - latest version from 2018/5. You should download them or compile yourself if you want to develop AI. Place them in "engines" folder in resulted binary folder. 
+Game can use YaneuraOu engine(https://github.com/yaneurao/YaneuraOu) and evaluation book Elmo(https://github.com/mk-takizawa/elmo_for_learn) (https://drive.google.com/file/d/0B0XpI3oPiCmFalVGclpIZjBmdGs) - latest version from 2018/5. You should download them or compile yourself if you want to develop AI. Place them in "engines" folder in exported binary folder and/or Godot engine binary folder.
 
 ## Why do you use Godot ? Why not Unity or Unreal Engine 4 ?
 
