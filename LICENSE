@@ -1,4 +1,4 @@
-Modern Shogi
+Modern Shogi - source code
 
 MIT License
 
@@ -21,6 +21,19 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+Modern Shogi - resources
+----------------------------------------------------------------------------------------
+
+May be subject of different licenses.
+
+List:
+
+- UI images - free - Google material design
+- UI sound - proprietary, and buyed by the author, do not use them in your projects
+- Models - all free and maded by author for now
+- UI flags - free - borrowed and transformed from Wikipedia
+- Fonts - Zekton called Modern(free), Rotonda Bold called Friendly(non-free but ok to use in free project such as Modern Shogi).
 
 ----------------------------------------------------------------------------------------
 
