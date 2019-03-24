@@ -383,6 +383,7 @@ rect_min_size = Vector2( 65, 60 )
 align = 1
 
 [node name="GameSettings" type="VBoxContainer" parent="Box/SimpleLayout"]
+editor/display_folded = true
 margin_right = 965.0
 margin_bottom = 138.0
 
@@ -431,12 +432,14 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 50, 0 )
 
 [node name="VBox" type="VBoxContainer" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox"]
+editor/display_folded = true
 margin_left = 50.0
 margin_right = 901.0
 margin_bottom = 50.0
 size_flags_horizontal = 3
 
 [node name="GameType" type="HBoxContainer" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox"]
+editor/display_folded = true
 visible = false
 margin_left = 768.0
 margin_top = 1075.0
@@ -473,32 +476,6 @@ group = SubResource( 1 )
 text = "RB_PRIVATE_GAME"
 script = ExtResource( 4 )
 
-[node name="Password" type="HBoxContainer" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox"]
-editor/display_folded = true
-visible = false
-margin_left = 768.0
-margin_top = 788.0
-margin_right = 2193.0
-margin_bottom = 841.0
-rect_min_size = Vector2( 0, 50 )
-size_flags_horizontal = 3
-custom_constants/separation = 50
-
-[node name="Desc" type="Label" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/Password"]
-margin_left = 84.0
-margin_top = 2.0
-margin_right = 304.0
-margin_bottom = 51.0
-rect_min_size = Vector2( 233, 0 )
-text = "LABEL_PASSWORD"
-
-[node name="PasswordBox" type="LineEdit" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/Password"]
-margin_right = 58.0
-margin_bottom = 24.0
-size_flags_horizontal = 3
-max_length = 30
-expand_to_text_length = true
-
 [node name="GameName" type="HBoxContainer" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox"]
 editor/display_folded = true
 visible = false
@@ -526,7 +503,34 @@ text = "Play with me !"
 max_length = 30
 expand_to_text_length = true
 
+[node name="Password" type="HBoxContainer" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox"]
+editor/display_folded = true
+visible = false
+margin_left = 768.0
+margin_top = 788.0
+margin_right = 2193.0
+margin_bottom = 841.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_horizontal = 3
+custom_constants/separation = 50
+
+[node name="Desc" type="Label" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/Password"]
+margin_left = 84.0
+margin_top = 2.0
+margin_right = 304.0
+margin_bottom = 51.0
+rect_min_size = Vector2( 233, 0 )
+text = "LABEL_PASSWORD"
+
+[node name="PasswordBox" type="LineEdit" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/Password"]
+margin_right = 58.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+max_length = 30
+expand_to_text_length = true
+
 [node name="HostSide" type="HBoxContainer" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox"]
+editor/display_folded = true
 margin_right = 851.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 0, 50 )
@@ -1009,6 +1013,10 @@ margin_right = 965.0
 margin_bottom = 412.0
 text = "BTN_CREATE"
 flat = true
+
+[node name="Offset" type="ReferenceRect" parent="Box/SimpleLayout"]
+margin_right = 40.0
+margin_bottom = 40.0
 
 [connection signal="visibility_changed" from="." to="." method="_on_SetupScreen_visibility_changed"]
 [connection signal="value_changed" from="Box/SimpleLayout/QuickAIControl/AIBox/VBox/QuickAIControl/HBoxAISkillLevel/AISkillLevelSlider" to="." method="_on_AISkillLevelSlider_value_changed"]

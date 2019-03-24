@@ -2023,6 +2023,7 @@ margin_right = 1202.0
 margin_bottom = 203.0
 
 [node name="CameraSettings" type="VBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox"]
+editor/display_folded = true
 visible = false
 margin_bottom = 803.0
 size_flags_horizontal = 3
