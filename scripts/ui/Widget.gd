@@ -1,4 +1,5 @@
 extends TextureButton
+class_name Widget
 
 # Widget.gd
 

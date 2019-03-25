@@ -1,5 +1,7 @@
 extends Control
 
+# GameBox.gd
+
 onready var index_label = $VBox/HBox/Index
 onready var password_box = $VBox/HBox/Password
 onready var places_label = $VBox/HBox/Places

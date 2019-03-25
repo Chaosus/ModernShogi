@@ -32,7 +32,7 @@ sub_offset_y = 91
 
 [node name="SimpleLayout" type="VBoxContainer" parent="Box"]
 margin_right = 136.0
-margin_bottom = 306.0
+margin_bottom = 356.0
 size_flags_horizontal = 3
 size_flags_vertical = 2
 custom_constants/separation = 50

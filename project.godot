@@ -33,13 +33,19 @@ _global_script_classes=[ {
 "class": "UIScreen",
 "language": "GDScript",
 "path": "res://scripts/UIScreen.gd"
+}, {
+"base": "TextureButton",
+"class": "Widget",
+"language": "GDScript",
+"path": "res://scripts/ui/Widget.gd"
 } ]
 _global_script_class_icons={
 "BeautyElement": "",
 "FadeElement": "",
 "HostScreen": "",
 "InfoPanel": "",
-"UIScreen": ""
+"UIScreen": "",
+"Widget": ""
 }
 
 [application]

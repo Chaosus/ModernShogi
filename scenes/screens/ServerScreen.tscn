@@ -1,0 +1,215 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scripts/screens/ServerScreen.gd" type="Script" id=1]
+[ext_resource path="res://ui/buttons/account.png" type="Texture" id=2]
+[ext_resource path="res://scripts/ui/Widget.gd" type="Script" id=3]
+[ext_resource path="res://ui/buttons/dashboard.png" type="Texture" id=4]
+[ext_resource path="res://ui/buttons/players.png" type="Texture" id=5]
+[ext_resource path="res://ui/buttons/chat.png" type="Texture" id=6]
+[ext_resource path="res://ui/buttons/add.png" type="Texture" id=7]
+[ext_resource path="res://scenes/RemoteServerGameBox.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/PlayerBox.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scripts/ui/ScalableScrollContainer.gd" type="Script" id=10]
+
+[node name="ServerScreen" type="CenterContainer"]
+visible = false
+margin_right = 1956.0
+margin_bottom = 952.0
+rect_min_size = Vector2( 0, 952 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource( 1 )
+
+[node name="VBox" type="VBoxContainer" parent="."]
+margin_left = 28.0
+margin_top = 406.0
+margin_right = 1928.0
+margin_bottom = 546.0
+custom_constants/separation = 0
+
+[node name="Header" type="VBoxContainer" parent="VBox"]
+margin_right = 1970.0
+margin_bottom = 158.0
+size_flags_vertical = 0
+custom_constants/separation = 0
+
+[node name="VBox" type="VBoxContainer" parent="VBox/Header"]
+margin_right = 1970.0
+margin_bottom = 158.0
+size_flags_vertical = 0
+custom_constants/separation = 0
+
+[node name="HBoxControlBar" type="HBoxContainer" parent="VBox/Header/VBox"]
+margin_right = 1970.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_vertical = 3
+
+[node name="LayoutControlBar" type="HBoxContainer" parent="VBox/Header/VBox/HBoxControlBar"]
+editor/display_folded = true
+margin_right = 232.0
+margin_bottom = 80.0
+custom_constants/separation = 20
+
+[node name="AccountButton" type="TextureButton" parent="VBox/Header/VBox/HBoxControlBar/LayoutControlBar"]
+margin_right = 64.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 64, 64 )
+texture_normal = ExtResource( 2 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 3 )
+unnamed = true
+tooltip_enabled = true
+tooltip = "BTN_ACCOUNT"
+
+[node name="GameListButton" type="TextureButton" parent="VBox/Header/VBox/HBoxControlBar/LayoutControlBar"]
+margin_left = 84.0
+margin_right = 148.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 64, 64 )
+texture_normal = ExtResource( 4 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 3 )
+unnamed = true
+tooltip_enabled = true
+tooltip = "BTN_SHOW_GAMES"
+tooltip_align = 1
+
+[node name="PlayersListButton" type="TextureButton" parent="VBox/Header/VBox/HBoxControlBar/LayoutControlBar"]
+margin_left = 168.0
+margin_right = 232.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 64, 64 )
+texture_normal = ExtResource( 5 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 3 )
+unnamed = true
+tooltip_enabled = true
+tooltip = "BTN_SHOW_PLAYERS"
+tooltip_align = 1
+
+[node name="ChatButton" type="TextureButton" parent="VBox/Header/VBox/HBoxControlBar/LayoutControlBar"]
+visible = false
+margin_left = 950.0
+margin_top = 70.0
+margin_right = 950.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 64, 64 )
+texture_normal = ExtResource( 6 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 3 )
+unnamed = true
+tooltip_enabled = true
+tooltip = "BTN_SHOW_CHAT"
+tooltip_align = 1
+
+[node name="StatusLabel" type="Label" parent="VBox/Header/VBox/HBoxControlBar"]
+margin_left = 240.0
+margin_right = 1812.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 300, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+align = 1
+valign = 1
+
+[node name="GameListBar" type="HBoxContainer" parent="VBox/Header/VBox/HBoxControlBar"]
+margin_left = 1820.0
+margin_right = 1970.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 150, 0 )
+alignment = 2
+
+[node name="CreateGameButton" type="TextureButton" parent="VBox/Header/VBox/HBoxControlBar/GameListBar"]
+margin_right = 64.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 64, 64 )
+focus_mode = 1
+action_mode = 0
+enabled_focus_mode = 1
+texture_normal = ExtResource( 7 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 3 )
+unnamed = true
+tooltip_enabled = true
+tooltip = "BTN_CREATE_SERVER"
+tooltip_align = 2
+
+[node name="PlayerListBar" type="HBoxContainer" parent="VBox/Header/VBox/HBoxControlBar"]
+visible = false
+margin_right = 1970.0
+
+[node name="ChatBar" type="HBoxContainer" parent="VBox/Header/VBox/HBoxControlBar"]
+visible = false
+margin_right = 40.0
+
+[node name="HSeparator2" type="HSeparator" parent="VBox/Header/VBox"]
+margin_top = 80.0
+margin_right = 1970.0
+margin_bottom = 80.0
+custom_constants/separation = 0
+
+[node name="GameHeader" parent="VBox/Header/VBox" instance=ExtResource( 8 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 80.0
+margin_right = 1970.0
+margin_bottom = 158.0
+is_header = true
+
+[node name="PlayerHeader" parent="VBox/Header/VBox" instance=ExtResource( 9 )]
+visible = false
+margin_top = 80.0
+margin_bottom = 80.0
+is_header = true
+
+[node name="HSeparator" type="HSeparator" parent="VBox/Header/VBox"]
+visible = false
+margin_right = 40.0
+margin_bottom = 4.0
+custom_constants/separation = 0
+
+[node name="Box" type="ScrollContainer" parent="VBox"]
+margin_top = 158.0
+margin_right = 1970.0
+margin_bottom = 158.0
+scroll_horizontal_enabled = false
+script = ExtResource( 10 )
+sub_offset_y = 140
+
+[node name="GameList" type="VBoxContainer" parent="VBox/Box"]
+margin_right = 3.0
+custom_constants/separation = 0
+
+[node name="HSeparator" type="HSeparator" parent="VBox/Box/GameList"]
+margin_right = 3.0
+custom_constants/separation = 0
+
+[node name="GameList" type="VBoxContainer" parent="VBox/Box/GameList"]
+margin_right = 3.0
+custom_constants/separation = 0
+
+[node name="PlayersList" type="VBoxContainer" parent="VBox/Box"]
+margin_right = 3.0
+custom_constants/separation = 0
+
+[node name="HSeparator" type="HSeparator" parent="VBox/Box/PlayersList"]
+margin_right = 3.0
+custom_constants/separation = 0
+
+[node name="PlayersList" type="VBoxContainer" parent="VBox/Box/PlayersList"]
+margin_right = 3.0
+custom_constants/separation = 0
+
+[connection signal="hide_completed" from="." to="." method="_on_ServerScreen_hide_completed"]
+[connection signal="show_completed" from="." to="." method="_on_ServerScreen_show_completed"]
+[connection signal="pressed" from="VBox/Header/VBox/HBoxControlBar/LayoutControlBar/AccountButton" to="." method="_on_AccountButton_pressed"]
+[connection signal="pressed" from="VBox/Header/VBox/HBoxControlBar/LayoutControlBar/GameListButton" to="." method="_on_GameListButton_pressed"]
+[connection signal="pressed" from="VBox/Header/VBox/HBoxControlBar/LayoutControlBar/PlayersListButton" to="." method="_on_PlayersListButton_pressed"]
+[connection signal="pressed" from="VBox/Header/VBox/HBoxControlBar/LayoutControlBar/ChatButton" to="." method="_on_ChatButton_pressed"]
+[connection signal="pressed" from="VBox/Header/VBox/HBoxControlBar/GameListBar/CreateGameButton" to="." method="_on_CreateGameButton_pressed"]

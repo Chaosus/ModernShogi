@@ -38,7 +38,7 @@ func pitch(angle : float, delta : float) -> void:
 
 func yaw(angle : float, lock : bool, delta : float) -> void:
 	if lock:
-		rotation.y = clamp(rotation.y + angle * delta, -ROTATE_LIMIT_Y - startup_rotation.y, ROTATE_LIMIT_Y - startup_rotation.y)
+		rotation.y = clamp(rotation.y + angle * delta, startup_rotation.y - ROTATE_LIMIT_Y, startup_rotation.y + ROTATE_LIMIT_Y)
 	else:
 		rotation.y = wrapf(rotation.y + angle * delta, 0.0, TAU)
 

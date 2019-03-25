@@ -1106,12 +1106,11 @@ enum {
 	WIDGET_LIBRARY_PLAY = 110,
 	WIDGET_LIBRARY_DELETE = 111,
 	WIDGET_LIBRARY_EXPLORER = 112,
-	WIDGET_CREATE_SERVER = 198,
 	WIDGET_REFRESH_SERVER_LIST = 199,
-	WIDGET_ACCOUNT = 200,
 	WIDGET_RESIGN = 201,
 	WIDGET_TAKEBACK = 202,
-	WIDGET_AI = 800,
+	# Other
+	WIDGET_AI = 800
 }
 
 func register_widget(id, widget):
@@ -1129,11 +1128,11 @@ func remove_texbtn(btn):
 func get_widget(id):
 	return _widgets[id]
 
-func show_account_btn():
-	_widgets[WIDGET_ACCOUNT].show()
+#func show_account_btn():
+#	_widgets[WIDGET_ACCOUNT].show()
 
-func hide_account_btn():
-	_widgets[WIDGET_ACCOUNT].hide()
+#func hide_account_btn():
+#	_widgets[WIDGET_ACCOUNT].hide()
 
 func show_back_btn():
 	_widgets[WIDGET_BACKBTN].show()

@@ -190,6 +190,7 @@ func ms_player_joined(index, is_obs, name):
 var camera_side = -2 setget set_camera_side, get_camera_side
 
 func set_camera_side(side):
+	print("set_camera_side(" + str(side) + ")")
 	if side == -2:
 		camera_side = side
 		return
@@ -203,6 +204,7 @@ func set_camera_side(side):
 			var ct = Vector3(0.0, 0.0, 0.0)
 			var was_resetted = camera_side == -2
 			
+			var ps = camera_side
 			camera_side = side
 			get_tree().call_group("storage_nest", "invert", side)
 			var by = 0.0
@@ -214,8 +216,9 @@ func set_camera_side(side):
 				by = current_view.rotation.y
 			current_view = fixedcamera2 if side == 1 else fixedcamera1
 			current_view.rotation.x = cx
-			current_view.rotation.y = by
-			current_view.flip(cy)
+			if ps >= 0:
+				current_view.rotation.y = by
+				current_view.flip(cy)
 			#current_view.rotation.y = cy
 			current_view.scale = cz
 			current_view.translation = Vector3(-ct.x, ct.y, -ct.z)
@@ -253,8 +256,8 @@ func init_game(session):
 	hint_needed = false
 	
 	# не сбрасывать камеру при переподключении
-	if !was_reconnect:
-		set_camera_side(-2)
+	#if !was_reconnect:
+	#	set_camera_side(-2)
 	
 	history_move_proc = HistoryPlayProc.NONE
 	desired_idx = 0

@@ -1,13 +1,47 @@
 extends "res://scripts/UIScreen.gd"
 
 onready var remote_box_prefab = preload("res://scenes/RemoteServerGameBox.tscn")
-onready var game_list = $VBox/Box/ServerList/ServerList
-onready var status_label = $VBox/Header/InfoContainer/StatusLabel
+onready var status_label = $VBox/Header/VBox/HBoxControlBar/StatusLabel
 
-var save_state = 0
+# GAME LIST
+
+onready var game_list_bar = $VBox/Header/VBox/HBoxControlBar/GameListBar
+onready var game_list = $VBox/Box/GameList/GameList
+onready var game_header = $VBox/Header/VBox/GameHeader
+
+onready var players_list_bar = $VBox/Header/VBox/HBoxControlBar/PlayerListBar
+onready var players_list = $VBox/Box/PlayersList/PlayersList
+onready var player_header = $VBox/Header/VBox/PlayerHeader
+
+onready var chat_bar = $VBox/Header/VBox/HBoxControlBar/ChatBar
+
+enum Layout {
+	GAME_LIST,
+	PLAYER_LIST,
+	CHAT
+}
+
+func clear_layout():
+	game_list_bar.visible = false
+	players_list_bar.visible = false
+	chat_bar.visible = false
+	game_header.visible = false
+	player_header.visible = false
+
+func set_layout(layout_idx):
+	clear_layout()
+	match layout_idx:
+		Layout.GAME_LIST:
+			game_list_bar.visible = true
+			game_header.visible = true
+		Layout.PLAYER_LIST:
+			players_list_bar.visible = true
+			player_header.visible = true
+		Layout.CHAT:
+			chat_bar.visible = true
 
 func _ready():
-	self.title = "TITLE_JOIN_LIST"
+	self.title = "TITLE_GAME_SERVER"
 
 class GameSessionInfo:
 	var key
@@ -24,18 +58,24 @@ class GameUser:
 var game_session = null
 	
 func _on_ServerScreen_show_completed():
-	UI.get_widget(UI.WIDGET_CREATE_SERVER).show()
-	UI.get_widget(UI.WIDGET_ACCOUNT).show()
+#	UI.get_widget(UI.WIDGET_ACCOUNT).show()
+#	UI.get_widget(UI.WIDGET_SHOW_GAMES).show()
+#	UI.get_widget(UI.WIDGET_SHOW_PLAYERS).show()
+#	UI.get_widget(UI.WIDGET_SHOW_CHAT).show()
+	set_layout(Layout.GAME_LIST)
+	status_label.text = "LABEL_LOADING_GAME_LIST"
 	
 	previous_screen = UI.get_root().main_menu
 	UI.show_back_btn()
 	
 func _on_ServerScreen_hide_completed():
-	UI.get_widget(UI.WIDGET_CREATE_SERVER).hide()
-	UI.get_widget(UI.WIDGET_ACCOUNT).hide()
+	pass
+#	UI.get_widget(UI.WIDGET_ACCOUNT).hide()
+#	UI.get_widget(UI.WIDGET_SHOW_GAMES).hide()
+#	UI.get_widget(UI.WIDGET_SHOW_PLAYERS).hide()
+#	UI.get_widget(UI.WIDGET_SHOW_CHAT).hide()
 	
 func go_back_if_possible():
-	save_state = 0
 	Network.disconnect_if_connected()
 	return .go_back_if_possible()
 
@@ -103,18 +143,31 @@ func join_obs_fail(id, reason):
 	if reason == 1:
 		UI.call_dialog("DESC_GAME_IS_FULL2")
 
+
+#--------------------------------------------------------------------------------#
+# Обработчики кнопок
+#--------------------------------------------------------------------------------#
+
+func _on_CreateGameButton_pressed():
+	UI.get_root().goto_game_setup(self, Games.PlayerConfig.PVP, true, true)
+
+#--------------------------------------------------------------------------------#
+# Обработчики кнопок
 #--------------------------------------------------------------------------------#
 
 func _on_AccountButton_pressed():
 	Network.request_account_info(-1)
 	
-func _on_RefreshListButton_pressed():
-	pass
-	#request_game_list()
+func _on_GameListButton_pressed():
+	set_layout(Layout.GAME_LIST)
 
-func _on_CreateGameButton_pressed():
-	UI.get_root().goto_game_setup(self, Games.PlayerConfig.PVP, true, true)
+func _on_PlayersListButton_pressed():
+	set_layout(Layout.PLAYER_LIST)
 
+func _on_ChatButton_pressed():
+	set_layout(Layout.CHAT)
+
+#--------------------------------------------------------------------------------#
 	
 # Очистка списка игр
 func clear_game_list():
@@ -149,7 +202,7 @@ func list_end(count):
 	if count > 13:
 		big_mode = true
 	var children = game_list.get_children()
-	$VBox/Header/VBoxContainer/Header.expand(!big_mode)
+	$VBox/Header/VBox/GameHeader.expand(!big_mode)
 	for child in children:
 		child.expand(!big_mode)
 	status_label.text = TranslationServer.translate("LABEL_OPEN") + str(count)
@@ -162,4 +215,8 @@ func create_dummy_items(count):
 		var id = game_list.get_child_count()
 		box.setup(id, id, Games.GameType.SHOGI, "MyTestGame" + str(i), Games.ShogiHandicaps.NONE, null, "Chaos, Chaos2", 0, 0, 0)
 	list_end(count)
+
+
+
+
 
