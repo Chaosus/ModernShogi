@@ -78,7 +78,6 @@ func _ready():
 	UI.register_named_element(UI.OB_AI_ENGINE_EXE, ai.get_node("AISettingsBox/VBox/HBoxEngineExe/EngineExeButton"))
 	UI.register_named_element(UI.SR_AI_SKILL_LEVEL, ai.get_node("AISettingsBox/VBox/HBoxAISkillLevel/SkillLevelSlider"))
 	UI.register_named_element(UI.LABEL_AI_SKILL_LEVEL, ai.get_node("AISettingsBox/VBox/HBoxAISkillLevel/SkillLevelSV"))
-	UI.register_named_element(UI.CB_AI_ENABLE_LOG, ai.get_node("AISettingsBox/VBox/AILog/AILogCheckBox"))
 	# Gameplay
 	UI.register_named_element(UI.CB_GAME_AUTOMOVE, gameplay.get_node("GeneralBox/VBox/HBoxAutomove/CB_AUTOMOVE"))
 	UI.register_named_element(UI.CB_GAME_AUTOPROMOTION, gameplay.get_node("GeneralBox/VBox/HBoxAutopromotion/CB_AUTOPROMOTE"))

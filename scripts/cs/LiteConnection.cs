@@ -78,6 +78,19 @@ public class LiteConnection : Node
     [Signal]
     public delegate void AddRecordString(string record);
 
+    #region UserList
+
+    [Signal]
+    public delegate void UserListBegin(int count);
+
+    [Signal]
+    public delegate void UserReceived(int id, bool is_online, int account_type, string name, int country, int points, int wins, int losses, int draws);
+
+    [Signal]
+    public delegate void UserListEnd();
+
+    #endregion
+
     [Signal]
     public delegate void PlayerJoined(int index, bool is_obs, string name);
 
@@ -147,6 +160,9 @@ public class LiteConnection : Node
         Connect(nameof(RemoveGame), serverScreen, "remove_game");
         Connect(nameof(GameListEnd), serverScreen, "list_end");
         Connect(nameof(ShowAccountInfo), serverScreen, "show_account_info");
+        Connect(nameof(UserListBegin), serverScreen, "user_list_begin");
+        Connect(nameof(UserReceived), serverScreen, "user_received");
+        Connect(nameof(UserListEnd), serverScreen, "user_list_end");
 
         Connect(nameof(AcceptChangeAccountInfo), accountScreen, "on_accept_change");
         Connect(nameof(DeclineChangeAccountInfo), accountScreen, "on_decline_change");
@@ -197,8 +213,6 @@ public class LiteConnection : Node
     {
         GD.Print(s);
     }
-
-    
 
     private void CreateClient()
     {
@@ -346,6 +360,28 @@ public class LiteConnection : Node
                             }
 
                             EmitSignal(nameof(PlayerDataEnd));
+                        }
+                        break;
+                    // Обработка получения списка пользователей.
+                    case ServerAnswer.UserList:
+                        {
+                            var userCount = reader.GetInt();
+                            EmitSignal(nameof(UserListBegin), userCount);
+
+                            for(int i = 0; i < userCount; i++)
+                            {
+                                var id = reader.GetInt();
+                                var isOnline = reader.GetBool();
+                                var accountType = reader.GetInt();
+                                var name = reader.GetString();
+                                var country = reader.GetInt();
+                                var points = reader.GetInt();
+                                var wins = reader.GetInt();
+                                var losses = reader.GetInt();
+                                var draws = reader.GetInt();
+                                EmitSignal(nameof(UserReceived), id, isOnline, accountType, name, country, points, wins, losses, draws);
+                            }
+                            EmitSignal(nameof(UserListEnd));
                         }
                         break;
                     case ServerAnswer.NotifyPlayerJoined:
@@ -534,6 +570,21 @@ public class LiteConnection : Node
         StartClient();
 
         server = client.Connect(IP, Port, "mshogi");
+    }
+
+    public void ChangeMode(int mode)
+    {
+        var writer = new NetDataWriter();
+        writer.Put((int)ClientRequest.ChangeMode);
+        writer.Put(mode);
+        server.Send(writer, DeliveryMethod.ReliableOrdered);
+    }
+
+    public void RequestPlayerList()
+    {
+        var writer = new NetDataWriter();
+        writer.Put((int)ClientRequest.UserList);
+        server.Send(writer, DeliveryMethod.ReliableOrdered);
     }
 
     public void RequestAccountInfo(int accountId)

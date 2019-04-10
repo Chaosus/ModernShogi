@@ -8,11 +8,16 @@
         SignUpInfo,
         AccountInfo,
         UserInfo,
+        ChangeMode,
         CreateGame,
         CloseGame,
         HostData,
         JoinGame,
         StopJoining,
+        /// <summary>
+        /// Запрос на получение полного списка пользователей.
+        /// </summary>
+        UserList,
         GameStart,
         GameData,
         PlayerData,

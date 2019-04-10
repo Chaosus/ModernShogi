@@ -111,6 +111,10 @@ func request_ready() -> void:
 	if connection_established:
 		connection.NotifyReady()
 
+func request_player_list() -> void:
+	if connection_established:
+		connection.RequestPlayerList()
+
 func send_move_string(s:String) -> void:
 	if connection_established:
 		connection.SendMoveString(s)
@@ -244,4 +248,3 @@ func reconnect_from_game():
 		return false
 	get_tree().set_network_peer(client_peer)
 	return true
-	

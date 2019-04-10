@@ -1,6 +1,7 @@
 extends "res://scripts/UIScreen.gd"
 
 onready var remote_box_prefab = preload("res://scenes/RemoteServerGameBox.tscn")
+onready var user_box_prefab = preload("res://scenes/UserBox.tscn")
 onready var status_label = $VBox/Header/VBox/HBoxControlBar/StatusLabel
 
 # GAME LIST
@@ -9,11 +10,21 @@ onready var game_list_bar = $VBox/Header/VBox/HBoxControlBar/GameListBar
 onready var game_list = $VBox/Box/GameList/GameList
 onready var game_header = $VBox/Header/VBox/GameHeader
 
-onready var players_list_bar = $VBox/Header/VBox/HBoxControlBar/PlayerListBar
-onready var players_list = $VBox/Box/PlayersList/PlayersList
-onready var player_header = $VBox/Header/VBox/PlayerHeader
+onready var users_list_bar = $VBox/Header/VBox/HBoxControlBar/PlayerListBar
+onready var users_list = $VBox/Box/PlayersList/PlayersList
+onready var user_header = $VBox/Header/VBox/PlayerHeader
 
 onready var chat_bar = $VBox/Header/VBox/HBoxControlBar/ChatBar
+
+enum Mode {
+	NONE,
+	GAMES_LIST,
+	PLAYERS_LIST	
+}
+
+var mode = Mode.GAMES_LIST
+
+var last_game_list_bar_text := ""
 
 enum Layout {
 	GAME_LIST,
@@ -23,21 +34,37 @@ enum Layout {
 
 func clear_layout():
 	game_list_bar.visible = false
-	players_list_bar.visible = false
+	users_list_bar.visible = false
 	chat_bar.visible = false
 	game_header.visible = false
-	player_header.visible = false
+	user_header.visible = false
 
 func set_layout(layout_idx):
 	clear_layout()
+	
+	if mode == Mode.GAMES_LIST:
+		last_game_list_bar_text = status_label.text
+	
 	match layout_idx:
 		Layout.GAME_LIST:
+			users_list_bar.visible = false
+			user_header.visible = false
+			
+			mode = Mode.GAMES_LIST
+			
 			game_list_bar.visible = true
 			game_header.visible = true
 		Layout.PLAYER_LIST:
-			players_list_bar.visible = true
-			player_header.visible = true
+			game_list_bar.visible = false
+			game_header.visible = false
+			
+			status_label.text = "LABEL_USERS_LIST"
+			mode = Mode.PLAYERS_LIST
+			
+			users_list_bar.visible = true
+			user_header.visible = true
 		Layout.CHAT:
+			mode = Mode.NONE
 			chat_bar.visible = true
 
 func _ready():
@@ -63,7 +90,6 @@ func _on_ServerScreen_show_completed():
 #	UI.get_widget(UI.WIDGET_SHOW_PLAYERS).show()
 #	UI.get_widget(UI.WIDGET_SHOW_CHAT).show()
 	set_layout(Layout.GAME_LIST)
-	status_label.text = "LABEL_LOADING_GAME_LIST"
 	
 	previous_screen = UI.get_root().main_menu
 	UI.show_back_btn()
@@ -159,18 +185,45 @@ func _on_AccountButton_pressed():
 	Network.request_account_info(-1)
 	
 func _on_GameListButton_pressed():
+	status_label.text = last_game_list_bar_text
 	set_layout(Layout.GAME_LIST)
 
 func _on_PlayersListButton_pressed():
 	set_layout(Layout.PLAYER_LIST)
+	Network.request_player_list()
 
 func _on_ChatButton_pressed():
 	set_layout(Layout.CHAT)
 
 #--------------------------------------------------------------------------------#
+# Получение списка игроков
+#--------------------------------------------------------------------------------#
+
+func user_list_begin(count : int) -> void:
+	pass
+
+func user_received(id : int, is_online : bool, account_type : int, user_name : String, country : int, points : int, wins : int, losses : int, draws : int) -> void:
 	
+	var children = users_list.get_children()
+	for child in children:
+		if child.get_id() == id:
+			# Изменение существующего пользователя
+			child.change(is_online, account_type, user_name, country, points, wins, losses, draws)
+			return
+	# Создание нового пользователя
+	var box = user_box_prefab.instance()
+	users_list.add_child(box)
+	box.setup(id, is_online, account_type, user_name, country, points, wins, losses, draws)
+	
+func user_list_end() -> void:
+	pass
+
+#--------------------------------------------------------------------------------#
+# Получение списка игр
+#--------------------------------------------------------------------------------#
+
 # Очистка списка игр
-func clear_game_list():
+func clear_games_list():
 	var children = game_list.get_children()
 	for child in children:
 		child.free()	
@@ -205,8 +258,13 @@ func list_end(count):
 	$VBox/Header/VBox/GameHeader.expand(!big_mode)
 	for child in children:
 		child.expand(!big_mode)
-	status_label.text = TranslationServer.translate("LABEL_OPEN") + str(count)
+	if mode == Mode.GAMES_LIST:
+		status_label.text = TranslationServer.translate("LABEL_OPEN") + str(count)
 
+#--------------------------------------------------------------------------------#
+# Тестовые методы
+#--------------------------------------------------------------------------------#
+	
 func create_dummy_items(count):
 	list_begin(count)
 	for i in range(count):
@@ -215,8 +273,3 @@ func create_dummy_items(count):
 		var id = game_list.get_child_count()
 		box.setup(id, id, Games.GameType.SHOGI, "MyTestGame" + str(i), Games.ShogiHandicaps.NONE, null, "Chaos, Chaos2", 0, 0, 0)
 	list_end(count)
-
-
-
-
-

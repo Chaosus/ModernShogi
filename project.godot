@@ -34,6 +34,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/UIScreen.gd"
 }, {
+"base": "PanelContainer",
+"class": "UserBox",
+"language": "GDScript",
+"path": "res://scripts/UserBox.gd"
+}, {
 "base": "TextureButton",
 "class": "Widget",
 "language": "GDScript",
@@ -45,6 +50,7 @@ _global_script_class_icons={
 "HostScreen": "",
 "InfoPanel": "",
 "UIScreen": "",
+"UserBox": "",
 "Widget": ""
 }
 

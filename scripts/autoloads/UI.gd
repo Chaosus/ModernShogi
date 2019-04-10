@@ -46,7 +46,6 @@ enum {
 	SR_AI_SKILL_LEVEL2,
 	LABEL_AI_SKILL_LEVEL,
 	LABEL_AI_SKILL_LEVEL2,
-	CB_AI_ENABLE_LOG,
 	
 	# Gameplay settings
 	
@@ -1685,9 +1684,6 @@ func apply_profile(profile):
 	get_named_element(SR_AI_SKILL_LEVEL2).value = skill_level
 	get_named_element(LABEL_AI_SKILL_LEVEL).text = str(skill_level)
 	get_named_element(LABEL_AI_SKILL_LEVEL2).text = str(skill_level)
-
-	var enable_log = settings.get_value(Settings.SV_AI_ENGINE_ENABLE_LOG)
-	get_named_element(CB_AI_ENABLE_LOG).pressed = enable_log
 	
 	input_list.setup_actions()
 	input_list.apply_actions()

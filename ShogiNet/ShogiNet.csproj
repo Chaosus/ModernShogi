@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AcceptArg.cs" />
+    <Compile Include="AccountType.cs" />
+    <Compile Include="ClientMode.cs" />
     <Compile Include="ClientRequest.cs" />
     <Compile Include="Country.cs" />
     <Compile Include="DeclineArg.cs" />

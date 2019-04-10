@@ -105,9 +105,6 @@ func _on_AISettingsButton_pressed():
 func _on_StylesSettingsButton_pressed():
 	UI.get_root().open_styles_settings()
 
-func _on_AIOpenLog_pressed():
-	ai_log_panel.show_or_hide()
-
 func _on_AIRestart_pressed():
 	game.reinit_ai(true)
 	

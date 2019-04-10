@@ -8,7 +8,7 @@
 [ext_resource path="res://ui/buttons/chat.png" type="Texture" id=6]
 [ext_resource path="res://ui/buttons/add.png" type="Texture" id=7]
 [ext_resource path="res://scenes/RemoteServerGameBox.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/PlayerBox.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/UserBox.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scripts/ui/ScalableScrollContainer.gd" type="Script" id=10]
 
 [node name="ServerScreen" type="CenterContainer"]
@@ -118,6 +118,7 @@ align = 1
 valign = 1
 
 [node name="GameListBar" type="HBoxContainer" parent="VBox/Header/VBox/HBoxControlBar"]
+editor/display_folded = true
 margin_left = 1820.0
 margin_right = 1970.0
 margin_bottom = 80.0
@@ -143,6 +144,7 @@ tooltip_align = 2
 [node name="PlayerListBar" type="HBoxContainer" parent="VBox/Header/VBox/HBoxControlBar"]
 visible = false
 margin_right = 1970.0
+custom_constants/separation = 0
 
 [node name="ChatBar" type="HBoxContainer" parent="VBox/Header/VBox/HBoxControlBar"]
 visible = false

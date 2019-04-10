@@ -19,8 +19,13 @@
         JoinedPlayerData,
         GameInfo,
         GameData,
+        /// <summary>
+        /// Сервер возвратил список пользователей.
+        /// </summary>
+        UserList,
         PlayerData,
         NotifyGameList,
+        NotifyPlayerList,
         NotifyGameClosed,
         NotifyPlayerJoined,
         NotifyMove,

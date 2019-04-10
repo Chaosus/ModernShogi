@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://scripts/GUI.gd" type="Script" id=1]
 [ext_resource path="res://scripts/ui/BlinkControl.gd" type="Script" id=2]
@@ -14,39 +14,36 @@
 [ext_resource path="res://scripts/ui/Widget.gd" type="Script" id=12]
 [ext_resource path="res://ui/buttons/fix.png" type="Texture" id=13]
 [ext_resource path="res://ui/buttons/help.png" type="Texture" id=14]
-[ext_resource path="res://ui/buttons/dashboard.png" type="Texture" id=15]
-[ext_resource path="res://ui/buttons/brush.png" type="Texture" id=16]
-[ext_resource path="res://ui/buttons/hidebar_left.png" type="Texture" id=17]
-[ext_resource path="res://ui/buttons/piecestyle.png" type="Texture" id=18]
-[ext_resource path="res://scripts/bars/LeftGameHideBar.gd" type="Script" id=19]
-[ext_resource path="res://ui/buttons/hidebar_right.png" type="Texture" id=20]
-[ext_resource path="res://scripts/bars/RightGameBar.gd" type="Script" id=21]
-[ext_resource path="res://ui/buttons/players.png" type="Texture" id=22]
-[ext_resource path="res://ui/buttons/history.png" type="Texture" id=23]
-[ext_resource path="res://ui/buttons/save.png" type="Texture" id=24]
-[ext_resource path="res://scripts/bars/RightGameHideBar.gd" type="Script" id=25]
-[ext_resource path="res://scripts/bars/PieceStylesBar.gd" type="Script" id=26]
-[ext_resource path="res://games/shogi/theme0/a.png" type="Texture" id=27]
-[ext_resource path="res://material/fonts/small_font.tres" type="DynamicFont" id=28]
-[ext_resource path="res://games/shogi/theme1/a.png" type="Texture" id=29]
-[ext_resource path="res://games/shogi/theme2/a.png" type="Texture" id=30]
-[ext_resource path="res://games/shogi/theme3/a.png" type="Texture" id=31]
-[ext_resource path="res://sys.theme" type="Theme" id=32]
-[ext_resource path="res://scripts/panels/HistoryPanel.gd" type="Script" id=33]
-[ext_resource path="res://ui/buttons/skip_previous.png" type="Texture" id=34]
-[ext_resource path="res://ui/buttons/arrow_back.png" type="Texture" id=35]
-[ext_resource path="res://ui/buttons/play_reversed.png" type="Texture" id=36]
-[ext_resource path="res://ui/buttons/play.png" type="Texture" id=37]
-[ext_resource path="res://ui/buttons/arrow_forward.png" type="Texture" id=38]
-[ext_resource path="res://ui/buttons/skip_next.png" type="Texture" id=39]
-[ext_resource path="res://ui/buttons/settings.png" type="Texture" id=40]
-[ext_resource path="res://material/dark_hvscroll.tres" type="Theme" id=41]
-[ext_resource path="res://scripts/panels/InfoPanelList.gd" type="Script" id=42]
-[ext_resource path="res://scenes/GameInfoPanel.tscn" type="PackedScene" id=43]
-[ext_resource path="res://scripts/ui/PopupCentered.gd" type="Script" id=44]
-[ext_resource path="res://scenes/PlayerPanel.tscn" type="PackedScene" id=45]
-
-
+[ext_resource path="res://ui/buttons/brush.png" type="Texture" id=15]
+[ext_resource path="res://ui/buttons/hidebar_left.png" type="Texture" id=16]
+[ext_resource path="res://ui/buttons/piecestyle.png" type="Texture" id=17]
+[ext_resource path="res://scripts/bars/LeftGameHideBar.gd" type="Script" id=18]
+[ext_resource path="res://ui/buttons/hidebar_right.png" type="Texture" id=19]
+[ext_resource path="res://scripts/bars/RightGameBar.gd" type="Script" id=20]
+[ext_resource path="res://ui/buttons/players.png" type="Texture" id=21]
+[ext_resource path="res://ui/buttons/history.png" type="Texture" id=22]
+[ext_resource path="res://ui/buttons/save.png" type="Texture" id=23]
+[ext_resource path="res://scripts/bars/RightGameHideBar.gd" type="Script" id=24]
+[ext_resource path="res://scripts/bars/PieceStylesBar.gd" type="Script" id=25]
+[ext_resource path="res://games/shogi/theme0/a.png" type="Texture" id=26]
+[ext_resource path="res://material/fonts/small_font.tres" type="DynamicFont" id=27]
+[ext_resource path="res://games/shogi/theme1/a.png" type="Texture" id=28]
+[ext_resource path="res://games/shogi/theme2/a.png" type="Texture" id=29]
+[ext_resource path="res://games/shogi/theme3/a.png" type="Texture" id=30]
+[ext_resource path="res://sys.theme" type="Theme" id=31]
+[ext_resource path="res://scripts/panels/HistoryPanel.gd" type="Script" id=32]
+[ext_resource path="res://ui/buttons/skip_previous.png" type="Texture" id=33]
+[ext_resource path="res://ui/buttons/arrow_back.png" type="Texture" id=34]
+[ext_resource path="res://ui/buttons/play_reversed.png" type="Texture" id=35]
+[ext_resource path="res://ui/buttons/play.png" type="Texture" id=36]
+[ext_resource path="res://ui/buttons/arrow_forward.png" type="Texture" id=37]
+[ext_resource path="res://ui/buttons/skip_next.png" type="Texture" id=38]
+[ext_resource path="res://ui/buttons/settings.png" type="Texture" id=39]
+[ext_resource path="res://material/dark_hvscroll.tres" type="Theme" id=40]
+[ext_resource path="res://scripts/panels/InfoPanelList.gd" type="Script" id=41]
+[ext_resource path="res://scenes/GameInfoPanel.tscn" type="PackedScene" id=42]
+[ext_resource path="res://scripts/ui/PopupCentered.gd" type="Script" id=43]
+[ext_resource path="res://scenes/PlayerPanel.tscn" type="PackedScene" id=44]
 
 [node name="GUI" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -247,6 +244,7 @@ margin_bottom = 322.0
 rect_min_size = Vector2( 0, 50 )
 
 [node name="GameOverDialog" type="PopupPanel" parent="Box"]
+editor/display_folded = true
 margin_right = 900.0
 margin_bottom = 320.0
 rect_min_size = Vector2( 900, 320 )
@@ -394,7 +392,6 @@ size_flags_vertical = 3
 custom_constants/separation = 0
 
 [node name="LeftGameBarAIMode" type="PanelContainer" parent="Box"]
-editor/display_folded = true
 visible = false
 margin_left = -142.0
 margin_top = 128.0
@@ -455,19 +452,6 @@ unnamed = true
 tooltip_enabled = true
 tooltip = "BTN_TOGGLE_HINT_MODE"
 
-[node name="AIOpenLog" type="TextureButton" parent="Box/LeftGameBarAIMode/VBox"]
-margin_top = 256.0
-margin_right = 128.0
-margin_bottom = 384.0
-rect_min_size = Vector2( 128, 128 )
-texture_normal = ExtResource( 15 )
-expand = true
-stretch_mode = 3
-script = ExtResource( 12 )
-unnamed = true
-tooltip_enabled = true
-tooltip = "BTN_AI_LOG"
-
 [node name="Offset" type="ReferenceRect" parent="Box/LeftGameBarAIMode/VBox"]
 margin_top = 384.0
 margin_right = 128.0
@@ -479,7 +463,7 @@ margin_top = 682.0
 margin_right = 128.0
 margin_bottom = 810.0
 rect_min_size = Vector2( 128, 128 )
-texture_normal = ExtResource( 16 )
+texture_normal = ExtResource( 15 )
 expand = true
 stretch_mode = 3
 script = ExtResource( 12 )
@@ -492,7 +476,7 @@ margin_top = 810.0
 margin_right = 128.0
 margin_bottom = 938.0
 rect_min_size = Vector2( 128, 128 )
-texture_normal = ExtResource( 17 )
+texture_normal = ExtResource( 16 )
 expand = true
 stretch_mode = 3
 script = ExtResource( 12 )
@@ -530,7 +514,7 @@ custom_constants/separation = 0
 margin_right = 128.0
 margin_bottom = 128.0
 rect_min_size = Vector2( 128, 128 )
-texture_normal = ExtResource( 16 )
+texture_normal = ExtResource( 15 )
 expand = true
 stretch_mode = 3
 script = ExtResource( 12 )
@@ -543,7 +527,7 @@ margin_top = 128.0
 margin_right = 128.0
 margin_bottom = 256.0
 rect_min_size = Vector2( 128, 128 )
-texture_normal = ExtResource( 18 )
+texture_normal = ExtResource( 17 )
 expand = true
 stretch_mode = 3
 script = ExtResource( 12 )
@@ -576,7 +560,7 @@ margin_top = 824.0
 margin_right = 128.0
 margin_bottom = 952.0
 rect_min_size = Vector2( 128, 128 )
-texture_normal = ExtResource( 17 )
+texture_normal = ExtResource( 16 )
 expand = true
 stretch_mode = 3
 script = ExtResource( 12 )
@@ -595,7 +579,7 @@ margin_bottom = 1080.0
 rect_min_size = Vector2( 142, 952 )
 mouse_filter = 2
 size_flags_vertical = 3
-script = ExtResource( 19 )
+script = ExtResource( 18 )
 fade_speed = 5.0
 
 [node name="VBox" type="VBoxContainer" parent="Box/LeftGameHideBar"]
@@ -618,7 +602,7 @@ margin_top = 810.0
 margin_right = 128.0
 margin_bottom = 938.0
 rect_min_size = Vector2( 128, 128 )
-texture_normal = ExtResource( 20 )
+texture_normal = ExtResource( 19 )
 expand = true
 stretch_mode = 3
 script = ExtResource( 12 )
@@ -639,7 +623,7 @@ grow_vertical = 0
 rect_min_size = Vector2( 0, 952 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 21 )
+script = ExtResource( 20 )
 fade_speed = 500.0
 hidden_by_default = true
 dir = Vector2( -1, 0 )
@@ -657,7 +641,7 @@ custom_constants/separation = 0
 margin_right = 128.0
 margin_bottom = 128.0
 rect_min_size = Vector2( 128, 128 )
-texture_normal = ExtResource( 22 )
+texture_normal = ExtResource( 21 )
 expand = true
 stretch_mode = 3
 script = ExtResource( 12 )
@@ -670,7 +654,7 @@ tooltip_align = 2
 margin_right = 128.0
 margin_bottom = 128.0
 rect_min_size = Vector2( 128, 128 )
-texture_normal = ExtResource( 23 )
+texture_normal = ExtResource( 22 )
 expand = true
 stretch_mode = 3
 script = ExtResource( 12 )
@@ -684,7 +668,7 @@ margin_top = 128.0
 margin_right = 128.0
 margin_bottom = 256.0
 rect_min_size = Vector2( 128, 128 )
-texture_normal = ExtResource( 24 )
+texture_normal = ExtResource( 23 )
 expand = true
 stretch_mode = 3
 script = ExtResource( 12 )
@@ -705,7 +689,7 @@ margin_top = 810.0
 margin_right = 128.0
 margin_bottom = 938.0
 rect_min_size = Vector2( 128, 128 )
-texture_normal = ExtResource( 20 )
+texture_normal = ExtResource( 19 )
 expand = true
 stretch_mode = 3
 script = ExtResource( 12 )
@@ -726,7 +710,7 @@ rect_min_size = Vector2( 142, 0 )
 mouse_filter = 2
 size_flags_horizontal = 0
 size_flags_vertical = 3
-script = ExtResource( 25 )
+script = ExtResource( 24 )
 fade_speed = 5.0
 
 [node name="VBox" type="VBoxContainer" parent="Box/RightGameHideBar"]
@@ -749,7 +733,7 @@ margin_top = 810.0
 margin_right = 128.0
 margin_bottom = 938.0
 rect_min_size = Vector2( 128, 128 )
-texture_normal = ExtResource( 17 )
+texture_normal = ExtResource( 16 )
 expand = true
 stretch_mode = 3
 script = ExtResource( 12 )
@@ -768,7 +752,7 @@ margin_bottom = 728.0
 rect_min_size = Vector2( 200, 700 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 26 )
+script = ExtResource( 25 )
 hidden_by_default = true
 
 [node name="HBoxContainer" type="VBoxContainer" parent="Box/PieceStylesPanel"]
@@ -792,7 +776,7 @@ margin_right = 186.0
 margin_bottom = 129.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture_normal = ExtResource( 27 )
+texture_normal = ExtResource( 26 )
 expand = true
 stretch_mode = 5
 script = ExtResource( 12 )
@@ -802,7 +786,7 @@ unnamed = true
 margin_top = 129.0
 margin_right = 186.0
 margin_bottom = 151.0
-custom_fonts/font = ExtResource( 28 )
+custom_fonts/font = ExtResource( 27 )
 text = "PSTYLE_KANJI"
 align = 1
 
@@ -819,7 +803,7 @@ margin_right = 186.0
 margin_bottom = 129.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture_normal = ExtResource( 29 )
+texture_normal = ExtResource( 28 )
 expand = true
 stretch_mode = 5
 script = ExtResource( 12 )
@@ -829,7 +813,7 @@ unnamed = true
 margin_top = 129.0
 margin_right = 186.0
 margin_bottom = 151.0
-custom_fonts/font = ExtResource( 28 )
+custom_fonts/font = ExtResource( 27 )
 text = "PSTYLE_SYMBOLS"
 align = 1
 
@@ -846,7 +830,7 @@ margin_right = 186.0
 margin_bottom = 129.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture_normal = ExtResource( 30 )
+texture_normal = ExtResource( 29 )
 expand = true
 stretch_mode = 5
 script = ExtResource( 12 )
@@ -856,7 +840,7 @@ unnamed = true
 margin_top = 129.0
 margin_right = 186.0
 margin_bottom = 151.0
-custom_fonts/font = ExtResource( 28 )
+custom_fonts/font = ExtResource( 27 )
 text = "PSTYLE_WESTERN"
 align = 1
 
@@ -873,7 +857,7 @@ margin_right = 186.0
 margin_bottom = 129.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture_normal = ExtResource( 31 )
+texture_normal = ExtResource( 30 )
 expand = true
 stretch_mode = 5
 script = ExtResource( 12 )
@@ -883,7 +867,7 @@ unnamed = true
 margin_top = 129.0
 margin_right = 186.0
 margin_bottom = 151.0
-custom_fonts/font = ExtResource( 28 )
+custom_fonts/font = ExtResource( 27 )
 text = "PSTYLE_KANJI"
 align = 1
 
@@ -901,8 +885,8 @@ margin_right = 1482.0
 margin_bottom = 292.0
 rect_min_size = Vector2( 0, 124 )
 size_flags_vertical = 3
-theme = ExtResource( 32 )
-script = ExtResource( 33 )
+theme = ExtResource( 31 )
+script = ExtResource( 32 )
 hidden_by_default = true
 
 [node name="VBox" type="VBoxContainer" parent="Box/HistoryPanel"]
@@ -932,7 +916,7 @@ size_flags_horizontal = 3
 margin_right = 50.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 50, 50 )
-texture_normal = ExtResource( 34 )
+texture_normal = ExtResource( 33 )
 expand = true
 stretch_mode = 5
 script = ExtResource( 12 )
@@ -962,7 +946,7 @@ margin_left = 50.0
 margin_right = 100.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 50, 50 )
-texture_normal = ExtResource( 35 )
+texture_normal = ExtResource( 34 )
 expand = true
 stretch_mode = 5
 script = ExtResource( 12 )
@@ -973,7 +957,7 @@ margin_left = 100.0
 margin_right = 150.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 50, 50 )
-texture_normal = ExtResource( 36 )
+texture_normal = ExtResource( 35 )
 expand = true
 stretch_mode = 5
 script = ExtResource( 12 )
@@ -984,7 +968,7 @@ margin_left = 150.0
 margin_right = 200.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 50, 50 )
-texture_normal = ExtResource( 37 )
+texture_normal = ExtResource( 36 )
 expand = true
 stretch_mode = 5
 script = ExtResource( 12 )
@@ -995,7 +979,7 @@ margin_left = 200.0
 margin_right = 250.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 50, 50 )
-texture_normal = ExtResource( 38 )
+texture_normal = ExtResource( 37 )
 expand = true
 stretch_mode = 5
 script = ExtResource( 12 )
@@ -1025,7 +1009,7 @@ margin_left = 250.0
 margin_right = 300.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 50, 50 )
-texture_normal = ExtResource( 39 )
+texture_normal = ExtResource( 38 )
 expand = true
 stretch_mode = 5
 script = ExtResource( 12 )
@@ -1048,7 +1032,7 @@ margin_left = 304.0
 margin_right = 354.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 50, 50 )
-texture_normal = ExtResource( 40 )
+texture_normal = ExtResource( 39 )
 expand = true
 stretch_mode = 5
 script = ExtResource( 12 )
@@ -1059,7 +1043,7 @@ margin_left = 354.0
 margin_right = 404.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 50, 50 )
-texture_normal = ExtResource( 20 )
+texture_normal = ExtResource( 19 )
 expand = true
 stretch_mode = 5
 script = ExtResource( 12 )
@@ -1246,7 +1230,7 @@ margin_right = 30.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 41 )
+theme = ExtResource( 40 )
 scroll_horizontal_enabled = false
 
 [node name="VBox" type="VBoxContainer" parent="Box/HistoryPanel/VBox/VBoxChess/HistoryScrollContainer"]
@@ -1260,7 +1244,7 @@ visible = false
 margin_top = 128.0
 margin_right = 40.0
 margin_bottom = 142.0
-custom_fonts/font = ExtResource( 28 )
+custom_fonts/font = ExtResource( 27 )
 
 [node name="PopupList" type="VBoxContainer" parent="Box"]
 editor/display_folded = true
@@ -1273,7 +1257,7 @@ margin_bottom = 506.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 42 )
+script = ExtResource( 41 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1284,7 +1268,7 @@ dir = Vector2( 0, 1 )
 editor/display_folded = true
 margin_right = 1920.0
 
-[node name="CheckPopup" parent="Box/PopupList/CC1" instance=ExtResource( 43 )]
+[node name="CheckPopup" parent="Box/PopupList/CC1" instance=ExtResource( 42 )]
 visible = false
 margin_left = 810.0
 margin_top = -7.0
@@ -1300,7 +1284,7 @@ margin_top = 4.0
 margin_right = 1920.0
 margin_bottom = 4.0
 
-[node name="AwaitAnswerPopup" parent="Box/PopupList/CC2" instance=ExtResource( 43 )]
+[node name="AwaitAnswerPopup" parent="Box/PopupList/CC2" instance=ExtResource( 42 )]
 visible = false
 margin_left = 560.0
 margin_top = -7.0
@@ -1310,7 +1294,7 @@ rect_min_size = Vector2( 800, 0 )
 mouse_filter = 2
 text = "POPUP_AWAIT_ANSWER"
 
-[node name="AwaitAnswerDisabled" parent="Box/PopupList/CC2" instance=ExtResource( 43 )]
+[node name="AwaitAnswerDisabled" parent="Box/PopupList/CC2" instance=ExtResource( 42 )]
 visible = false
 margin_left = 560.0
 margin_top = -7.0
@@ -1320,7 +1304,7 @@ rect_min_size = Vector2( 800, 0 )
 mouse_filter = 2
 text = "POPUP_AWAIT_ANSWER"
 
-[node name="AwaitAnswerDisconnectedPopup" parent="Box/PopupList/CC2" instance=ExtResource( 43 )]
+[node name="AwaitAnswerDisconnectedPopup" parent="Box/PopupList/CC2" instance=ExtResource( 42 )]
 visible = false
 margin_left = 560.0
 margin_top = -7.0
@@ -1330,7 +1314,7 @@ rect_min_size = Vector2( 800, 0 )
 mouse_filter = 2
 text = "POPUP_AWAIT_DISCONNECTED"
 
-[node name="AwaitAnswerNotYourTurnPopup" parent="Box/PopupList/CC2" instance=ExtResource( 43 )]
+[node name="AwaitAnswerNotYourTurnPopup" parent="Box/PopupList/CC2" instance=ExtResource( 42 )]
 visible = false
 margin_left = 560.0
 margin_top = -7.0
@@ -1340,7 +1324,7 @@ rect_min_size = Vector2( 800, 0 )
 mouse_filter = 2
 text = "POPUP_AWAIT_YOUR_TURN"
 
-[node name="AwaitAnswerGameOverPopup" parent="Box/PopupList/CC2" instance=ExtResource( 43 )]
+[node name="AwaitAnswerGameOverPopup" parent="Box/PopupList/CC2" instance=ExtResource( 42 )]
 visible = false
 margin_left = 560.0
 margin_top = -7.0
@@ -1356,7 +1340,7 @@ margin_top = 8.0
 margin_right = 1920.0
 margin_bottom = 8.0
 
-[node name="TakebackYes" parent="Box/PopupList/CC3" instance=ExtResource( 43 )]
+[node name="TakebackYes" parent="Box/PopupList/CC3" instance=ExtResource( 42 )]
 visible = false
 margin_left = 660.0
 margin_top = -7.0
@@ -1374,7 +1358,7 @@ margin_top = 12.0
 margin_right = 1920.0
 margin_bottom = 12.0
 
-[node name="TakebackNo" parent="Box/PopupList/CC4" instance=ExtResource( 43 )]
+[node name="TakebackNo" parent="Box/PopupList/CC4" instance=ExtResource( 42 )]
 visible = false
 margin_left = 810.0
 margin_top = -7.0
@@ -1390,7 +1374,7 @@ margin_top = 16.0
 margin_right = 1920.0
 margin_bottom = 16.0
 
-[node name="ReplayDonePanel" parent="Box/PopupList/CC5" instance=ExtResource( 43 )]
+[node name="ReplayDonePanel" parent="Box/PopupList/CC5" instance=ExtResource( 42 )]
 visible = false
 margin_left = 810.0
 margin_top = -7.0
@@ -1405,7 +1389,7 @@ margin_top = 20.0
 margin_right = 1920.0
 margin_bottom = 20.0
 
-[node name="DisconnectPanel" parent="Box/PopupList/CC6" instance=ExtResource( 43 )]
+[node name="DisconnectPanel" parent="Box/PopupList/CC6" instance=ExtResource( 42 )]
 visible = false
 margin_left = 810.0
 margin_top = -7.0
@@ -1420,7 +1404,7 @@ margin_top = 24.0
 margin_right = 1920.0
 margin_bottom = 24.0
 
-[node name="ConnectedPopup" parent="Box/PopupList/CC7" instance=ExtResource( 43 )]
+[node name="ConnectedPopup" parent="Box/PopupList/CC7" instance=ExtResource( 42 )]
 visible = false
 margin_left = 810.0
 margin_top = -7.0
@@ -1435,7 +1419,7 @@ margin_top = 28.0
 margin_right = 1920.0
 margin_bottom = 28.0
 
-[node name="ObsConnectedPopup" parent="Box/PopupList/CC8" instance=ExtResource( 43 )]
+[node name="ObsConnectedPopup" parent="Box/PopupList/CC8" instance=ExtResource( 42 )]
 visible = false
 margin_left = 810.0
 margin_top = -7.0
@@ -1450,7 +1434,7 @@ margin_top = 32.0
 margin_right = 1920.0
 margin_bottom = 32.0
 
-[node name="ObsDisconnectedPopup" parent="Box/PopupList/CC9" instance=ExtResource( 43 )]
+[node name="ObsDisconnectedPopup" parent="Box/PopupList/CC9" instance=ExtResource( 42 )]
 visible = false
 margin_left = 810.0
 margin_top = -7.0
@@ -1465,7 +1449,7 @@ margin_top = 36.0
 margin_right = 1920.0
 margin_bottom = 36.0
 
-[node name="ReconnectedPopup" parent="Box/PopupList/CC10" instance=ExtResource( 43 )]
+[node name="ReconnectedPopup" parent="Box/PopupList/CC10" instance=ExtResource( 42 )]
 visible = false
 margin_left = 810.0
 margin_top = -7.0
@@ -1489,7 +1473,7 @@ margin_bottom = 275.0
 rect_min_size = Vector2( 900, 275 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 44 )
+script = ExtResource( 43 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Box/TakebackDialog"]
 editor/display_folded = true
@@ -1590,7 +1574,7 @@ margin_bottom = 270.0
 rect_min_size = Vector2( 900, 275 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 44 )
+script = ExtResource( 43 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Box/LeavePopup"]
 margin_left = 4.0
@@ -1684,7 +1668,7 @@ margin_bottom = 270.0
 rect_min_size = Vector2( 900, 275 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 44 )
+script = ExtResource( 43 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Box/LeavePopup2"]
 margin_left = 4.0
@@ -1763,7 +1747,7 @@ margin_bottom = 270.0
 rect_min_size = Vector2( 900, 275 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 44 )
+script = ExtResource( 43 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Box/SaveDialog"]
 editor/display_folded = true
@@ -1896,7 +1880,7 @@ margin_bottom = 270.0
 rect_min_size = Vector2( 950, 275 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 44 )
+script = ExtResource( 43 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Box/ServerSDDialog"]
 margin_left = 4.0
@@ -1975,7 +1959,7 @@ margin_bottom = 275.0
 rect_min_size = Vector2( 900, 275 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 44 )
+script = ExtResource( 43 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Box/ResignDialog"]
 margin_left = 4.0
@@ -2061,12 +2045,12 @@ size_flags_horizontal = 3
 margin_right = 800.0
 size_flags_vertical = 3
 
-[node name="WhitePlayerPanel" parent="." instance=ExtResource( 45 )]
+[node name="WhitePlayerPanel" parent="." instance=ExtResource( 44 )]
 visible = false
 margin_top = 128.0
 margin_bottom = 128.0
 
-[node name="BlackPlayerPanel" parent="." instance=ExtResource( 45 )]
+[node name="BlackPlayerPanel" parent="." instance=ExtResource( 44 )]
 visible = false
 anchor_left = 1.0
 anchor_top = 1.0
@@ -2086,7 +2070,6 @@ side = true
 [connection signal="pressed" from="Box/LeftGameBarAIMode/VBox/AISettingsButton" to="." method="_on_AISettingsButton_pressed"]
 [connection signal="pressed" from="Box/LeftGameBarAIMode/VBox/AIRestart" to="." method="_on_AIRestart_pressed"]
 [connection signal="pressed" from="Box/LeftGameBarAIMode/VBox/AIHint" to="." method="_on_AIHint_pressed"]
-[connection signal="pressed" from="Box/LeftGameBarAIMode/VBox/AIOpenLog" to="." method="_on_AIOpenLog_pressed"]
 [connection signal="pressed" from="Box/LeftGameBarAIMode/VBox/SwitchModeButton" to="Box/LeftGameBarAIMode" method="_on_SwitchModeButton_pressed"]
 [connection signal="pressed" from="Box/LeftGameBarAIMode/VBox/LeftHideButton" to="Box/LeftGameBarAIMode" method="_on_LeftHideButton_pressed"]
 [connection signal="pressed" from="Box/LeftGameBarBrushMode/VBox/StylesSettingsButton" to="." method="_on_StylesSettingsButton_pressed"]

@@ -59,6 +59,7 @@ size_flags_vertical = 3
 custom_constants/separation = 0
 
 [node name="GBox" type="GridContainer" parent="SimpleLayout"]
+editor/display_folded = true
 margin_right = 1558.0
 margin_bottom = 952.0
 size_flags_horizontal = 3
@@ -1030,7 +1031,6 @@ margin_right = 1024.0
 margin_bottom = 195.0
 
 [node name="AISettings" type="VBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox"]
-editor/display_folded = true
 visible = false
 margin_left = 1000.0
 margin_right = 1938.0
@@ -1142,83 +1142,6 @@ rect_min_size = Vector2( 50, 0 )
 align = 1
 
 [node name="Offset3" type="ReferenceRect" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/AISettings/AISettingsBox/VBox/HBoxAISkillLevel"]
-
-[node name="AILog" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/AISettings/AISettingsBox/VBox"]
-margin_left = -500.0
-margin_right = 627.0
-margin_bottom = 128.0
-rect_min_size = Vector2( 0, 50 )
-custom_constants/separation = 80
-
-[node name="Offset" type="ReferenceRect" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/AISettings/AISettingsBox/VBox/AILog"]
-modulate = Color( 1, 1, 1, 0 )
-margin_bottom = 24.0
-
-[node name="AILogCheckBox" type="CheckBox" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/AISettings/AISettingsBox/VBox/AILog"]
-margin_left = 80.0
-margin_right = 232.0
-margin_bottom = 24.0
-rect_min_size = Vector2( 0, 50 )
-text = "CB_SOUND_ENABLE_SPEECH"
-script = ExtResource( 14 )
-
-[node name="HBoxHash" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/AISettings/AISettingsBox/VBox"]
-editor/display_folded = true
-visible = false
-margin_left = -1342.0
-margin_top = 274.0
-margin_right = -459.0
-margin_bottom = 402.0
-size_flags_horizontal = 3
-
-[node name="Offset" type="ReferenceRect" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/AISettings/AISettingsBox/VBox/HBoxHash"]
-margin_right = 40.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 80, 0 )
-
-[node name="HashDescLabel" type="Label" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/AISettings/AISettingsBox/VBox/HBoxHash"]
-margin_right = 40.0
-margin_bottom = 49.0
-text = "Hash:"
-
-[node name="Offset2" type="ReferenceRect" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/AISettings/AISettingsBox/VBox/HBoxHash"]
-margin_right = 80.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 40, 0 )
-
-[node name="HashLabel" type="Label" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/AISettings/AISettingsBox/VBox/HBoxHash"]
-margin_right = 40.0
-margin_bottom = 49.0
-text = "-"
-
-[node name="HBoxDepthLimit" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/AISettings/AISettingsBox/VBox"]
-editor/display_folded = true
-visible = false
-margin_left = -1342.0
-margin_top = 274.0
-margin_right = -459.0
-margin_bottom = 402.0
-size_flags_horizontal = 3
-
-[node name="Offset" type="ReferenceRect" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/AISettings/AISettingsBox/VBox/HBoxDepthLimit"]
-margin_right = 40.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 80, 0 )
-
-[node name="DepthLimitDescLabel" type="Label" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/AISettings/AISettingsBox/VBox/HBoxDepthLimit"]
-margin_right = 40.0
-margin_bottom = 49.0
-text = "DepthLimit:"
-
-[node name="Offset2" type="ReferenceRect" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/AISettings/AISettingsBox/VBox/HBoxDepthLimit"]
-margin_right = 80.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 40, 0 )
-
-[node name="DepthLimitLabel" type="Label" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/AISettings/AISettingsBox/VBox/HBoxDepthLimit"]
-margin_right = 40.0
-margin_bottom = 49.0
-text = "-"
 
 [node name="HSep" type="HSeparator" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/AISettings/AISettingsBox/VBox"]
 margin_left = -1000.0
@@ -3662,7 +3585,6 @@ flat = true
 [connection signal="item_selected" from="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/AISettings/AISettingsBox/VBox/HBoxEngineFolder/EngineFolderButton" to="." method="_on_EngineFolderButton_item_selected"]
 [connection signal="item_selected" from="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/AISettings/AISettingsBox/VBox/HBoxEngineExe/EngineExeButton" to="." method="_on_EngineExeButton_item_selected"]
 [connection signal="value_changed" from="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/AISettings/AISettingsBox/VBox/HBoxAISkillLevel/SkillLevelSlider" to="." method="_on_AIPowerSlider_value_changed"]
-[connection signal="toggled" from="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/AISettings/AISettingsBox/VBox/AILog/AILogCheckBox" to="." method="_on_AILogCheckBox_toggled"]
 [connection signal="focus_entered" from="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/GameplaySettings/GeneralBox/VBox/HBoxAutomove/CB_AUTOMOVE" to="." method="_on_CB_AUTOMOVE_focus_entered"]
 [connection signal="focus_exited" from="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/GameplaySettings/GeneralBox/VBox/HBoxAutomove/CB_AUTOMOVE" to="." method="_on_CB_AUTOMOVE_focus_exited"]
 [connection signal="mouse_entered" from="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/GameplaySettings/GeneralBox/VBox/HBoxAutomove/CB_AUTOMOVE" to="." method="_on_CB_AUTOMOVE_mouse_entered"]
