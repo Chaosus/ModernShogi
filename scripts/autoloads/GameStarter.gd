@@ -27,12 +27,14 @@ func _post_load():
 	loading_screen.goto_screen(UI.SCREEN_GAME)
 
 # Старт новой одиночной игры
-func start_local(player_config, player_side, minutes, seconds, handicap, sfen = null):
+func start_local(player_config, player_side, minutes : int, byomi : int, handicap, sfen = null):
 	_pre_load()
 	yield(self, "preload_completed")
 	
 	var session = Game.GameSession.new()
 	session.game_template = Games.get_game_by_name(Games.GameType.SHOGI)
+	session.max_minutes = minutes
+	session.max_byomi = byomi
 	session.setup = handicap
 	session.sfen = sfen
 	session.ai_enabled = player_config == Games.PlayerConfig.AI
@@ -86,7 +88,7 @@ func join(ip, port, obsmode):
 	game_screen.obsmode = obsmode
 	game_screen.username = Profiles.get_current_profile().nickname
 	
-func start_host(port, is_rated, _host_side, minutes, seconds, handicap, sfen = null, global_game = false) -> void :
+func start_host(port, is_rated, _host_side, minutes, byomi, handicap, sfen = null, global_game = false) -> void :
 	_pre_load()
 	yield(self, "preload_completed")
 	
@@ -152,7 +154,7 @@ func start_host(port, is_rated, _host_side, minutes, seconds, handicap, sfen = n
 	session.initial_side = _host_side
 	session.your_side = host_side
 	session.max_minutes = minutes
-	session.max_seconds = seconds
+	session.max_byomi = byomi
 	session.is_server = true
 	session.user_name = Network.get_login_name()
 	

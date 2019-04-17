@@ -100,6 +100,11 @@ public class AI : Node
         UCIEngine.SkillLevel = level;
     }
 
+    public int GetSkillLevel()
+    {
+        return UCIEngine.SkillLevel;
+    }
+
     public void Shutdown()
     {
         UCIEngine.Shutdown();

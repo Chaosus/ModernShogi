@@ -16,6 +16,9 @@ onready var piece_prefab = preload("res://scenes/Piece.tscn")
 
 var session
 
+func get_ai_power():
+	return Profiles.get_value(Settings.SV_AI_ENGINE_SKILL_LEVEL)
+
 enum HistoryPlayProc {
 	NONE,
 	BACKWARD,
@@ -277,6 +280,13 @@ func init_game(session):
 	for i in range(session.game_template.max_players):
 		var player = Game.Player.new(i)
 		player.name = "?"
+		player.panel = gui.get_player_panel(i)
+		player.current_minutes = session.max_minutes
+		player.current_seconds = 60
+		player.current_byomi = session.max_byomi
+		player.panel.set_byomi_mode_enabled(false)
+		player.panel.set_timer(player.current_minutes, player.current_seconds, player.current_byomi)	
+		player.panel.beautiful_show()
 		for piece_template in session.game_template.piece_templates.values():
 			player.storage.add_piece_type(piece_template, board)
 		player.storage.add_to_scene(self)
@@ -327,22 +337,24 @@ func init_game(session):
 		var player_name
 		var cpu_name
 		
-		if cpu_side == -1:
-			player_name = "CPU1"
-			cpu_name = "CPU2"
-		else:
+		if cpu_side >= 0:
 			player_name = Profiles.get_current_profile().nickname
 			cpu_name = "CPU"
 		
 		var bname = ""
 		var wname = ""
 		
+		var ai_power = str(get_ai_power())
+		
 		if player_side == 0:
 			bname = player_name
-			wname = cpu_name
-		else:
-			bname = cpu_name
+			wname = cpu_name + "-Gote( Level " + ai_power + " )"
+		elif player_side == 1:
+			bname = cpu_name + "-Sente( Level " + ai_power + " )"
 			wname = player_name
+		else:
+			bname = "CPU-Sente( Level " + ai_power + " )"
+			wname = "CPU-Gote( Level " + ai_power + " )"
 		
 		session.set_your_side(player_side)
 		set_camera_side(player_side)
@@ -928,7 +940,7 @@ func reinit_ai(reset = false):
 	clear_ai_log()
 	if session.is_multiplayer():
 		return
-	var engine_folder = OS.get_executable_path().get_base_dir() + "\\engines\\" + Profiles.get_value(Settings.SV_AI_ENGINE_FOLDER)
+	var engine_folder = OS.get_executable_path().get_base_dir() + "//engines//" + Profiles.get_value(Settings.SV_AI_ENGINE_FOLDER)
 	var engine_exe = Profiles.get_value(Settings.SV_AI_ENGINE_EXE)
 	ai.Init(engine_folder, engine_exe, reset)
 	if ai.IsReady:
@@ -1207,7 +1219,7 @@ func next_turn(prev_nest, next_nest, promotion):
 	emit_signal("turn_changed")
 	
 	clear_nest_masks()
-	stopwatch.start()
+	start_timer()
 	
 	get_history().get_previous_record().ai_string = get_build_string(next_nest, prev_nest, promotion, next_nest.piece)
 	
@@ -1637,8 +1649,22 @@ func _process_input(delta):
 func flip_board():
 	self.camera_side = wrapi(self.camera_side + 1, 0, session.game_template.max_players)
 
+func start_timer():
+	stopwatch.start()
+
+func stop_timer():
+	stopwatch.stop()
+
 func _on_SecondTimer_timeout():
-	pass
+	if session.gameover:
+		return
+	var player = session.get_current_player()
+	player.current_seconds -= 1
+	if player.current_seconds == -1:
+		player.current_seconds = 59
+		player.current_minutes -= 1
+	player.panel.set_timer(player.current_minutes, player.current_seconds, player.current_byomi)
+	
 	#current_think_seconds += 1
 	#if current_think_seconds == 2:
 	#	if session.is_ai_turn() and !session.gameover:
@@ -1650,8 +1676,11 @@ func _on_SecondTimer_timeout():
 	#	current_think_seconds = 0
 
 func get_think_time():
-	pass
-	#return str(current_think_minutes) + ":" + str(current_think_seconds)
+	var player = session.get_current_player()
+	if player.byomi_mode:
+		return "0 : " + str(player.current_byomi)
+	else:
+		return str(player.current_minutes) + " : " + str(player.current_seconds)
 
 func _process(delta):
 	
@@ -1747,7 +1776,6 @@ func on_show():
 		else:
 			UI.get_widget(UI.WIDGET_TAKEBACK).hide()
 	else:
-		stopwatch.pause_mode = false
 		UI.get_widget(UI.WIDGET_RESIGN).hide()
 		UI.get_widget(UI.WIDGET_TAKEBACK).hide()
 	# Показать окно истории вновь, если оно было открыто
@@ -1799,8 +1827,7 @@ func leave():
 			terminate_network()
 	
 	full_cleanup()
-	
-	stopwatch.stop()
+	stop_timer()
 	
 	if UI.server_list_enabled:
 		open_screen(UI.SCREEN_SERVER, false)
@@ -1836,7 +1863,7 @@ func save_game(filename, format, result):
 	var place = "ModernShogi v" + UI.get_version() + " " + ("(Multiplayer)" if session.is_multiplayer() else "(Singleplayer)")
 	
 	var minutes = str(session.max_minutes)
-	var seconds = str(session.max_seconds)
+	var byomi = str(session.max_byomi)
 	
 	var handicap = session.setup
 	
@@ -1845,7 +1872,7 @@ func save_game(filename, format, result):
 	
 	var tc_result = get_think_time()
 	
-	save_kif(filename, format, date, place, minutes, seconds, handicap, bname, wname, gui.history_panel.history.moves, result, tc_result)
+	save_kif(filename, format, date, place, minutes, byomi, handicap, bname, wname, gui.history_panel.history.moves, result, tc_result)
 
 func convert_move(format, step, move, at):
 	var indent = ""
@@ -2352,8 +2379,8 @@ func set_player_name(idx, name):
 		$GUI/Box/HistoryPanel/VBox/VBoxChess/HBoxTableHeader/LABEL_WHITE_INPUT.text = name
 		
 func set_player_names(black, white):
-	session.players[0].name = black
-	session.players[1].name = white
+	session.players[0].set_name(black)
+	session.players[1].set_name(white)
 	$GUI/Box/HistoryPanel/VBox/VBoxShogi/HBoxTableHeader/HBoxPlayers/LABEL_BLACK_INPUT.text = black
 	$GUI/Box/HistoryPanel/VBox/VBoxShogi/HBoxTableHeader/HBoxPlayers/LABEL_WHITE_INPUT.text = white
 	$GUI/Box/HistoryPanel/VBox/VBoxChess/HBoxTableHeader/LABEL_BLACK_INPUT.text = black

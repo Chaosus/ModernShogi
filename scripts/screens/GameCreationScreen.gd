@@ -5,8 +5,8 @@ onready var ai_error_box = $Box/SimpleLayout/QuickAIControl/AIBox/VBox/VBoxQuick
 onready var ai_box2 = $Box/SimpleLayout/QuickAIControl/AIBox/VBox/QuickAIControl
 onready var ai_handicap = $Box/SimpleLayout/HandicapBox/VBox/VBox/HBoxAIHandicap
 
-onready var minutes_list = $Box/SimpleLayout/TimeControl/HBoxTimeControl/TimeControlMinutes
-onready var seconds_list = $Box/SimpleLayout/TimeControl/HBoxTimeControl/TimeControlSeconds
+onready var minutes_list = $Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/Timer/TimerBox/TimeControlMinutes
+onready var seconds_list = $Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/Timer/TimerBox/TimeControlSeconds
 
 onready var handicap_box = $Box/SimpleLayout/HandicapBox
 onready var handicap_header = $Box/SimpleLayout/SH_GAME_HANDICAP
@@ -40,6 +40,7 @@ onready var create_button = $Box/SimpleLayout/CreateButton
 var is_rated_game = true
 var is_private_game = false
 var password = null
+var timer_disabled = false
 
 var host_side = 0
 
@@ -173,12 +174,14 @@ func _ready():
 	tm.add_item("30")
 	tm.add_item("45")
 	tm.add_item("60")
+	tm.select(3)
 	
 	var tb = seconds_list
 	tb.add_item("10")
 	tb.add_item("20")
 	tb.add_item("30")
 	tb.add_item("60")
+	tb.select(3)
 
 func update_side(v):
 	match v:
@@ -315,6 +318,15 @@ func _on_BlackCheckBox_pressed():
 func _on_WhiteCheckBox_pressed():
 	host_side = 2
 
+# Настройки таймера
+
+func _on_CB_DISABLE_TIMER_toggled(toggled):
+	timer_disabled = toggled
+	if toggled:
+		$Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/Timer/TimerBox.visible = false
+	else:
+		$Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/Timer/TimerBox.visible = true
+
 # Фора
 
 func _on_HandicapLeftLance_pressed():
@@ -390,8 +402,15 @@ func _on_CreateButton_pressed():
 		
 	create_click = true
 	
-	var minutes = minutes_list.get_item_text(minutes_list.selected)
-	var seconds = seconds_list.get_item_text(seconds_list.selected)
+	var minutes
+	var byomi
+	if timer_disabled:
+		minutes = -1
+		byomi = -1
+	else:
+		minutes = int(minutes_list.get_item_text(minutes_list.selected))
+		byomi = int(seconds_list.get_item_text(seconds_list.selected))
+	
 	var handicap = Games.ShogiHandicaps.NONE
 	var side = host_side
 	
@@ -421,9 +440,8 @@ func _on_CreateButton_pressed():
 		
 		Network.request_create_game(Games.GameType.SHOGI, is_rated_game, game_name.text, handicap, side, password)
 	if mp_host:
-		GameStarter.start_host(port.value, is_rated_game, side, minutes, seconds, handicap, null, from_master)
+		GameStarter.start_host(port.value, is_rated_game, side, minutes, byomi, handicap, null, from_master)
 	else:
-		GameStarter.start_local(player_config, side, minutes, seconds, handicap)
-
+		GameStarter.start_local(player_config, side, minutes, byomi, handicap)
 
 

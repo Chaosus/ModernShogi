@@ -154,8 +154,16 @@ class Player:
 	var move_count = 0
 	var storage # массив съеденных фигур, если droprule включен оттуда их можно брать
 	var peer # id в сети
-	var remained_minutes = 0
-	var remained_seconds = 0
+	var current_minutes = 0
+	var current_seconds = 0
+	var current_byomi = 0
+	var byomi_mode = false
+	var panel = null
+	
+	func set_name(name):
+		self.name = name
+		panel.set_name(name)
+	
 	func _init(index):
 		self.side = index
 		storage = Storage.new(index)
@@ -208,7 +216,7 @@ class GameSession:
 	var replay_mode = false
 	var ai_enabled = false
 	var max_minutes = 0
-	var max_seconds = 0
+	var max_byomi = 0
 	var is_server = false	
 	var has_other_player = false
 

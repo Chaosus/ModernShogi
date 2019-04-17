@@ -59,7 +59,6 @@ size_flags_vertical = 3
 custom_constants/separation = 0
 
 [node name="GBox" type="GridContainer" parent="SimpleLayout"]
-editor/display_folded = true
 margin_right = 1558.0
 margin_bottom = 952.0
 size_flags_horizontal = 3
@@ -1031,6 +1030,7 @@ margin_right = 1024.0
 margin_bottom = 195.0
 
 [node name="AISettings" type="VBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox"]
+editor/display_folded = true
 visible = false
 margin_left = 1000.0
 margin_right = 1938.0

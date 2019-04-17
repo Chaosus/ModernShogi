@@ -286,104 +286,7 @@ text = "CB_AI_VS_AI"
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="TimeControl" type="VBoxContainer" parent="Box/SimpleLayout"]
-editor/display_folded = true
-visible = false
-margin_top = 50.0
-margin_right = 1023.0
-margin_bottom = 294.0
-
-[node name="HSeparator" type="HSeparator" parent="Box/SimpleLayout/TimeControl"]
-margin_right = 1023.0
-size_flags_horizontal = 3
-
-[node name="SH_GAME_TIMECONTROL" type="Label" parent="Box/SimpleLayout/TimeControl"]
-margin_top = 45.0
-margin_right = 1023.0
-margin_bottom = 94.0
-text = "SH_GAME_TIMECONTROL"
-align = 1
-
-[node name="HSeparator2" type="HSeparator" parent="Box/SimpleLayout/TimeControl"]
-margin_top = 139.0
-margin_right = 1023.0
-margin_bottom = 139.0
-size_flags_horizontal = 3
-
-[node name="HBoxTimeControl" type="HBoxContainer" parent="Box/SimpleLayout/TimeControl"]
-editor/display_folded = true
-margin_top = 184.0
-margin_right = 1023.0
-margin_bottom = 244.0
-custom_constants/separation = 80
-
-[node name="ReferenceRect" type="ReferenceRect" parent="Box/SimpleLayout/TimeControl/HBoxTimeControl"]
-margin_bottom = 60.0
-
-[node name="TimeControlMinutesDesc" type="Label" parent="Box/SimpleLayout/TimeControl/HBoxTimeControl"]
-margin_left = 80.0
-margin_top = 5.0
-margin_right = 363.0
-margin_bottom = 54.0
-text = "DESC_MINUTES"
-
-[node name="TimeControlMinutes" type="OptionButton" parent="Box/SimpleLayout/TimeControl/HBoxTimeControl"]
-margin_left = 443.0
-margin_right = 508.0
-margin_bottom = 60.0
-rect_min_size = Vector2( 65, 60 )
-align = 1
-
-[node name="TimeControlSecondsDesc" type="Label" parent="Box/SimpleLayout/TimeControl/HBoxTimeControl"]
-margin_left = 588.0
-margin_top = 5.0
-margin_right = 878.0
-margin_bottom = 54.0
-text = "DESC_BYOYOMI"
-
-[node name="TimeControlSeconds" type="OptionButton" parent="Box/SimpleLayout/TimeControl/HBoxTimeControl"]
-margin_left = 958.0
-margin_right = 1023.0
-margin_bottom = 60.0
-rect_min_size = Vector2( 65, 60 )
-align = 1
-
-[node name="HBoxRatedTimeControl" type="HBoxContainer" parent="Box/SimpleLayout/TimeControl"]
-editor/display_folded = true
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
-custom_constants/separation = 80
-
-[node name="ReferenceRect" type="ReferenceRect" parent="Box/SimpleLayout/TimeControl/HBoxRatedTimeControl"]
-margin_right = 40.0
-margin_bottom = 40.0
-
-[node name="DESC_MINUTES" type="Label" parent="Box/SimpleLayout/TimeControl/HBoxRatedTimeControl"]
-margin_right = 40.0
-margin_bottom = 14.0
-text = "DESC_MINUTES"
-
-[node name="OPT_TIMECONTROL_MINUTES" type="OptionButton" parent="Box/SimpleLayout/TimeControl/HBoxRatedTimeControl"]
-margin_top = 34.0
-margin_right = 65.0
-margin_bottom = 94.0
-rect_min_size = Vector2( 65, 60 )
-align = 1
-
-[node name="DESC_BYOYOMI" type="Label" parent="Box/SimpleLayout/TimeControl/HBoxRatedTimeControl"]
-margin_right = 96.0
-margin_bottom = 14.0
-text = "DESC_BYOYOMI"
-
-[node name="OPT_TIMECONTROL_BYOYOMI" type="OptionButton" parent="Box/SimpleLayout/TimeControl/HBoxRatedTimeControl"]
-margin_right = 65.0
-margin_bottom = 60.0
-rect_min_size = Vector2( 65, 60 )
-align = 1
-
 [node name="GameSettings" type="VBoxContainer" parent="Box/SimpleLayout"]
-editor/display_folded = true
 margin_right = 965.0
 margin_bottom = 138.0
 
@@ -432,7 +335,6 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 50, 0 )
 
 [node name="VBox" type="VBoxContainer" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox"]
-editor/display_folded = true
 margin_left = 50.0
 margin_right = 901.0
 margin_bottom = 50.0
@@ -614,6 +516,63 @@ margin_bottom = 50.0
 group = SubResource( 2 )
 text = "LABEL_WHITE4"
 script = ExtResource( 4 )
+
+[node name="Timer" type="HBoxContainer" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox"]
+margin_left = -57.0
+margin_top = 161.0
+margin_right = 966.0
+margin_bottom = 221.0
+rect_min_size = Vector2( 0, 60 )
+custom_constants/separation = 80
+
+[node name="SH_GAME_TIMECONTROL" type="Label" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/Timer"]
+margin_top = -139.0
+margin_right = 1023.0
+margin_bottom = -90.0
+text = "SH_GAME_TIMECONTROL"
+align = 1
+
+[node name="CB_DISABLE_TIMER" type="CheckBox" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/Timer"]
+margin_right = 24.0
+margin_bottom = 24.0
+text = "CB_DISABLED"
+
+[node name="TimerBox" type="HBoxContainer" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/Timer"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 25
+
+[node name="TimeControlMinutesDesc" type="Label" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/Timer/TimerBox"]
+margin_left = 80.0
+margin_top = 5.0
+margin_right = 363.0
+margin_bottom = 54.0
+text = "DESC_MINUTES"
+
+[node name="TimeControlMinutes" type="OptionButton" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/Timer/TimerBox"]
+margin_left = 443.0
+margin_right = 508.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 65, 60 )
+align = 1
+
+[node name="Offset" type="ReferenceRect" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/Timer/TimerBox"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TimeControlSecondsDesc" type="Label" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/Timer/TimerBox"]
+margin_left = 588.0
+margin_top = 5.0
+margin_right = 878.0
+margin_bottom = 54.0
+text = "DESC_BYOYOMI"
+
+[node name="TimeControlSeconds" type="OptionButton" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/Timer/TimerBox"]
+margin_left = 958.0
+margin_right = 1023.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 65, 60 )
+align = 1
 
 [node name="Offset2" type="ReferenceRect" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox"]
 margin_left = 901.0
@@ -1027,6 +986,7 @@ margin_bottom = 40.0
 [connection signal="pressed" from="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/HostSide/HBoxSide/RandomCheckBox" to="." method="_on_RandomCheckBox_pressed"]
 [connection signal="pressed" from="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/HostSide/HBoxSide/BlackCheckBox" to="." method="_on_BlackCheckBox_pressed"]
 [connection signal="pressed" from="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/HostSide/HBoxSide/WhiteCheckBox" to="." method="_on_WhiteCheckBox_pressed"]
+[connection signal="toggled" from="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox/Timer/CB_DISABLE_TIMER" to="." method="_on_CB_DISABLE_TIMER_toggled"]
 [connection signal="toggled" from="Box/SimpleLayout/HandicapBox/VBox/VBox/HBoxHandicap/CB_GAME_ENABLE_HANDICAP" to="." method="_on_CB_GAME_ENABLE_HANDICAP_toggled"]
 [connection signal="toggled" from="Box/SimpleLayout/HandicapBox/VBox/VBox/HBoxAIHandicap/AIGiveHandicapCheckBox" to="." method="_on_AIGiveHandicapCheckBox_toggled"]
 [connection signal="pressed" from="Box/SimpleLayout/HandicapBox/VBox/VBox2/HBoxHandicapLeftLance/HandicapLeftLance" to="." method="_on_HandicapLeftLance_pressed"]

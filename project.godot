@@ -30,6 +30,16 @@ _global_script_classes=[ {
 "path": "res://scripts/panels/InfoPanel.gd"
 }, {
 "base": "Control",
+"class": "PlayerPanel",
+"language": "GDScript",
+"path": "res://scripts/PlayerPanel.gd"
+}, {
+"base": "Control",
+"class": "TimerPanel",
+"language": "GDScript",
+"path": "res://scripts/panels/TimerPanel.gd"
+}, {
+"base": "Control",
 "class": "UIScreen",
 "language": "GDScript",
 "path": "res://scripts/UIScreen.gd"
@@ -49,6 +59,8 @@ _global_script_class_icons={
 "FadeElement": "",
 "HostScreen": "",
 "InfoPanel": "",
+"PlayerPanel": "",
+"TimerPanel": "",
 "UIScreen": "",
 "UserBox": "",
 "Widget": ""

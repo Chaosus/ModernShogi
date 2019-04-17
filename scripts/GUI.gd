@@ -56,6 +56,20 @@ onready var await_label = $Box/AwaitLabel
 onready var save_edit = $Box/SaveDialog/VBoxContainer/HBoxSave/SavePathEdit
 onready var save_edit2 = $Box/GameOverDialog/VBox/VBox/HBoxSave/SavePathEdit
 
+# Панели игроков
+
+onready var black_player_panel = $BlackPlayerPanel
+onready var white_player_panel = $WhitePlayerPanel
+
+# Возвращает панель игрока по индексу игрока.
+func get_player_panel(player_index : int) -> PlayerPanel:
+	match player_index:
+		0:
+			return black_player_panel
+		1:
+			return white_player_panel
+	return null
+
 func setup(game):
 	self.game = game
 	self.is_mp = game.session.is_multiplayer()
@@ -243,6 +257,8 @@ func set_visible(visible):
 	$Box.visible = visible
 	
 func cleanup():
+	black_player_panel.beautiful_hide()
+	white_player_panel.beautiful_hide()
 	promotion_dialog.beautiful_hide()
 	gameover_dialog.beautiful_hide()
 	infopanel.beautiful_hide()
