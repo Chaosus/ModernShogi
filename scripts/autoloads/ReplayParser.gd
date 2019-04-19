@@ -302,6 +302,8 @@ func parse_replay(path, filename):
 				move_count = 1
 				reset_move_count = false
 		file.close()
+		if strings.empty():
+			return null
 		var version = strings[0]
 		replay.date = parse_header_line(strings[1])
 		replay.place = parse_header_line(strings[2])

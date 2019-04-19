@@ -1,9 +1,16 @@
 extends "res://scripts/ui/FloatElement.gd"
 
 onready var timer = $Timer
+onready var attention_preset = preload("res://scenes/GameInfoPanel.tscn")
 
 var _ss_state = false
 
+var _list = []
+
+func create_simple_popup(text : String) -> void:
+	var instance = attention_preset.instance()
+	_list.append(instance)
+	
 func _ready():
 	dir = Vector2(0.0, 1.0)
 	rect_scale = UI.scale

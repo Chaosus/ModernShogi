@@ -1,4 +1,5 @@
 extends TextureButton
+
 class_name Widget
 
 # Widget.gd
@@ -29,7 +30,7 @@ var color_mask_pressed
 var color_mask_hover_pressed
 var color_mask_disabled
 
-func _ready():
+func _ready() -> void:
 	if unnamed:
 		UI.add_texbtn(self)
 	else:
@@ -43,7 +44,7 @@ func _ready():
 	
 var button_index = 0
 
-func set_disabled(value):
+func set_disabled(value : bool) -> void:
 	if value:
 		modulate = color_mask_disabled
 	else:

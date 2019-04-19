@@ -286,6 +286,7 @@ func init_game(session):
 		player.current_byomi = session.max_byomi
 		player.panel.set_byomi_mode_enabled(false)
 		player.panel.set_timer(player.current_minutes, player.current_seconds, player.current_byomi)	
+		player.panel.set_byomi_mode_enabled(player.current_minutes <= 0)
 		player.panel.beautiful_show()
 		for piece_template in session.game_template.piece_templates.values():
 			player.storage.add_piece_type(piece_template, board)
@@ -1648,6 +1649,11 @@ func _process_input(delta):
 
 func flip_board():
 	self.camera_side = wrapi(self.camera_side + 1, 0, session.game_template.max_players)
+	var black_panel = gui.get_player_panel(0)
+	var white_panel = gui.get_player_panel(1)
+	var buffer = white_panel.get_position()
+	white_panel.set_position(black_panel.get_position())
+	black_panel.set_position(buffer)
 
 func start_timer():
 	stopwatch.start()
@@ -1663,6 +1669,8 @@ func _on_SecondTimer_timeout():
 	if player.current_seconds == -1:
 		player.current_seconds = 59
 		player.current_minutes -= 1
+	if player.current_minutes == 0:
+		player.panel.set_byomi_mode_enabled(true)
 	player.panel.set_timer(player.current_minutes, player.current_seconds, player.current_byomi)
 	
 	#current_think_seconds += 1

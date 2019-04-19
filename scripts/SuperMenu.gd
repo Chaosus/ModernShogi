@@ -280,3 +280,4 @@ func _physics_process(_delta):
 	if Input.is_action_just_pressed("ui_back"):
 		if UI.get_current_screen() != null:
 			UI.get_current_screen().go_back_if_possible()
+

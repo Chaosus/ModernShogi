@@ -68,20 +68,20 @@ func _on_item_selected():
 	#dclick = 0
 	var item = self.get_selected()
 	if _replays_list.has(item.get_meta("path") + item.get_text(0)):
-		_parent_screen.show_play_control()
-		_parent_screen.hide_explorer_control()
+		_parent_screen.show_play_control(true)
+		_parent_screen.show_explorer_control(false)
 		_parent_screen.load_replay(item, item.get_meta("path"), item.get_text(0))
 	elif _songs_list.has(item):
-		_parent_screen.show_play_control()
-		_parent_screen.hide_explorer_control()
+		_parent_screen.show_play_control(true)
+		_parent_screen.show_explorer_control(false)
 		_parent_screen.load_song(item.get_meta("path"), item.get_text(0))
 	elif _profiles_list.has(item):
-		_parent_screen.hide_play_control()
-		_parent_screen.hide_explorer_control()
+		_parent_screen.show_play_control(false)
+		_parent_screen.show_explorer_control(false)
 		_parent_screen.load_profile(item.get_meta("path"), item.get_text(0))
 	elif _dir_list.has(item):
-		_parent_screen.hide_play_control()
-		_parent_screen.show_explorer_control()
+		_parent_screen.show_play_control(false)
+		_parent_screen.show_explorer_control(true)
 		_parent_screen.load_folder(item.get_meta("path"),  item.get_text(0), item.get_meta("filecount"), item.get_meta("subdirs"), item.get_meta("filecount2"), item.get_meta("is_root"))
 
 #func _input(event):

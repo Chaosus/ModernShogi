@@ -44,6 +44,7 @@ onready var connected_obs_popup = $Box/PopupList/CC8/ObsConnectedPopup
 onready var disconnected_obs_popup = $Box/PopupList/CC9/ObsDisconnectedPopup
 onready var reconnected_popup = $Box/PopupList/CC10/ReconnectedPopup
 
+
 # Правые кнопки
 
 onready var save_btn = $Box/RightGameBar/VBox/SaveButton
@@ -305,7 +306,3 @@ func open_ps_panel():
 
 func _on_PieceStylesButton_pressed():
 	open_ps_panel()
-
-func _on_PlayerInfoButton_pressed():
-	$WhitePlayerPanel.show_or_hide()
-	$BlackPlayerPanel.show_or_hide()

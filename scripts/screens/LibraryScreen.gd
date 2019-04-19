@@ -15,6 +15,7 @@ onready var replay_white_control = $HBox/FileInfo/VBox/ReplayInfo/HBoxGoteName/L
 onready var replay_move_count_control = $HBox/FileInfo/VBox/ReplayInfo/HBoxMoveCounter/LABEL_REPLAY_MOVECOUNT_INPUT
 onready var replay_result_control = $HBox/FileInfo/VBox/ReplayInfo/HBoxResult/LABEL_REPLAY_RESULT_INPUT
 onready var replay_winner_control = $HBox/FileInfo/VBox/ReplayInfo/HBoxWinner/LABEL_REPLAY_WINNER_INPUT
+onready var replay_damaged =  $HBox/FileInfo/VBox/ReplayState
 
 onready var dir_info = $HBox/FileInfo/VBox/DirInfo
 onready var dir_type_control = $HBox/FileInfo/VBox/DirInfo/LABEL_DIR_TYPE_INPUT
@@ -38,34 +39,34 @@ func _on_LibraryDelete_pressed():
 		fdlg.connect("yes_pressed", self, "delete_file")
 	fdlg.beautiful_show()
 
-func delete_file():
+func delete_file() -> void:
 	if _replay_selected:
 		var path = _current_replay.path + _current_replay.filename
 		if Utility.delete_file(path):
 			tree.remove_replay(path)
 			replay_info.hide()
 			file_name_control.text = ""
-			hide_play_control()
+			show_play_control(false)
 
-func _on_LibraryExplorer_pressed():
+func _on_LibraryExplorer_pressed() -> void:
 	_path.erase(0, 6)
 	var path = OS.get_user_data_dir() +  _path
 	
 	OS. shell_open("file://" + path)
 	
-func _on_LibraryPlayWidget_pressed():
+func _on_LibraryPlayWidget_pressed() -> void:
 	if _replay_selected:
 		GameStarter.set_from_screen(self)
 		GameStarter.start_replay(_current_replay)
 
-func _ready():
+func _ready() -> void:
 	self.title = "TITLE_LIBRARY"
 
 func beautiful_hide():
 	tree.set_process_input(false)
 	_play_was_visible = UI.get_widget(UI.WIDGET_LIBRARY_PLAY).visible
-	hide_play_control()
-	hide_explorer_control()
+	show_play_control(false)
+	show_explorer_control(false)
 	return .beautiful_hide()
 
 func beautiful_show():
@@ -73,23 +74,23 @@ func beautiful_show():
 	set_previous_screen(UI.get_named_element(UI.SCREEN_MAIN_MENU))
 	#tree.dclick = 0
 	if _play_was_visible:
-		show_play_control()
+		show_play_control(true)
 	return .beautiful_show()
+	
+func show_explorer_control(toggled  : bool) -> void:
+	if toggled:
+		UI.show_library_explorer_btn()
+	else:
+		UI.hide_library_explorer_btn()
 
-func hide_play_control():
-	UI.hide_library_play_btn()
-	UI.hide_library_delete_btn()
-	
-func hide_explorer_control():
-	UI.hide_library_explorer_btn()
-	
-func show_explorer_control():
-	UI.show_library_explorer_btn()
+func show_play_control(toggled : bool) -> void:
+	if toggled:
+		UI.show_library_play_btn()
+		UI.show_library_delete_btn()
+	else:
+		UI.hide_library_play_btn()
+		UI.hide_library_delete_btn()
 
-func show_play_control():
-	UI.show_library_play_btn()
-	UI.show_library_delete_btn()
-	
 func load_folder(path, name, file_count, subdir_count, file_count2, is_root):
 	_path = path
 	file_name_control.text = name
@@ -102,18 +103,21 @@ func load_folder(path, name, file_count, subdir_count, file_count2, is_root):
 	
 	replay_info.hide()
 	dir_info.show()
+	replay_damaged.visible = false
 	_replay_selected = false
 
 func load_song(path, name):
 	file_name_control.text = name
 	replay_info.hide()
 	dir_info.hide()
+	replay_damaged.visible = false
 	_replay_selected = false
 
 func load_profile(path, name):
 	file_name_control.text = name
 	replay_info.hide()
 	dir_info.hide()
+	replay_damaged.visible = false
 	_replay_selected = false
 
 func load_replay(item, path, name):
@@ -126,26 +130,31 @@ func load_replay(item, path, name):
 	replay_info.show()
 	
 	var replay = ReplayParser.parse_replay(path, name)
-			
-	replay_date_control.text = replay.date
-	replay_place_control.text = replay.place
+	if replay == null:	
+		replay_info.visible = false
+		_replay_selected = false
+		replay_damaged.visible = true
+		show_play_control(false)	
+		return
+		
+	replay_info.visible = true
 	
+	replay_date_control.text = replay.date
+	replay_place_control.text = replay.place	
 	replay_time_min_control.text = str(replay.time_control.minutes)
 	replay_time_byo_control.text = str(replay.time_control.byoyomi)
-	
 	replay_handicap_control.text = replay.handicap
-	
 	replay_black_control.text = replay.black_name
 	replay_white_control.text = replay.white_name
-	
 	replay_move_count_control.text = str(replay.move_count)
-	
 	replay_result_control.text = Checks.get_game_result_str(replay.result)
 	replay_winner_control.text = replay.winner
+	
+	replay_damaged.visible = false
 	
 	_current_replay = replay
 	_current_replay_item = item
 	_replay_selected = true
-
-
-
+	
+	show_play_control(true)
+	

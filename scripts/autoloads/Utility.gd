@@ -23,7 +23,7 @@ func get_file_count(path, name):
 			file_name = dir.get_next()
 	return counter
 
-func delete_file(path):
+func delete_file(path : String) -> bool:
 	return Directory.new().remove(path) == OK
 
 # Возвращает список под-папок из указанной папки.

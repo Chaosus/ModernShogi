@@ -7,7 +7,6 @@
 [ext_resource path="res://scripts/ui/SmallElement.gd" type="Script" id=5]
 
 [node name="LibraryScreen" type="CenterContainer"]
-editor/display_folded = true
 visible = false
 margin_right = 1920.0
 margin_bottom = 952.0
@@ -399,4 +398,13 @@ text = "LABEL_DIR_FILECOUNT2"
 margin_left = 145.0
 margin_right = 145.0
 margin_bottom = 14.0
+
+[node name="ReplayState" type="Label" parent="HBox/FileInfo/VBox"]
+visible = false
+margin_right = 157.0
+margin_bottom = 49.0
+text = "DESC_REPLAY_DAMAGED"
+align = 1
+valign = 1
+script = ExtResource( 5 )
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=2]
+[gd_scene load_steps=77 format=2]
 
 [ext_resource path="res://sys.theme" type="Theme" id=1]
 [ext_resource path="res://scripts/SuperMenu.gd" type="Script" id=2]
@@ -34,44 +34,42 @@
 [ext_resource path="res://scripts/dialogs/PopupBase.gd" type="Script" id=32]
 [ext_resource path="res://scenes/screens/MainMenuScreen.tscn" type="PackedScene" id=33]
 [ext_resource path="res://scenes/SettingsScreen.tscn" type="PackedScene" id=34]
-[ext_resource path="res://scripts/screens/LibraryScreen.gd" type="Script" id=35]
-[ext_resource path="res://scripts/ui/FileTree.gd" type="Script" id=36]
-[ext_resource path="res://scripts/ui/MediumElement.gd" type="Script" id=37]
-[ext_resource path="res://scripts/ui/SmallElement.gd" type="Script" id=38]
-[ext_resource path="res://scripts/screens/LoadingScreen.gd" type="Script" id=39]
-[ext_resource path="res://textures/loader_big.png" type="Texture" id=40]
-[ext_resource path="res://scripts/ui/BigButton.gd" type="Script" id=41]
-[ext_resource path="res://scripts/screens/LoadGameScreen.gd" type="Script" id=42]
-[ext_resource path="res://scripts/ui/ScalableScrollContainer.gd" type="Script" id=43]
-[ext_resource path="res://scripts/ui/BackgroundContainer.gd" type="Script" id=44]
-[ext_resource path="res://scenes/screens/SetupScreen.tscn" type="PackedScene" id=45]
-[ext_resource path="res://scripts/screens/JoinScreen.gd" type="Script" id=46]
-[ext_resource path="res://scripts/ui/PopupCentered.gd" type="Script" id=47]
-[ext_resource path="res://scripts/screens/LoginScreen.gd" type="Script" id=48]
-[ext_resource path="res://ui/flags/unknown.jpg" type="Texture" id=49]
-[ext_resource path="res://scripts/ui/HelpElement.gd" type="Script" id=50]
-[ext_resource path="res://scripts/screens/AccountScreen.gd" type="Script" id=51]
-[ext_resource path="res://scripts/ui/PopupPanelCentered.gd" type="Script" id=52]
-[ext_resource path="res://ui/avatars/blank_simple.jpg" type="Texture" id=53]
-[ext_resource path="res://ui/buttons/gender_male.png" type="Texture" id=54]
-[ext_resource path="res://scenes/screens/ServerScreen.tscn" type="PackedScene" id=55]
-[ext_resource path="res://scripts/screens/QuitConfirmation.gd" type="Script" id=56]
-[ext_resource path="res://themes/hv_big_division.tres" type="Theme" id=57]
-[ext_resource path="res://scripts/ui/BigLabel.gd" type="Script" id=58]
-[ext_resource path="res://scripts/GoodBayScreen.gd" type="Script" id=59]
-[ext_resource path="res://scripts/screens/ExtrasMenu.gd" type="Script" id=60]
-[ext_resource path="res://themes/hv_containers.tres" type="Theme" id=61]
-[ext_resource path="res://scenes/screens/CountrySelectionScreen.tscn" type="PackedScene" id=62]
-[ext_resource path="res://scripts/screens/AvatarSelectionScreen.gd" type="Script" id=63]
-[ext_resource path="res://material/light_hvscroll.tres" type="Theme" id=64]
-[ext_resource path="res://scripts/screens/ColorSelectionScreen.gd" type="Script" id=65]
-[ext_resource path="res://material/fonts/standart_font.tres" type="DynamicFont" id=66]
-[ext_resource path="res://themes/hv_medium_division.tres" type="Theme" id=67]
-[ext_resource path="res://scripts/panels/LoadingPanel.gd" type="Script" id=68]
-[ext_resource path="res://scenes/Game.tscn" type="PackedScene" id=69]
-[ext_resource path="res://scripts/UISFX.gd" type="Script" id=70]
-[ext_resource path="res://scripts/BackgroundMusic.gd" type="Script" id=71]
-[ext_resource path="res://scenes/PopupDialog.tscn" type="PackedScene" id=72]
+[ext_resource path="res://scenes/screens/LibraryScreen.tscn" type="PackedScene" id=35]
+[ext_resource path="res://scripts/screens/LoadingScreen.gd" type="Script" id=36]
+[ext_resource path="res://textures/loader_big.png" type="Texture" id=37]
+[ext_resource path="res://scripts/ui/BigButton.gd" type="Script" id=38]
+[ext_resource path="res://scripts/screens/LoadGameScreen.gd" type="Script" id=39]
+[ext_resource path="res://scripts/ui/ScalableScrollContainer.gd" type="Script" id=40]
+[ext_resource path="res://scripts/ui/BackgroundContainer.gd" type="Script" id=41]
+[ext_resource path="res://scenes/screens/SetupScreen.tscn" type="PackedScene" id=42]
+[ext_resource path="res://scripts/screens/JoinScreen.gd" type="Script" id=43]
+[ext_resource path="res://scripts/ui/PopupCentered.gd" type="Script" id=44]
+[ext_resource path="res://scripts/screens/LoginScreen.gd" type="Script" id=45]
+[ext_resource path="res://ui/flags/unknown.jpg" type="Texture" id=46]
+[ext_resource path="res://scripts/ui/HelpElement.gd" type="Script" id=47]
+[ext_resource path="res://scripts/ui/MediumElement.gd" type="Script" id=48]
+[ext_resource path="res://scripts/screens/AccountScreen.gd" type="Script" id=49]
+[ext_resource path="res://scripts/ui/PopupPanelCentered.gd" type="Script" id=50]
+[ext_resource path="res://ui/avatars/blank_simple.jpg" type="Texture" id=51]
+[ext_resource path="res://ui/buttons/gender_male.png" type="Texture" id=52]
+[ext_resource path="res://scenes/screens/ServerScreen.tscn" type="PackedScene" id=53]
+[ext_resource path="res://scripts/screens/QuitConfirmation.gd" type="Script" id=54]
+[ext_resource path="res://themes/hv_big_division.tres" type="Theme" id=55]
+[ext_resource path="res://scripts/ui/BigLabel.gd" type="Script" id=56]
+[ext_resource path="res://scripts/GoodBayScreen.gd" type="Script" id=57]
+[ext_resource path="res://scripts/screens/ExtrasMenu.gd" type="Script" id=58]
+[ext_resource path="res://themes/hv_containers.tres" type="Theme" id=59]
+[ext_resource path="res://scenes/screens/CountrySelectionScreen.tscn" type="PackedScene" id=60]
+[ext_resource path="res://scripts/screens/AvatarSelectionScreen.gd" type="Script" id=61]
+[ext_resource path="res://material/light_hvscroll.tres" type="Theme" id=62]
+[ext_resource path="res://scripts/screens/ColorSelectionScreen.gd" type="Script" id=63]
+[ext_resource path="res://material/fonts/standart_font.tres" type="DynamicFont" id=64]
+[ext_resource path="res://themes/hv_medium_division.tres" type="Theme" id=65]
+[ext_resource path="res://scripts/panels/LoadingPanel.gd" type="Script" id=66]
+[ext_resource path="res://scenes/Game.tscn" type="PackedScene" id=67]
+[ext_resource path="res://scripts/UISFX.gd" type="Script" id=68]
+[ext_resource path="res://scripts/BackgroundMusic.gd" type="Script" id=69]
+[ext_resource path="res://scenes/PopupDialog.tscn" type="PackedScene" id=70]
 
 [sub_resource type="ButtonGroup" id=1]
 
@@ -1727,399 +1725,7 @@ margin_bottom = 685.0
 [node name="SettingsScreen" parent="MainContainer/MainLayout/Screens" instance=ExtResource( 34 )]
 margin_right = 1865.0
 
-[node name="LibraryScreen" type="CenterContainer" parent="MainContainer/MainLayout/Screens"]
-editor/display_folded = true
-visible = false
-margin_right = 1920.0
-margin_bottom = 952.0
-rect_min_size = Vector2( 0, 952 )
-size_flags_horizontal = 3
-size_flags_vertical = 0
-script = ExtResource( 35 )
-
-[node name="HBox" type="HBoxContainer" parent="MainContainer/MainLayout/Screens/LibraryScreen"]
-margin_left = 60.0
-margin_top = 376.0
-margin_right = 1860.0
-margin_bottom = 576.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/separation = 0
-
-[node name="FileTree" type="Tree" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox"]
-margin_right = 1000.0
-margin_bottom = 200.0
-rect_min_size = Vector2( 1000, 200 )
-size_flags_vertical = 5
-hide_root = true
-script = ExtResource( 36 )
-
-[node name="FileInfo" type="PanelContainer" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox"]
-margin_left = 1000.0
-margin_right = 1800.0
-margin_bottom = 200.0
-rect_min_size = Vector2( 800, 0 )
-
-[node name="VBox" type="VBoxContainer" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo"]
-margin_right = 800.0
-margin_bottom = 200.0
-
-[node name="ReferenceRect" type="ReferenceRect" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox"]
-margin_right = 800.0
-
-[node name="HBoxTitle" type="HBoxContainer" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox"]
-editor/display_folded = true
-margin_top = 45.0
-margin_right = 800.0
-margin_bottom = 94.0
-alignment = 1
-
-[node name="LABEL_FILE_NAME_INPUT" type="Label" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/HBoxTitle"]
-margin_left = 400.0
-margin_right = 400.0
-margin_bottom = 49.0
-align = 1
-
-[node name="HSeparator" type="HSeparator" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox"]
-margin_top = 139.0
-margin_right = 800.0
-margin_bottom = 143.0
-
-[node name="ReplayInfo" type="VBoxContainer" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox"]
-editor/display_folded = true
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/separation = 40
-script = ExtResource( 10 )
-
-[node name="HBoxDate" type="HBoxContainer" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo"]
-editor/display_folded = true
-margin_top = 30.0
-margin_right = 786.0
-margin_bottom = 44.0
-custom_constants/separation = 15
-
-[node name="ReferenceRect" type="ReferenceRect" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo/HBoxDate"]
-margin_right = 40.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 60, 0 )
-
-[node name="LABEL_REPLAY_DATE" type="Label" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo/HBoxDate"]
-margin_right = 130.0
-margin_bottom = 14.0
-text = "LABEL_REPLAY_DATE"
-script = ExtResource( 37 )
-
-[node name="LABEL_REPLAY_DATE_INPUT" type="Label" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo/HBoxDate"]
-margin_left = 145.0
-margin_right = 145.0
-margin_bottom = 14.0
-script = ExtResource( 37 )
-
-[node name="HBoxPlace" type="HBoxContainer" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo"]
-editor/display_folded = true
-margin_top = 48.0
-margin_right = 786.0
-margin_bottom = 62.0
-custom_constants/separation = 15
-
-[node name="ReferenceRect" type="ReferenceRect" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo/HBoxPlace"]
-margin_right = 40.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 60, 0 )
-
-[node name="LABEL_REPLAY_PLACE" type="Label" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo/HBoxPlace"]
-margin_right = 136.0
-margin_bottom = 14.0
-text = "LABEL_REPLAY_PLACE"
-script = ExtResource( 37 )
-
-[node name="LABEL_REPLAY_PLACE_INPUT" type="Label" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo/HBoxPlace"]
-margin_left = 151.0
-margin_right = 151.0
-margin_bottom = 14.0
-script = ExtResource( 37 )
-
-[node name="HBoxTimeControl" type="HBoxContainer" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo"]
-editor/display_folded = true
-margin_top = 66.0
-margin_right = 786.0
-margin_bottom = 80.0
-custom_constants/separation = 15
-script = ExtResource( 38 )
-
-[node name="ReferenceRect" type="ReferenceRect" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo/HBoxTimeControl"]
-margin_right = 40.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 60, 0 )
-
-[node name="LABEL_REPLAY_TIMECONTROL" type="Label" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo/HBoxTimeControl"]
-margin_right = 190.0
-margin_bottom = 14.0
-text = "LABEL_REPLAY_TIMECONTROL"
-script = ExtResource( 37 )
-
-[node name="LABEL_REPLAY_TIMECONTROL_MINUTES" type="Label" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo/HBoxTimeControl"]
-margin_left = 205.0
-margin_right = 205.0
-margin_bottom = 14.0
-script = ExtResource( 37 )
-
-[node name="LABEL_MINUTES" type="Label" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo/HBoxTimeControl"]
-margin_right = 40.0
-margin_bottom = 14.0
-text = "LABEL_MINUTES2"
-script = ExtResource( 37 )
-
-[node name="LABEL_DIV" type="Label" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo/HBoxTimeControl"]
-margin_right = 40.0
-margin_bottom = 14.0
-text = "/"
-script = ExtResource( 37 )
-
-[node name="LABEL_REPLAY_TIMECONTROL_BYOYOMI" type="Label" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo/HBoxTimeControl"]
-margin_left = 220.0
-margin_right = 220.0
-margin_bottom = 14.0
-script = ExtResource( 37 )
-
-[node name="LABEL_SECONDS" type="Label" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo/HBoxTimeControl"]
-margin_right = 40.0
-margin_bottom = 14.0
-text = "LABEL_SECONDS2"
-script = ExtResource( 37 )
-
-[node name="HBoxHandicap" type="HBoxContainer" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo"]
-editor/display_folded = true
-margin_top = 84.0
-margin_right = 786.0
-margin_bottom = 98.0
-custom_constants/separation = 15
-
-[node name="ReferenceRect" type="ReferenceRect" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo/HBoxHandicap"]
-margin_right = 40.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 60, 0 )
-
-[node name="LABEL_REPLAY_HANDICAP" type="Label" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo/HBoxHandicap"]
-margin_right = 166.0
-margin_bottom = 14.0
-text = "LABEL_REPLAY_HANDICAP"
-script = ExtResource( 37 )
-
-[node name="LABEL_REPLAY_HANDICAP_INPUT" type="Label" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo/HBoxHandicap"]
-margin_left = 181.0
-margin_right = 181.0
-margin_bottom = 14.0
-script = ExtResource( 37 )
-
-[node name="HBoxSenteName" type="HBoxContainer" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo"]
-editor/display_folded = true
-margin_top = 102.0
-margin_right = 786.0
-margin_bottom = 116.0
-custom_constants/separation = 15
-
-[node name="ReferenceRect" type="ReferenceRect" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo/HBoxSenteName"]
-margin_right = 40.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 60, 0 )
-
-[node name="LABEL_REPLAY_SENTE_NAME" type="Label" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo/HBoxSenteName"]
-margin_right = 179.0
-margin_bottom = 14.0
-text = "LABEL_REPLAY_SENTE_NAME"
-script = ExtResource( 37 )
-
-[node name="LABEL_REPLAY_SENTE_NAME_INPUT" type="Label" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo/HBoxSenteName"]
-margin_left = 194.0
-margin_right = 194.0
-margin_bottom = 14.0
-script = ExtResource( 37 )
-
-[node name="HBoxGoteName" type="HBoxContainer" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo"]
-editor/display_folded = true
-margin_top = 120.0
-margin_right = 786.0
-margin_bottom = 134.0
-custom_constants/separation = 15
-
-[node name="ReferenceRect" type="ReferenceRect" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo/HBoxGoteName"]
-margin_right = 40.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 60, 0 )
-
-[node name="LABEL_REPLAY_GOTE_NAME" type="Label" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo/HBoxGoteName"]
-margin_right = 176.0
-margin_bottom = 14.0
-text = "LABEL_REPLAY_GOTE_NAME"
-script = ExtResource( 37 )
-
-[node name="LABEL_REPLAY_GOTE_NAME_INPUT" type="Label" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo/HBoxGoteName"]
-margin_left = 191.0
-margin_right = 191.0
-margin_bottom = 14.0
-script = ExtResource( 37 )
-
-[node name="HBoxMoveCounter" type="HBoxContainer" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo"]
-editor/display_folded = true
-margin_top = 138.0
-margin_right = 786.0
-margin_bottom = 152.0
-custom_constants/separation = 15
-
-[node name="ReferenceRect" type="ReferenceRect" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo/HBoxMoveCounter"]
-margin_right = 40.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 60, 0 )
-
-[node name="LABEL_REPLAY_MOVECOUNT" type="Label" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo/HBoxMoveCounter"]
-margin_right = 181.0
-margin_bottom = 14.0
-text = "LABEL_REPLAY_MOVECOUNT"
-script = ExtResource( 37 )
-
-[node name="LABEL_REPLAY_MOVECOUNT_INPUT" type="Label" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo/HBoxMoveCounter"]
-margin_left = 196.0
-margin_right = 196.0
-margin_bottom = 14.0
-script = ExtResource( 37 )
-
-[node name="HBoxResult" type="HBoxContainer" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo"]
-editor/display_folded = true
-margin_top = 156.0
-margin_right = 786.0
-margin_bottom = 170.0
-custom_constants/separation = 15
-
-[node name="ReferenceRect" type="ReferenceRect" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo/HBoxResult"]
-margin_right = 40.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 60, 0 )
-
-[node name="LABEL_REPLAY_RESULT" type="Label" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo/HBoxResult"]
-margin_right = 143.0
-margin_bottom = 14.0
-text = "LABEL_REPLAY_RESULT"
-script = ExtResource( 37 )
-
-[node name="LABEL_REPLAY_RESULT_INPUT" type="Label" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo/HBoxResult"]
-margin_left = 158.0
-margin_right = 158.0
-margin_bottom = 14.0
-script = ExtResource( 37 )
-
-[node name="HBoxWinner" type="HBoxContainer" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo"]
-editor/display_folded = true
-margin_top = 174.0
-margin_right = 786.0
-margin_bottom = 188.0
-custom_constants/separation = 15
-
-[node name="ReferenceRect" type="ReferenceRect" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo/HBoxWinner"]
-margin_right = 40.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 60, 0 )
-
-[node name="LABEL_REPLAY_WINNER" type="Label" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo/HBoxWinner"]
-margin_right = 150.0
-margin_bottom = 14.0
-text = "LABEL_REPLAY_WINNER"
-script = ExtResource( 37 )
-
-[node name="LABEL_REPLAY_WINNER_INPUT" type="Label" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/ReplayInfo/HBoxWinner"]
-margin_left = 165.0
-margin_right = 165.0
-margin_bottom = 14.0
-script = ExtResource( 37 )
-
-[node name="DirInfo" type="VBoxContainer" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox"]
-editor/display_folded = true
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
-
-[node name="LABEL_DIR_TYPE_INPUT" type="Label" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/DirInfo"]
-margin_left = 145.0
-margin_top = 30.0
-margin_right = 145.0
-margin_bottom = 44.0
-align = 1
-
-[node name="HSeparator" type="HSeparator" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/DirInfo"]
-margin_right = 40.0
-margin_bottom = 4.0
-
-[node name="HBoxFileCount" type="HBoxContainer" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/DirInfo"]
-editor/display_folded = true
-margin_top = 30.0
-margin_right = 786.0
-margin_bottom = 44.0
-custom_constants/separation = 15
-
-[node name="ReferenceRect" type="ReferenceRect" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/DirInfo/HBoxFileCount"]
-margin_right = 40.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 60, 0 )
-
-[node name="LABEL_DIR_FILECOUNT" type="Label" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/DirInfo/HBoxFileCount"]
-margin_left = 145.0
-margin_right = 145.0
-margin_bottom = 14.0
-text = "LABEL_DIR_FILECOUNT"
-
-[node name="LABEL_DIR_FILECOUNT_INPUT" type="Label" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/DirInfo/HBoxFileCount"]
-margin_left = 145.0
-margin_right = 145.0
-margin_bottom = 14.0
-
-[node name="HBoxSubDirCount" type="HBoxContainer" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/DirInfo"]
-margin_top = 30.0
-margin_right = 786.0
-margin_bottom = 44.0
-custom_constants/separation = 15
-
-[node name="ReferenceRect" type="ReferenceRect" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/DirInfo/HBoxSubDirCount"]
-margin_right = 40.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 60, 0 )
-
-[node name="LABEL_DIR_SUBDIR_COUNT" type="Label" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/DirInfo/HBoxSubDirCount"]
-margin_left = 145.0
-margin_right = 145.0
-margin_bottom = 14.0
-text = "LABEL_DIR_SUBDIR_COUNT"
-
-[node name="LABEL_DIR_SUBDIR_COUNT_INPUT" type="Label" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/DirInfo/HBoxSubDirCount"]
-margin_left = 145.0
-margin_right = 145.0
-margin_bottom = 14.0
-
-[node name="HBoxAllFileCount" type="HBoxContainer" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/DirInfo"]
-editor/display_folded = true
-margin_top = 30.0
-margin_right = 786.0
-margin_bottom = 44.0
-custom_constants/separation = 15
-
-[node name="ReferenceRect" type="ReferenceRect" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/DirInfo/HBoxAllFileCount"]
-margin_right = 40.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 60, 0 )
-
-[node name="LABEL_DIR_FILECOUNT2" type="Label" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/DirInfo/HBoxAllFileCount"]
-margin_left = 145.0
-margin_right = 145.0
-margin_bottom = 14.0
-text = "LABEL_DIR_FILECOUNT2"
-
-[node name="LABEL_DIR_FILECOUNT_INPUT2" type="Label" parent="MainContainer/MainLayout/Screens/LibraryScreen/HBox/FileInfo/VBox/DirInfo/HBoxAllFileCount"]
-margin_left = 145.0
-margin_right = 145.0
-margin_bottom = 14.0
+[node name="LibraryScreen" parent="MainContainer/MainLayout/Screens" instance=ExtResource( 35 )]
 
 [node name="LoadingScreen" type="CenterContainer" parent="MainContainer/MainLayout/Screens"]
 editor/display_folded = true
@@ -2129,13 +1735,13 @@ margin_bottom = 952.0
 rect_min_size = Vector2( 0, 952 )
 size_flags_horizontal = 3
 size_flags_vertical = 0
-script = ExtResource( 39 )
+script = ExtResource( 36 )
 hidden_by_default = true
 
 [node name="Symbol" type="Sprite" parent="MainContainer/MainLayout/Screens/LoadingScreen"]
 position = Vector2( 1280, 500 )
 scale = Vector2( 0.6, 0.6 )
-texture = ExtResource( 40 )
+texture = ExtResource( 37 )
 
 [node name="VBox" type="VBoxContainer" parent="MainContainer/MainLayout/Screens/LoadingScreen"]
 margin_left = 794.0
@@ -2183,7 +1789,7 @@ margin_right = 331.0
 margin_bottom = 742.0
 text = "BTN_TRYAGAIN"
 flat = true
-script = ExtResource( 41 )
+script = ExtResource( 38 )
 
 [node name="BottomOffset" type="ReferenceRect" parent="MainContainer/MainLayout/Screens/LoadingScreen/VBox"]
 visible = false
@@ -2200,14 +1806,14 @@ margin_right = 1920.0
 margin_bottom = 952.0
 rect_min_size = Vector2( 0, 952 )
 size_flags_vertical = 0
-script = ExtResource( 42 )
+script = ExtResource( 39 )
 
 [node name="Box" type="ScrollContainer" parent="MainContainer/MainLayout/Screens/LoadGameScreen"]
 margin_left = 960.0
 margin_top = 476.0
 margin_right = 960.0
 margin_bottom = 476.0
-script = ExtResource( 43 )
+script = ExtResource( 40 )
 full_scale = true
 
 [node name="VBox" type="VBoxContainer" parent="MainContainer/MainLayout/Screens/LoadGameScreen/Box"]
@@ -2230,7 +1836,7 @@ valign = 1
 margin_top = 139.0
 margin_right = 800.0
 margin_bottom = 294.0
-script = ExtResource( 44 )
+script = ExtResource( 41 )
 
 [node name="VBox" type="VBoxContainer" parent="MainContainer/MainLayout/Screens/LoadGameScreen/Box/VBox/TargetBox"]
 margin_right = 800.0
@@ -2301,7 +1907,7 @@ valign = 1
 margin_left = -68.0
 margin_right = -28.0
 margin_bottom = 40.0
-script = ExtResource( 44 )
+script = ExtResource( 41 )
 
 [node name="VBox" type="VBoxContainer" parent="MainContainer/MainLayout/Screens/LoadGameScreen/Box/VBox/VBoxNetwork/NetBox"]
 margin_right = 40.0
@@ -2400,7 +2006,7 @@ editor/display_folded = true
 margin_top = 433.0
 margin_right = 800.0
 margin_bottom = 588.0
-script = ExtResource( 44 )
+script = ExtResource( 41 )
 
 [node name="VBox" type="VBoxContainer" parent="MainContainer/MainLayout/Screens/LoadGameScreen/Box/VBox/MethodBox"]
 margin_right = 800.0
@@ -2497,7 +2103,7 @@ margin_bottom = 1375.0
 text = "BTN_LOAD"
 flat = true
 
-[node name="SetupScreen" parent="MainContainer/MainLayout/Screens" instance=ExtResource( 45 )]
+[node name="SetupScreen" parent="MainContainer/MainLayout/Screens" instance=ExtResource( 42 )]
 
 [node name="JoinIPScreen" type="CenterContainer" parent="MainContainer/MainLayout/Screens"]
 editor/display_folded = true
@@ -2506,7 +2112,7 @@ margin_right = 1920.0
 margin_bottom = 952.0
 rect_min_size = Vector2( 0, 952 )
 size_flags_vertical = 0
-script = ExtResource( 46 )
+script = ExtResource( 43 )
 
 [node name="Panel" type="PopupPanel" parent="MainContainer/MainLayout/Screens/JoinIPScreen"]
 visible = true
@@ -2514,7 +2120,7 @@ margin_left = 391.0
 margin_top = 172.0
 margin_right = 1528.0
 margin_bottom = 780.0
-script = ExtResource( 47 )
+script = ExtResource( 44 )
 
 [node name="VBox" type="VBoxContainer" parent="MainContainer/MainLayout/Screens/JoinIPScreen/Panel"]
 margin_right = 1137.0
@@ -2729,7 +2335,7 @@ margin_right = 1920.0
 margin_bottom = 952.0
 rect_min_size = Vector2( 0, 952 )
 size_flags_vertical = 0
-script = ExtResource( 48 )
+script = ExtResource( 45 )
 
 [node name="LoginPanel" type="PopupPanel" parent="MainContainer/MainLayout/Screens/LoginScreen"]
 visible = true
@@ -2740,7 +2346,7 @@ margin_bottom = 847.0
 rect_min_size = Vector2( 800, 700 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 47 )
+script = ExtResource( 44 )
 
 [node name="VBox" type="VBoxContainer" parent="MainContainer/MainLayout/Screens/LoginScreen/LoginPanel"]
 margin_right = 1030.0
@@ -2938,7 +2544,7 @@ margin_bottom = 826.0
 rect_min_size = Vector2( 1800, 700 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 47 )
+script = ExtResource( 44 )
 
 [node name="VBox" type="VBoxContainer" parent="MainContainer/MainLayout/Screens/LoginScreen/RestorePassword"]
 margin_right = 1800.0
@@ -3017,7 +2623,7 @@ margin_top = 426.0
 margin_right = 1160.0
 margin_bottom = 526.0
 rect_min_size = Vector2( 400, 100 )
-script = ExtResource( 47 )
+script = ExtResource( 44 )
 
 [node name="Box" type="CenterContainer" parent="MainContainer/MainLayout/Screens/LoginScreen/ConnectionPanel"]
 margin_right = 400.0
@@ -3041,7 +2647,7 @@ margin_top = 426.0
 margin_right = 1560.0
 margin_bottom = 526.0
 rect_min_size = Vector2( 1200, 100 )
-script = ExtResource( 47 )
+script = ExtResource( 44 )
 
 [node name="Box" type="CenterContainer" parent="MainContainer/MainLayout/Screens/LoginScreen/ConnectionDonePanel"]
 margin_right = 1200.0
@@ -3067,7 +2673,7 @@ margin_bottom = 847.0
 rect_min_size = Vector2( 900, 500 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 47 )
+script = ExtResource( 44 )
 
 [node name="VBox" type="VBoxContainer" parent="MainContainer/MainLayout/Screens/LoginScreen/RegPanel"]
 margin_right = 1649.0
@@ -3211,9 +2817,9 @@ margin_top = 177.0
 margin_right = 225.0
 margin_bottom = 327.0
 rect_min_size = Vector2( 225, 150 )
-texture_normal = ExtResource( 49 )
+texture_normal = ExtResource( 46 )
 expand = true
-script = ExtResource( 50 )
+script = ExtResource( 47 )
 tooltip_enabled = true
 tooltip_align = 1
 
@@ -3225,7 +2831,7 @@ margin_bottom = 40.0
 text = "CY_UNKNOWN"
 align = 1
 valign = 3
-script = ExtResource( 37 )
+script = ExtResource( 48 )
 
 [node name="Offset2" type="ReferenceRect" parent="MainContainer/MainLayout/Screens/LoginScreen/RegPanel/VBox/Data/HBox"]
 margin_right = 50.0
@@ -3282,7 +2888,7 @@ editor/display_folded = true
 visible = false
 margin_right = 1920.0
 margin_bottom = 952.0
-script = ExtResource( 51 )
+script = ExtResource( 49 )
 
 [node name="AccountInfoPanel" type="PopupPanel" parent="MainContainer/MainLayout/Screens/AccountScreen"]
 margin_left = 260.0
@@ -3290,7 +2896,7 @@ margin_top = 16.0
 margin_right = 1660.0
 margin_bottom = 936.0
 rect_min_size = Vector2( 1400, 920 )
-script = ExtResource( 52 )
+script = ExtResource( 50 )
 
 [node name="VBox" type="VBoxContainer" parent="MainContainer/MainLayout/Screens/AccountScreen/AccountInfoPanel"]
 margin_right = 1400.0
@@ -3333,7 +2939,7 @@ margin_top = -130.0
 margin_right = 150.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 256, 256 )
-texture = ExtResource( 53 )
+texture = ExtResource( 51 )
 expand = true
 stretch_mode = 1
 
@@ -3383,7 +2989,7 @@ margin_bottom = -334.0
 rect_min_size = Vector2( 64, 32 )
 expand = true
 stretch_mode = 5
-script = ExtResource( 50 )
+script = ExtResource( 47 )
 
 [node name="ExtraData" type="HBoxContainer" parent="MainContainer/MainLayout/Screens/AccountScreen/AccountInfoPanel/VBox/HLayout/VLayout/GeneralInfo/VBox"]
 editor/display_folded = true
@@ -3428,7 +3034,7 @@ margin_bottom = 40.0
 [node name="GenderBox" type="TextureRect" parent="MainContainer/MainLayout/Screens/AccountScreen/AccountInfoPanel/VBox/HLayout/VLayout/GeneralInfo/VBox/ExtraData/GenderBox"]
 margin_right = 32.0
 margin_bottom = 32.0
-texture = ExtResource( 54 )
+texture = ExtResource( 52 )
 expand = true
 
 [node name="HBox" type="HBoxContainer" parent="MainContainer/MainLayout/Screens/AccountScreen/AccountInfoPanel/VBox/HLayout/VLayout"]
@@ -3754,7 +3360,7 @@ margin_top = 132.0
 margin_right = 1468.0
 margin_bottom = 820.0
 rect_min_size = Vector2( 0, 400 )
-script = ExtResource( 52 )
+script = ExtResource( 50 )
 
 [node name="VBox" type="VBoxContainer" parent="MainContainer/MainLayout/Screens/AccountScreen/ChangePasswordPanel"]
 margin_right = 1017.0
@@ -4001,7 +3607,7 @@ margin_top = 260.0
 margin_right = 1305.0
 margin_bottom = 691.0
 rect_min_size = Vector2( 0, 400 )
-script = ExtResource( 52 )
+script = ExtResource( 50 )
 
 [node name="VBox" type="VBoxContainer" parent="MainContainer/MainLayout/Screens/AccountScreen/ChangePublicDataPanel"]
 margin_right = 690.0
@@ -4085,7 +3691,7 @@ margin_bottom = 40.0
 rect_min_size = Vector2( 64, 32 )
 expand = true
 stretch_mode = 5
-script = ExtResource( 50 )
+script = ExtResource( 47 )
 
 [node name="Offset2" type="ReferenceRect" parent="MainContainer/MainLayout/Screens/AccountScreen/ChangePublicDataPanel/VBox/Layout"]
 margin_right = 40.0
@@ -4143,7 +3749,7 @@ margin_top = 184.0
 margin_right = 1414.0
 margin_bottom = 768.0
 rect_min_size = Vector2( 0, 350 )
-script = ExtResource( 52 )
+script = ExtResource( 50 )
 
 [node name="VBox" type="VBoxContainer" parent="MainContainer/MainLayout/Screens/AccountScreen/DeleteAccountPanel"]
 margin_right = 908.0
@@ -4337,7 +3943,7 @@ size_flags_horizontal = 3
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="ServerScreen" parent="MainContainer/MainLayout/Screens" instance=ExtResource( 55 )]
+[node name="ServerScreen" parent="MainContainer/MainLayout/Screens" instance=ExtResource( 53 )]
 
 [node name="QuitConfirmationScreen" type="CenterContainer" parent="MainContainer/MainLayout/Screens"]
 editor/display_folded = true
@@ -4346,7 +3952,7 @@ margin_right = 2560.0
 margin_bottom = 952.0
 rect_min_size = Vector2( 0, 952 )
 size_flags_vertical = 0
-script = ExtResource( 56 )
+script = ExtResource( 54 )
 
 [node name="SimpleLayout" type="VBoxContainer" parent="MainContainer/MainLayout/Screens/QuitConfirmationScreen"]
 margin_left = 1099.0
@@ -4355,7 +3961,7 @@ margin_right = 1461.0
 margin_bottom = 625.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 57 )
+theme = ExtResource( 55 )
 
 [node name="QuitQuestion" type="Label" parent="MainContainer/MainLayout/Screens/QuitConfirmationScreen/SimpleLayout"]
 margin_right = 759.0
@@ -4363,7 +3969,7 @@ margin_bottom = 110.0
 text = "LB_QUIT_QUESTION"
 align = 1
 valign = 1
-script = ExtResource( 58 )
+script = ExtResource( 56 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainContainer/MainLayout/Screens/QuitConfirmationScreen/SimpleLayout"]
 margin_top = 155.0
@@ -4377,7 +3983,7 @@ focus_neighbour_top = NodePath("../NoBtn")
 focus_neighbour_bottom = NodePath("../NoBtn")
 text = "BTN_YES"
 flat = true
-script = ExtResource( 41 )
+script = ExtResource( 38 )
 
 [node name="BTN_NO" type="Button" parent="MainContainer/MainLayout/Screens/QuitConfirmationScreen/SimpleLayout/VBoxContainer"]
 margin_top = 136.0
@@ -4387,7 +3993,7 @@ focus_neighbour_top = NodePath("../YesBtn")
 focus_neighbour_bottom = NodePath("../YesBtn")
 text = "BTN_NO"
 flat = true
-script = ExtResource( 41 )
+script = ExtResource( 38 )
 
 [node name="BottomOffset2" type="Panel" parent="MainContainer/MainLayout/Screens/QuitConfirmationScreen/SimpleLayout"]
 modulate = Color( 1, 1, 1, 0 )
@@ -4405,7 +4011,7 @@ margin_right = 1920.0
 margin_bottom = 952.0
 rect_min_size = Vector2( 0, 952 )
 size_flags_vertical = 0
-script = ExtResource( 59 )
+script = ExtResource( 57 )
 
 [node name="VBox" type="VBoxContainer" parent="MainContainer/MainLayout/Screens/GoodbayScreen"]
 margin_left = 810.0
@@ -4423,7 +4029,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "LB_GOODBAY1"
 align = 1
-script = ExtResource( 58 )
+script = ExtResource( 56 )
 
 [node name="GoodBuyLabel2" type="Label" parent="MainContainer/MainLayout/Screens/GoodbayScreen/VBox"]
 margin_top = 109.0
@@ -4433,7 +4039,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "LB_GOODBAY2"
 align = 1
-script = ExtResource( 58 )
+script = ExtResource( 56 )
 
 [node name="GoodBuyLabel3" type="Label" parent="MainContainer/MainLayout/Screens/GoodbayScreen/VBox"]
 margin_top = 168.0
@@ -4443,7 +4049,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "LB_GOODBAY3"
 align = 1
-script = ExtResource( 58 )
+script = ExtResource( 56 )
 
 [node name="Offset2" type="Panel" parent="MainContainer/MainLayout/Screens/GoodbayScreen/VBox"]
 modulate = Color( 1, 1, 1, 0 )
@@ -4467,7 +4073,7 @@ margin_bottom = 1221.0
 rect_min_size = Vector2( 0, 952 )
 focus_mode = 2
 size_flags_vertical = 0
-script = ExtResource( 60 )
+script = ExtResource( 58 )
 
 [node name="SimpleLayout" type="VBoxContainer" parent="MainContainer/MainLayout/Screens/ExtrasScreen"]
 margin_left = 713.0
@@ -4505,7 +4111,7 @@ margin_top = 89.0
 margin_right = 847.0
 margin_bottom = 645.0
 focus_mode = 2
-theme = ExtResource( 61 )
+theme = ExtResource( 59 )
 alignment = 1
 __meta__ = {
 "_edit_lock_": true
@@ -4588,22 +4194,22 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CountrySelectionScreen" parent="MainContainer/MainLayout/Screens" instance=ExtResource( 62 )]
+[node name="CountrySelectionScreen" parent="MainContainer/MainLayout/Screens" instance=ExtResource( 60 )]
 
 [node name="AvatarSelectionScreen" type="CenterContainer" parent="MainContainer/MainLayout/Screens"]
 editor/display_folded = true
 visible = false
 margin_right = 1920.0
 margin_bottom = 952.0
-script = ExtResource( 63 )
+script = ExtResource( 61 )
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MainContainer/MainLayout/Screens/AvatarSelectionScreen"]
 margin_left = 960.0
 margin_top = 476.0
 margin_right = 960.0
 margin_bottom = 476.0
-theme = ExtResource( 64 )
-script = ExtResource( 43 )
+theme = ExtResource( 62 )
+script = ExtResource( 40 )
 full_scale = true
 
 [node name="Grid" type="GridContainer" parent="MainContainer/MainLayout/Screens/AvatarSelectionScreen/ScrollContainer"]
@@ -4632,7 +4238,7 @@ editor/display_folded = true
 visible = false
 margin_right = 1920.0
 margin_bottom = 952.0
-script = ExtResource( 65 )
+script = ExtResource( 63 )
 
 [node name="Panel" type="PanelContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen"]
 margin_left = 960.0
@@ -4647,7 +4253,7 @@ margin_right = 30.0
 margin_bottom = 30.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 43 )
+script = ExtResource( 40 )
 full_scale = true
 
 [node name="Grid" type="GridContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer"]
@@ -4680,7 +4286,7 @@ margin_right = 300.0
 margin_bottom = 281.0
 rect_min_size = Vector2( 300, 186 )
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 66 )
+custom_fonts/font = ExtResource( 64 )
 text = "Red"
 align = 1
 valign = 1
@@ -4691,7 +4297,7 @@ margin_right = 300.0
 margin_bottom = 562.0
 rect_min_size = Vector2( 300, 186 )
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 66 )
+custom_fonts/font = ExtResource( 64 )
 text = "Pink"
 align = 1
 valign = 1
@@ -4702,7 +4308,7 @@ margin_right = 300.0
 margin_bottom = 843.0
 rect_min_size = Vector2( 300, 186 )
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 66 )
+custom_fonts/font = ExtResource( 64 )
 text = "Orange"
 align = 1
 valign = 1
@@ -4713,7 +4319,7 @@ margin_right = 300.0
 margin_bottom = 1124.0
 rect_min_size = Vector2( 300, 186 )
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 66 )
+custom_fonts/font = ExtResource( 64 )
 text = "Yellow"
 align = 1
 valign = 1
@@ -4724,7 +4330,7 @@ margin_right = 300.0
 margin_bottom = 1405.0
 rect_min_size = Vector2( 300, 186 )
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 66 )
+custom_fonts/font = ExtResource( 64 )
 text = "Green"
 align = 1
 valign = 1
@@ -4735,7 +4341,7 @@ margin_right = 300.0
 margin_bottom = 1686.0
 rect_min_size = Vector2( 300, 186 )
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 66 )
+custom_fonts/font = ExtResource( 64 )
 text = "Black"
 align = 1
 valign = 1
@@ -4763,7 +4369,7 @@ editor/display_folded = true
 margin_right = 230.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxRed/RED"]
 editor/display_folded = true
@@ -4792,7 +4398,7 @@ margin_left = 380.0
 margin_right = 610.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxRed/INDIAN_RED"]
 editor/display_folded = true
@@ -4821,7 +4427,7 @@ margin_left = 760.0
 margin_right = 990.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxRed/LIGHT_CORAL"]
 margin_right = 230.0
@@ -4849,7 +4455,7 @@ margin_left = 1140.0
 margin_right = 1370.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxRed/SALMON"]
 margin_right = 230.0
@@ -4877,7 +4483,7 @@ margin_left = 1520.0
 margin_right = 1750.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxRed/DARK_SALMON"]
 margin_right = 230.0
@@ -4905,7 +4511,7 @@ margin_left = 1900.0
 margin_right = 2130.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxRed/LIGHT_SALMON"]
 margin_right = 230.0
@@ -4933,7 +4539,7 @@ margin_left = 2280.0
 margin_right = 2510.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxRed/CRIMSON"]
 margin_right = 230.0
@@ -4961,7 +4567,7 @@ margin_left = 2660.0
 margin_right = 2890.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxRed/FIRE_BRICK"]
 editor/display_folded = true
@@ -4990,7 +4596,7 @@ margin_left = 3040.0
 margin_right = 3270.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxRed/DARK_RED"]
 margin_right = 230.0
@@ -5026,7 +4632,7 @@ editor/display_folded = true
 margin_right = 230.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxPink/PINK"]
 margin_right = 230.0
@@ -5054,7 +4660,7 @@ margin_left = 380.0
 margin_right = 610.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxPink/LIGHT_PINK"]
 margin_right = 230.0
@@ -5082,7 +4688,7 @@ margin_left = 760.0
 margin_right = 990.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxPink/HOT_PINK"]
 margin_right = 230.0
@@ -5110,7 +4716,7 @@ margin_left = 1140.0
 margin_right = 1370.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxPink/DEEP_PINK"]
 margin_right = 230.0
@@ -5138,7 +4744,7 @@ margin_left = 1520.0
 margin_right = 1750.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxPink/MEDIUM_VIOLET_RED"]
 margin_right = 230.0
@@ -5166,7 +4772,7 @@ margin_left = 1900.0
 margin_right = 2130.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxPink/PALE_VIOLET_RED"]
 margin_right = 230.0
@@ -5200,7 +4806,7 @@ editor/display_folded = true
 margin_right = 230.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxOrange/ORANGE"]
 margin_right = 230.0
@@ -5228,7 +4834,7 @@ margin_left = 380.0
 margin_right = 610.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxOrange/LIGHT_SALMON"]
 margin_right = 230.0
@@ -5256,7 +4862,7 @@ margin_left = 760.0
 margin_right = 990.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxOrange/CORAL"]
 margin_right = 230.0
@@ -5284,7 +4890,7 @@ margin_left = 1140.0
 margin_right = 1370.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxOrange/TOMATO"]
 margin_right = 230.0
@@ -5312,7 +4918,7 @@ margin_left = 1520.0
 margin_right = 1750.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxOrange/ORANGE_RED"]
 margin_right = 230.0
@@ -5340,7 +4946,7 @@ margin_left = 1900.0
 margin_right = 2130.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxOrange/DARK_ORANGE"]
 margin_right = 230.0
@@ -5374,7 +4980,7 @@ editor/display_folded = true
 margin_right = 230.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxYellow/YELLOW"]
 editor/display_folded = true
@@ -5403,7 +5009,7 @@ margin_left = 380.0
 margin_right = 610.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxYellow/GOLD"]
 margin_right = 230.0
@@ -5431,7 +5037,7 @@ margin_left = 760.0
 margin_right = 990.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxYellow/LIGHT_YELLOW"]
 margin_right = 230.0
@@ -5459,7 +5065,7 @@ margin_left = 1140.0
 margin_right = 1370.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxYellow/LEMON_CHIFFON"]
 margin_right = 230.0
@@ -5487,7 +5093,7 @@ margin_left = 1520.0
 margin_right = 1750.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxYellow/LIGHT_GOLDENROD_YELLOW"]
 margin_right = 230.0
@@ -5515,7 +5121,7 @@ margin_left = 1900.0
 margin_right = 2130.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxYellow/PAPAYA_WHIP"]
 margin_right = 230.0
@@ -5543,7 +5149,7 @@ margin_left = 2280.0
 margin_right = 2510.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxYellow/MOCCASIN"]
 margin_right = 230.0
@@ -5571,7 +5177,7 @@ margin_left = 2660.0
 margin_right = 2890.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxYellow/PEACH_PUFF"]
 margin_right = 230.0
@@ -5599,7 +5205,7 @@ margin_left = 3040.0
 margin_right = 3270.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxYellow/PALE_GOLDENROD"]
 margin_right = 230.0
@@ -5627,7 +5233,7 @@ margin_left = 3420.0
 margin_right = 3650.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxYellow/KHAKI"]
 margin_right = 230.0
@@ -5655,7 +5261,7 @@ margin_left = 3800.0
 margin_right = 4030.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxYellow/DARK_KHAKI"]
 margin_right = 230.0
@@ -5689,7 +5295,7 @@ editor/display_folded = true
 margin_right = 230.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxGreen/GREEN_YELLOW"]
 margin_right = 230.0
@@ -5717,7 +5323,7 @@ margin_left = 380.0
 margin_right = 610.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxGreen/CHARTREUSE"]
 margin_right = 230.0
@@ -5745,7 +5351,7 @@ margin_left = 760.0
 margin_right = 990.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxGreen/LAWNGREEN"]
 margin_right = 230.0
@@ -5773,7 +5379,7 @@ margin_left = 1140.0
 margin_right = 1370.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxGreen/LIME"]
 margin_right = 230.0
@@ -5801,7 +5407,7 @@ margin_left = 1520.0
 margin_right = 1750.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxGreen/LIME_GREEN"]
 margin_right = 230.0
@@ -5829,7 +5435,7 @@ margin_left = 1900.0
 margin_right = 2130.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxGreen/PALE_GREEN"]
 margin_right = 230.0
@@ -5857,7 +5463,7 @@ margin_left = 2280.0
 margin_right = 2510.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxGreen/LIGHT_GREEN"]
 margin_right = 230.0
@@ -5885,7 +5491,7 @@ margin_left = 2660.0
 margin_right = 2890.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxGreen/MEDIUM_SPRING_GREEN"]
 margin_right = 230.0
@@ -5913,7 +5519,7 @@ margin_left = 3040.0
 margin_right = 3270.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxGreen/SPRING_GREEN"]
 margin_right = 230.0
@@ -5947,7 +5553,7 @@ editor/display_folded = true
 margin_right = 230.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxBlackAndGray/BLACK"]
 editor/display_folded = true
@@ -5976,7 +5582,7 @@ margin_left = 380.0
 margin_right = 610.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxBlackAndGray/GAINSBORO"]
 editor/display_folded = true
@@ -6005,7 +5611,7 @@ margin_left = 760.0
 margin_right = 990.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxBlackAndGray/LIGHT_GRAY"]
 margin_right = 230.0
@@ -6033,7 +5639,7 @@ margin_left = 1140.0
 margin_right = 1370.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxBlackAndGray/SILVER"]
 margin_right = 230.0
@@ -6061,7 +5667,7 @@ margin_left = 1520.0
 margin_right = 1750.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxBlackAndGray/DARK_GRAY"]
 margin_right = 230.0
@@ -6089,7 +5695,7 @@ margin_left = 1900.0
 margin_right = 2130.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxBlackAndGray/GRAY"]
 margin_right = 230.0
@@ -6117,7 +5723,7 @@ margin_left = 2280.0
 margin_right = 2510.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxBlackAndGray/DIM_GRAY"]
 margin_right = 230.0
@@ -6145,7 +5751,7 @@ margin_left = 2660.0
 margin_right = 2890.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxBlackAndGray/LIGHT_SLATE_GRAY"]
 margin_right = 230.0
@@ -6173,7 +5779,7 @@ margin_left = 3040.0
 margin_right = 3270.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxBlackAndGray/SLATE_GRAY"]
 margin_right = 230.0
@@ -6201,7 +5807,7 @@ margin_left = 3420.0
 margin_right = 3650.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 230, 200 )
-theme = ExtResource( 67 )
+theme = ExtResource( 65 )
 
 [node name="CBox" type="CenterContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer/Grid/ColorContainer/HBoxBlackAndGray/DARK_SLATE_GRAY"]
 margin_right = 230.0
@@ -6237,7 +5843,7 @@ margin_top = 390.0
 margin_right = 1430.0
 margin_bottom = 690.0
 rect_min_size = Vector2( 300, 300 )
-script = ExtResource( 68 )
+script = ExtResource( 66 )
 
 [node name="VBox" type="VBoxContainer" parent="MainContainer/LoadingPanel"]
 margin_right = 307.0
@@ -6248,7 +5854,7 @@ size_flags_vertical = 3
 [node name="Symbol" type="Sprite" parent="MainContainer/LoadingPanel/VBox"]
 position = Vector2( 150, 150 )
 scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 40 )
+texture = ExtResource( 37 )
 
 [node name="LABEL_LOADING" type="Label" parent="MainContainer/LoadingPanel/VBox"]
 margin_right = 286.0
@@ -6256,7 +5862,7 @@ margin_bottom = 14.0
 text = "LABEL_LOADING"
 align = 1
 
-[node name="Game" parent="MainContainer" instance=ExtResource( 69 )]
+[node name="Game" parent="MainContainer" instance=ExtResource( 67 )]
 editor/display_folded = true
 margin_top = 128.0
 margin_bottom = 1208.0
@@ -6270,18 +5876,18 @@ margin_right = 1920.0
 margin_bottom = 483.0
 
 [node name="UISFX" type="AudioStreamPlayer" parent="."]
-script = ExtResource( 70 )
+script = ExtResource( 68 )
 
 [node name="BackgroundMusic" type="Node" parent="."]
 editor/display_folded = true
-script = ExtResource( 71 )
+script = ExtResource( 69 )
 
 [node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="BackgroundMusic"]
 autoplay = true
 
-[node name="DeleteFileDialog" parent="." instance=ExtResource( 72 )]
+[node name="DeleteFileDialog" parent="." instance=ExtResource( 70 )]
 
-[node name="DeleteProfileDialog" parent="." instance=ExtResource( 72 )]
+[node name="DeleteProfileDialog" parent="." instance=ExtResource( 70 )]
 
 [connection signal="pressed" from="MainContainer/MainLayout/TopBar/HBox/LeftWidgetBox/BackBtnWidget" to="." method="_on_BackBtnWidget_pressed"]
 [connection signal="pressed" from="MainContainer/MainLayout/TopBar/HBox/LeftWidgetBox/SettingsWidget" to="." method="_on_SettingsWidget_pressed"]
