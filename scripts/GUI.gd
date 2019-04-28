@@ -30,20 +30,15 @@ onready var piece_style_panel = $Box/PieceStylesPanel
 
 # Инфо-вставки
 
-onready var infopanel = $Box/PopupList
-onready var check_popup = $Box/PopupList/CC1/CheckPopup
-onready var await_answer_popup = $Box/PopupList/CC2/AwaitAnswerPopup
-onready var await_answer_disconnected = $Box/PopupList/CC2/AwaitAnswerDisconnectedPopup
-onready var await_answer_gameover = $Box/PopupList/CC2/AwaitAnswerGameOverPopup
-onready var takeback_yes_popup = $Box/PopupList/CC3/TakebackYes
-onready var takeback_no_popup = $Box/PopupList/CC4/TakebackNo
-onready var replaydone_popup = $Box/PopupList/CC5/ReplayDonePanel
-onready var connected_popup = $Box/PopupList/CC7/ConnectedPopup
-onready var disconnected_popup = $Box/PopupList/CC6/DisconnectPanel
-onready var connected_obs_popup = $Box/PopupList/CC8/ObsConnectedPopup
-onready var disconnected_obs_popup = $Box/PopupList/CC9/ObsDisconnectedPopup
-onready var reconnected_popup = $Box/PopupList/CC10/ReconnectedPopup
+onready var attentions_list = $Box/AttentionPopupList
 
+func show_attention(text : String) -> void:
+	attentions_list.show_popup(String(), text)
+	attentions_list.start()
+
+func show_attention_prefix(prefix : String, text : String) -> void:
+	attentions_list.show_popup(prefix, text)
+	attentions_list.start()
 
 # Правые кнопки
 
@@ -262,7 +257,8 @@ func cleanup():
 	white_player_panel.beautiful_hide()
 	promotion_dialog.beautiful_hide()
 	gameover_dialog.beautiful_hide()
-	infopanel.beautiful_hide()
+	attentions_list.beautiful_hide()
+	attentions_list.stop()
 	history_panel.clear()
 	
 func show_await_label(show, text, blink):

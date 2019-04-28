@@ -243,8 +243,7 @@ func _on_BackToGameWidget_pressed():
 
 func _on_ResignButton_pressed():
 	if !game_screen.session.has_other_player():
-		game_screen.gui.infopanel.start()
-		game_screen.gui.await_answer_disconnected.start()
+		game_screen.gui.show_attention("POPUP_AWAIT_DISCONNECTED")
 		return
 	game_screen.gui.show_dialog(UI.GUI_DLG_RESIGN)
 

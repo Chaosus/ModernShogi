@@ -5888,7 +5888,6 @@ autoplay = true
 [node name="DeleteFileDialog" parent="." instance=ExtResource( 70 )]
 
 [node name="DeleteProfileDialog" parent="." instance=ExtResource( 70 )]
-
 [connection signal="pressed" from="MainContainer/MainLayout/TopBar/HBox/LeftWidgetBox/BackBtnWidget" to="." method="_on_BackBtnWidget_pressed"]
 [connection signal="pressed" from="MainContainer/MainLayout/TopBar/HBox/LeftWidgetBox/SettingsWidget" to="." method="_on_SettingsWidget_pressed"]
 [connection signal="pressed" from="MainContainer/MainLayout/TopBar/HBox/LeftWidgetBox/TakebackButton" to="." method="_on_TakebackButton_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://scripts/GUI.gd" type="Script" id=1]
 [ext_resource path="res://scripts/ui/BlinkControl.gd" type="Script" id=2]
@@ -39,10 +39,9 @@
 [ext_resource path="res://ui/buttons/skip_next.png" type="Texture" id=37]
 [ext_resource path="res://ui/buttons/settings.png" type="Texture" id=38]
 [ext_resource path="res://material/dark_hvscroll.tres" type="Theme" id=39]
-[ext_resource path="res://scripts/panels/InfoPanelList.gd" type="Script" id=40]
-[ext_resource path="res://scenes/GameInfoPanel.tscn" type="PackedScene" id=41]
-[ext_resource path="res://scripts/ui/PopupCentered.gd" type="Script" id=42]
-[ext_resource path="res://scenes/PlayerPanel.tscn" type="PackedScene" id=43]
+[ext_resource path="res://scripts/panels/AttentionPopupList.gd" type="Script" id=40]
+[ext_resource path="res://scripts/ui/PopupCentered.gd" type="Script" id=41]
+[ext_resource path="res://scenes/PlayerPanel.tscn" type="PackedScene" id=42]
 
 [node name="GUI" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -1231,7 +1230,8 @@ margin_right = 40.0
 margin_bottom = 142.0
 custom_fonts/font = ExtResource( 26 )
 
-[node name="PopupList" type="VBoxContainer" parent="Box"]
+[node name="AttentionPopupList" type="VBoxContainer" parent="Box"]
+editor/display_folded = true
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -960.0
@@ -1248,201 +1248,7 @@ __meta__ = {
 fade_speed = 600.0
 dir = Vector2( 0, 1 )
 
-[node name="CC1" type="CenterContainer" parent="Box/PopupList"]
-editor/display_folded = true
-margin_right = 1920.0
-
-[node name="CheckPopup" parent="Box/PopupList/CC1" instance=ExtResource( 41 )]
-visible = false
-margin_left = 810.0
-margin_top = -7.0
-margin_right = 1110.0
-margin_bottom = 7.0
-mouse_filter = 2
-size_flags_horizontal = 0
-text = "LABEL_CHECK"
-
-[node name="CC2" type="CenterContainer" parent="Box/PopupList"]
-editor/display_folded = true
-margin_top = 4.0
-margin_right = 1920.0
-margin_bottom = 4.0
-
-[node name="AwaitAnswerPopup" parent="Box/PopupList/CC2" instance=ExtResource( 41 )]
-visible = false
-margin_left = 560.0
-margin_top = -7.0
-margin_right = 1360.0
-margin_bottom = 7.0
-rect_min_size = Vector2( 800, 0 )
-mouse_filter = 2
-text = "POPUP_AWAIT_ANSWER"
-
-[node name="AwaitAnswerDisabled" parent="Box/PopupList/CC2" instance=ExtResource( 41 )]
-visible = false
-margin_left = 560.0
-margin_top = -7.0
-margin_right = 1360.0
-margin_bottom = 7.0
-rect_min_size = Vector2( 800, 0 )
-mouse_filter = 2
-text = "POPUP_AWAIT_ANSWER"
-
-[node name="AwaitAnswerDisconnectedPopup" parent="Box/PopupList/CC2" instance=ExtResource( 41 )]
-visible = false
-margin_left = 560.0
-margin_top = -7.0
-margin_right = 1360.0
-margin_bottom = 7.0
-rect_min_size = Vector2( 800, 0 )
-mouse_filter = 2
-text = "POPUP_AWAIT_DISCONNECTED"
-
-[node name="AwaitAnswerNotYourTurnPopup" parent="Box/PopupList/CC2" instance=ExtResource( 41 )]
-visible = false
-margin_left = 560.0
-margin_top = -7.0
-margin_right = 1360.0
-margin_bottom = 7.0
-rect_min_size = Vector2( 800, 0 )
-mouse_filter = 2
-text = "POPUP_AWAIT_YOUR_TURN"
-
-[node name="AwaitAnswerGameOverPopup" parent="Box/PopupList/CC2" instance=ExtResource( 41 )]
-visible = false
-margin_left = 560.0
-margin_top = -7.0
-margin_right = 1360.0
-margin_bottom = 7.0
-rect_min_size = Vector2( 800, 0 )
-mouse_filter = 2
-text = "POPUP_AWAIT_GAMEOVER"
-
-[node name="CC3" type="CenterContainer" parent="Box/PopupList"]
-editor/display_folded = true
-margin_top = 8.0
-margin_right = 1920.0
-margin_bottom = 8.0
-
-[node name="TakebackYes" parent="Box/PopupList/CC3" instance=ExtResource( 41 )]
-visible = false
-margin_left = 660.0
-margin_top = -7.0
-margin_right = 1260.0
-margin_bottom = 7.0
-rect_min_size = Vector2( 600, 0 )
-mouse_filter = 2
-size_flags_horizontal = 0
-hidden_by_default = true
-text = "DESC_TAKEBACK_YES"
-
-[node name="CC4" type="CenterContainer" parent="Box/PopupList"]
-editor/display_folded = true
-margin_top = 12.0
-margin_right = 1920.0
-margin_bottom = 12.0
-
-[node name="TakebackNo" parent="Box/PopupList/CC4" instance=ExtResource( 41 )]
-visible = false
-margin_left = 810.0
-margin_top = -7.0
-margin_right = 1110.0
-margin_bottom = 7.0
-mouse_filter = 2
-hidden_by_default = true
-text = "DESC_TAKEBACK_NO"
-
-[node name="CC5" type="CenterContainer" parent="Box/PopupList"]
-editor/display_folded = true
-margin_top = 16.0
-margin_right = 1920.0
-margin_bottom = 16.0
-
-[node name="ReplayDonePanel" parent="Box/PopupList/CC5" instance=ExtResource( 41 )]
-visible = false
-margin_left = 810.0
-margin_top = -7.0
-margin_right = 1110.0
-margin_bottom = 7.0
-mouse_filter = 2
-prefix = "LABEL_REPLAY_IS_DONE"
-
-[node name="CC6" type="CenterContainer" parent="Box/PopupList"]
-editor/display_folded = true
-margin_top = 20.0
-margin_right = 1920.0
-margin_bottom = 20.0
-
-[node name="DisconnectPanel" parent="Box/PopupList/CC6" instance=ExtResource( 41 )]
-visible = false
-margin_left = 810.0
-margin_top = -7.0
-margin_right = 1110.0
-margin_bottom = 7.0
-mouse_filter = 2
-text = "POPUP_DISCONNECTED"
-
-[node name="CC7" type="CenterContainer" parent="Box/PopupList"]
-editor/display_folded = true
-margin_top = 24.0
-margin_right = 1920.0
-margin_bottom = 24.0
-
-[node name="ConnectedPopup" parent="Box/PopupList/CC7" instance=ExtResource( 41 )]
-visible = false
-margin_left = 810.0
-margin_top = -7.0
-margin_right = 1110.0
-margin_bottom = 7.0
-mouse_filter = 2
-text = "POPUP_CONNECTED"
-
-[node name="CC8" type="CenterContainer" parent="Box/PopupList"]
-editor/display_folded = true
-margin_top = 28.0
-margin_right = 1920.0
-margin_bottom = 28.0
-
-[node name="ObsConnectedPopup" parent="Box/PopupList/CC8" instance=ExtResource( 41 )]
-visible = false
-margin_left = 810.0
-margin_top = -7.0
-margin_right = 1110.0
-margin_bottom = 7.0
-mouse_filter = 2
-text = "POPUP_CONNECTED"
-
-[node name="CC9" type="CenterContainer" parent="Box/PopupList"]
-editor/display_folded = true
-margin_top = 32.0
-margin_right = 1920.0
-margin_bottom = 32.0
-
-[node name="ObsDisconnectedPopup" parent="Box/PopupList/CC9" instance=ExtResource( 41 )]
-visible = false
-margin_left = 810.0
-margin_top = -7.0
-margin_right = 1110.0
-margin_bottom = 7.0
-mouse_filter = 2
-text = "POPUP_DISCONNECTED"
-
-[node name="CC10" type="CenterContainer" parent="Box/PopupList"]
-editor/display_folded = true
-margin_top = 36.0
-margin_right = 1920.0
-margin_bottom = 36.0
-
-[node name="ReconnectedPopup" parent="Box/PopupList/CC10" instance=ExtResource( 41 )]
-visible = false
-margin_left = 810.0
-margin_top = -7.0
-margin_right = 1110.0
-margin_bottom = 7.0
-mouse_filter = 2
-text = "POPUP_RECONNECTED"
-
-[node name="Timer" type="Timer" parent="Box/PopupList"]
+[node name="Timer" type="Timer" parent="Box/AttentionPopupList"]
 wait_time = 1.66
 one_shot = true
 
@@ -1457,7 +1263,7 @@ margin_bottom = 275.0
 rect_min_size = Vector2( 900, 275 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 42 )
+script = ExtResource( 41 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Box/TakebackDialog"]
 editor/display_folded = true
@@ -1558,7 +1364,7 @@ margin_bottom = 270.0
 rect_min_size = Vector2( 900, 275 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 42 )
+script = ExtResource( 41 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Box/LeavePopup"]
 margin_left = 4.0
@@ -1652,7 +1458,7 @@ margin_bottom = 270.0
 rect_min_size = Vector2( 900, 275 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 42 )
+script = ExtResource( 41 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Box/LeavePopup2"]
 margin_left = 4.0
@@ -1731,7 +1537,7 @@ margin_bottom = 270.0
 rect_min_size = Vector2( 900, 275 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 42 )
+script = ExtResource( 41 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Box/SaveDialog"]
 editor/display_folded = true
@@ -1864,7 +1670,7 @@ margin_bottom = 270.0
 rect_min_size = Vector2( 950, 275 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 42 )
+script = ExtResource( 41 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Box/ServerSDDialog"]
 margin_left = 4.0
@@ -1943,7 +1749,7 @@ margin_bottom = 275.0
 rect_min_size = Vector2( 900, 275 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 42 )
+script = ExtResource( 41 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Box/ResignDialog"]
 margin_left = 4.0
@@ -2029,12 +1835,12 @@ size_flags_horizontal = 3
 margin_right = 800.0
 size_flags_vertical = 3
 
-[node name="WhitePlayerPanel" parent="." instance=ExtResource( 43 )]
+[node name="WhitePlayerPanel" parent="." instance=ExtResource( 42 )]
 visible = false
 margin_top = 128.0
 margin_bottom = 128.0
 
-[node name="BlackPlayerPanel" parent="." instance=ExtResource( 43 )]
+[node name="BlackPlayerPanel" parent="." instance=ExtResource( 42 )]
 visible = false
 anchor_left = 1.0
 anchor_top = 1.0
@@ -2077,7 +1883,7 @@ side = true
 [connection signal="pressed" from="Box/HistoryPanel/VBox/VBoxControl/HBox/ToEndHistoryBtn" to="Box/HistoryPanel" method="_on_ToEndHistoryBtn_pressed"]
 [connection signal="pressed" from="Box/HistoryPanel/VBox/VBoxControl/HBox/SettingsHistoryBtn" to="Box/HistoryPanel" method="_on_SettingsHistoryBtn_pressed"]
 [connection signal="pressed" from="Box/HistoryPanel/VBox/VBoxControl/HBox/HideHistoryBtn" to="Box/HistoryPanel" method="_on_HideHistoryBtn_pressed"]
-[connection signal="timeout" from="Box/PopupList/Timer" to="Box/PopupList" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Box/AttentionPopupList/Timer" to="Box/AttentionPopupList" method="_on_Timer_timeout"]
 [connection signal="pressed" from="Box/TakebackDialog/VBoxContainer/HBoxContainer/TakebackYesButton" to="." method="_on_TakebackYesButton_pressed"]
 [connection signal="pressed" from="Box/TakebackDialog/VBoxContainer/HBoxContainer/TakebackNoButton" to="." method="_on_TakebackNoButton_pressed"]
 [connection signal="pressed" from="Box/LeavePopup/VBoxContainer/HBoxContainer/LeaveYesButton" to="." method="_on_LeaveYesButton_pressed"]

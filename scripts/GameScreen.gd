@@ -2,6 +2,12 @@ extends "res://scripts/UIScreen.gd"
 
 # GameScreen.gd
 
+signal new_game_started
+
+# Происходит при старте новой игры
+func on_new_game_started() -> void:
+	gui.attentions_list.clear_popups()
+	
 onready var gui = $GUI
 onready var ai = $AI
 onready var board = $Board
@@ -100,8 +106,7 @@ func ms_suspend(reason):
 func ms_accept(what):
 	if what == 0: # AcceptArg.Takeback - Получение положительного ответа на возврат хода
 		gui.show_await_label(false, "DESC_AWAITING", true)
-		gui.takeback_yes_popup.start()
-		gui.infopanel.start()
+		gui.show_attention("POPUP_TAKEBACK_YES")
 		gui.history_panel.history_back(false, true)
 		gui.history_panel.erase_next_moves()
 
@@ -109,11 +114,9 @@ func ms_decline(what):
 	if what == -2 || what == 9: # DeclineArg.InvalidCommand или DeclineArg.GameNotExist
 		UI.call_dialog("MP_DECLINE")
 	elif what == 5: # DeclineArg.UserNotExist - Другой игрок не присоединён !
-		gui.await_answer_disconnected.start()
-		gui.infopanel.start()
+		gui.show_attention("POPUP_AWAIT_DISCONNECTED")
 	elif what == 6: # DeclineArg.UserCancelTakeback - Получение отрицательного ответа на возврат хода
-		gui.takeback_no_popup.start()
-		gui.infopanel.start()
+		gui.show_attention("POPUP_TAKEBACK_NO")
 	elif what == 7: # DeclineArg.GameNotStarted
 		UI.call_dialog("MP_DECLINE_GAME_NOT_STARTED")
 	elif what == 8: # DeclineArg.GameIsDone
@@ -180,13 +183,9 @@ func ms_player_data_end():
 
 func ms_player_joined(index, is_obs, name):
 	if !is_obs:
-		gui.connected_popup.prefix = name
-		gui.connected_popup.start()
+		gui.show_attention_prefix(name, "POPUP_CONNECTED")
 	else:
-		gui.connected_obs_popup.prefix = TranslationServer.translate("DESC_OBSERVER") + " " + name
-		gui.connected_obs_popup.start()
-	
-	gui.infopanel.start()
+		gui.show_attention_prefix(TranslationServer.translate("DESC_OBSERVER") + " " + name, "POPUP_CONNECTED")
 
 ####################################################################################
 
@@ -374,6 +373,7 @@ func init_game(session):
 	else:
 		show_await_label()
 	Network.request_game_data()
+	emit_signal("new_game_started")
 	
 func common_cleanup():
 	nest_select_lock = false
@@ -616,8 +616,7 @@ func update_all_moves(prev_nest, next_nest):
 	if show_check_dlg and !session.is_replay():
 		if Profiles.get_current_settings().get_value(Settings.SV_SFX_CHECK_ENABLED):
 			commentator.say_check()
-		gui.check_popup.start()
-		gui.infopanel.start()
+		gui.show_attention("POPUP_CHECK")
 	elif show_checkmate_dlg:
 #		if black_move_count == 0:
 #			if Profiles.get_current_settings().get_value(Settings.SV_SFX_CHECK_ENABLED):
@@ -1357,25 +1356,17 @@ func forward_turn(boost, next_nest, prev_nest, promotion):
 			if session.is_replay():
 				match _current_replay.result:
 					Games.GameResult.NONE:
-						gui.replaydone_popup.prefix = "LABEL_REPLAY_DONE"
-						gui.replaydone_popup.text = ""
+						gui.show_attention("LABEL_REPLAY_DONE")
 					Games.GameResult.REPETITION:
-						gui.replaydone_popup.prefix = "LABEL_REPLAY_DONE2"
-						gui.replaydone_popup.text = "DESC_DRAW"
+						gui.show_attention_prefix("LABEL_REPLAY_DONE2", "DESC_DRAW")
 					Games.GameResult.PERPETUAL_CHECK:
-						gui.replaydone_popup.prefix = "LABEL_REPLAY_DONE2"
-						gui.replaydone_popup.text = session.players[1 if session.turn_side == 0 else 0].name + " " + TranslationServer.translate("LABEL_PERPETUAL_CHECK")
+						gui.show_attention_prefix("LABEL_REPLAY_DONE2", session.players[1 if session.turn_side == 0 else 0].name + " " + TranslationServer.translate("LABEL_PERPETUAL_CHECK"))
 					Games.GameResult.ILLEGAL_MOVE:
-						gui.replaydone_popup.prefix = "LABEL_REPLAY_DONE2"
-						gui.replaydone_popup.text = session.players[1 if session.turn_side == 0 else 0].name + " " + TranslationServer.translate("LABEL_ILLEGAL_MOVE")
+						gui.show_attention_prefix("LABEL_REPLAY_DONE2", session.players[1 if session.turn_side == 0 else 0].name + " " + TranslationServer.translate("LABEL_ILLEGAL_MOVE"))
 					Games.GameResult.DISCONNECT:
-						gui.replaydone_popup.prefix = "LABEL_REPLAY_DONE2"
-						gui.replaydone_popup.text = session.players[session.turn_side].name + " " + TranslationServer.translate("LABEL_DISCONNECTED2")
+						gui.show_attention_prefix("LABEL_REPLAY_DONE2", session.players[session.turn_side].name + " " + TranslationServer.translate("LABEL_DISCONNECTED2"))
 					Games.GameResult.RESIGN:
-						gui.replaydone_popup.prefix = "LABEL_REPLAY_DONE2"
-						gui.replaydone_popup.text = session.players[session.turn_side].name + " " + TranslationServer.translate("LABEL_RESIGN2")
-				gui.replaydone_popup.start()
-				gui.infopanel.start()
+						gui.show_attention_prefix("LABEL_REPLAY_DONE2", session.players[session.turn_side].name + " " + TranslationServer.translate("LABEL_RESIGN2"))
 	
 	clear_nest_masks()
 
@@ -1499,6 +1490,7 @@ func _input(event):
 		if event.pressed:
 			match event.scancode:
 				KEY_T:
+					#gui.show_attention("TEST")
 					#ms_show_joining_dialog(0, "Chaosus", 0, 22, 1200, 0, 0, 0)
 					#gui.show_promotion_dialog(null)
 					#spawn_test_arrow(null, get_nest(1, 1), Games.ShogiPieceTypes.BISHOP, session.turn_side)
@@ -1690,7 +1682,7 @@ func get_think_time():
 	else:
 		return str(player.current_minutes) + " : " + str(player.current_seconds)
 
-func _process(delta):
+func _process(delta) -> void:
 	
 	if !visible:
 		return
@@ -1719,13 +1711,15 @@ func _process(delta):
 			HistoryPlayProc.FORWARD:
 				gui.history_panel.history_forward(playback_boost)
 
-func _ready():
+func _ready() -> void:
 	self.title = "GAME_TITLE"
 	UI.set_game(self)
 	tag = UI.SCREEN_GAME
 	_register_multiplayer_events()
 	hidden_by_default = true
 	hide_layout = true
+	connect("new_game_started", self, "on_new_game_started")
+
 
 func goto_screen(screen, set_previous = true):
 	
@@ -1735,8 +1729,6 @@ func goto_screen(screen, set_previous = true):
 	#yield(UI.ai_panel.beautiful_hide(), "fade_completed")
 	
 	return .goto_screen(screen, set_previous)
-
-
 
 func set_piece_theme(tag):
 	Profiles.get_current_settings().set_value(Settings.SV_STYLES_PIECE_THEME, tag)
@@ -2104,29 +2096,25 @@ remote func request_takeback():
 # Получение положительного ответа на возврат хода
 remote func request_takeback_yes():
 	gui.show_await_label(false, "DESC_AWAITING", true)
-	gui.takeback_yes_popup.start()
-	gui.infopanel.start()
+	gui.show_attention("POPUP_TAKEBACK_YES")
 	gui.history_panel.history_back(false, true)
 	gui.history_panel.erase_next_moves()
 	
 # Получение отрицательного ответа на возврат хода	
 remote func request_takeback_no():
-	gui.takeback_no_popup.start()
-	gui.infopanel.start()
+	gui.show_attention("POPUP_TAKEBACK_NO")
 
 # Запрос на возврат хода
 func takeback_request():
 	if session.global_game:
-		gui.await_answer_popup.start()
-		gui.infopanel.start()
+		gui.show_attention("POPUP_AWAIT_ANSWER")
 		Network.request_takeback()
 	else:
-		gui.infopanel.start()
 		if !session.has_other_player:
-			gui.await_answer_disconnected.start()
+			gui.show_attention("POPUP_AWAIT_DISCONNECTED")
 			return
 		else:
-			gui.await_answer_popup.start()
+			gui.show_attention("POPUP_AWAIT_ANSWER")
 		rpc_id(1, "request_takeback")
 #	history_panel.history_back(false, true)
 #	history_panel.erase_next_moves()
@@ -2194,12 +2182,9 @@ remote func force_leave():
 
 remotesync func player_lost(name, is_obs):
 	if is_obs:
-		gui.disconnected_obs_popup.prefix = TranslationServer.translate("DESC_OBSERVER") + " " +  name
-		gui.disconnected_obs_popup.start()
+		gui.show_attention_prefix(TranslationServer.translate("DESC_OBSERVER") + " " +  name, "POPUP_DISCONNECTED")
 	else:
-		gui.disconnected_popup.prefix = name
-		gui.disconnected_popup.start()
-	gui.infopanel.start()
+		gui.show_attention_prefix(name, "POPUP_CONNECTED")
 	
 # Emitted whenever this MultiplayerAPI's network_peer disconnects from a peer. 
 # Clients get notified when other clients disconnect from the same server.
@@ -2303,19 +2288,14 @@ puppetsync func player_joined(id, name):
 	peers[id].name = name
 	if multiplayer.get_network_unique_id() != id:
 		if was_reconnect:
-			gui.reconnected_popup.prefix = name
-			gui.reconnected_popup.start()
+			gui.show_attention_prefix(name, "POPUP_RECONNECTED")
 		else:
-			gui.connected_popup.prefix = name
-			gui.connected_popup.start()
-		gui.infopanel.start()
+			gui.show_attention_prefix(name, "POPUP_CONNECTED")
 
 puppetsync func obs_joined(id, name):
 	peers[id].name = name
 	if multiplayer.get_network_unique_id() != id:
-		gui.connected_obs_popup.prefix = TranslationServer.translate("DESC_OBSERVER") + " " + name
-		gui.connected_obs_popup.start()
-		gui.infopanel.start()
+		gui.show_attention_prefix(TranslationServer.translate("DESC_OBSERVER") + " " + name, "POPUP_CONNECTED")
 	
 master func request_sfen(id):
 	rpc_id(id, "build_position", var2bytes(get_current_sfen()))
@@ -2368,10 +2348,8 @@ master func client_ready(id, client_name, obsmode):
 			set_player_names(bname, wname)
 			if !session.is_gameover():
 				gui.show_await_label(false, "DESC_AWAITING", true)
-				
-			gui.connected_popup.prefix = _opponent_name
-			gui.connected_popup.start()
-			gui.infopanel.start()
+			
+			gui.show_attention_prefix(_opponent_name, "POPUP_CONNECTED")
 			
 			rpc_id(id,"player_getinfo", session.get_your_name(), session.your_side, session.turn_counter, session.gamestate, session.setup)
 			rpc("player_joined", id, client_name)

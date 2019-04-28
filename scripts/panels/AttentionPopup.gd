@@ -1,7 +1,9 @@
 extends "res://scripts/ui/FadeElement.gd"
-class_name InfoPanel
+class_name AttentionPopup
 
-onready var label = $VBox/HBoxInfo/LABEL_INFO
+# AttentionPopup.gd
+
+onready var label = $Panel/VBox/HBox/Label
 
 export(String) var text = ""
 

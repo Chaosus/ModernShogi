@@ -10,6 +10,16 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Control",
+"class": "AttentionPopup",
+"language": "GDScript",
+"path": "res://scripts/panels/AttentionPopup.gd"
+}, {
+"base": "Control",
+"class": "AttentionPopupList",
+"language": "GDScript",
+"path": "res://scripts/panels/AttentionPopupList.gd"
+}, {
+"base": "Control",
 "class": "BeautyElement",
 "language": "GDScript",
 "path": "res://scripts/ui/BeautyElement.gd"
@@ -23,11 +33,6 @@ _global_script_classes=[ {
 "class": "HostScreen",
 "language": "GDScript",
 "path": "res://scripts/screens/HostScreen.gd"
-}, {
-"base": "Control",
-"class": "InfoPanel",
-"language": "GDScript",
-"path": "res://scripts/panels/InfoPanel.gd"
 }, {
 "base": "Control",
 "class": "PlayerPanel",
@@ -55,10 +60,11 @@ _global_script_classes=[ {
 "path": "res://scripts/ui/Widget.gd"
 } ]
 _global_script_class_icons={
+"AttentionPopup": "",
+"AttentionPopupList": "",
 "BeautyElement": "",
 "FadeElement": "",
 "HostScreen": "",
-"InfoPanel": "",
 "PlayerPanel": "",
 "TimerPanel": "",
 "UIScreen": "",
