@@ -94,8 +94,8 @@ func set_cpu_mode(enabled : bool) -> void:
 func set_name(name : String) -> void:
 	name_label.text = name
 
-func set_position(position : Vector2) -> void:
+func set_pos(position : Vector2) -> void:
 	self.rect_position = position
 
-func get_position() -> Vector2:
+func get_pos() -> Vector2:
 	return rect_position

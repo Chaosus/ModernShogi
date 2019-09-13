@@ -71,7 +71,7 @@ class ProfileSettings:
 		append_settings(Settings.SV_STYLES_GRID_COLOR,Settings.WebColor.BLACK)
 		append_settings(Settings.SV_STYLES_GRID_THICKNESS, UI.Thickness.TS_STANDART)
 		append_settings(Settings.SV_STYLES_PIECE_THEME, 2)
-		   
+		
 		# SFX
 		
 		append_settings(Settings.SV_SFX_UI_ENABLED, true)

@@ -64,7 +64,7 @@ func gen_mesh(from, to, promotion):
 	var length = d * c
 	var spike
 	var spike_h = bh
-	 
+	
 	var a
 	var a2
 	var t

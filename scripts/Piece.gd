@@ -242,10 +242,10 @@ func remove_checkmate_moves():
 		
 		if game_instance.king_in_check(side):
 			erase_nests.append(nest)
-	 	
+		
 		restore_temp_move()
 		game_instance.clear_attacks()
-	 
+
 	for nest in erase_nests:
 		if temp_moves.has(nest):
 			temp_moves.erase(nest)
@@ -268,7 +268,7 @@ func has_move(move):
 	if current_moves.has(move) or protected_moves.has(move):
 		return true
 	return false
- 
+
 func clear_moves():
 	temp_moves.clear() # очистка массива временных ходов
 	
@@ -710,7 +710,7 @@ func move_or_eat(next_nest, is_mp_move, promote):
 
 func mark_need_update(prev_nest, next_nest):
 	need_update = true
-	 
+	
 	for piece in next_nest.sente_protects:
 		piece.need_update = true 
 	for piece in next_nest.gote_protects:
@@ -749,7 +749,7 @@ func get_fullname():
 
 func is_skip_anim():
 	return game_instance.is_skip_anim()
- 
+
 func select(ai_move = false):
 	
 	if game_session.is_gameover():

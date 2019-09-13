@@ -12,6 +12,8 @@
     <BaseIntermediateOutputPath>.mono\temp\obj</BaseIntermediateOutputPath>
     <IntermediateOutputPath>$(BaseIntermediateOutputPath)\$(Configuration)</IntermediateOutputPath>
     <TargetFrameworkProfile />
+    <ApiConfiguration Condition=" '$(Configuration)' != 'Release' ">Debug</ApiConfiguration>
+    <ApiConfiguration Condition=" '$(Configuration)' == 'Release' ">Release</ApiConfiguration>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -45,8 +47,11 @@
     <Reference Include="GodotSharp">
       <HintPath>.mono\assemblies\GodotSharp.dll</HintPath>
     </Reference>
+    <Reference Include="GodotSharpEditor">
+      <HintPath>.mono\assemblies\GodotSharpEditor.dll</HintPath>
+    </Reference>
     <Reference Include="LiteNetLib">
-      <HintPath>..\LiteNetLib\LiteNetLib\bin\Release\LiteNetLib.dll</HintPath>
+      <HintPath>.mono\assemblies\LiteNetLib.dll</HintPath>
     </Reference>
     <Reference Include="ShogiNet">
       <HintPath>ShogiNet\bin\Release\ShogiNet.dll</HintPath>

@@ -1,5 +1,5 @@
 extends CheckBox
- 
+
 # CheckBox.gd
 
 func _ready():

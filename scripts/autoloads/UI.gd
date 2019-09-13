@@ -498,7 +498,7 @@ func _create_theme(data, current_index = 0):
 	theme.set_icon("arrow_collapsed", "Tree", data.fr1)
 	
 	theme.set_constant("item_margin", "Tree", 40)
-	 
+
 	theme.set_color("font_color", "Tree", data.element_color)
 	theme.set_color("font_color_selected", "Tree", data.element_hover_color)
 	theme.set_color("guide_color", "Tree", data.element_color - Color(0,0,0,0.2))
@@ -1150,7 +1150,7 @@ func show_library_play_btn():
 
 func hide_library_play_btn():
 	_widgets[WIDGET_LIBRARY_PLAY].hide()
- 
+
 func show_library_delete_btn():
 	_widgets[WIDGET_LIBRARY_DELETE].show()
 
@@ -1286,16 +1286,16 @@ func get_current_screen():
 func get_appbar_color(ui_theme):
 	match ui_theme:
 		UITheme.UI_THEME_REALM_OF_GODS:
-			 return Color("f9f9f9")
+			return Color("f9f9f9")
 		UITheme.UI_THEME_REALM_OF_SINNERS:
 			return Color("2f2f2f")
 
 func get_inverted_appbar_color(ui_theme):
 	match ui_theme:
 		UITheme.UI_THEME_REALM_OF_GODS:
-			 return Color("2f2f2f")
+			return Color("2f2f2f")
 		UITheme.UI_THEME_REALM_OF_SINNERS:
-			 return Color("f9f9f9")
+			return Color("f9f9f9")
 
 var _named_elements = {}
 
@@ -1358,7 +1358,7 @@ func get_named_element(name):
 	if _named_elements.has(name):
 		return _named_elements[name]
 	return null
- 
+
 func apply_theme_to_ui(theme, aspect):
 	match theme:
 		UITheme.REALM_OF_GODS:
@@ -1579,7 +1579,7 @@ func apply_profile(profile):
 	get_named_element(SLIDER_SOUND_MUSIC_VOLUME).value = settings.get_value(Settings.SV_SFX_MUSIC_VOLUME)	
 	match settings.get_value(Settings.SV_SFX_MUSIC_ORDER):
 		0:
- 			get_named_element(RB_MUSIC_PLAYORDER_NEXT).pressed = true
+			get_named_element(RB_MUSIC_PLAYORDER_NEXT).pressed = true
 		1:
 			get_named_element(RB_MUSIC_PLAYORDER_RANDOMIZE).pressed = true
 	

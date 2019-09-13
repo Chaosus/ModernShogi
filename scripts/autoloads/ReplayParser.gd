@@ -218,7 +218,7 @@ func parse_move(string):
 	if result_from_x and result_from_y:
 		var x = result_from_x.get_string()
 		var y = result_from_y.get_string()
-		 
+		
 		x = Checks.convert_wide_number(x)
 		y = Checks.convert_japanese_number(y)
 		

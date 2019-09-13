@@ -1,5 +1,5 @@
 extends Area
- 
+
 # StorageNest.gd
 
 onready var mesh = $Mesh

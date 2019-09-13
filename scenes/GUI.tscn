@@ -488,8 +488,7 @@ tooltip_align = 3
 editor/display_folded = true
 margin_left = -142.0
 margin_top = 128.0
-margin_bottom = 1094.0
-rect_min_size = Vector2( 0, 952 )
+margin_bottom = 1080.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 10 )
@@ -502,11 +501,13 @@ mode = 1
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 135.0
-margin_bottom = 959.0
-rect_min_size = Vector2( 0, 952 )
+margin_bottom = 945.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="StylesSettingsButton" type="TextureButton" parent="Box/LeftGameBarBrushMode/VBox"]
 margin_right = 128.0
@@ -536,14 +537,17 @@ tooltip = "BTN_PIECE_STYLE"
 [node name="Offset" type="ReferenceRect" parent="Box/LeftGameBarBrushMode/VBox"]
 margin_top = 256.0
 margin_right = 128.0
-margin_bottom = 696.0
+margin_bottom = 682.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="SwitchModeButton" type="TextureButton" parent="Box/LeftGameBarBrushMode/VBox"]
-margin_top = 696.0
+margin_top = 682.0
 margin_right = 128.0
-margin_bottom = 824.0
+margin_bottom = 810.0
 rect_min_size = Vector2( 128, 128 )
 texture_normal = ExtResource( 11 )
 expand = true
@@ -554,9 +558,9 @@ tooltip_enabled = true
 tooltip = "BTN_SWITCH_PANEL_AI"
 
 [node name="LeftHideButton" type="TextureButton" parent="Box/LeftGameBarBrushMode/VBox"]
-margin_top = 824.0
+margin_top = 810.0
 margin_right = 128.0
-margin_bottom = 952.0
+margin_bottom = 938.0
 rect_min_size = Vector2( 128, 128 )
 texture_normal = ExtResource( 16 )
 expand = true
@@ -633,6 +637,9 @@ margin_bottom = 945.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="HistoryButton" type="TextureButton" parent="Box/RightGameBar/VBox"]
 margin_right = 128.0
@@ -667,6 +674,9 @@ margin_right = 128.0
 margin_bottom = 810.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="RightHideWidget" type="TextureButton" parent="Box/RightGameBar/VBox"]
 margin_top = 810.0
@@ -1851,7 +1861,6 @@ margin_top = -474.0
 margin_right = 0.0
 margin_bottom = -460.0
 side = true
-
 [connection signal="visibility_changed" from="Box/PromotionDialog" to="Box/PromotionDialog" method="_on_PromotionPanel_visibility_changed"]
 [connection signal="pressed" from="Box/PromotionDialog/VBox/HBox/VBox/UnpromotionBtn" to="Box/PromotionDialog" method="_on_UnpromotionBtn_pressed"]
 [connection signal="pressed" from="Box/PromotionDialog/VBox/HBox/VBox3/PromotionBtn" to="Box/PromotionDialog" method="_on_PromotionBtn_pressed"]

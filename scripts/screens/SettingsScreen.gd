@@ -500,7 +500,7 @@ func _on_LanguageRussianRadioButton_pressed():
 func _on_LanguageChineseRadioButton_pressed():
 	Profiles.get_current_settings().set_value(Settings.SV_UI_LANGUAGE, Settings.Language.CHINESE)
 	UI.apply_language(Settings.Language.CHINESE)
- 
+
 func _on_LanguageJapaneseRadioButton_pressed():
 	Profiles.get_current_settings().set_value(Settings.SV_UI_LANGUAGE, Settings.Language.JAPANESE)
 	UI.apply_language(Settings.Language.JAPANESE)
@@ -670,7 +670,7 @@ func _on_CB_LASTMOVE_toggled(toggled):
 		last_piece.prev_nest.mark_last_move(toggled)
 	
 func _on_CB_GAME_SHOW_CASTLINGS_toggled(toggled):
-	Profiles.get_current_settings().set_value(Settings.SV_GAME_CASTLINGS_ENABLED, toggled) 
+	Profiles.get_current_settings().set_value(Settings.SV_GAME_CASTLES_ENABLED, toggled) 
 func _on_CB_GAME_SHOW_CASTLINGS_mouse_entered():
 	UI.get_helper().show_tooltip("TT_CASTLINGS", $SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/GameplaySettings/GeneralBox/VBox/HBoxShowCastles/CB_CASTLES)
 func _on_CB_GAME_SHOW_CASTLINGS_mouse_exited():
@@ -795,7 +795,7 @@ func _on_CB_CAMERA_RESTRICT_YAW_toggled(toggled):
 
 func _on_CB_CAMERA_INTERPOLATION_toggled(toggled):
 	Profiles.set_value(Settings.SV_CAMERA_SMOOTH_ENABLED, toggled)
-	UI.get_game().current_view.stop_tweens()
+	#UI.get_game().current_view.stop_tweens()
 			
 # Styles
 

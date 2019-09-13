@@ -175,7 +175,7 @@ class Player:
 		if piece_type == Games.ShogiPieceTypes.KING:
 			return null
 		elif piece_type == Games.ShogiPieceTypes.PAWN:
-			 return storage.get_pawn_section()
+			return storage.get_pawn_section()
 		elif piece_type == Games.ShogiPieceTypes.ROOK or piece_type == Games.ShogiPieceTypes.BISHOP:
 			return storage.sections[Games.PieceImportance.MAJOR].stacks[piece_type]
 		else:

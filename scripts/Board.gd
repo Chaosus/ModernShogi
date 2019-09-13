@@ -21,7 +21,7 @@ func update_grid_color():
 func update_grid_thickness():
 	var thickness = Profiles.get_current_settings().styles_grid_thickness_val()
 	surface.get_surface_material(0).set_shader_param("thickness", thickness)
- 
+
 func update_background_color(aspect):
 	
 	var color = Color("EFC086")

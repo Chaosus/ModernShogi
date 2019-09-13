@@ -105,7 +105,7 @@ class PieceTemplate:
 		return gramma
 	
 	func get_promoted_name():
-	 	return promoted_name
+		return promoted_name
 		
 	func get_texture():
 		return game.current_piece_theme.textures[type]
@@ -173,7 +173,7 @@ class Gameplay:
 		if piece_themes.has(tag):
 			current_piece_theme = piece_themes[tag]
 	func get_piece_type(tag):
- 		return piece_templates[tag]
+		return piece_templates[tag]
 	func get_piece_theme(tag):
 		return piece_themes[tag]
 	func add_piece_type(tag, importance, name, gramma, weight, promoted_name = "", promoted_gramma = GrammaType.NEUTRAL, promoted_weight = -1):
@@ -720,7 +720,7 @@ class History:
 			current_index += 1
 
 enum Rank{
- 	Kyu15,
+	Kyu15,
 	Kyu14,
 	Kyu13,
 	Kyu12,
