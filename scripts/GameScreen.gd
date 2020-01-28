@@ -192,7 +192,7 @@ func ms_player_joined(index, is_obs, name):
 var camera_side = -2 setget set_camera_side, get_camera_side
 
 func set_camera_side(side):
-	print("set_camera_side(" + str(side) + ")")
+	#print("set_camera_side(" + str(side) + ")")
 	if side == -2:
 		camera_side = side
 		return

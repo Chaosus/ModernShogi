@@ -32,8 +32,8 @@
 [ext_resource path="res://scripts/ui/MainLayout.gd" type="Script" id=30]
 [ext_resource path="res://scripts/screens/FirstScreen.gd" type="Script" id=31]
 [ext_resource path="res://scripts/dialogs/PopupBase.gd" type="Script" id=32]
-[ext_resource path="res://scenes/screens/MainMenuScreen.tscn" type="PackedScene" id=33]
-[ext_resource path="res://scenes/SettingsScreen.tscn" type="PackedScene" id=34]
+[ext_resource path="res://scenes/screens/CountrySelectionScreen.tscn" type="PackedScene" id=33]
+[ext_resource path="res://scenes/screens/ServerScreen.tscn" type="PackedScene" id=34]
 [ext_resource path="res://scenes/screens/LibraryScreen.tscn" type="PackedScene" id=35]
 [ext_resource path="res://scripts/screens/LoadingScreen.gd" type="Script" id=36]
 [ext_resource path="res://textures/loader_big.png" type="Texture" id=37]
@@ -41,7 +41,7 @@
 [ext_resource path="res://scripts/screens/LoadGameScreen.gd" type="Script" id=39]
 [ext_resource path="res://scripts/ui/ScalableScrollContainer.gd" type="Script" id=40]
 [ext_resource path="res://scripts/ui/BackgroundContainer.gd" type="Script" id=41]
-[ext_resource path="res://scenes/screens/SetupScreen.tscn" type="PackedScene" id=42]
+[ext_resource path="res://scenes/Game.tscn" type="PackedScene" id=42]
 [ext_resource path="res://scripts/screens/JoinScreen.gd" type="Script" id=43]
 [ext_resource path="res://scripts/ui/PopupCentered.gd" type="Script" id=44]
 [ext_resource path="res://scripts/screens/LoginScreen.gd" type="Script" id=45]
@@ -52,21 +52,21 @@
 [ext_resource path="res://scripts/ui/PopupPanelCentered.gd" type="Script" id=50]
 [ext_resource path="res://ui/avatars/blank_simple.jpg" type="Texture" id=51]
 [ext_resource path="res://ui/buttons/gender_male.png" type="Texture" id=52]
-[ext_resource path="res://scenes/screens/ServerScreen.tscn" type="PackedScene" id=53]
+[ext_resource path="res://scenes/screens/MainMenuScreen.tscn" type="PackedScene" id=53]
 [ext_resource path="res://scripts/screens/QuitConfirmation.gd" type="Script" id=54]
 [ext_resource path="res://themes/hv_big_division.tres" type="Theme" id=55]
 [ext_resource path="res://scripts/ui/BigLabel.gd" type="Script" id=56]
 [ext_resource path="res://scripts/GoodBayScreen.gd" type="Script" id=57]
 [ext_resource path="res://scripts/screens/ExtrasMenu.gd" type="Script" id=58]
 [ext_resource path="res://themes/hv_containers.tres" type="Theme" id=59]
-[ext_resource path="res://scenes/screens/CountrySelectionScreen.tscn" type="PackedScene" id=60]
+[ext_resource path="res://scenes/SettingsScreen.tscn" type="PackedScene" id=60]
 [ext_resource path="res://scripts/screens/AvatarSelectionScreen.gd" type="Script" id=61]
 [ext_resource path="res://material/light_hvscroll.tres" type="Theme" id=62]
 [ext_resource path="res://scripts/screens/ColorSelectionScreen.gd" type="Script" id=63]
 [ext_resource path="res://material/fonts/standart_font.tres" type="DynamicFont" id=64]
 [ext_resource path="res://themes/hv_medium_division.tres" type="Theme" id=65]
 [ext_resource path="res://scripts/panels/LoadingPanel.gd" type="Script" id=66]
-[ext_resource path="res://scenes/Game.tscn" type="PackedScene" id=67]
+[ext_resource path="res://scenes/screens/SetupScreen.tscn" type="PackedScene" id=67]
 [ext_resource path="res://scripts/UISFX.gd" type="Script" id=68]
 [ext_resource path="res://scripts/BackgroundMusic.gd" type="Script" id=69]
 [ext_resource path="res://scenes/PopupDialog.tscn" type="PackedScene" id=70]
@@ -988,6 +988,9 @@ WindowDialog/styles/panel = null
 [node name="SuperMenu" type="Control"]
 theme = ExtResource( 1 )
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Connection" type="Node" parent="."]
 script = ExtResource( 3 )
@@ -1263,7 +1266,8 @@ tooltip_align = 1
 
 [node name="AccountButton" type="TextureButton" parent="MainContainer/MainLayout/TopBar/HBox/LeftWidgetBox"]
 visible = false
-margin_right = 128.0
+margin_left = 128.0
+margin_right = 256.0
 margin_bottom = 128.0
 rect_min_size = Vector2( 128, 128 )
 focus_mode = 1
@@ -1708,9 +1712,9 @@ margin_top = 685.0
 margin_right = 650.0
 margin_bottom = 685.0
 
-[node name="MainMenuScreen" parent="MainContainer/MainLayout/Screens" instance=ExtResource( 33 )]
+[node name="MainMenuScreen" parent="MainContainer/MainLayout/Screens" instance=ExtResource( 53 )]
 
-[node name="SettingsScreen" parent="MainContainer/MainLayout/Screens" instance=ExtResource( 34 )]
+[node name="SettingsScreen" parent="MainContainer/MainLayout/Screens" instance=ExtResource( 60 )]
 margin_right = 1865.0
 
 [node name="LibraryScreen" parent="MainContainer/MainLayout/Screens" instance=ExtResource( 35 )]
@@ -2084,7 +2088,7 @@ margin_bottom = 1375.0
 text = "BTN_LOAD"
 flat = true
 
-[node name="SetupScreen" parent="MainContainer/MainLayout/Screens" instance=ExtResource( 42 )]
+[node name="SetupScreen" parent="MainContainer/MainLayout/Screens" instance=ExtResource( 67 )]
 
 [node name="JoinIPScreen" type="CenterContainer" parent="MainContainer/MainLayout/Screens"]
 visible = false
@@ -3865,7 +3869,7 @@ size_flags_horizontal = 3
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="ServerScreen" parent="MainContainer/MainLayout/Screens" instance=ExtResource( 53 )]
+[node name="ServerScreen" parent="MainContainer/MainLayout/Screens" instance=ExtResource( 34 )]
 
 [node name="QuitConfirmationScreen" type="CenterContainer" parent="MainContainer/MainLayout/Screens"]
 visible = false
@@ -4112,7 +4116,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CountrySelectionScreen" parent="MainContainer/MainLayout/Screens" instance=ExtResource( 60 )]
+[node name="CountrySelectionScreen" parent="MainContainer/MainLayout/Screens" instance=ExtResource( 33 )]
 
 [node name="AvatarSelectionScreen" type="CenterContainer" parent="MainContainer/MainLayout/Screens"]
 visible = false
@@ -4130,6 +4134,7 @@ script = ExtResource( 40 )
 full_scale = true
 
 [node name="Grid" type="GridContainer" parent="MainContainer/MainLayout/Screens/AvatarSelectionScreen/ScrollContainer"]
+margin_right = 200.0
 custom_constants/hseparation = 100
 columns = 3
 
@@ -4173,8 +4178,8 @@ script = ExtResource( 40 )
 full_scale = true
 
 [node name="Grid" type="GridContainer" parent="MainContainer/MainLayout/Screens/ColorSelectionScreen/Panel/ScrollContainer"]
-margin_right = 30.0
-margin_bottom = 30.0
+margin_right = 4520.0
+margin_bottom = 1686.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/hseparation = 50
@@ -5720,7 +5725,7 @@ margin_bottom = 14.0
 text = "LABEL_LOADING"
 align = 1
 
-[node name="Game" parent="MainContainer" instance=ExtResource( 67 )]
+[node name="Game" parent="MainContainer" instance=ExtResource( 42 )]
 margin_top = 128.0
 margin_bottom = 1208.0
 size_flags_horizontal = 3

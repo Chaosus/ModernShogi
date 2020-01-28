@@ -99,7 +99,6 @@ GameStarter="*res://scripts/autoloads/GameStarter.gd"
 [debug]
 
 gdscript/warnings/enable=false
-gdscript/warnings/unused_class_variable=false
 
 [display]
 
@@ -289,6 +288,10 @@ translations=PoolStringArray( "res://loc/loc.en.translation", "res://loc/loc.ru.
 [memory]
 
 limits/message_queue/max_size_kb=2048
+
+[mono]
+
+project/auto_update_project=false
 
 [rendering]
 
