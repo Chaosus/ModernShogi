@@ -52,6 +52,9 @@ anchor_bottom = 1.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AwaitLabel" type="Label" parent="Box"]
 visible = false
@@ -92,7 +95,6 @@ custom_constants/separation = 40
 script = ExtResource( 3 )
 
 [node name="PromotionDialog" type="PopupPanel" parent="Box"]
-editor/display_folded = true
 margin_top = 600.0
 margin_right = 624.0
 margin_bottom = 966.0
@@ -136,7 +138,6 @@ rect_min_size = Vector2( 50, 0 )
 size_flags_vertical = 0
 
 [node name="VBox" type="VBoxContainer" parent="Box/PromotionDialog/VBox/HBox"]
-editor/display_folded = true
 margin_left = 54.0
 margin_right = 254.0
 margin_bottom = 109.0
@@ -242,7 +243,6 @@ margin_bottom = 322.0
 rect_min_size = Vector2( 0, 50 )
 
 [node name="GameOverDialog" type="PopupPanel" parent="Box"]
-editor/display_folded = true
 margin_right = 900.0
 margin_bottom = 320.0
 rect_min_size = Vector2( 900, 320 )
@@ -362,7 +362,6 @@ margin_right = 892.0
 margin_bottom = 312.0
 
 [node name="AILog" type="PanelContainer" parent="Box"]
-editor/display_folded = true
 visible = false
 self_modulate = Color( 1, 1, 1, 0.501961 )
 margin_left = 142.0
@@ -390,7 +389,6 @@ size_flags_vertical = 3
 custom_constants/separation = 0
 
 [node name="LeftGameBarAIMode" type="PanelContainer" parent="Box"]
-editor/display_folded = true
 visible = false
 margin_left = -142.0
 margin_top = 128.0
@@ -485,7 +483,6 @@ tooltip = "BTN_HIDE_PANEL"
 tooltip_align = 3
 
 [node name="LeftGameBarBrushMode" type="PanelContainer" parent="Box"]
-editor/display_folded = true
 margin_left = -142.0
 margin_top = 128.0
 margin_bottom = 1080.0
@@ -572,7 +569,6 @@ tooltip = "BTN_HIDE_PANEL"
 tooltip_align = 3
 
 [node name="LeftGameHideBar" type="PanelContainer" parent="Box"]
-editor/display_folded = true
 visible = false
 self_modulate = Color( 1, 1, 1, 0 )
 margin_top = 128.0
@@ -614,7 +610,6 @@ tooltip = "BTN_SHOW_PANEL"
 tooltip_align = 3
 
 [node name="RightGameBar" type="PanelContainer" parent="Box"]
-editor/display_folded = true
 margin_left = 1920.0
 margin_top = 128.0
 margin_right = 2062.0
@@ -693,7 +688,6 @@ tooltip = "BTN_HIDE_PANEL"
 tooltip_align = 4
 
 [node name="RightGameHideBar" type="PanelContainer" parent="Box"]
-editor/display_folded = true
 visible = false
 self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 1778.0
@@ -737,7 +731,6 @@ tooltip = "BTN_SHOW_PANEL"
 tooltip_align = 4
 
 [node name="PieceStylesPanel" type="PanelContainer" parent="Box"]
-editor/display_folded = true
 visible = false
 margin_left = 142.0
 margin_top = 128.0
@@ -871,7 +864,6 @@ margin_right = 186.0
 margin_bottom = 684.0
 
 [node name="HistoryPanel" type="PopupPanel" parent="Box"]
-editor/display_folded = true
 self_modulate = Color( 1, 1, 1, 0.501961 )
 margin_left = 1078.0
 margin_top = 128.0
@@ -1241,7 +1233,6 @@ margin_bottom = 142.0
 custom_fonts/font = ExtResource( 26 )
 
 [node name="AttentionPopupList" type="VBoxContainer" parent="Box"]
-editor/display_folded = true
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -960.0
@@ -1267,7 +1258,6 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="TakebackDialog" type="PopupPanel" parent="Box"]
-editor/display_folded = true
 margin_right = 900.0
 margin_bottom = 275.0
 rect_min_size = Vector2( 900, 275 )
@@ -1276,7 +1266,6 @@ size_flags_vertical = 3
 script = ExtResource( 41 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Box/TakebackDialog"]
-editor/display_folded = true
 margin_left = 4.0
 margin_top = 4.0
 margin_right = 896.0
@@ -1368,7 +1357,6 @@ margin_bottom = 267.0
 size_flags_vertical = 3
 
 [node name="LeavePopup" type="PopupPanel" parent="Box"]
-editor/display_folded = true
 margin_right = 900.0
 margin_bottom = 270.0
 rect_min_size = Vector2( 900, 275 )
@@ -1416,7 +1404,6 @@ margin_right = 800.0
 size_flags_vertical = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Box/LeavePopup/VBoxContainer"]
-editor/display_folded = true
 margin_top = 26.0
 margin_right = 800.0
 margin_bottom = 46.0
@@ -1462,7 +1449,6 @@ margin_right = 800.0
 size_flags_vertical = 3
 
 [node name="LeavePopup2" type="PopupPanel" parent="Box"]
-editor/display_folded = true
 margin_right = 900.0
 margin_bottom = 270.0
 rect_min_size = Vector2( 900, 275 )
@@ -1541,7 +1527,6 @@ margin_right = 800.0
 size_flags_vertical = 3
 
 [node name="SaveDialog" type="PopupPanel" parent="Box"]
-editor/display_folded = true
 margin_right = 900.0
 margin_bottom = 270.0
 rect_min_size = Vector2( 900, 275 )
@@ -1550,7 +1535,6 @@ size_flags_vertical = 3
 script = ExtResource( 41 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Box/SaveDialog"]
-editor/display_folded = true
 margin_left = 4.0
 margin_top = 4.0
 margin_right = 896.0
@@ -1590,7 +1574,6 @@ margin_right = 800.0
 size_flags_vertical = 3
 
 [node name="HBoxSave" type="HBoxContainer" parent="Box/SaveDialog/VBoxContainer"]
-editor/display_folded = true
 margin_top = 26.0
 margin_right = 800.0
 margin_bottom = 46.0
@@ -1629,7 +1612,6 @@ size_flags_vertical = 3
 custom_constants/separation = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Box/SaveDialog/VBoxContainer"]
-editor/display_folded = true
 margin_top = 26.0
 margin_right = 800.0
 margin_bottom = 46.0
@@ -1674,7 +1656,6 @@ margin_right = 800.0
 size_flags_vertical = 3
 
 [node name="ServerSDDialog" type="PopupPanel" parent="Box"]
-editor/display_folded = true
 margin_right = 900.0
 margin_bottom = 270.0
 rect_min_size = Vector2( 950, 275 )
@@ -1753,7 +1734,6 @@ margin_right = 800.0
 size_flags_vertical = 3
 
 [node name="ResignDialog" type="PopupPanel" parent="Box"]
-editor/display_folded = true
 margin_right = 900.0
 margin_bottom = 275.0
 rect_min_size = Vector2( 900, 275 )

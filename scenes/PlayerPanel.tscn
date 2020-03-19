@@ -74,7 +74,6 @@ align = 1
 script = ExtResource( 6 )
 
 [node name="RankBox" type="HBoxContainer" parent="VBox"]
-editor/display_folded = true
 margin_top = 248.0
 margin_right = 216.0
 margin_bottom = 262.0
@@ -114,7 +113,6 @@ margin_bottom = 14.0
 rect_min_size = Vector2( 15, 0 )
 
 [node name="RatingBox" type="HBoxContainer" parent="VBox"]
-editor/display_folded = true
 margin_top = 277.0
 margin_right = 216.0
 margin_bottom = 291.0
@@ -154,7 +152,6 @@ margin_bottom = 14.0
 rect_min_size = Vector2( 15, 0 )
 
 [node name="CountryBox" type="HBoxContainer" parent="VBox"]
-editor/display_folded = true
 margin_top = 306.0
 margin_right = 216.0
 margin_bottom = 338.0
@@ -200,7 +197,6 @@ margin_bottom = 32.0
 rect_min_size = Vector2( 15, 0 )
 
 [node name="TimerBox" type="HBoxContainer" parent="VBox"]
-editor/display_folded = true
 margin_top = 353.0
 margin_right = 216.0
 margin_bottom = 385.0
@@ -229,6 +225,5 @@ size_flags_horizontal = 3
 margin_top = 400.0
 margin_right = 216.0
 margin_bottom = 400.0
-
 [connection signal="pressed" from="VBox/HideButton" to="." method="_on_HideButton_pressed"]
 [connection signal="pressed" from="VBox/ShowButton" to="." method="_on_ShowButton_pressed"]

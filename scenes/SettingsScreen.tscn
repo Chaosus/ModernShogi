@@ -50,10 +50,10 @@ script = ExtResource( 1 )
 hidden_by_default = true
 
 [node name="SimpleLayout" type="VBoxContainer" parent="."]
-margin_left = 779.0
-margin_top = 476.0
-margin_right = 779.0
-margin_bottom = 476.0
+margin_left = 763.0
+margin_top = 469.0
+margin_right = 795.0
+margin_bottom = 483.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 0
@@ -66,7 +66,6 @@ custom_constants/vseparation = 0
 columns = 2
 
 [node name="SettingsPanel" type="PanelContainer" parent="SimpleLayout/GBox"]
-editor/display_folded = true
 margin_right = 500.0
 margin_bottom = 952.0
 size_flags_horizontal = 0
@@ -329,7 +328,6 @@ size_flags_vertical = 3
 custom_constants/separation = 0
 
 [node name="UISettings" type="VBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox"]
-editor/display_folded = true
 margin_right = 1024.0
 margin_bottom = 1832.0
 size_flags_horizontal = 3
@@ -354,7 +352,6 @@ align = 1
 valign = 1
 
 [node name="LanguageBox" type="PanelContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/UISettings"]
-editor/display_folded = true
 margin_top = 150.0
 margin_right = 1024.0
 margin_bottom = 481.0
@@ -413,6 +410,7 @@ flat = true
 script = ExtResource( 9 )
 
 [node name="HBoxLanguageZH" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/UISettings/LanguageBox/VBox"]
+visible = false
 margin_top = 237.0
 margin_right = 1024.0
 margin_bottom = 286.0
@@ -463,7 +461,6 @@ margin_bottom = 331.0
 custom_constants/separation = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/UISettings"]
-editor/display_folded = true
 margin_top = 531.0
 margin_right = 1024.0
 margin_bottom = 581.0
@@ -497,7 +494,6 @@ margin_bottom = 270.0
 custom_constants/separation = 0
 
 [node name="ThemesBox" type="PanelContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/UISettings"]
-editor/display_folded = true
 margin_top = 631.0
 margin_right = 1024.0
 margin_bottom = 1134.0
@@ -866,7 +862,6 @@ align = 1
 valign = 1
 
 [node name="FontBox" type="PanelContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/UISettings"]
-editor/display_folded = true
 margin_top = 1284.0
 margin_right = 1024.0
 margin_bottom = 1487.0
@@ -919,7 +914,6 @@ flat = true
 script = ExtResource( 9 )
 
 [node name="HBoxFontOutline" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/UISettings/FontBox/VBox"]
-editor/display_folded = true
 visible = false
 margin_top = 512.0
 margin_right = 1000.0
@@ -955,7 +949,6 @@ align = 1
 valign = 1
 
 [node name="MiscBox" type="PanelContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/UISettings"]
-editor/display_folded = true
 margin_top = 1637.0
 margin_right = 1024.0
 margin_bottom = 1832.0
@@ -1030,7 +1023,6 @@ margin_right = 1024.0
 margin_bottom = 195.0
 
 [node name="AISettings" type="VBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox"]
-editor/display_folded = true
 visible = false
 margin_left = 1000.0
 margin_right = 1938.0
@@ -1055,7 +1047,6 @@ margin_left = -1000.0
 margin_right = -1000.0
 
 [node name="HBoxEngineFolder" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/AISettings/AISettingsBox/VBox"]
-editor/display_folded = true
 visible = false
 margin_left = -1357.0
 margin_top = 802.0
@@ -1075,11 +1066,10 @@ text = "SH_ENGINE_FOLDER"
 margin_right = 18.0
 margin_bottom = 53.0
 text = "None"
-items = [ "None", null, false, -1, null ]
+items = [ "None", null, false, 0, null ]
 selected = 0
 
 [node name="HBoxEngineExe" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/AISettings/AISettingsBox/VBox"]
-editor/display_folded = true
 visible = false
 margin_left = -1357.0
 margin_top = 802.0
@@ -1110,7 +1100,6 @@ margin_right = 18.0
 margin_bottom = 53.0
 
 [node name="HBoxAISkillLevel" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/AISettings/AISettingsBox/VBox"]
-editor/display_folded = true
 margin_left = -1342.0
 margin_top = 274.0
 margin_right = -459.0
@@ -1150,7 +1139,6 @@ margin_right = 1000.0
 margin_bottom = 797.0
 
 [node name="GameplaySettings" type="VBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox"]
-editor/display_folded = true
 visible = false
 margin_left = 500.0
 margin_right = 1000.0
@@ -1161,13 +1149,11 @@ custom_constants/separation = 50
 script = ExtResource( 4 )
 
 [node name="GeneralBox" type="PanelContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/GameplaySettings"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 7 )
 
 [node name="VBox" type="VBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/GameplaySettings/GeneralBox"]
-editor/display_folded = true
 margin_left = -1089.0
 margin_top = -330.0
 margin_right = -1049.0
@@ -1181,7 +1167,6 @@ margin_right = 1089.0
 margin_bottom = 330.0
 
 [node name="HBoxAutomove" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/GameplaySettings/GeneralBox/VBox"]
-editor/display_folded = true
 margin_left = 1089.0
 margin_top = 330.0
 margin_right = 1589.0
@@ -1200,7 +1185,6 @@ text = "CB_AUTOMOVE"
 script = ExtResource( 14 )
 
 [node name="HBoxAutopromotion" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/GameplaySettings/GeneralBox/VBox"]
-editor/display_folded = true
 margin_left = 1089.0
 margin_top = 404.0
 margin_right = 1589.0
@@ -1219,7 +1203,6 @@ text = "CB_AUTOPROMOTE"
 script = ExtResource( 14 )
 
 [node name="HBoxShowLastMove" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/GameplaySettings/GeneralBox/VBox"]
-editor/display_folded = true
 margin_left = 1089.0
 margin_top = 404.0
 margin_right = 1765.0
@@ -1238,7 +1221,6 @@ text = "CB_GAME_SHOW_LASTMOVE"
 script = ExtResource( 14 )
 
 [node name="HBoxShowCastles" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/GameplaySettings/GeneralBox/VBox"]
-editor/display_folded = true
 visible = false
 margin_left = 1089.0
 margin_top = 404.0
@@ -1274,7 +1256,6 @@ align = 1
 valign = 1
 
 [node name="ShowMovesModeBox" type="PanelContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/GameplaySettings"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 7 )
@@ -1289,7 +1270,6 @@ margin_right = 500.0
 margin_bottom = 270.0
 
 [node name="HBoxShowMoves1" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/GameplaySettings/ShowMovesModeBox/VBox"]
-editor/display_folded = true
 margin_top = 320.0
 margin_right = 601.0
 margin_bottom = 369.0
@@ -1308,7 +1288,6 @@ text = "RB_SHOW_MOVES_NONE"
 script = ExtResource( 9 )
 
 [node name="HBoxShowMoves2" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/GameplaySettings/ShowMovesModeBox/VBox"]
-editor/display_folded = true
 margin_top = 394.0
 margin_right = 645.0
 margin_bottom = 443.0
@@ -1327,7 +1306,6 @@ text = "RB_SHOW_MOVES_MYSELF"
 script = ExtResource( 9 )
 
 [node name="HBoxShowMoves3" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/GameplaySettings/ShowMovesModeBox/VBox"]
-editor/display_folded = true
 margin_top = 468.0
 margin_right = 569.0
 margin_bottom = 517.0
@@ -1405,7 +1383,6 @@ max_value = 4.0
 value = 2.0
 rounded = true
 ticks_on_borders = true
-focus_mode = 1
 
 [node name="LABEL_CURRENT_ANIM_SPEED" type="Label" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/GameplaySettings/HBoxAnimSpeed/VBoxAnimSpeed"]
 margin_top = 160.0
@@ -1414,7 +1391,6 @@ margin_bottom = 209.0
 align = 1
 
 [node name="HBoxLiftUpPieces" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/GameplaySettings"]
-editor/display_folded = true
 visible = false
 margin_top = 74.0
 margin_right = 500.0
@@ -1433,7 +1409,6 @@ text = "CB_GAME_LIFTUP_PIECES"
 script = ExtResource( 14 )
 
 [node name="HistorySettings" type="VBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox"]
-editor/display_folded = true
 visible = false
 margin_right = 1024.0
 margin_bottom = 1964.0
@@ -1444,13 +1419,11 @@ alignment = 1
 script = ExtResource( 4 )
 
 [node name="GeneralBox" type="PanelContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/HistorySettings"]
-editor/display_folded = true
 margin_right = 1202.0
 margin_bottom = 195.0
 script = ExtResource( 7 )
 
 [node name="VBox" type="VBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/HistorySettings/GeneralBox"]
-editor/display_folded = true
 margin_right = 1202.0
 margin_bottom = 195.0
 
@@ -1459,7 +1432,6 @@ modulate = Color( 1, 1, 1, 0 )
 margin_right = 1202.0
 
 [node name="HBoxAutoShowHistory" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/HistorySettings/GeneralBox/VBox"]
-editor/display_folded = true
 margin_top = 45.0
 margin_right = 1202.0
 margin_bottom = 75.0
@@ -1478,7 +1450,6 @@ flat = true
 script = ExtResource( 14 )
 
 [node name="HBoxHistoryAutoScroll" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/HistorySettings/GeneralBox/VBox"]
-editor/display_folded = true
 margin_top = 120.0
 margin_right = 1202.0
 margin_bottom = 150.0
@@ -1515,7 +1486,6 @@ align = 1
 valign = 1
 
 [node name="StylesBox" type="PanelContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/HistorySettings"]
-editor/display_folded = true
 margin_top = 345.0
 margin_right = 1202.0
 margin_bottom = 688.0
@@ -1531,7 +1501,6 @@ size_flags_vertical = 0
 custom_constants/separation = 0
 
 [node name="HBoxHistoryStyle1" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/HistorySettings/StylesBox/VBox"]
-editor/display_folded = true
 margin_top = 45.0
 margin_right = 1202.0
 margin_bottom = 75.0
@@ -1551,7 +1520,6 @@ flat = true
 script = ExtResource( 9 )
 
 [node name="HBoxHistoryStyle2" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/HistorySettings/StylesBox/VBox"]
-editor/display_folded = true
 margin_top = 120.0
 margin_right = 1202.0
 margin_bottom = 150.0
@@ -1597,10 +1565,8 @@ value = 2.0
 rounded = true
 scrollable = false
 ticks_on_borders = true
-focus_mode = 0
 
 [node name="HBoxHistoryCount" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/HistorySettings/StylesBox/VBox"]
-editor/display_folded = true
 margin_top = 262.0
 margin_right = 1202.0
 margin_bottom = 294.0
@@ -1641,7 +1607,6 @@ align = 1
 valign = 1
 
 [node name="PlaybackBox" type="PanelContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/HistorySettings"]
-editor/display_folded = true
 margin_top = 1769.0
 margin_right = 1202.0
 margin_bottom = 1964.0
@@ -1656,7 +1621,6 @@ margin_right = 1202.0
 margin_bottom = 4.0
 
 [node name="PlaybackRevert" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/HistorySettings/PlaybackBox/VBox"]
-editor/display_folded = true
 margin_top = 49.0
 margin_right = 1202.0
 margin_bottom = 79.0
@@ -1674,7 +1638,6 @@ flat = true
 script = ExtResource( 14 )
 
 [node name="PlaybackFromReplay" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/HistorySettings/PlaybackBox/VBox"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 custom_constants/separation = 80
@@ -1691,7 +1654,6 @@ group = SubResource( 1 )
 text = "RB_HISTORY_PLAYBACK_FROM_REPLAY"
 
 [node name="PlaybackFixedDuration" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/HistorySettings/PlaybackBox/VBox"]
-editor/display_folded = true
 margin_top = 124.0
 margin_right = 1202.0
 margin_bottom = 146.0
@@ -1707,7 +1669,6 @@ group = SubResource( 1 )
 text = "RB_HISTORY_PLAYBACK_FIXED"
 
 [node name="PlaybackFixedDuration2" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/HistorySettings/PlaybackBox/VBox"]
-editor/display_folded = true
 margin_top = 124.0
 margin_right = 1202.0
 margin_bottom = 146.0
@@ -1763,7 +1724,6 @@ align = 1
 valign = 1
 
 [node name="NotationBox" type="PanelContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/HistorySettings"]
-editor/display_folded = true
 margin_top = 838.0
 margin_right = 1202.0
 margin_bottom = 1266.0
@@ -1778,7 +1738,6 @@ margin_right = 1202.0
 margin_bottom = 4.0
 
 [node name="HBoxNotation1" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/HistorySettings/NotationBox/VBox"]
-editor/display_folded = true
 margin_top = 49.0
 margin_right = 1202.0
 margin_bottom = 79.0
@@ -1798,7 +1757,6 @@ flat = true
 script = ExtResource( 9 )
 
 [node name="HBoxNotation2" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/HistorySettings/NotationBox/VBox"]
-editor/display_folded = true
 margin_top = 124.0
 margin_right = 1202.0
 margin_bottom = 154.0
@@ -1817,7 +1775,6 @@ flat = true
 script = ExtResource( 9 )
 
 [node name="HBoxNotation3" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/HistorySettings/NotationBox/VBox"]
-editor/display_folded = true
 margin_top = 199.0
 margin_right = 1202.0
 margin_bottom = 229.0
@@ -1853,7 +1810,6 @@ flat = true
 script = ExtResource( 14 )
 
 [node name="HBoxHistoryTurnSymbol" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/HistorySettings/NotationBox/VBox"]
-editor/display_folded = true
 margin_top = 349.0
 margin_right = 1202.0
 margin_bottom = 379.0
@@ -1888,7 +1844,6 @@ align = 1
 valign = 1
 
 [node name="SymbolsBox" type="PanelContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/HistorySettings"]
-editor/display_folded = true
 margin_top = 1416.0
 margin_right = 1202.0
 margin_bottom = 1619.0
@@ -1922,7 +1877,6 @@ flat = true
 script = ExtResource( 9 )
 
 [node name="HBoxHistorySymbols2" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/HistorySettings/SymbolsBox/VBox"]
-editor/display_folded = true
 margin_top = 124.0
 margin_right = 1202.0
 margin_bottom = 154.0
@@ -1946,7 +1900,6 @@ margin_right = 1202.0
 margin_bottom = 203.0
 
 [node name="CameraSettings" type="VBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox"]
-editor/display_folded = true
 visible = false
 margin_bottom = 803.0
 size_flags_horizontal = 3
@@ -1969,7 +1922,6 @@ margin_top = -45.0
 margin_bottom = -45.0
 
 [node name="HBoxAllowYaw" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/CameraSettings/Box/VBox"]
-editor/display_folded = true
 margin_right = 1000.0
 margin_bottom = 49.0
 custom_constants/separation = 80
@@ -1987,7 +1939,6 @@ flat = true
 script = ExtResource( 14 )
 
 [node name="HBoxAllowPitch" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/CameraSettings/Box/VBox"]
-editor/display_folded = true
 margin_right = 1000.0
 margin_bottom = 49.0
 custom_constants/separation = 80
@@ -2005,7 +1956,6 @@ flat = true
 script = ExtResource( 14 )
 
 [node name="HBoxAllowZoom" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/CameraSettings/Box/VBox"]
-editor/display_folded = true
 margin_right = 1000.0
 margin_bottom = 49.0
 custom_constants/separation = 80
@@ -2023,7 +1973,6 @@ flat = true
 script = ExtResource( 14 )
 
 [node name="HBoxAllowPan" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/CameraSettings/Box/VBox"]
-editor/display_folded = true
 margin_right = 1000.0
 margin_bottom = 49.0
 custom_constants/separation = 80
@@ -2045,7 +1994,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="HBoxSwitchSides" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/CameraSettings/Box/VBox"]
-editor/display_folded = true
 margin_right = 1000.0
 margin_bottom = 49.0
 custom_constants/separation = 80
@@ -2102,7 +2050,6 @@ margin_right = 1000.0
 margin_bottom = 4.0
 
 [node name="StylesSettings" type="VBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox"]
-editor/display_folded = true
 visible = false
 margin_right = 1000.0
 margin_bottom = 209.0
@@ -2127,7 +2074,6 @@ align = 1
 valign = 1
 
 [node name="BoardStylesBox" type="PanelContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/StylesSettings"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 7 )
@@ -2141,7 +2087,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="HBoxBoardUIColoring" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/StylesSettings/BoardStylesBox/VBox"]
-editor/display_folded = true
 margin_right = 609.0
 margin_bottom = 49.0
 custom_constants/separation = 80
@@ -2157,7 +2102,6 @@ text = "CB_STYLES_UI_COLORING"
 script = ExtResource( 14 )
 
 [node name="HBoxBoardChessColoring" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/StylesSettings/BoardStylesBox/VBox"]
-editor/display_folded = true
 margin_right = 694.0
 margin_bottom = 49.0
 custom_constants/separation = 80
@@ -2177,7 +2121,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="HBoxBoardMarkup" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/StylesSettings"]
-editor/display_folded = true
 visible = false
 margin_right = 294.0
 margin_bottom = 40.0
@@ -2194,7 +2137,6 @@ text = "CB_STYLES_BOARD_MARKUP"
 script = ExtResource( 14 )
 
 [node name="HBoxBoardZonesColoring" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/StylesSettings"]
-editor/display_folded = true
 visible = false
 margin_right = 286.0
 margin_bottom = 40.0
@@ -2233,7 +2175,6 @@ align = 1
 valign = 1
 
 [node name="GridStylesBox" type="PanelContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/StylesSettings"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 size_flags_vertical = 3
@@ -2248,7 +2189,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="HBoxGridBlack" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/StylesSettings/GridStylesBox/VBox"]
-editor/display_folded = true
 margin_right = 602.0
 margin_bottom = 49.0
 custom_constants/separation = 80
@@ -2265,7 +2205,6 @@ text = "RB_STYLES_GRID_BLACK"
 script = ExtResource( 9 )
 
 [node name="HBoxGridWhite" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/StylesSettings/GridStylesBox/VBox"]
-editor/display_folded = true
 margin_right = 595.0
 margin_bottom = 49.0
 custom_constants/separation = 80
@@ -2282,7 +2221,6 @@ text = "RB_STYLES_GRID_WHITE"
 script = ExtResource( 9 )
 
 [node name="HBoxGridThickness" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/StylesSettings/GridStylesBox/VBox"]
-editor/display_folded = true
 margin_right = 1000.0
 margin_bottom = 237.0
 custom_constants/separation = 80
@@ -2320,7 +2258,6 @@ max_value = 5.0
 value = 3.0
 rounded = true
 ticks_on_borders = true
-focus_mode = 1
 
 [node name="LABEL_CURRENT_GRID_THICKNESS" type="Label" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/StylesSettings/GridStylesBox/VBox/HBoxGridThickness/VBoxGridThickness"]
 margin_top = 160.0
@@ -2336,7 +2273,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="SoundSettings" type="VBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox"]
-editor/display_folded = true
 visible = false
 margin_bottom = 803.0
 size_flags_horizontal = 3
@@ -2345,13 +2281,11 @@ custom_constants/separation = 50
 script = ExtResource( 4 )
 
 [node name="SoundBox" type="PanelContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/SoundSettings"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 7 )
 
 [node name="VBox" type="VBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/SoundSettings/SoundBox"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -2361,7 +2295,6 @@ margin_top = -45.0
 margin_bottom = -45.0
 
 [node name="HBoxEnableUISound" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/SoundSettings/SoundBox/VBox"]
-editor/display_folded = true
 margin_right = 561.0
 margin_bottom = 49.0
 custom_constants/separation = 80
@@ -2378,7 +2311,6 @@ text = "CB_SOUND_ENABLE_UI"
 script = ExtResource( 14 )
 
 [node name="HBoxUIVolume" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/SoundSettings/SoundBox/VBox"]
-editor/display_folded = true
 visible = false
 margin_right = 961.0
 margin_bottom = 128.0
@@ -2406,10 +2338,8 @@ value = 1.0
 rounded = true
 scrollable = false
 ticks_on_borders = true
-focus_mode = 0
 
 [node name="HBoxEnableMoveSound" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/SoundSettings/SoundBox/VBox"]
-editor/display_folded = true
 margin_left = 500.0
 margin_right = 1136.0
 margin_bottom = 49.0
@@ -2427,7 +2357,6 @@ text = "CB_SOUND_ENABLE_MOVE"
 script = ExtResource( 14 )
 
 [node name="HBoxEnable3DSound" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/SoundSettings/SoundBox/VBox"]
-editor/display_folded = true
 margin_left = 500.0
 margin_right = 1075.0
 margin_bottom = 49.0
@@ -2474,7 +2403,6 @@ margin_bottom = 4.0
 size_flags_horizontal = 3
 
 [node name="HBoxEnableSpeech" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/SoundSettings/SpeechBox/VBox"]
-editor/display_folded = true
 margin_left = 500.0
 margin_right = 1627.0
 margin_bottom = 128.0
@@ -2494,7 +2422,6 @@ text = "CB_SOUND_ENABLE_SPEECH"
 script = ExtResource( 14 )
 
 [node name="HBoxEnableCheckSound" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/SoundSettings/SpeechBox/VBox"]
-editor/display_folded = true
 margin_left = 500.0
 margin_right = 1147.0
 margin_bottom = 49.0
@@ -2539,7 +2466,6 @@ value = 1.0
 rounded = true
 scrollable = false
 ticks_on_borders = true
-focus_mode = 0
 
 [node name="LABEL_SPEECH_VOLUME" type="Label" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/SoundSettings/SpeechBox/VBox/HBoxEnableSpeechSlider"]
 margin_right = 40.0
@@ -2569,7 +2495,6 @@ margin_bottom = 4.0
 size_flags_horizontal = 3
 
 [node name="HBoxEnableMusic" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/SoundSettings"]
-editor/display_folded = true
 visible = false
 margin_left = 500.0
 margin_right = 1000.0
@@ -2588,7 +2513,6 @@ text = "CB_SOUND_ENABLE_MUSIC"
 script = ExtResource( 14 )
 
 [node name="HBoxMusicVolume" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/SoundSettings"]
-editor/display_folded = true
 visible = false
 margin_left = 500.0
 margin_right = 1260.0
@@ -2617,10 +2541,8 @@ value = 1.0
 rounded = true
 scrollable = false
 ticks_on_borders = true
-focus_mode = 0
 
 [node name="HBoxCurrentSong" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/SoundSettings"]
-editor/display_folded = true
 visible = false
 margin_left = 500.0
 margin_right = 1399.0
@@ -2670,7 +2592,6 @@ stretch_mode = 3
 script = ExtResource( 21 )
 
 [node name="HBoxMusicOrder" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/SoundSettings"]
-editor/display_folded = true
 visible = false
 margin_left = 500.0
 margin_right = 1322.0
@@ -2710,7 +2631,6 @@ script = ExtResource( 9 )
 [node name="InputSettings" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox" instance=ExtResource( 24 )]
 
 [node name="WidgetSettings" type="VBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox"]
-editor/display_folded = true
 visible = false
 margin_left = 1000.0
 margin_right = 2043.0
@@ -2721,7 +2641,6 @@ custom_constants/separation = 0
 script = ExtResource( 4 )
 
 [node name="HBoxSansaraWidgetTitle" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/WidgetSettings"]
-editor/display_folded = true
 margin_right = 740.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 0, 120 )
@@ -2816,7 +2735,6 @@ align = 1
 valign = 1
 
 [node name="SansaraWidgetOrderBox" type="PanelContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/WidgetSettings"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 7 )
@@ -2845,7 +2763,6 @@ margin_bottom = 40.0
 size_flags_vertical = 3
 
 [node name="HBoxSansaraOrderNext" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/WidgetSettings/SansaraWidgetOrderBox/VBox"]
-editor/display_folded = true
 margin_right = 310.0
 margin_bottom = 24.0
 size_flags_vertical = 3
@@ -2868,7 +2785,6 @@ margin_bottom = 40.0
 size_flags_vertical = 3
 
 [node name="HBoxSansaraOrderPrevious" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/WidgetSettings/SansaraWidgetOrderBox/VBox"]
-editor/display_folded = true
 margin_top = 28.0
 margin_right = 310.0
 margin_bottom = 52.0
@@ -2896,7 +2812,6 @@ margin_right = 40.0
 custom_constants/separation = 0
 
 [node name="HBoxClockWidgetTitle" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/WidgetSettings"]
-editor/display_folded = true
 margin_right = 1660.0
 margin_bottom = 120.0
 rect_min_size = Vector2( 0, 120 )
@@ -2982,7 +2897,6 @@ margin_bottom = 4.0
 custom_constants/separation = 0
 
 [node name="ClockBox" type="PanelContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/WidgetSettings"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 7 )
@@ -3008,7 +2922,6 @@ margin_bottom = 40.0
 size_flags_vertical = 3
 
 [node name="HBoxClockShowSeconds" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/WidgetSettings/ClockBox/VBox"]
-editor/display_folded = true
 margin_right = 310.0
 margin_bottom = 24.0
 custom_constants/separation = 80
@@ -3046,7 +2959,6 @@ align = 1
 valign = 1
 
 [node name="ClockFormat" type="PanelContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/WidgetSettings"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 7 )
@@ -3074,7 +2986,6 @@ margin_bottom = 40.0
 size_flags_vertical = 3
 
 [node name="HBoxClockFormat24" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/WidgetSettings/ClockFormat/VBox"]
-editor/display_folded = true
 margin_right = 310.0
 margin_bottom = 24.0
 custom_constants/separation = 80
@@ -3096,7 +3007,6 @@ margin_bottom = 40.0
 size_flags_vertical = 3
 
 [node name="HBoxClockFormat12" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/WidgetSettings/ClockFormat/VBox"]
-editor/display_folded = true
 margin_top = 28.0
 margin_right = 310.0
 margin_bottom = 52.0
@@ -3123,7 +3033,6 @@ margin_right = 40.0
 custom_constants/separation = 0
 
 [node name="HBoxQQWidgetTitle" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/WidgetSettings"]
-editor/display_folded = true
 margin_right = 1660.0
 margin_bottom = 120.0
 rect_min_size = Vector2( 0, 120 )
@@ -3208,7 +3117,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="QQBox" type="PanelContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/WidgetSettings"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 7 )
@@ -3251,7 +3159,6 @@ margin_right = 40.0
 custom_constants/separation = 0
 
 [node name="OtherSettings" type="VBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox"]
-editor/display_folded = true
 visible = false
 margin_left = 1000.0
 margin_right = 1000.0
@@ -3332,7 +3239,6 @@ size_flags_vertical = 0
 custom_constants/separation = 0
 
 [node name="DevMode" type="VBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/OtherSettings"]
-editor/display_folded = true
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
@@ -3366,7 +3272,6 @@ size_flags_vertical = 0
 custom_constants/separation = 0
 
 [node name="HBoxIPV4" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/OtherSettings/DevMode/MasterServerIPBox/VBox"]
-editor/display_folded = true
 margin_left = 1589.0
 margin_top = 330.0
 margin_right = 2527.0
@@ -3437,7 +3342,6 @@ margin_bottom = -155.0
 size_flags_horizontal = 3
 
 [node name="HBoxIPV6" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/OtherSettings/DevMode/MasterServerIPBox/VBox"]
-editor/display_folded = true
 margin_left = 7.0
 margin_top = 135.0
 margin_right = 1084.0
@@ -3477,7 +3381,6 @@ margin_bottom = 40.0
 rect_min_size = Vector2( 50, 0 )
 
 [node name="HBoxPort" type="HBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/OtherSettings/DevMode/MasterServerIPBox/VBox"]
-editor/display_folded = true
 margin_left = 105.0
 margin_top = 117.0
 margin_right = 593.0
@@ -3549,7 +3452,6 @@ margin_right = 12.0
 margin_bottom = 20.0
 text = "BTN_DELETE_PROFILE"
 flat = true
-
 [connection signal="pressed" from="SimpleLayout/GBox/SettingsPanel/SettingsList/BTN_SETTINGS_UI" to="." method="_on_BTN_SETTINGS_UI_pressed"]
 [connection signal="pressed" from="SimpleLayout/GBox/SettingsPanel/SettingsList/BTN_SETTINGS_AI" to="." method="_on_BTN_SETTINGS_AI_pressed"]
 [connection signal="pressed" from="SimpleLayout/GBox/SettingsPanel/SettingsList/BTN_SETTINGS_GAMEPLAY" to="." method="_on_BTN_SETTINGS_GAMEPLAY_pressed"]

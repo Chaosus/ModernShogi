@@ -1,5 +1,8 @@
 extends "res://scripts/UIScreen.gd"
 
+onready var main_box = $GridContainer
+onready var multiplayer_box = $MultiplayerContainer
+
 # MainMenu.gd
 
 func _ready():
@@ -53,17 +56,13 @@ func _on_PlayerVsPlayerButton_pressed():
 	UI.server_list_enabled = false
 	UI.get_root().goto_game_setup(self, Games.PlayerConfig.PVP, false)
 
-func _on_HostButton_pressed():
-	UI.server_list_enabled = false
-	UI.get_root().goto_game_setup(self, Games.PlayerConfig.PVP, true)
-
+func _on_MultiplayerButton_pressed():
+	main_box.beautiful_hide()
+	multiplayer_box.beautiful_show()
+	
 func _on_ServerListButton_pressed():
 	UI.server_list_enabled = true
 	goto_screen(UI.SCREEN_LOGIN)
-
-func _on_JoinButton_pressed():
-	UI.server_list_enabled = false
-	goto_screen(UI.SCREEN_JOIN_IP)
 	
 # Колонка 2 - Кнопки вспомогательных функций
 
@@ -115,3 +114,18 @@ func _on_QuickPlay_pressed():
 	UI.get_root().quick_game()
 
 
+############################################
+# 			Обработчики кнопок (мультиплеер)
+############################################
+
+func _on_HostButton_pressed():
+	UI.server_list_enabled = false
+	UI.get_root().goto_game_setup(self, Games.PlayerConfig.PVP, true)
+	
+func _on_JoinButton_pressed():
+	UI.server_list_enabled = false
+	goto_screen(UI.SCREEN_JOIN_IP)
+
+func _on_BackFromMultiplayerButton_pressed():
+	multiplayer_box.beautiful_hide()
+	main_box.beautiful_show()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scripts/screens/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://ui/menubuttons/human_vs_ai.png" type="Texture" id=2]
@@ -10,24 +10,25 @@
 [ext_resource path="res://ui/menubuttons/human_vs_human.png" type="Texture" id=8]
 [ext_resource path="res://ui/menubuttons/settings.png" type="Texture" id=9]
 [ext_resource path="res://ui/menubuttons/quit.png" type="Texture" id=10]
-[ext_resource path="res://ui/menubuttons/news.png" type="Texture" id=11]
-[ext_resource path="res://ui/menubuttons/achivements.png" type="Texture" id=12]
-[ext_resource path="res://ui/menubuttons/profile.png" type="Texture" id=13]
 [ext_resource path="res://ui/menubuttons/library.png" type="Texture" id=14]
 [ext_resource path="res://ui/menubuttons/load.png" type="Texture" id=15]
 [ext_resource path="res://ui/buttons/play.png" type="Texture" id=16]
 [ext_resource path="res://ui/menubuttons/bug.png" type="Texture" id=17]
 [ext_resource path="res://ui/menubuttons/donate.png" type="Texture" id=18]
+[ext_resource path="res://ui/menubuttons/back.png" type="Texture" id=19]
+[ext_resource path="res://scripts/ui/FadeElement.gd" type="Script" id=20]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
 [node name="MainMenuScreen" type="CenterContainer"]
-visible = false
 margin_right = 1920.0
 margin_bottom = 952.0
 rect_min_size = Vector2( 0, 952 )
 size_flags_vertical = 0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 hidden_by_default = true
 
 [node name="GridContainer" type="GridContainer" parent="."]
@@ -37,6 +38,7 @@ margin_right = 1268.0
 margin_bottom = 805.0
 custom_constants/hseparation = 20
 columns = 4
+script = ExtResource( 20 )
 
 [node name="Column1" type="VBoxContainer" parent="GridContainer"]
 margin_right = 192.0
@@ -73,89 +75,31 @@ align = 1
 valign = 1
 script = ExtResource( 4 )
 
-[node name="Server" type="VBoxContainer" parent="GridContainer/Column1"]
-material = SubResource( 1 )
+[node name="VBoxLibrary" type="VBoxContainer" parent="GridContainer/Column1"]
 margin_top = 222.0
 margin_right = 192.0
 margin_bottom = 436.0
 custom_constants/separation = 8
 
-[node name="ServerButton" type="TextureButton" parent="GridContainer/Column1/Server"]
+[node name="LibraryButton" type="TextureButton" parent="GridContainer/Column1/VBoxLibrary"]
 margin_right = 192.0
 margin_bottom = 192.0
 rect_min_size = Vector2( 192, 192 )
-texture_normal = ExtResource( 5 )
+texture_normal = ExtResource( 14 )
 expand = true
 stretch_mode = 5
 script = ExtResource( 3 )
 unnamed = true
 
-[node name="Description" type="Label" parent="GridContainer/Column1/Server"]
+[node name="Description" type="Label" parent="GridContainer/Column1/VBoxLibrary"]
 margin_top = 200.0
 margin_right = 192.0
 margin_bottom = 214.0
 size_flags_horizontal = 3
-text = "BTN_GM_SERVER"
+size_flags_vertical = 0
+text = "BTN_GM_LIBRARY"
 align = 1
 valign = 1
-script = ExtResource( 4 )
-
-[node name="HostContainer" type="VBoxContainer" parent="GridContainer/Column1"]
-visible = false
-margin_top = 333.0
-margin_right = 192.0
-margin_bottom = 658.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/separation = 8
-alignment = 1
-
-[node name="HostButton" type="TextureButton" parent="GridContainer/Column1/HostContainer"]
-margin_top = 55.0
-margin_right = 192.0
-margin_bottom = 247.0
-rect_min_size = Vector2( 192, 192 )
-size_flags_horizontal = 3
-texture_normal = ExtResource( 6 )
-expand = true
-stretch_mode = 5
-script = ExtResource( 3 )
-unnamed = true
-
-[node name="Description" type="Label" parent="GridContainer/Column1/HostContainer"]
-margin_top = 255.0
-margin_right = 192.0
-margin_bottom = 269.0
-size_flags_horizontal = 3
-text = "BTN_GM_HOST"
-align = 1
-valign = 1
-script = ExtResource( 4 )
-
-[node name="HBoxJoin" type="VBoxContainer" parent="GridContainer/Column1"]
-visible = false
-margin_top = 444.0
-margin_right = 192.0
-margin_bottom = 658.0
-custom_constants/separation = 8
-
-[node name="JoinButton" type="TextureButton" parent="GridContainer/Column1/HBoxJoin"]
-margin_right = 192.0
-margin_bottom = 192.0
-rect_min_size = Vector2( 192, 192 )
-texture_normal = ExtResource( 7 )
-expand = true
-stretch_mode = 5
-script = ExtResource( 3 )
-unnamed = true
-
-[node name="Description" type="Label" parent="GridContainer/Column1/HBoxJoin"]
-margin_top = 200.0
-margin_right = 192.0
-margin_bottom = 214.0
-size_flags_horizontal = 3
-text = "BTN_GM_JOIN"
-align = 1
 script = ExtResource( 4 )
 
 [node name="Column2" type="VBoxContainer" parent="GridContainer"]
@@ -246,160 +190,45 @@ valign = 1
 script = ExtResource( 4 )
 
 [node name="Column3" type="VBoxContainer" parent="GridContainer"]
-visible = false
 margin_left = 424.0
 margin_right = 616.0
-margin_bottom = 880.0
+margin_bottom = 436.0
 size_flags_vertical = 0
 custom_constants/separation = 8
 
-[node name="VBoxNews" type="VBoxContainer" parent="GridContainer/Column3"]
-modulate = Color( 1, 0, 0, 1 )
+[node name="MultiplayerContainer" type="VBoxContainer" parent="GridContainer/Column3"]
+material = SubResource( 1 )
 margin_right = 192.0
 margin_bottom = 214.0
 custom_constants/separation = 8
 
-[node name="LibraryButton" type="TextureButton" parent="GridContainer/Column3/VBoxNews"]
+[node name="MultiplayerButton" type="TextureButton" parent="GridContainer/Column3/MultiplayerContainer"]
 margin_right = 192.0
 margin_bottom = 192.0
 rect_min_size = Vector2( 192, 192 )
-disabled = true
-texture_normal = ExtResource( 11 )
-expand = true
-stretch_mode = 5
-script = ExtResource( 3 )
-
-[node name="Description" type="Label" parent="GridContainer/Column3/VBoxNews"]
-margin_top = 200.0
-margin_right = 192.0
-margin_bottom = 214.0
-size_flags_horizontal = 3
-text = "BTN_GM_NEWS"
-align = 1
-valign = 1
-script = ExtResource( 4 )
-
-[node name="VBoxAchivements" type="VBoxContainer" parent="GridContainer/Column3"]
-modulate = Color( 1, 0, 0, 1 )
-margin_top = 222.0
-margin_right = 192.0
-margin_bottom = 436.0
-custom_constants/separation = 8
-
-[node name="AchivementsButton" type="TextureButton" parent="GridContainer/Column3/VBoxAchivements"]
-margin_right = 192.0
-margin_bottom = 192.0
-rect_min_size = Vector2( 192, 192 )
-disabled = true
-texture_normal = ExtResource( 12 )
-expand = true
-stretch_mode = 5
-script = ExtResource( 3 )
-
-[node name="Description" type="Label" parent="GridContainer/Column3/VBoxAchivements"]
-margin_top = 200.0
-margin_right = 192.0
-margin_bottom = 214.0
-size_flags_horizontal = 3
-text = "BTN_GM_ACHIVEMENTS"
-align = 1
-valign = 1
-script = ExtResource( 4 )
-
-[node name="VBoxWatchOnlineReplays" type="VBoxContainer" parent="GridContainer/Column3"]
-modulate = Color( 1, 0, 0, 1 )
-margin_top = 444.0
-margin_right = 192.0
-margin_bottom = 658.0
-custom_constants/separation = 8
-
-[node name="WatchOnlineButton" type="TextureButton" parent="GridContainer/Column3/VBoxWatchOnlineReplays"]
-margin_right = 192.0
-margin_bottom = 192.0
-rect_min_size = Vector2( 192, 192 )
-disabled = true
 texture_normal = ExtResource( 5 )
-expand = true
-stretch_mode = 5
-script = ExtResource( 3 )
-
-[node name="Description" type="Label" parent="GridContainer/Column3/VBoxWatchOnlineReplays"]
-margin_top = 200.0
-margin_right = 192.0
-margin_bottom = 214.0
-size_flags_horizontal = 3
-text = "BTN_GM_ONLINE_REPLAYS"
-align = 1
-valign = 1
-script = ExtResource( 4 )
-
-[node name="VBoxProfile" type="VBoxContainer" parent="GridContainer/Column3"]
-modulate = Color( 1, 0, 0, 1 )
-margin_top = 666.0
-margin_right = 192.0
-margin_bottom = 880.0
-custom_constants/separation = 8
-
-[node name="ProfileButton" type="TextureButton" parent="GridContainer/Column3/VBoxProfile"]
-margin_right = 192.0
-margin_bottom = 192.0
-rect_min_size = Vector2( 192, 192 )
-disabled = true
-texture_normal = ExtResource( 13 )
-expand = true
-stretch_mode = 5
-script = ExtResource( 3 )
-
-[node name="Description" type="Label" parent="GridContainer/Column3/VBoxProfile"]
-margin_top = 200.0
-margin_right = 192.0
-margin_bottom = 214.0
-size_flags_horizontal = 3
-text = "BTN_GM_PROFILE"
-align = 1
-valign = 1
-script = ExtResource( 4 )
-
-[node name="Column4" type="VBoxContainer" parent="GridContainer"]
-margin_left = 424.0
-margin_right = 616.0
-margin_bottom = 436.0
-size_flags_vertical = 0
-custom_constants/separation = 8
-
-[node name="VBoxLibrary" type="VBoxContainer" parent="GridContainer/Column4"]
-margin_right = 192.0
-margin_bottom = 214.0
-custom_constants/separation = 8
-
-[node name="LibraryButton" type="TextureButton" parent="GridContainer/Column4/VBoxLibrary"]
-margin_right = 192.0
-margin_bottom = 192.0
-rect_min_size = Vector2( 192, 192 )
-texture_normal = ExtResource( 14 )
 expand = true
 stretch_mode = 5
 script = ExtResource( 3 )
 unnamed = true
 
-[node name="Description" type="Label" parent="GridContainer/Column4/VBoxLibrary"]
+[node name="Description" type="Label" parent="GridContainer/Column3/MultiplayerContainer"]
 margin_top = 200.0
 margin_right = 192.0
 margin_bottom = 214.0
 size_flags_horizontal = 3
-size_flags_vertical = 0
-text = "BTN_GM_LIBRARY"
+text = "BTN_GM_SERVER"
 align = 1
 valign = 1
 script = ExtResource( 4 )
 
-[node name="VBoxLoad" type="VBoxContainer" parent="GridContainer/Column4"]
+[node name="VBoxLoad" type="VBoxContainer" parent="GridContainer/Column3"]
 margin_top = 222.0
 margin_right = 192.0
 margin_bottom = 436.0
 custom_constants/separation = 8
 
-[node name="LoadButton" type="TextureButton" parent="GridContainer/Column4/VBoxLoad"]
+[node name="LoadButton" type="TextureButton" parent="GridContainer/Column3/VBoxLoad"]
 margin_right = 192.0
 margin_bottom = 192.0
 rect_min_size = Vector2( 192, 192 )
@@ -409,7 +238,7 @@ stretch_mode = 5
 script = ExtResource( 3 )
 unnamed = true
 
-[node name="Description" type="Label" parent="GridContainer/Column4/VBoxLoad"]
+[node name="Description" type="Label" parent="GridContainer/Column3/VBoxLoad"]
 margin_top = 200.0
 margin_right = 192.0
 margin_bottom = 214.0
@@ -419,14 +248,14 @@ text = "BTN_GM_LOAD"
 align = 1
 script = ExtResource( 4 )
 
-[node name="VBoxLoad2" type="VBoxContainer" parent="GridContainer/Column4"]
+[node name="VBoxLoad2" type="VBoxContainer" parent="GridContainer/Column3"]
 visible = false
 margin_top = 444.0
 margin_right = 192.0
 margin_bottom = 658.0
 custom_constants/separation = 8
 
-[node name="QuickPlay" type="TextureButton" parent="GridContainer/Column4/VBoxLoad2"]
+[node name="QuickPlay" type="TextureButton" parent="GridContainer/Column3/VBoxLoad2"]
 margin_right = 192.0
 margin_bottom = 192.0
 rect_min_size = Vector2( 192, 192 )
@@ -435,7 +264,7 @@ expand = true
 stretch_mode = 5
 script = ExtResource( 3 )
 
-[node name="Description" type="Label" parent="GridContainer/Column4/VBoxLoad2"]
+[node name="Description" type="Label" parent="GridContainer/Column3/VBoxLoad2"]
 margin_top = 200.0
 margin_right = 192.0
 margin_bottom = 214.0
@@ -444,7 +273,7 @@ text = "BTN_GM_LOAD"
 align = 1
 script = ExtResource( 4 )
 
-[node name="VBoxBug" type="VBoxContainer" parent="GridContainer/Column4"]
+[node name="VBoxBug" type="VBoxContainer" parent="GridContainer/Column3"]
 visible = false
 modulate = Color( 1, 0, 0, 1 )
 margin_top = 222.0
@@ -452,7 +281,7 @@ margin_right = 192.0
 margin_bottom = 436.0
 custom_constants/separation = 8
 
-[node name="BugsButton" type="TextureButton" parent="GridContainer/Column4/VBoxBug"]
+[node name="BugsButton" type="TextureButton" parent="GridContainer/Column3/VBoxBug"]
 margin_right = 192.0
 margin_bottom = 192.0
 rect_min_size = Vector2( 192, 192 )
@@ -462,7 +291,7 @@ expand = true
 stretch_mode = 5
 script = ExtResource( 3 )
 
-[node name="Description" type="Label" parent="GridContainer/Column4/VBoxBug"]
+[node name="Description" type="Label" parent="GridContainer/Column3/VBoxBug"]
 margin_top = 200.0
 margin_right = 192.0
 margin_bottom = 214.0
@@ -472,7 +301,7 @@ align = 1
 valign = 1
 script = ExtResource( 4 )
 
-[node name="VBoxDonate" type="VBoxContainer" parent="GridContainer/Column4"]
+[node name="VBoxDonate" type="VBoxContainer" parent="GridContainer/Column3"]
 visible = false
 modulate = Color( 1, 0, 0, 1 )
 margin_top = 222.0
@@ -480,7 +309,7 @@ margin_right = 192.0
 margin_bottom = 436.0
 custom_constants/separation = 8
 
-[node name="DonateButton" type="TextureButton" parent="GridContainer/Column4/VBoxDonate"]
+[node name="DonateButton" type="TextureButton" parent="GridContainer/Column3/VBoxDonate"]
 margin_right = 192.0
 margin_bottom = 192.0
 rect_min_size = Vector2( 192, 192 )
@@ -490,7 +319,7 @@ expand = true
 stretch_mode = 5
 script = ExtResource( 3 )
 
-[node name="Description" type="Label" parent="GridContainer/Column4/VBoxDonate"]
+[node name="Description" type="Label" parent="GridContainer/Column3/VBoxDonate"]
 margin_top = 200.0
 margin_right = 192.0
 margin_bottom = 214.0
@@ -499,17 +328,108 @@ text = "BTN_GM_DONATE"
 align = 1
 valign = 1
 script = ExtResource( 4 )
+
+[node name="MultiplayerContainer" type="GridContainer" parent="."]
+visible = false
+margin_left = 668.0
+margin_top = 369.0
+margin_right = 1252.0
+margin_bottom = 583.0
+script = ExtResource( 20 )
+hidden_by_default = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MultiplayerContainer"]
+margin_right = 584.0
+margin_bottom = 214.0
+
+[node name="HostContainer" type="VBoxContainer" parent="MultiplayerContainer/HBoxContainer"]
+margin_right = 192.0
+margin_bottom = 214.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 8
+alignment = 1
+
+[node name="HostButton" type="TextureButton" parent="MultiplayerContainer/HBoxContainer/HostContainer"]
+margin_right = 192.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 192, 192 )
+size_flags_horizontal = 3
+texture_normal = ExtResource( 6 )
+expand = true
+stretch_mode = 5
+script = ExtResource( 3 )
+unnamed = true
+
+[node name="Description" type="Label" parent="MultiplayerContainer/HBoxContainer/HostContainer"]
+margin_top = 200.0
+margin_right = 192.0
+margin_bottom = 214.0
+size_flags_horizontal = 3
+text = "BTN_GM_HOST"
+align = 1
+valign = 1
+script = ExtResource( 4 )
+
+[node name="HBoxJoin" type="VBoxContainer" parent="MultiplayerContainer/HBoxContainer"]
+margin_left = 196.0
+margin_right = 388.0
+margin_bottom = 214.0
+custom_constants/separation = 8
+
+[node name="JoinButton" type="TextureButton" parent="MultiplayerContainer/HBoxContainer/HBoxJoin"]
+margin_right = 192.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 192, 192 )
+texture_normal = ExtResource( 7 )
+expand = true
+stretch_mode = 5
+script = ExtResource( 3 )
+unnamed = true
+
+[node name="Description" type="Label" parent="MultiplayerContainer/HBoxContainer/HBoxJoin"]
+margin_top = 200.0
+margin_right = 192.0
+margin_bottom = 214.0
+size_flags_horizontal = 3
+text = "BTN_GM_JOIN"
+align = 1
+script = ExtResource( 4 )
+
+[node name="HBoxBack" type="VBoxContainer" parent="MultiplayerContainer/HBoxContainer"]
+margin_left = 392.0
+margin_right = 584.0
+margin_bottom = 214.0
+custom_constants/separation = 8
+
+[node name="BackFromMultiplayerButton" type="TextureButton" parent="MultiplayerContainer/HBoxContainer/HBoxBack"]
+margin_right = 192.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 192, 192 )
+texture_normal = ExtResource( 19 )
+expand = true
+stretch_mode = 5
+script = ExtResource( 3 )
+unnamed = true
+
+[node name="Description" type="Label" parent="MultiplayerContainer/HBoxContainer/HBoxBack"]
+margin_top = 200.0
+margin_right = 192.0
+margin_bottom = 214.0
+size_flags_horizontal = 3
+text = "BTN_BACK"
+align = 1
+script = ExtResource( 4 )
 [connection signal="pressed" from="GridContainer/Column1/VersusAIContainer/VersusAIButton" to="." method="_on_VersusAIButton_pressed"]
-[connection signal="pressed" from="GridContainer/Column1/Server/ServerButton" to="." method="_on_ServerListButton_pressed"]
-[connection signal="pressed" from="GridContainer/Column1/HostContainer/HostButton" to="." method="_on_HostButton_pressed"]
-[connection signal="pressed" from="GridContainer/Column1/HBoxJoin/JoinButton" to="." method="_on_JoinButton_pressed"]
+[connection signal="pressed" from="GridContainer/Column1/VBoxLibrary/LibraryButton" to="." method="_on_LibraryButton_pressed"]
 [connection signal="pressed" from="GridContainer/Column2/Local/PlayerVsPlayerButton" to="." method="_on_PlayerVsPlayerButton_pressed"]
 [connection signal="pressed" from="GridContainer/Column2/VBoxSettings/SettingsButton" to="." method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="GridContainer/Column2/VBoxQuit/QuitButton" to="." method="_on_QuitButton_pressed"]
-[connection signal="pressed" from="GridContainer/Column3/VBoxWatchOnlineReplays/WatchOnlineButton" to="." method="_on_WatchOnlineButton_pressed"]
-[connection signal="pressed" from="GridContainer/Column3/VBoxProfile/ProfileButton" to="." method="_on_ProfileButton_pressed"]
-[connection signal="pressed" from="GridContainer/Column4/VBoxLibrary/LibraryButton" to="." method="_on_LibraryButton_pressed"]
-[connection signal="pressed" from="GridContainer/Column4/VBoxLoad/LoadButton" to="." method="_on_LoadButton_pressed"]
-[connection signal="pressed" from="GridContainer/Column4/VBoxLoad2/QuickPlay" to="." method="_on_QuickPlay_pressed"]
-[connection signal="pressed" from="GridContainer/Column4/VBoxBug/BugsButton" to="." method="_on_BugsButton_pressed"]
-[connection signal="pressed" from="GridContainer/Column4/VBoxDonate/DonateButton" to="." method="_on_DonateButton_pressed"]
+[connection signal="pressed" from="GridContainer/Column3/MultiplayerContainer/MultiplayerButton" to="." method="_on_MultiplayerButton_pressed"]
+[connection signal="pressed" from="GridContainer/Column3/VBoxLoad/LoadButton" to="." method="_on_LoadButton_pressed"]
+[connection signal="pressed" from="GridContainer/Column3/VBoxLoad2/QuickPlay" to="." method="_on_QuickPlay_pressed"]
+[connection signal="pressed" from="GridContainer/Column3/VBoxBug/BugsButton" to="." method="_on_BugsButton_pressed"]
+[connection signal="pressed" from="GridContainer/Column3/VBoxDonate/DonateButton" to="." method="_on_DonateButton_pressed"]
+[connection signal="pressed" from="MultiplayerContainer/HBoxContainer/HostContainer/HostButton" to="." method="_on_HostButton_pressed"]
+[connection signal="pressed" from="MultiplayerContainer/HBoxContainer/HBoxJoin/JoinButton" to="." method="_on_JoinButton_pressed"]
+[connection signal="pressed" from="MultiplayerContainer/HBoxContainer/HBoxBack/BackFromMultiplayerButton" to="." method="_on_BackFromMultiplayerButton_pressed"]

@@ -44,14 +44,15 @@
     <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GodotSharp" />
-    <Reference Include="GodotSharp, Version=1.0.7217.28399, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Godot\GodotSharp\Api\Release\GodotSharp.dll</HintPath>
+    <Reference Include="GodotSharp">
+      <HintPath>$(ProjectDir)/.mono/assemblies/$(ApiConfiguration)/GodotSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="GodotSharpEditor">
+      <HintPath>.mono\assemblies\Debug\GodotSharpEditor.dll</HintPath>
     </Reference>
     <Reference Include="GodotSharpEditor" Condition=" '$(Configuration)' == 'Tools' " />
     <Reference Include="LiteNetLib">
-      <HintPath>..\LiteNetLib\LiteNetLib.dll</HintPath>
+      <HintPath>..\LiteNetLib\LiteNetLib\bin\Release\net35\LiteNetLib.dll</HintPath>
     </Reference>
     <Reference Include="ShogiNet, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

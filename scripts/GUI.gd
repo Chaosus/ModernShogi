@@ -253,8 +253,8 @@ func set_visible(visible):
 	$Box.visible = visible
 	
 func cleanup():
-	black_player_panel.beautiful_hide()
-	white_player_panel.beautiful_hide()
+	#black_player_panel.beautiful_hide()
+	#white_player_panel.beautiful_hide()
 	promotion_dialog.beautiful_hide()
 	gameover_dialog.beautiful_hide()
 	attentions_list.beautiful_hide()

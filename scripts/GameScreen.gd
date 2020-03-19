@@ -280,13 +280,13 @@ func init_game(session):
 		var player = Game.Player.new(i)
 		player.name = "?"
 		player.panel = gui.get_player_panel(i)
-		player.current_minutes = session.max_minutes
-		player.current_seconds = 60
-		player.current_byomi = session.max_byomi
-		player.panel.set_byomi_mode_enabled(false)
-		player.panel.set_timer(player.current_minutes, player.current_seconds, player.current_byomi)	
-		player.panel.set_byomi_mode_enabled(player.current_minutes <= 0)
-		player.panel.beautiful_show()
+#		player.current_minutes = session.max_minutes
+#		player.current_seconds = 60
+#		player.current_byomi = session.max_byomi
+#		player.panel.set_byomi_mode_enabled(false)
+#		player.panel.set_timer(player.current_minutes, player.current_seconds, player.current_byomi)	
+#		player.panel.set_byomi_mode_enabled(player.current_minutes <= 0)
+#		player.panel.beautiful_show()
 		for piece_template in session.game_template.piece_templates.values():
 			player.storage.add_piece_type(piece_template, board)
 		player.storage.add_to_scene(self)
