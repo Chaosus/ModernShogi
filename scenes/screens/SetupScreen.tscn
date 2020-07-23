@@ -38,7 +38,6 @@ size_flags_vertical = 2
 custom_constants/separation = 50
 
 [node name="LoadControl" type="VBoxContainer" parent="Box/SimpleLayout"]
-editor/display_folded = true
 visible = false
 margin_right = 965.0
 margin_bottom = 58.0
@@ -59,7 +58,6 @@ align = 1
 valign = 1
 
 [node name="VBoxNetworkControl" type="VBoxContainer" parent="Box/SimpleLayout"]
-editor/display_folded = true
 visible = false
 margin_right = 1425.0
 margin_bottom = 237.0
@@ -79,13 +77,11 @@ align = 1
 valign = 1
 
 [node name="NetBox" type="PanelContainer" parent="Box/SimpleLayout/VBoxNetworkControl"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 3 )
 
 [node name="VBox" type="VBoxContainer" parent="Box/SimpleLayout/VBoxNetworkControl/NetBox"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -96,7 +92,6 @@ margin_bottom = 50.0
 size_flags_horizontal = 3
 
 [node name="HBoxPort" type="HBoxContainer" parent="Box/SimpleLayout/VBoxNetworkControl/NetBox/VBox"]
-editor/display_folded = true
 margin_top = 184.0
 margin_right = 1425.0
 margin_bottom = 237.0
@@ -136,7 +131,6 @@ margin_bottom = 139.0
 size_flags_horizontal = 3
 
 [node name="QuickAIControl" type="VBoxContainer" parent="Box/SimpleLayout"]
-editor/display_folded = true
 visible = false
 margin_right = 1151.0
 margin_bottom = 331.0
@@ -157,13 +151,11 @@ align = 1
 valign = 1
 
 [node name="AIBox" type="PanelContainer" parent="Box/SimpleLayout/QuickAIControl"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 3 )
 
 [node name="VBox" type="VBoxContainer" parent="Box/SimpleLayout/QuickAIControl/AIBox"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -174,13 +166,11 @@ margin_bottom = 189.0
 size_flags_horizontal = 3
 
 [node name="VBoxQuickAIError" type="VBoxContainer" parent="Box/SimpleLayout/QuickAIControl/AIBox/VBox"]
-editor/display_folded = true
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="HBoxQuickAIError" type="HBoxContainer" parent="Box/SimpleLayout/QuickAIControl/AIBox/VBox/VBoxQuickAIError"]
-editor/display_folded = true
 margin_right = 821.0
 margin_bottom = 49.0
 rect_min_size = Vector2( 0, 105 )
@@ -205,7 +195,6 @@ rect_min_size = Vector2( 80, 0 )
 size_flags_horizontal = 3
 
 [node name="HBoxAISettings" type="HBoxContainer" parent="Box/SimpleLayout/QuickAIControl/AIBox/VBox/VBoxQuickAIError"]
-editor/display_folded = true
 margin_right = 628.0
 margin_bottom = 128.0
 rect_min_size = Vector2( 0, 50 )
@@ -266,7 +255,6 @@ align = 1
 [node name="Offset2" type="ReferenceRect" parent="Box/SimpleLayout/QuickAIControl/AIBox/VBox/QuickAIControl/HBoxAISkillLevel"]
 
 [node name="HBoxAIBattle" type="HBoxContainer" parent="Box/SimpleLayout/QuickAIControl/AIBox/VBox/QuickAIControl"]
-editor/display_folded = true
 margin_right = 146.0
 margin_bottom = 128.0
 rect_min_size = Vector2( 0, 50 )
@@ -341,7 +329,6 @@ margin_bottom = 50.0
 size_flags_horizontal = 3
 
 [node name="GameType" type="HBoxContainer" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox"]
-editor/display_folded = true
 visible = false
 margin_left = 768.0
 margin_top = 1075.0
@@ -379,7 +366,6 @@ text = "RB_PRIVATE_GAME"
 script = ExtResource( 4 )
 
 [node name="GameName" type="HBoxContainer" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox"]
-editor/display_folded = true
 visible = false
 margin_left = 768.0
 margin_top = 788.0
@@ -406,7 +392,6 @@ max_length = 30
 expand_to_text_length = true
 
 [node name="Password" type="HBoxContainer" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox"]
-editor/display_folded = true
 visible = false
 margin_left = 768.0
 margin_top = 788.0
@@ -432,7 +417,6 @@ max_length = 30
 expand_to_text_length = true
 
 [node name="HostSide" type="HBoxContainer" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox"]
-editor/display_folded = true
 margin_right = 851.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 0, 50 )
@@ -518,6 +502,7 @@ text = "LABEL_WHITE4"
 script = ExtResource( 4 )
 
 [node name="Timer" type="HBoxContainer" parent="Box/SimpleLayout/GameSettings/GameBox/VBox/HBox/VBox"]
+visible = false
 margin_left = -57.0
 margin_top = 161.0
 margin_right = 966.0
@@ -597,7 +582,6 @@ align = 1
 valign = 1
 
 [node name="HandicapBox" type="PanelContainer" parent="Box/SimpleLayout"]
-editor/display_folded = true
 margin_top = 288.0
 margin_right = 965.0
 margin_bottom = 342.0
@@ -615,13 +599,11 @@ margin_bottom = 4.0
 size_flags_horizontal = 3
 
 [node name="VBox" type="VBoxContainer" parent="Box/SimpleLayout/HandicapBox/VBox"]
-editor/display_folded = true
 margin_top = 8.0
 margin_right = 951.0
 margin_bottom = 40.0
 
 [node name="HBoxHandicap" type="HBoxContainer" parent="Box/SimpleLayout/HandicapBox/VBox/VBox"]
-editor/display_folded = true
 margin_right = 951.0
 margin_bottom = 24.0
 
@@ -638,7 +620,6 @@ text = "CB_GAME_ENABLE_HANDICAP"
 script = ExtResource( 5 )
 
 [node name="HBoxAIHandicap" type="HBoxContainer" parent="Box/SimpleLayout/HandicapBox/VBox/VBox"]
-editor/display_folded = true
 visible = false
 margin_top = 184.0
 margin_right = 456.0
@@ -664,7 +645,6 @@ margin_bottom = 32.0
 size_flags_horizontal = 3
 
 [node name="VBox2" type="VBoxContainer" parent="Box/SimpleLayout/HandicapBox/VBox"]
-editor/display_folded = true
 visible = false
 margin_top = 82.0
 margin_right = 1128.0
@@ -976,7 +956,6 @@ flat = true
 [node name="Offset" type="ReferenceRect" parent="Box/SimpleLayout"]
 margin_right = 40.0
 margin_bottom = 40.0
-
 [connection signal="visibility_changed" from="." to="." method="_on_SetupScreen_visibility_changed"]
 [connection signal="value_changed" from="Box/SimpleLayout/QuickAIControl/AIBox/VBox/QuickAIControl/HBoxAISkillLevel/AISkillLevelSlider" to="." method="_on_AISkillLevelSlider_value_changed"]
 [connection signal="toggled" from="Box/SimpleLayout/QuickAIControl/AIBox/VBox/QuickAIControl/HBoxAIBattle/CPUBattleCheckBox" to="." method="_on_CPUBattleCheckBox_toggled"]

@@ -516,7 +516,8 @@ func _create_theme(data, current_index = 0):
 	var hs_line = StyleBoxLine.new()
 	hs_line.color = data.element_pressed_color
 	hs_line.thickness = 5
-	theme.set_stylebox("grabber_area", "HSlider", hs_line) 
+	theme.set_stylebox("grabber_area_highlight", "HSlider", hs_line)
+	theme.set_stylebox("grabber_area", "HSlider", hs_line)
 	var hs_slider = StyleBoxLine.new()
 	hs_slider.color = data.panel_color.darkened(0.5)
 	hs_slider.thickness = 5

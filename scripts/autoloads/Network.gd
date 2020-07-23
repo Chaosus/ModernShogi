@@ -3,7 +3,7 @@ extends Node
 # Network.gd
 # Содержит методы соединяющие игру и удалённый сервер
 
-var connection
+#var connection
 
 var login_screen
 
@@ -26,26 +26,28 @@ func get_password() -> String:
 	return saved_password
 
 func setup_connection_data(ip:String, port:int) -> void:
-	connection.SetupAddress(ip, port)
+	#connection.SetupAddress(ip, port)
+	pass
 
 # Вход на главный сервер
 func sign_in(name:String, password:String) -> void:
 	saved_username = name
 	saved_password = password
-	connection.SignIn(name, password)
+	#connection.SignIn(name, password)
 
 # Регистрация на главном сервере
 func sign_up(name:String, password:String, country:int) -> void:
-	connection.SignUp(name, password, country)
+	#connection.SignUp(name, password, country)
+	pass
 
 # Установка базовых параметров
 func setup(connection, login_screen, server_screen, account_screen, game_instance):
-	self.connection = connection
+	#self.connection = connection
 	self.login_screen = login_screen
 	self.server_screen = server_screen
 	self.account_screen= account_screen
 	self.game_instance = game_instance
-	self.connection.SetupEventHandlers(login_screen, server_screen, account_screen, game_instance)
+	#self.connection.SetupEventHandlers(login_screen, server_screen, account_screen, game_instance)
 
 # Вспомогательная функция вызываемая при успешном соединении с главным сервером
 func notify_connect_to_server():
@@ -60,121 +62,145 @@ func get_login_name():
 # Разрыв соединения с главным сервером
 func disconnect_if_connected():
 	if connection_established:
-		connection.Disconnect()
+		#connection.Disconnect()
 		connection_established = false
 
 func request_account_info(id):
 	if connection_established:
-		connection.RequestAccountInfo(id)
+		#connection.RequestAccountInfo(id)
+		pass
 
 # Посылает запрос на создание игры на главный сервер
 func request_create_game(game_type, is_rated, game_name, handicap, side, password):
 	if connection_established:
-		connection.RequestCreateGame(game_type, is_rated, game_name, handicap, side, password)
-	
+		#connection.RequestCreateGame(game_type, is_rated, game_name, handicap, side, password)
+		pass
+		
 # Посылает запрос на присоединение к указанной игре на главный сервер
 func request_join(key, is_obs):
 	if connection_established:
-		connection.RequestJoin(key, is_obs)
+		#connection.RequestJoin(key, is_obs)
+		pass
 
 func request_join_protected(key, is_obs, password):
 	if connection_established:
-		connection.RequestJoinProtected(key, is_obs, password)
+		#connection.RequestJoinProtected(key, is_obs, password)
+		pass
 
 # Посылает сигнал на главный сервер при закрытии активной игры
 func request_close_game():
 	if connection_established:
-		connection.RequestCloseGame()
+		#connection.RequestCloseGame()
+		pass
 
 # Посылает сигнал на получение строки SFEN и истории у главного сервера
 func request_game_data():
 	if connection_established:
-		connection.RequestGameData()
+		#connection.RequestGameData()
+		pass
 		
 # Посылает сигнал на получение данных игроков у главного сервера
 func request_player_data():
 	if connection_established:
-		connection.RequestPlayerData()
+		#connection.RequestPlayerData()
+		pass
 
 # Запрос возврата хода.
 func request_takeback():
 	if connection_established:
-		connection.RequestTakeback()
+		#connection.RequestTakeback()
+		pass
 
 # Удаление своего аккаунта - доступно всем пользователям
 func delete_yourself(password:String) -> void:
 	if connection_established:
-		connection.DeleteYourself(password)
+		#connection.DeleteYourself(password)
+		pass
 
 # Посылает сигнал о готовности на главный сервер
 func request_ready() -> void:
 	if connection_established:
-		connection.NotifyReady()
+		#connection.NotifyReady()
+		pass
 
 func request_player_list() -> void:
 	if connection_established:
-		connection.RequestPlayerList()
+		#connection.RequestPlayerList()
+		pass
 
 func send_move_string(s:String) -> void:
 	if connection_established:
-		connection.SendMoveString(s)
+		#connection.SendMoveString(s)
+		pass
 		
 # Посылает ход на главный сервер
 func send_move(piece_type:int, is_promoted:bool, from_x:int, from_y:int, to_x:int, to_y:int, promotion:bool) -> void:
 	if connection_established:
-		connection.SendMove(piece_type, is_promoted, from_x, from_y, to_x, to_y, promotion)
+		#connection.SendMove(piece_type, is_promoted, from_x, from_y, to_x, to_y, promotion)
+		pass
 		
 # Посылает ход-сброс на главный сервер
 func send_drop(side:int, type:int, to_x:int, to_y:int) -> void:
 	if connection_established:
-		connection.SendDrop(side, type, to_x, to_y)
+		#connection.SendDrop(side, type, to_x, to_y)
+		pass
 
 func send_result(reason:int) -> void:
 	if connection_established:
-		connection.SendResult(reason)
+		#connection.SendResult(reason)
+		pass
 
 func send_accept(caller_index:int) -> void:
 	if connection_established:
-		connection.AcceptRequest(caller_index)
+		#connection.AcceptRequest(caller_index)
+		pass
 
 func send_decline(caller_index:int) -> void:
 	if connection_established:
-		connection.DeclineRequest(caller_index)
+		#connection.DeclineRequest(caller_index)
+		pass
 
 func send_accept_takeback() -> void:
 	if connection_established:
-		connection.AcceptTakeback()
+		#connection.AcceptTakeback()
+		pass
 		
 func send_decline_takeback() -> void:
 	if connection_established:
-		connection.DeclineTakeback()
+		#connection.DeclineTakeback()
+		pass
 
 # Принятие другого игрока
 func accept_joining_request(user_id:int) -> void:
 	if connection_established:
-		connection.AcceptJoiningRequest(user_id)
+		#connection.AcceptJoiningRequest(user_id)
+		pass
 		
 # Отклонение другого игрока
 func decline_joining_request(user_id:int) -> void:
 	if connection_established:
-		connection.DeclineJoiningRequest(user_id)
+		#connection.DeclineJoiningRequest(user_id)
+		pass
 
 # Остановка присоединения к игре	
 func stop_joining():
 	if connection_established:
-		connection.StopJoining()
+		#connection.StopJoining()
+		pass
 
 # Запросы на изменение данных аккаунта
 
 # Запрос на изменение пароля
 func request_change_password(old_password:String, new_password:String) -> void:
 	if connection_established:
-		connection.RequestChangePassword(old_password, new_password)
+		#connection.RequestChangePassword(old_password, new_password)
+		pass
 
 # Запрос на изменение страны
 func request_change_country(tag:int) -> void:
 	if connection_established:
-		connection.RequestChangeCountry(tag)
+		#connection.RequestChangeCountry(tag)
+		pass
 
 # ENET handlers
 

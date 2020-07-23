@@ -940,9 +940,9 @@ func reinit_ai(reset = false):
 	clear_ai_log()
 	if session.is_multiplayer():
 		return
-	var engine_folder = OS.get_executable_path().get_base_dir() + "//engines//" + Profiles.get_value(Settings.SV_AI_ENGINE_FOLDER)
-	var engine_exe = Profiles.get_value(Settings.SV_AI_ENGINE_EXE)
-	ai.Init(engine_folder, engine_exe, reset)
+	#var engine_folder = OS.get_executable_path().get_base_dir() + "//engines//" + Profiles.get_value(Settings.SV_AI_ENGINE_FOLDER)
+	#var engine_exe = Profiles.get_value(Settings.SV_AI_ENGINE_EXE)
+	ai.Init(OS.get_executable_path().get_base_dir() + "\\engines\\YaneuraOu", "YaneuraOu_NNUE_nosse.exe", reset)
 	if ai.IsReady:
 		if session.is_ai(): # для анализа игры использовать полную силу AI(по умолчанию), а при игре с AI установить сложность
 			ai.SetSkillLevel(Profiles.get_value(Settings.SV_AI_ENGINE_SKILL_LEVEL))

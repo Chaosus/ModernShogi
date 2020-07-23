@@ -118,7 +118,7 @@ class ProfileSettings:
 		# AI
 		
 		append_settings(Settings.SV_AI_ENGINE_FOLDER, "YaneuraOu")
-		append_settings(Settings.SV_AI_ENGINE_EXE, "YaneuraOu2018KPPT_nosse.exe")
+		append_settings(Settings.SV_AI_ENGINE_EXE, "YaneuraOu_KPPT_nosse.exe")
 		append_settings(Settings.SV_AI_ENGINE_SKILL_LEVEL, 0)
 		append_settings(Settings.SV_AI_ENGINE_ENABLE_LOG, false)
 

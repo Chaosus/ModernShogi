@@ -59,7 +59,7 @@ func init_network():
 	$MainContainer/MainLayout/Screens/JoinIPScreen/Panel/VBox/VBoxIP/HBoxIPV4/NumBox4.value = Profiles.get_current_settings().get_value(Settings.SV_IPV4_4)
 	$MainContainer/MainLayout/Screens/JoinIPScreen/Panel/VBox/VBoxIP/HBoxIPV6/IPV6Box.text = Profiles.get_value(Settings.SV_IPV6)
 	$MainContainer/MainLayout/Screens/JoinIPScreen/Panel/VBox/VBoxIP/HBoxPort/SpinBox.value = Profiles.get_current_settings().get_value(Settings.SV_JOIN_PORT)
-	Network.setup($Connection, login_screen, server_screen, account_screen, game_screen)
+	#Network.setup($Connection, login_screen, server_screen, account_screen, game_screen)
 
 func goto_game_setup(from_screen, config, mp_host = false, master_server = false):
 	setup_screen.setup_standart()

@@ -1,8 +1,7 @@
-[gd_scene load_steps=77 format=2]
+[gd_scene load_steps=76 format=2]
 
 [ext_resource path="res://sys.theme" type="Theme" id=1]
 [ext_resource path="res://scripts/SuperMenu.gd" type="Script" id=2]
-[ext_resource path="res://scripts/cs/LiteConnection.cs" type="Script" id=3]
 [ext_resource path="res://scripts/ui/HelperPopup.gd" type="Script" id=4]
 [ext_resource path="res://scripts/ui/BigHelperPopup.gd" type="Script" id=5]
 [ext_resource path="res://scripts/ui/HelperSeparator.gd" type="Script" id=6]
@@ -992,9 +991,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Connection" type="Node" parent="."]
-script = ExtResource( 3 )
-
 [node name="HelperLayer" type="CanvasLayer" parent="."]
 layer = 2
 
@@ -1111,6 +1107,9 @@ mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MainLayout" type="VBoxContainer" parent="MainContainer"]
 self_modulate = Color( 1, 1, 1, 0 )
@@ -2087,6 +2086,11 @@ margin_right = 800.0
 margin_bottom = 1375.0
 text = "BTN_LOAD"
 flat = true
+
+[node name="Control" type="Control" parent="MainContainer/MainLayout/Screens/LoadGameScreen/Box/VBox"]
+margin_top = 1320.0
+margin_right = 40.0
+margin_bottom = 1360.0
 
 [node name="SetupScreen" parent="MainContainer/MainLayout/Screens" instance=ExtResource( 67 )]
 

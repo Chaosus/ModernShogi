@@ -1,4 +1,5 @@
-﻿using System;
+using Godot;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -1314,7 +1315,7 @@ public static class UCIEngine
 
         var path = processFolder + "\\" + processName;
 
-        if(!File.Exists(path))
+        if(!System.IO.File.Exists(path))
         {
             Print($"ERROR: Process {path} not exist !", AI.MessageType.Info);
             IsReady = false;
@@ -1588,6 +1589,7 @@ public static class UCIEngine
     private static void Print(string line, AI.MessageType type)
 	{
         AINode.Call("SendToLog", line, type);
+		//GD.Print(line);
 	}
 
     public static string Message;

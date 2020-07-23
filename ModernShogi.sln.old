@@ -5,15 +5,15 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 	Debug|Any CPU = Debug|Any CPU
-	ExportDebug|Any CPU = ExportDebug|Any CPU
-	ExportRelease|Any CPU = ExportRelease|Any CPU
+	Release|Any CPU = Release|Any CPU
+	Tools|Any CPU = Tools|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{2BCA54BC-264F-4F31-9747-D784FE5CF6DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2BCA54BC-264F-4F31-9747-D784FE5CF6DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2BCA54BC-264F-4F31-9747-D784FE5CF6DC}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
-		{2BCA54BC-264F-4F31-9747-D784FE5CF6DC}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
-		{2BCA54BC-264F-4F31-9747-D784FE5CF6DC}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
-		{2BCA54BC-264F-4F31-9747-D784FE5CF6DC}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+		{2BCA54BC-264F-4F31-9747-D784FE5CF6DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BCA54BC-264F-4F31-9747-D784FE5CF6DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BCA54BC-264F-4F31-9747-D784FE5CF6DC}.Tools|Any CPU.ActiveCfg = Tools|Any CPU
+		{2BCA54BC-264F-4F31-9747-D784FE5CF6DC}.Tools|Any CPU.Build.0 = Tools|Any CPU
 	EndGlobalSection
 EndGlobal

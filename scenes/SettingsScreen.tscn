@@ -1022,6 +1022,10 @@ margin_top = 191.0
 margin_right = 1024.0
 margin_bottom = 195.0
 
+[node name="Offset2" type="ReferenceRect" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/UISettings"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 1024.0
+
 [node name="AISettings" type="VBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox"]
 visible = false
 margin_left = 1000.0
@@ -1899,6 +1903,10 @@ margin_top = 199.0
 margin_right = 1202.0
 margin_bottom = 203.0
 
+[node name="Offset" type="Control" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/HistorySettings"]
+margin_right = 40.0
+margin_bottom = 40.0
+
 [node name="CameraSettings" type="VBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox"]
 visible = false
 margin_bottom = 803.0
@@ -2271,6 +2279,11 @@ valign = 1
 [node name="HSeparator2" type="HSeparator" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/StylesSettings/GridStylesBox/VBox"]
 margin_right = 40.0
 margin_bottom = 4.0
+
+[node name="Offset2" type="ReferenceRect" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox/StylesSettings"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = -45.0
+margin_bottom = -45.0
 
 [node name="SoundSettings" type="VBoxContainer" parent="SimpleLayout/GBox/HBox/Section/Panel/VBox/Box/VBox/HBox"]
 visible = false

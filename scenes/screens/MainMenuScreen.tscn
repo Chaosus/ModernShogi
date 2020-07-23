@@ -33,9 +33,9 @@ hidden_by_default = true
 
 [node name="GridContainer" type="GridContainer" parent="."]
 margin_left = 652.0
-margin_top = 147.0
+margin_top = 258.0
 margin_right = 1268.0
-margin_bottom = 805.0
+margin_bottom = 694.0
 custom_constants/hseparation = 20
 columns = 4
 script = ExtResource( 20 )
@@ -105,7 +105,7 @@ script = ExtResource( 4 )
 [node name="Column2" type="VBoxContainer" parent="GridContainer"]
 margin_left = 212.0
 margin_right = 404.0
-margin_bottom = 658.0
+margin_bottom = 436.0
 size_flags_vertical = 0
 custom_constants/separation = 8
 
@@ -163,40 +163,14 @@ align = 1
 valign = 1
 script = ExtResource( 4 )
 
-[node name="VBoxQuit" type="VBoxContainer" parent="GridContainer/Column2"]
-margin_top = 444.0
-margin_right = 192.0
-margin_bottom = 658.0
-custom_constants/separation = 8
-
-[node name="QuitButton" type="TextureButton" parent="GridContainer/Column2/VBoxQuit"]
-margin_right = 192.0
-margin_bottom = 192.0
-rect_min_size = Vector2( 192, 192 )
-texture_normal = ExtResource( 10 )
-expand = true
-stretch_mode = 5
-script = ExtResource( 3 )
-unnamed = true
-
-[node name="Description" type="Label" parent="GridContainer/Column2/VBoxQuit"]
-margin_top = 200.0
-margin_right = 192.0
-margin_bottom = 214.0
-size_flags_horizontal = 3
-text = "BTN_QUIT"
-align = 1
-valign = 1
-script = ExtResource( 4 )
-
 [node name="Column3" type="VBoxContainer" parent="GridContainer"]
 margin_left = 424.0
 margin_right = 616.0
 margin_bottom = 436.0
-size_flags_vertical = 0
 custom_constants/separation = 8
 
 [node name="MultiplayerContainer" type="VBoxContainer" parent="GridContainer/Column3"]
+visible = false
 material = SubResource( 1 )
 margin_right = 192.0
 margin_bottom = 214.0
@@ -223,9 +197,8 @@ valign = 1
 script = ExtResource( 4 )
 
 [node name="VBoxLoad" type="VBoxContainer" parent="GridContainer/Column3"]
-margin_top = 222.0
 margin_right = 192.0
-margin_bottom = 436.0
+margin_bottom = 214.0
 custom_constants/separation = 8
 
 [node name="LoadButton" type="TextureButton" parent="GridContainer/Column3/VBoxLoad"]
@@ -329,6 +302,32 @@ align = 1
 valign = 1
 script = ExtResource( 4 )
 
+[node name="VBoxQuit" type="VBoxContainer" parent="GridContainer/Column3"]
+margin_top = 222.0
+margin_right = 192.0
+margin_bottom = 436.0
+custom_constants/separation = 8
+
+[node name="QuitButton" type="TextureButton" parent="GridContainer/Column3/VBoxQuit"]
+margin_right = 192.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 192, 192 )
+texture_normal = ExtResource( 10 )
+expand = true
+stretch_mode = 5
+script = ExtResource( 3 )
+unnamed = true
+
+[node name="Description" type="Label" parent="GridContainer/Column3/VBoxQuit"]
+margin_top = 200.0
+margin_right = 192.0
+margin_bottom = 214.0
+size_flags_horizontal = 3
+text = "BTN_QUIT"
+align = 1
+valign = 1
+script = ExtResource( 4 )
+
 [node name="MultiplayerContainer" type="GridContainer" parent="."]
 visible = false
 margin_left = 668.0
@@ -424,12 +423,12 @@ script = ExtResource( 4 )
 [connection signal="pressed" from="GridContainer/Column1/VBoxLibrary/LibraryButton" to="." method="_on_LibraryButton_pressed"]
 [connection signal="pressed" from="GridContainer/Column2/Local/PlayerVsPlayerButton" to="." method="_on_PlayerVsPlayerButton_pressed"]
 [connection signal="pressed" from="GridContainer/Column2/VBoxSettings/SettingsButton" to="." method="_on_SettingsButton_pressed"]
-[connection signal="pressed" from="GridContainer/Column2/VBoxQuit/QuitButton" to="." method="_on_QuitButton_pressed"]
 [connection signal="pressed" from="GridContainer/Column3/MultiplayerContainer/MultiplayerButton" to="." method="_on_MultiplayerButton_pressed"]
 [connection signal="pressed" from="GridContainer/Column3/VBoxLoad/LoadButton" to="." method="_on_LoadButton_pressed"]
 [connection signal="pressed" from="GridContainer/Column3/VBoxLoad2/QuickPlay" to="." method="_on_QuickPlay_pressed"]
 [connection signal="pressed" from="GridContainer/Column3/VBoxBug/BugsButton" to="." method="_on_BugsButton_pressed"]
 [connection signal="pressed" from="GridContainer/Column3/VBoxDonate/DonateButton" to="." method="_on_DonateButton_pressed"]
+[connection signal="pressed" from="GridContainer/Column3/VBoxQuit/QuitButton" to="." method="_on_QuitButton_pressed"]
 [connection signal="pressed" from="MultiplayerContainer/HBoxContainer/HostContainer/HostButton" to="." method="_on_HostButton_pressed"]
 [connection signal="pressed" from="MultiplayerContainer/HBoxContainer/HBoxJoin/JoinButton" to="." method="_on_JoinButton_pressed"]
 [connection signal="pressed" from="MultiplayerContainer/HBoxContainer/HBoxBack/BackFromMultiplayerButton" to="." method="_on_BackFromMultiplayerButton_pressed"]

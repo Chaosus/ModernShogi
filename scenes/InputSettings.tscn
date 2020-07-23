@@ -34,7 +34,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="HBoxInfo" type="HBoxContainer" parent="."]
-editor/display_folded = true
 margin_right = 241.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 0, 50 )
@@ -144,7 +143,6 @@ size_flags_horizontal = 3
 custom_constants/separation = 0
 
 [node name="VBoxUIUp" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
-editor/display_folded = true
 visible = false
 margin_right = 170.0
 margin_bottom = 84.0
@@ -164,7 +162,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="VBoxUIDown" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
-editor/display_folded = true
 visible = false
 margin_right = 170.0
 margin_bottom = 84.0
@@ -184,7 +181,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="VBoxUILeft" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
-editor/display_folded = true
 visible = false
 margin_right = 170.0
 margin_bottom = 84.0
@@ -204,7 +200,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="VBoxUIRight" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
-editor/display_folded = true
 visible = false
 margin_right = 170.0
 margin_bottom = 84.0
@@ -224,7 +219,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="VBoxUIAccept" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
-editor/display_folded = true
 visible = false
 margin_right = 170.0
 margin_bottom = 84.0
@@ -244,7 +238,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="VBoxCameraRotateUp" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
-editor/display_folded = true
 margin_right = 170.0
 margin_bottom = 84.0
 custom_constants/separation = 0
@@ -263,7 +256,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="VBoxCameraRotateDown" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
-editor/display_folded = true
 margin_right = 170.0
 margin_bottom = 84.0
 custom_constants/separation = 0
@@ -282,7 +274,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="DescCameraRotateLeft" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
-editor/display_folded = true
 margin_right = 170.0
 margin_bottom = 84.0
 custom_constants/separation = 0
@@ -301,7 +292,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="VBoxCameraRotateRight" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
-editor/display_folded = true
 margin_right = 170.0
 margin_bottom = 84.0
 custom_constants/separation = 0
@@ -320,7 +310,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="VBoxCameraReset" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
-editor/display_folded = true
 margin_right = 128.0
 margin_bottom = 84.0
 custom_constants/separation = 0
@@ -339,7 +328,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="VBoxFlipBoard" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
-editor/display_folded = true
 margin_right = 128.0
 margin_bottom = 84.0
 custom_constants/separation = 0
@@ -358,7 +346,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="VBoxHistory" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 custom_constants/separation = 0
@@ -377,7 +364,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="VBoxHistoryBack" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 custom_constants/separation = 0
@@ -396,7 +382,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="VBoxHistoryForward" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 custom_constants/separation = 0
@@ -415,7 +400,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="VBoxHistoryPlay" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 custom_constants/separation = 0
@@ -434,7 +418,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="VBoxHistoryPlayReversed" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
-editor/display_folded = true
 margin_right = 187.0
 margin_bottom = 84.0
 custom_constants/separation = 0
@@ -453,7 +436,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="VBoxHistoryToStart" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 custom_constants/separation = 0
@@ -472,7 +454,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="VBoxHistoryToEnd" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 custom_constants/separation = 0
@@ -491,7 +472,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="VBoxHintMode" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 custom_constants/separation = 0
@@ -526,7 +506,6 @@ size_flags_horizontal = 3
 custom_constants/separation = 0
 
 [node name="KeyUIUp" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
-editor/display_folded = true
 visible = false
 margin_right = 188.0
 margin_bottom = 84.0
@@ -563,7 +542,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="KeyUIDown" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
-editor/display_folded = true
 visible = false
 margin_right = 188.0
 margin_bottom = 84.0
@@ -602,7 +580,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="KeyUILeft" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
-editor/display_folded = true
 visible = false
 margin_right = 188.0
 margin_bottom = 84.0
@@ -641,7 +618,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="KeyUIRight" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
-editor/display_folded = true
 visible = false
 margin_right = 188.0
 margin_bottom = 84.0
@@ -680,7 +656,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="KeyUIAccept" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
-editor/display_folded = true
 visible = false
 margin_right = 188.0
 margin_bottom = 84.0
@@ -719,7 +694,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="VBoxCameraRotateUp" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
-editor/display_folded = true
 margin_right = 188.0
 margin_bottom = 84.0
 custom_constants/separation = 0
@@ -755,7 +729,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="VBoxCameraRotateDown" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
-editor/display_folded = true
 margin_right = 188.0
 margin_bottom = 84.0
 custom_constants/separation = 0
@@ -791,7 +764,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="KeyCameraRotateLeft" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
-editor/display_folded = true
 margin_right = 188.0
 margin_bottom = 84.0
 custom_constants/separation = 0
@@ -827,13 +799,11 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="VBoxCameraRotateRight" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
-editor/display_folded = true
 margin_right = 188.0
 margin_bottom = 84.0
 custom_constants/separation = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="KeyBox/KeyGrid/VBox2/VBoxCameraRotateRight"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -864,7 +834,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="VBoxCameraReset" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 84.0
 custom_constants/separation = 0
@@ -900,7 +869,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="VBoxFlipBoard" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 84.0
 custom_constants/separation = 0
@@ -936,7 +904,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="VBoxHistory" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 custom_constants/separation = 0
@@ -972,13 +939,11 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="VBoxHistoryBack" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 custom_constants/separation = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="KeyBox/KeyGrid/VBox2/VBoxHistoryBack"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -1009,13 +974,11 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="VBoxHistoryForward" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 custom_constants/separation = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="KeyBox/KeyGrid/VBox2/VBoxHistoryForward"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -1046,7 +1009,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="VBoxHistoryPlay" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 custom_constants/separation = 0
@@ -1082,7 +1044,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="KeyHistoryPlayReversed" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 custom_constants/separation = 0
@@ -1118,7 +1079,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="VBoxHistoryToStart" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 custom_constants/separation = 0
@@ -1154,7 +1114,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="VBoxHistoryToEnd" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 custom_constants/separation = 0
@@ -1190,7 +1149,6 @@ margin_right = 40.0
 margin_bottom = 4.0
 
 [node name="KeyHintMode" type="VBoxContainer" parent="KeyBox/KeyGrid/VBox2"]
-editor/display_folded = true
 margin_right = 188.0
 margin_bottom = 84.0
 custom_constants/separation = 0
@@ -1235,11 +1193,15 @@ margin_right = 12.0
 margin_bottom = 20.0
 text = "BTN_INPUT_DEFAULT"
 
+[node name="HSeparator" type="HSeparator" parent="."]
+margin_right = 40.0
+margin_bottom = 4.0
+
 [node name="Offset2" type="ReferenceRect" parent="."]
 modulate = Color( 1, 1, 1, 0 )
 margin_top = -45.0
 margin_bottom = -45.0
-
+rect_min_size = Vector2( 0, 20 )
 [connection signal="toggled" from="HBoxInfo3/CB_SHOW_LOCKED_MEMBERS" to="." method="_on_CB_SHOW_LOCKED_MEMBERS_toggled"]
 [connection signal="pressed" from="SaveButton" to="." method="_on_SaveButton_pressed"]
 [connection signal="pressed" from="DefaultButton" to="." method="_on_DefaultButton_pressed"]
